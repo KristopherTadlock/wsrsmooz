@@ -28,29 +28,21 @@ namespace WSRsmooz
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Login_textbox_employee = new System.Windows.Forms.TextBox();
             this.Login_textbox_password = new System.Windows.Forms.TextBox();
             this.Login_button_login = new System.Windows.Forms.Button();
             this.Login_label_employee = new System.Windows.Forms.Label();
             this.Login_label_password = new System.Windows.Forms.Label();
             this.Login_picturebox_logo = new System.Windows.Forms.PictureBox();
+            this.Login_label_welcome = new System.Windows.Forms.Label();
+            this.Login_label_currentUser = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Login_picturebox_logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.Visible = false;
             // 
             // Login_textbox_employee
             // 
             this.Login_textbox_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_textbox_employee.Location = new System.Drawing.Point(484, 254);
+            this.Login_textbox_employee.Location = new System.Drawing.Point(481, 254);
             this.Login_textbox_employee.Name = "Login_textbox_employee";
             this.Login_textbox_employee.Size = new System.Drawing.Size(100, 22);
             this.Login_textbox_employee.TabIndex = 1;
@@ -58,7 +50,7 @@ namespace WSRsmooz
             // Login_textbox_password
             // 
             this.Login_textbox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_textbox_password.Location = new System.Drawing.Point(484, 286);
+            this.Login_textbox_password.Location = new System.Drawing.Point(481, 286);
             this.Login_textbox_password.Name = "Login_textbox_password";
             this.Login_textbox_password.Size = new System.Drawing.Size(100, 22);
             this.Login_textbox_password.TabIndex = 2;
@@ -66,7 +58,7 @@ namespace WSRsmooz
             // Login_button_login
             // 
             this.Login_button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_button_login.Location = new System.Drawing.Point(449, 316);
+            this.Login_button_login.Location = new System.Drawing.Point(456, 316);
             this.Login_button_login.Name = "Login_button_login";
             this.Login_button_login.Size = new System.Drawing.Size(75, 28);
             this.Login_button_login.TabIndex = 3;
@@ -78,7 +70,7 @@ namespace WSRsmooz
             // 
             this.Login_label_employee.AutoSize = true;
             this.Login_label_employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_label_employee.Location = new System.Drawing.Point(408, 257);
+            this.Login_label_employee.Location = new System.Drawing.Point(405, 257);
             this.Login_label_employee.Name = "Login_label_employee";
             this.Login_label_employee.Size = new System.Drawing.Size(73, 16);
             this.Login_label_employee.TabIndex = 4;
@@ -89,7 +81,7 @@ namespace WSRsmooz
             // 
             this.Login_label_password.AutoSize = true;
             this.Login_label_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_label_password.Location = new System.Drawing.Point(410, 289);
+            this.Login_label_password.Location = new System.Drawing.Point(407, 289);
             this.Login_label_password.Name = "Login_label_password";
             this.Login_label_password.Size = new System.Drawing.Size(71, 16);
             this.Login_label_password.TabIndex = 5;
@@ -99,11 +91,34 @@ namespace WSRsmooz
             // Login_picturebox_logo
             // 
             this.Login_picturebox_logo.Image = global::WSRsmooz.Properties.Resources.wsrlogo;
-            this.Login_picturebox_logo.Location = new System.Drawing.Point(349, 72);
+            this.Login_picturebox_logo.Location = new System.Drawing.Point(345, 72);
             this.Login_picturebox_logo.Name = "Login_picturebox_logo";
             this.Login_picturebox_logo.Size = new System.Drawing.Size(297, 182);
             this.Login_picturebox_logo.TabIndex = 6;
             this.Login_picturebox_logo.TabStop = false;
+            // 
+            // Login_label_welcome
+            // 
+            this.Login_label_welcome.AutoSize = true;
+            this.Login_label_welcome.Location = new System.Drawing.Point(407, 258);
+            this.Login_label_welcome.Name = "Login_label_welcome";
+            this.Login_label_welcome.Size = new System.Drawing.Size(173, 13);
+            this.Login_label_welcome.TabIndex = 7;
+            this.Login_label_welcome.Text = "You have successfully logged in as";
+            this.Login_label_welcome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Login_label_welcome.Visible = false;
+            // 
+            // Login_label_currentUser
+            // 
+            this.Login_label_currentUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Login_label_currentUser.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_label_currentUser.Location = new System.Drawing.Point(182, 278);
+            this.Login_label_currentUser.Name = "Login_label_currentUser";
+            this.Login_label_currentUser.Size = new System.Drawing.Size(622, 35);
+            this.Login_label_currentUser.TabIndex = 8;
+            this.Login_label_currentUser.Text = "Darryl Nixon";
+            this.Login_label_currentUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Login_label_currentUser.Visible = false;
             // 
             // Login
             // 
@@ -111,15 +126,15 @@ namespace WSRsmooz
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 657);
+            this.Controls.Add(this.Login_label_currentUser);
+            this.Controls.Add(this.Login_label_welcome);
             this.Controls.Add(this.Login_picturebox_logo);
             this.Controls.Add(this.Login_label_password);
             this.Controls.Add(this.Login_label_employee);
             this.Controls.Add(this.Login_button_login);
             this.Controls.Add(this.Login_textbox_password);
             this.Controls.Add(this.Login_textbox_employee);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Login";
@@ -131,12 +146,13 @@ namespace WSRsmooz
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TextBox Login_textbox_employee;
         private System.Windows.Forms.TextBox Login_textbox_password;
         private System.Windows.Forms.Button Login_button_login;
         private System.Windows.Forms.Label Login_label_employee;
         private System.Windows.Forms.Label Login_label_password;
         private System.Windows.Forms.PictureBox Login_picturebox_logo;
+        private System.Windows.Forms.Label Login_label_welcome;
+        private System.Windows.Forms.Label Login_label_currentUser;
     }
 }

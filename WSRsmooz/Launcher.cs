@@ -19,21 +19,26 @@ namespace WSRsmooz
         public bool loggedIn { get; set; }
         public bool superUser { get; set; }
         public String currentUser { get; set; }
+        public String currentWindow { get; set; }
 
         // initialize form children
-        Form formB = new Login();
+        Form loginForm;
+        Form newPatientIntakeForm;
         
         public Launcher()
         {
             InitializeComponent();
+
             loggedIn = false;
             superUser = false;
             currentUser = "";
+            currentWindow = "Login";
 
             // set form children properties properly to fit within mdi
-            formB.MdiParent = this;
-            formB.Size = new Rectangle(0, 0, toolStrip.Width-4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
-            formB.Show();
+            loginForm = new Login();
+            loginForm.MdiParent = this;
+            loginForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+            loginForm.Show();
 
         }
 
@@ -64,32 +69,54 @@ namespace WSRsmooz
                     this.Text = defaultTitle;
                     break;
             }
-
         }
 
         private void refreshLoginScreen()
         {
-            formB.Close();
-            formB = new Login();
-            formB.MdiParent = this;
-            formB.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
-            formB.Show();
+            this.currentWindow = "Login";
+            loginForm = new Login();
+            loginForm.MdiParent = this;
+            loginForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+            loginForm.Show();
+        }
+
+        public void logout()
+        {
+            loggedIn = false;
+            superUser = false;
+            currentUser = "";
+            toggleToolstrip();
+            shutdownEverything();
+            refreshLoginScreen();
+        }
+
+        public void shutdownEverything()
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i].Name != "Launcher")
+                    Application.OpenForms[i].Close();
+            }
         }
 
         private void launcher_button_login_Click(object sender, EventArgs e)
         {
             if (loggedIn)
-            {
-                loggedIn = false;
-                superUser = false;
-                currentUser = "";
-                toggleToolstrip();
-                //shutdownEverything();
-                refreshLoginScreen();
-            }
+                logout();
             else
+                if (!this.currentWindow.Equals("Login"))
+                   refreshLoginScreen();
+        }
+
+        private void launcher_button_newPatientIntake_Click(object sender, EventArgs e)
+        {
+            if (!this.currentWindow.Equals("New Patient Intake"))
             {
-                refreshLoginScreen();
+                this.currentWindow = "New Patient Intake";
+                newPatientIntakeForm = new NewPatientIntake();
+                newPatientIntakeForm.MdiParent = this;
+                newPatientIntakeForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                newPatientIntakeForm.Show();
             }
         }
     }

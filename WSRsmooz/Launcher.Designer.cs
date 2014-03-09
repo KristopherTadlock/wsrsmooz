@@ -42,6 +42,7 @@ namespace WSRsmooz
             // toolStrip
             // 
             this.toolStrip.AllowMerge = false;
+            this.toolStrip.BackColor = System.Drawing.SystemColors.ControlLight;
             this.toolStrip.CanOverflow = false;
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(50, 50);
@@ -79,6 +80,7 @@ namespace WSRsmooz
             this.launcher_button_newPatientIntake.Size = new System.Drawing.Size(110, 69);
             this.launcher_button_newPatientIntake.Text = "New Patient &Intake";
             this.launcher_button_newPatientIntake.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.launcher_button_newPatientIntake.Click += new System.EventHandler(this.launcher_button_newPatientIntake_Click);
             // 
             // launcher_button_groupClipboard
             // 
