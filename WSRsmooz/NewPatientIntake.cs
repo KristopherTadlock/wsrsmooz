@@ -15,6 +15,11 @@ namespace WSRsmooz
     {
         // option variables
         Color textBoxErrorColor = Color.PaleVioletRed;
+        String[] stepDescriptions = { "Step 1: Enter basic client information.",
+                                      "Step 2: Enter bullshit here."
+                                    };
+
+        Button[] stepButtons;
 
         // mandatory variables
         Boolean tab1_valid = false;
@@ -22,6 +27,10 @@ namespace WSRsmooz
         public NewPatientIntake()
         {
             InitializeComponent();
+            stepButtons = new Button[] { NewPatientIntake_checklist_button_tab1,
+                                         NewPatientIntake_checklist_button_tab2
+                                       };
+            changeConstantsToTab(newPatientIntakeWizard, null);
         }
 
         public void cancelNewPatientIntake()
@@ -48,7 +57,7 @@ namespace WSRsmooz
                 case 1:
                     // letters with space only, upper or lower ok
                     //regex = new Regex(@"^[a-zA-Z ]*$");
-                    regex = new Regex(@"^([\w]+\s)*[\w]+$");
+                    regex = new Regex(@"^([a-zA-Z]+\s)*[a-zA-Z]+$");
                     break;
                 case 2:
                     // letters only, upper only
@@ -57,6 +66,10 @@ namespace WSRsmooz
                 case 3:
                     // numbers only
                     regex = new Regex(@"^[0-9]*$");
+                    break;
+                case 4:
+                    // letters or numbers with space, upper or lower ok
+                    regex = new Regex(@"^([\w.]+\s)*[\w.]+$");
                     break;
                 default:
                     regex = new Regex(@"*$");
@@ -79,6 +92,38 @@ namespace WSRsmooz
         {
             if (newPatientIntakeWizard.SelectedIndex < newPatientIntakeWizard.TabCount - 1)
                 newPatientIntakeWizard.SelectedIndex++;
+        }
+
+        private void changeConstantsToTab(object sender, EventArgs e)
+        {
+            if (newPatientIntakeWizard.SelectedIndex == 0)
+                newPatientIntakeWizard_button_back.Visible = false;
+            else
+                newPatientIntakeWizard_button_back.Visible = true;
+
+            if (newPatientIntakeWizard.SelectedIndex == newPatientIntakeWizard.TabCount - 1)
+            {
+                newPatientIntakeWizard_button_next.Text = "Complete";
+            }
+            else
+                newPatientIntakeWizard_button_next.Text = "Next";
+
+            for (int i = 0; i <= newPatientIntakeWizard.TabCount - 1; i++)
+                if (newPatientIntakeWizard.SelectedIndex > i)
+                    stepButtons[i].BackColor = SystemColors.ActiveCaption;
+                else if (newPatientIntakeWizard.SelectedIndex == i)
+                    stepButtons[i].BackColor = SystemColors.Highlight;
+                else
+                    stepButtons[i].BackColor = SystemColors.Control;
+
+            newPatientIntakeWizard_label_instructions.Text = stepDescriptions[newPatientIntakeWizard.SelectedIndex];
+
+            newPatientIntakeWizard_label_instructions.Parent = newPatientIntakeWizard.TabPages[newPatientIntakeWizard.SelectedIndex];
+            newPatientIntakeWizard_button_back.Parent = newPatientIntakeWizard.TabPages[newPatientIntakeWizard.SelectedIndex];
+            newPatientIntakeWizard_button_next.Parent = newPatientIntakeWizard.TabPages[newPatientIntakeWizard.SelectedIndex];
+            newPatientIntakeWizard_button_cancel.Parent = newPatientIntakeWizard.TabPages[newPatientIntakeWizard.SelectedIndex];
+            newPatientIntakeWizard_picturebox_wizard.Parent = newPatientIntakeWizard.TabPages[newPatientIntakeWizard.SelectedIndex];
+            newPatientIntakeWizard_label_title.Parent = newPatientIntakeWizard.TabPages[newPatientIntakeWizard.SelectedIndex];
         }
 
         private void newPatientIntakeWizard_tab1_textbox_firstName_TextChanged(object sender, EventArgs e)
@@ -107,11 +152,6 @@ namespace WSRsmooz
             validateTextBox(sender, 3);
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            backTab();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             nextTab();
@@ -128,6 +168,16 @@ namespace WSRsmooz
                 }
             }
             nextTab();
+        }
+
+        private void newPatientIntakeWizard_tab1_textbox_streetAddress_TextChanged(object sender, EventArgs e)
+        {
+            validateTextBox(sender, 4);
+        }
+
+        private void newPatientIntakeWizard_button_back_Click(object sender, EventArgs e)
+        {
+            backTab();
         }
 
     }

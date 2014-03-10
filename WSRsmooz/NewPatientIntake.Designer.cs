@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.NewPatientIntake_checklist_button_tab1 = new System.Windows.Forms.Button();
+            this.NewPatientIntake_checklist_button_tab2 = new System.Windows.Forms.Button();
             this.newPatientIntakeWizard = new WSRsmooz.WizardTabs();
             this.newPatientIntakeWizard_tab1 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_button_back = new System.Windows.Forms.Button();
             this.newPatientIntakeWizard_tab1_label_zip = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_textbox_zip = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_tab1_combobox_state = new System.Windows.Forms.ComboBox();
@@ -41,30 +43,21 @@
             this.newPatientIntakeWizard_tab1_textbox_streetAddress = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_tab1_label_dateOfBirth = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.newPatientIntakeWizard_tab1_button_cancel = new System.Windows.Forms.Button();
-            this.newPatientIntakeWizard_tab1_button_next = new System.Windows.Forms.Button();
+            this.newPatientIntakeWizard_button_cancel = new System.Windows.Forms.Button();
+            this.newPatientIntakeWizard_button_next = new System.Windows.Forms.Button();
             this.newPatientIntakeWizard_tab1_label_middleInitial = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_textbox_middleInitial = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_tab1_label_lastName = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_textbox_lastName = new System.Windows.Forms.TextBox();
-            this.newPatientIntakeWizard_tab1_label_instructions = new System.Windows.Forms.Label();
+            this.newPatientIntakeWizard_label_instructions = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_label_firstName = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_textbox_firstName = new System.Windows.Forms.TextBox();
-            this.newPatientIntakeWizard_tab1_picturebox_wizard = new System.Windows.Forms.PictureBox();
-            this.newPatientIntakeWizard_tab1_label_title = new System.Windows.Forms.Label();
+            this.newPatientIntakeWizard_picturebox_wizard = new System.Windows.Forms.PictureBox();
+            this.newPatientIntakeWizard_label_title = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.newPatientIntakeWizard_tab2_button_cancel = new System.Windows.Forms.Button();
-            this.newPatientIntakeWizard_tab2_button_next = new System.Windows.Forms.Button();
-            this.newPatientIntakeWizard_tab2_button_back = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.newPatientIntakeWizard_tab2_picturebox_logo = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.NewPatientIntake_checklist_button_tab2 = new System.Windows.Forms.Button();
             this.newPatientIntakeWizard.SuspendLayout();
             this.newPatientIntakeWizard_tab1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_tab1_picturebox_wizard)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_tab2_picturebox_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_picturebox_wizard)).BeginInit();
             this.SuspendLayout();
             // 
             // NewPatientIntake_checklist_button_tab1
@@ -78,6 +71,17 @@
             this.NewPatientIntake_checklist_button_tab1.Text = "Basic Information";
             this.NewPatientIntake_checklist_button_tab1.UseVisualStyleBackColor = true;
             // 
+            // NewPatientIntake_checklist_button_tab2
+            // 
+            this.NewPatientIntake_checklist_button_tab2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewPatientIntake_checklist_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPatientIntake_checklist_button_tab2.Location = new System.Drawing.Point(12, 50);
+            this.NewPatientIntake_checklist_button_tab2.Name = "NewPatientIntake_checklist_button_tab2";
+            this.NewPatientIntake_checklist_button_tab2.Size = new System.Drawing.Size(130, 32);
+            this.NewPatientIntake_checklist_button_tab2.TabIndex = 2;
+            this.NewPatientIntake_checklist_button_tab2.Text = "Basic Bullshit";
+            this.NewPatientIntake_checklist_button_tab2.UseVisualStyleBackColor = true;
+            // 
             // newPatientIntakeWizard
             // 
             this.newPatientIntakeWizard.Controls.Add(this.newPatientIntakeWizard_tab1);
@@ -88,10 +92,12 @@
             this.newPatientIntakeWizard.SelectedIndex = 0;
             this.newPatientIntakeWizard.Size = new System.Drawing.Size(832, 657);
             this.newPatientIntakeWizard.TabIndex = 0;
+            this.newPatientIntakeWizard.SelectedIndexChanged += new System.EventHandler(this.changeConstantsToTab);
             // 
             // newPatientIntakeWizard_tab1
             // 
             this.newPatientIntakeWizard_tab1.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_button_back);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_zip);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_textbox_zip);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_combobox_state);
@@ -102,23 +108,33 @@
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_textbox_streetAddress);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_dateOfBirth);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth);
-            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_button_cancel);
-            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_button_next);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_button_cancel);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_button_next);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_middleInitial);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_textbox_middleInitial);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_lastName);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_textbox_lastName);
-            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_instructions);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_label_instructions);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_firstName);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_textbox_firstName);
-            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_picturebox_wizard);
-            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_title);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_picturebox_wizard);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_label_title);
             this.newPatientIntakeWizard_tab1.Location = new System.Drawing.Point(4, 22);
             this.newPatientIntakeWizard_tab1.Name = "newPatientIntakeWizard_tab1";
             this.newPatientIntakeWizard_tab1.Padding = new System.Windows.Forms.Padding(3);
             this.newPatientIntakeWizard_tab1.Size = new System.Drawing.Size(824, 631);
             this.newPatientIntakeWizard_tab1.TabIndex = 0;
             this.newPatientIntakeWizard_tab1.Text = "tabPage1";
+            // 
+            // newPatientIntakeWizard_button_back
+            // 
+            this.newPatientIntakeWizard_button_back.Location = new System.Drawing.Point(416, 336);
+            this.newPatientIntakeWizard_button_back.Name = "newPatientIntakeWizard_button_back";
+            this.newPatientIntakeWizard_button_back.Size = new System.Drawing.Size(75, 23);
+            this.newPatientIntakeWizard_button_back.TabIndex = 23;
+            this.newPatientIntakeWizard_button_back.Text = "Back";
+            this.newPatientIntakeWizard_button_back.UseVisualStyleBackColor = true;
+            this.newPatientIntakeWizard_button_back.Click += new System.EventHandler(this.newPatientIntakeWizard_button_back_Click);
             // 
             // newPatientIntakeWizard_tab1_label_zip
             // 
@@ -258,6 +274,7 @@
             this.newPatientIntakeWizard_tab1_textbox_streetAddress.Name = "newPatientIntakeWizard_tab1_textbox_streetAddress";
             this.newPatientIntakeWizard_tab1_textbox_streetAddress.Size = new System.Drawing.Size(220, 22);
             this.newPatientIntakeWizard_tab1_textbox_streetAddress.TabIndex = 14;
+            this.newPatientIntakeWizard_tab1_textbox_streetAddress.TextChanged += new System.EventHandler(this.newPatientIntakeWizard_tab1_textbox_streetAddress_TextChanged);
             // 
             // newPatientIntakeWizard_tab1_label_dateOfBirth
             // 
@@ -279,25 +296,25 @@
             this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.Size = new System.Drawing.Size(106, 22);
             this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.TabIndex = 12;
             // 
-            // newPatientIntakeWizard_tab1_button_cancel
+            // newPatientIntakeWizard_button_cancel
             // 
-            this.newPatientIntakeWizard_tab1_button_cancel.Location = new System.Drawing.Point(599, 336);
-            this.newPatientIntakeWizard_tab1_button_cancel.Name = "newPatientIntakeWizard_tab1_button_cancel";
-            this.newPatientIntakeWizard_tab1_button_cancel.Size = new System.Drawing.Size(75, 23);
-            this.newPatientIntakeWizard_tab1_button_cancel.TabIndex = 11;
-            this.newPatientIntakeWizard_tab1_button_cancel.Text = "Cancel";
-            this.newPatientIntakeWizard_tab1_button_cancel.UseVisualStyleBackColor = true;
-            this.newPatientIntakeWizard_tab1_button_cancel.Click += new System.EventHandler(this.newPatientIntakeWizard_tab1_button_cancel_Click);
+            this.newPatientIntakeWizard_button_cancel.Location = new System.Drawing.Point(599, 336);
+            this.newPatientIntakeWizard_button_cancel.Name = "newPatientIntakeWizard_button_cancel";
+            this.newPatientIntakeWizard_button_cancel.Size = new System.Drawing.Size(75, 23);
+            this.newPatientIntakeWizard_button_cancel.TabIndex = 11;
+            this.newPatientIntakeWizard_button_cancel.Text = "Cancel";
+            this.newPatientIntakeWizard_button_cancel.UseVisualStyleBackColor = true;
+            this.newPatientIntakeWizard_button_cancel.Click += new System.EventHandler(this.newPatientIntakeWizard_tab1_button_cancel_Click);
             // 
-            // newPatientIntakeWizard_tab1_button_next
+            // newPatientIntakeWizard_button_next
             // 
-            this.newPatientIntakeWizard_tab1_button_next.Location = new System.Drawing.Point(497, 336);
-            this.newPatientIntakeWizard_tab1_button_next.Name = "newPatientIntakeWizard_tab1_button_next";
-            this.newPatientIntakeWizard_tab1_button_next.Size = new System.Drawing.Size(75, 23);
-            this.newPatientIntakeWizard_tab1_button_next.TabIndex = 10;
-            this.newPatientIntakeWizard_tab1_button_next.Text = "Next";
-            this.newPatientIntakeWizard_tab1_button_next.UseVisualStyleBackColor = true;
-            this.newPatientIntakeWizard_tab1_button_next.Click += new System.EventHandler(this.newPatientIntakeWizard_tab1_button_next_Click);
+            this.newPatientIntakeWizard_button_next.Location = new System.Drawing.Point(497, 336);
+            this.newPatientIntakeWizard_button_next.Name = "newPatientIntakeWizard_button_next";
+            this.newPatientIntakeWizard_button_next.Size = new System.Drawing.Size(75, 23);
+            this.newPatientIntakeWizard_button_next.TabIndex = 10;
+            this.newPatientIntakeWizard_button_next.Text = "Next";
+            this.newPatientIntakeWizard_button_next.UseVisualStyleBackColor = true;
+            this.newPatientIntakeWizard_button_next.Click += new System.EventHandler(this.newPatientIntakeWizard_tab1_button_next_Click);
             // 
             // newPatientIntakeWizard_tab1_label_middleInitial
             // 
@@ -339,15 +356,15 @@
             this.newPatientIntakeWizard_tab1_textbox_lastName.TabIndex = 5;
             this.newPatientIntakeWizard_tab1_textbox_lastName.TextChanged += new System.EventHandler(this.newPatientIntakeWizard_tab1_textbox_lastName_TextChanged);
             // 
-            // newPatientIntakeWizard_tab1_label_instructions
+            // newPatientIntakeWizard_label_instructions
             // 
-            this.newPatientIntakeWizard_tab1_label_instructions.AutoSize = true;
-            this.newPatientIntakeWizard_tab1_label_instructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newPatientIntakeWizard_tab1_label_instructions.Location = new System.Drawing.Point(356, 83);
-            this.newPatientIntakeWizard_tab1_label_instructions.Name = "newPatientIntakeWizard_tab1_label_instructions";
-            this.newPatientIntakeWizard_tab1_label_instructions.Size = new System.Drawing.Size(224, 16);
-            this.newPatientIntakeWizard_tab1_label_instructions.TabIndex = 4;
-            this.newPatientIntakeWizard_tab1_label_instructions.Text = "Step 1: Enter basic client information.";
+            this.newPatientIntakeWizard_label_instructions.AutoSize = true;
+            this.newPatientIntakeWizard_label_instructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_label_instructions.Location = new System.Drawing.Point(356, 83);
+            this.newPatientIntakeWizard_label_instructions.Name = "newPatientIntakeWizard_label_instructions";
+            this.newPatientIntakeWizard_label_instructions.Size = new System.Drawing.Size(224, 16);
+            this.newPatientIntakeWizard_label_instructions.TabIndex = 4;
+            this.newPatientIntakeWizard_label_instructions.Text = "Step 1: Enter basic client information.";
             // 
             // newPatientIntakeWizard_tab1_label_firstName
             // 
@@ -369,111 +386,35 @@
             this.newPatientIntakeWizard_tab1_textbox_firstName.TabIndex = 2;
             this.newPatientIntakeWizard_tab1_textbox_firstName.TextChanged += new System.EventHandler(this.newPatientIntakeWizard_tab1_textbox_firstName_TextChanged);
             // 
-            // newPatientIntakeWizard_tab1_picturebox_wizard
+            // newPatientIntakeWizard_picturebox_wizard
             // 
-            this.newPatientIntakeWizard_tab1_picturebox_wizard.Image = global::WSRsmooz.Properties.Resources.wizard_icon;
-            this.newPatientIntakeWizard_tab1_picturebox_wizard.Location = new System.Drawing.Point(114, 83);
-            this.newPatientIntakeWizard_tab1_picturebox_wizard.Name = "newPatientIntakeWizard_tab1_picturebox_wizard";
-            this.newPatientIntakeWizard_tab1_picturebox_wizard.Size = new System.Drawing.Size(229, 276);
-            this.newPatientIntakeWizard_tab1_picturebox_wizard.TabIndex = 1;
-            this.newPatientIntakeWizard_tab1_picturebox_wizard.TabStop = false;
+            this.newPatientIntakeWizard_picturebox_wizard.Image = global::WSRsmooz.Properties.Resources.wizard_icon;
+            this.newPatientIntakeWizard_picturebox_wizard.Location = new System.Drawing.Point(114, 83);
+            this.newPatientIntakeWizard_picturebox_wizard.Name = "newPatientIntakeWizard_picturebox_wizard";
+            this.newPatientIntakeWizard_picturebox_wizard.Size = new System.Drawing.Size(229, 276);
+            this.newPatientIntakeWizard_picturebox_wizard.TabIndex = 1;
+            this.newPatientIntakeWizard_picturebox_wizard.TabStop = false;
             // 
-            // newPatientIntakeWizard_tab1_label_title
+            // newPatientIntakeWizard_label_title
             // 
-            this.newPatientIntakeWizard_tab1_label_title.AutoSize = true;
-            this.newPatientIntakeWizard_tab1_label_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newPatientIntakeWizard_tab1_label_title.Location = new System.Drawing.Point(353, 38);
-            this.newPatientIntakeWizard_tab1_label_title.Name = "newPatientIntakeWizard_tab1_label_title";
-            this.newPatientIntakeWizard_tab1_label_title.Size = new System.Drawing.Size(357, 33);
-            this.newPatientIntakeWizard_tab1_label_title.TabIndex = 0;
-            this.newPatientIntakeWizard_tab1_label_title.Text = "New Patient Intake Wizard";
-            this.newPatientIntakeWizard_tab1_label_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.newPatientIntakeWizard_label_title.AutoSize = true;
+            this.newPatientIntakeWizard_label_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_label_title.Location = new System.Drawing.Point(353, 38);
+            this.newPatientIntakeWizard_label_title.Name = "newPatientIntakeWizard_label_title";
+            this.newPatientIntakeWizard_label_title.Size = new System.Drawing.Size(357, 33);
+            this.newPatientIntakeWizard_label_title.TabIndex = 0;
+            this.newPatientIntakeWizard_label_title.Text = "New Patient Intake Wizard";
+            this.newPatientIntakeWizard_label_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.newPatientIntakeWizard_tab2_button_cancel);
-            this.tabPage2.Controls.Add(this.newPatientIntakeWizard_tab2_button_next);
-            this.tabPage2.Controls.Add(this.newPatientIntakeWizard_tab2_button_back);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.newPatientIntakeWizard_tab2_picturebox_logo);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(824, 631);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
-            // 
-            // newPatientIntakeWizard_tab2_button_cancel
-            // 
-            this.newPatientIntakeWizard_tab2_button_cancel.Location = new System.Drawing.Point(599, 336);
-            this.newPatientIntakeWizard_tab2_button_cancel.Name = "newPatientIntakeWizard_tab2_button_cancel";
-            this.newPatientIntakeWizard_tab2_button_cancel.Size = new System.Drawing.Size(75, 23);
-            this.newPatientIntakeWizard_tab2_button_cancel.TabIndex = 17;
-            this.newPatientIntakeWizard_tab2_button_cancel.Text = "Cancel";
-            this.newPatientIntakeWizard_tab2_button_cancel.UseVisualStyleBackColor = true;
-            // 
-            // newPatientIntakeWizard_tab2_button_next
-            // 
-            this.newPatientIntakeWizard_tab2_button_next.Location = new System.Drawing.Point(497, 336);
-            this.newPatientIntakeWizard_tab2_button_next.Name = "newPatientIntakeWizard_tab2_button_next";
-            this.newPatientIntakeWizard_tab2_button_next.Size = new System.Drawing.Size(75, 23);
-            this.newPatientIntakeWizard_tab2_button_next.TabIndex = 16;
-            this.newPatientIntakeWizard_tab2_button_next.Text = "Next";
-            this.newPatientIntakeWizard_tab2_button_next.UseVisualStyleBackColor = true;
-            this.newPatientIntakeWizard_tab2_button_next.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // newPatientIntakeWizard_tab2_button_back
-            // 
-            this.newPatientIntakeWizard_tab2_button_back.Location = new System.Drawing.Point(416, 336);
-            this.newPatientIntakeWizard_tab2_button_back.Name = "newPatientIntakeWizard_tab2_button_back";
-            this.newPatientIntakeWizard_tab2_button_back.Size = new System.Drawing.Size(75, 23);
-            this.newPatientIntakeWizard_tab2_button_back.TabIndex = 15;
-            this.newPatientIntakeWizard_tab2_button_back.Text = "Back";
-            this.newPatientIntakeWizard_tab2_button_back.UseVisualStyleBackColor = true;
-            this.newPatientIntakeWizard_tab2_button_back.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(356, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 16);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Step 1: Enter basic bullshit.";
-            // 
-            // newPatientIntakeWizard_tab2_picturebox_logo
-            // 
-            this.newPatientIntakeWizard_tab2_picturebox_logo.Image = global::WSRsmooz.Properties.Resources.wizard_icon;
-            this.newPatientIntakeWizard_tab2_picturebox_logo.Location = new System.Drawing.Point(114, 83);
-            this.newPatientIntakeWizard_tab2_picturebox_logo.Name = "newPatientIntakeWizard_tab2_picturebox_logo";
-            this.newPatientIntakeWizard_tab2_picturebox_logo.Size = new System.Drawing.Size(229, 276);
-            this.newPatientIntakeWizard_tab2_picturebox_logo.TabIndex = 13;
-            this.newPatientIntakeWizard_tab2_picturebox_logo.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(353, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(357, 33);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "New Patient Intake Wizard";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // NewPatientIntake_checklist_button_tab2
-            // 
-            this.NewPatientIntake_checklist_button_tab2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewPatientIntake_checklist_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPatientIntake_checklist_button_tab2.Location = new System.Drawing.Point(12, 50);
-            this.NewPatientIntake_checklist_button_tab2.Name = "NewPatientIntake_checklist_button_tab2";
-            this.NewPatientIntake_checklist_button_tab2.Size = new System.Drawing.Size(130, 32);
-            this.NewPatientIntake_checklist_button_tab2.TabIndex = 2;
-            this.NewPatientIntake_checklist_button_tab2.Text = "Basic Bullshit";
-            this.NewPatientIntake_checklist_button_tab2.UseVisualStyleBackColor = true;
             // 
             // NewPatientIntake
             // 
@@ -490,10 +431,7 @@
             this.newPatientIntakeWizard.ResumeLayout(false);
             this.newPatientIntakeWizard_tab1.ResumeLayout(false);
             this.newPatientIntakeWizard_tab1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_tab1_picturebox_wizard)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_tab2_picturebox_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_picturebox_wizard)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,17 +441,17 @@
         private WizardTabs newPatientIntakeWizard;
         private System.Windows.Forms.TabPage newPatientIntakeWizard_tab1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox newPatientIntakeWizard_tab1_picturebox_wizard;
-        private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_title;
+        private System.Windows.Forms.PictureBox newPatientIntakeWizard_picturebox_wizard;
+        private System.Windows.Forms.Label newPatientIntakeWizard_label_title;
         private System.Windows.Forms.TextBox newPatientIntakeWizard_tab1_textbox_firstName;
-        private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_instructions;
+        private System.Windows.Forms.Label newPatientIntakeWizard_label_instructions;
         private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_firstName;
         private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_lastName;
         private System.Windows.Forms.TextBox newPatientIntakeWizard_tab1_textbox_lastName;
         private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_middleInitial;
         private System.Windows.Forms.TextBox newPatientIntakeWizard_tab1_textbox_middleInitial;
-        private System.Windows.Forms.Button newPatientIntakeWizard_tab1_button_cancel;
-        private System.Windows.Forms.Button newPatientIntakeWizard_tab1_button_next;
+        private System.Windows.Forms.Button newPatientIntakeWizard_button_cancel;
+        private System.Windows.Forms.Button newPatientIntakeWizard_button_next;
         private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_dateOfBirth;
         private System.Windows.Forms.DateTimePicker newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth;
         private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_streetAddress;
@@ -524,14 +462,9 @@
         private System.Windows.Forms.ComboBox newPatientIntakeWizard_tab1_combobox_state;
         private System.Windows.Forms.Label newPatientIntakeWizard_tab1_label_zip;
         private System.Windows.Forms.TextBox newPatientIntakeWizard_tab1_textbox_zip;
-        private System.Windows.Forms.Button newPatientIntakeWizard_tab2_button_cancel;
-        private System.Windows.Forms.Button newPatientIntakeWizard_tab2_button_next;
-        private System.Windows.Forms.Button newPatientIntakeWizard_tab2_button_back;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox newPatientIntakeWizard_tab2_picturebox_logo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab1;
         private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab2;
+        private System.Windows.Forms.Button newPatientIntakeWizard_button_back;
 
     }
 }
