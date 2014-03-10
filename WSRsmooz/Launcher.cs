@@ -92,6 +92,7 @@ namespace WSRsmooz
 
         public void shutdownEverything()
         {
+            this.currentWindow = "";
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
                 if (Application.OpenForms[i].Name != "Launcher")
@@ -112,6 +113,7 @@ namespace WSRsmooz
         {
             if (!this.currentWindow.Equals("New Patient Intake"))
             {
+                shutdownEverything();
                 this.currentWindow = "New Patient Intake";
                 newPatientIntakeForm = new NewPatientIntake();
                 newPatientIntakeForm.MdiParent = this;

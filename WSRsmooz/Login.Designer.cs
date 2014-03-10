@@ -54,6 +54,7 @@ namespace WSRsmooz
             this.Login_textbox_password.Name = "Login_textbox_password";
             this.Login_textbox_password.Size = new System.Drawing.Size(100, 22);
             this.Login_textbox_password.TabIndex = 2;
+            this.Login_textbox_password.UseSystemPasswordChar = true;
             // 
             // Login_button_login
             // 

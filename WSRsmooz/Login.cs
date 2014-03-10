@@ -12,13 +12,11 @@ namespace WSRsmooz
 {
     public partial class Login : Form
     {
-        Launcher parent;
 
         public Login()
         {
             InitializeComponent();
             VerticalScroll.Visible = false;
-            parent = (Launcher)this.MdiParent;
         }
 
         private void button1_Click(object sender, EventArgs e)
