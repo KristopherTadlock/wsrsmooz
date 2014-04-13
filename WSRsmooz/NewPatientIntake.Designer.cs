@@ -54,7 +54,15 @@
             this.newPatientIntakeWizard_tab1_textbox_firstName = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_picturebox_wizard = new System.Windows.Forms.PictureBox();
             this.newPatientIntakeWizard_label_title = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab2 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab3 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab4 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab5 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab6 = new System.Windows.Forms.TabPage();
+            this.NewPatientIntake_checklist_button_tab3 = new System.Windows.Forms.Button();
+            this.NewPatientIntake_checklist_button_tab5 = new System.Windows.Forms.Button();
+            this.NewPatientIntake_checklist_button_tab4 = new System.Windows.Forms.Button();
+            this.NewPatientIntake_checklist_button_tab6 = new System.Windows.Forms.Button();
             this.newPatientIntakeWizard.SuspendLayout();
             this.newPatientIntakeWizard_tab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_picturebox_wizard)).BeginInit();
@@ -85,7 +93,11 @@
             // newPatientIntakeWizard
             // 
             this.newPatientIntakeWizard.Controls.Add(this.newPatientIntakeWizard_tab1);
-            this.newPatientIntakeWizard.Controls.Add(this.tabPage2);
+            this.newPatientIntakeWizard.Controls.Add(this.newPatientIntakeWizard_tab2);
+            this.newPatientIntakeWizard.Controls.Add(this.newPatientIntakeWizard_tab3);
+            this.newPatientIntakeWizard.Controls.Add(this.newPatientIntakeWizard_tab4);
+            this.newPatientIntakeWizard.Controls.Add(this.newPatientIntakeWizard_tab5);
+            this.newPatientIntakeWizard.Controls.Add(this.newPatientIntakeWizard_tab6);
             this.newPatientIntakeWizard.Dock = System.Windows.Forms.DockStyle.Right;
             this.newPatientIntakeWizard.Location = new System.Drawing.Point(154, 0);
             this.newPatientIntakeWizard.Name = "newPatientIntakeWizard";
@@ -124,7 +136,7 @@
             this.newPatientIntakeWizard_tab1.Padding = new System.Windows.Forms.Padding(3);
             this.newPatientIntakeWizard_tab1.Size = new System.Drawing.Size(824, 631);
             this.newPatientIntakeWizard_tab1.TabIndex = 0;
-            this.newPatientIntakeWizard_tab1.Text = "tabPage1";
+            this.newPatientIntakeWizard_tab1.Text = "1";
             // 
             // newPatientIntakeWizard_button_back
             // 
@@ -406,21 +418,105 @@
             this.newPatientIntakeWizard_label_title.Text = "New Patient Intake Wizard";
             this.newPatientIntakeWizard_label_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tabPage2
+            // newPatientIntakeWizard_tab2
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(824, 631);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.newPatientIntakeWizard_tab2.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab2.Location = new System.Drawing.Point(4, 22);
+            this.newPatientIntakeWizard_tab2.Name = "newPatientIntakeWizard_tab2";
+            this.newPatientIntakeWizard_tab2.Padding = new System.Windows.Forms.Padding(3);
+            this.newPatientIntakeWizard_tab2.Size = new System.Drawing.Size(824, 631);
+            this.newPatientIntakeWizard_tab2.TabIndex = 1;
+            this.newPatientIntakeWizard_tab2.Text = "2";
+            // 
+            // newPatientIntakeWizard_tab3
+            // 
+            this.newPatientIntakeWizard_tab3.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab3.Location = new System.Drawing.Point(4, 22);
+            this.newPatientIntakeWizard_tab3.Name = "newPatientIntakeWizard_tab3";
+            this.newPatientIntakeWizard_tab3.Size = new System.Drawing.Size(824, 631);
+            this.newPatientIntakeWizard_tab3.TabIndex = 2;
+            this.newPatientIntakeWizard_tab3.Text = "3";
+            // 
+            // newPatientIntakeWizard_tab4
+            // 
+            this.newPatientIntakeWizard_tab4.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab4.Location = new System.Drawing.Point(4, 22);
+            this.newPatientIntakeWizard_tab4.Name = "newPatientIntakeWizard_tab4";
+            this.newPatientIntakeWizard_tab4.Size = new System.Drawing.Size(824, 631);
+            this.newPatientIntakeWizard_tab4.TabIndex = 3;
+            this.newPatientIntakeWizard_tab4.Text = "4";
+            // 
+            // newPatientIntakeWizard_tab5
+            // 
+            this.newPatientIntakeWizard_tab5.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab5.Location = new System.Drawing.Point(4, 22);
+            this.newPatientIntakeWizard_tab5.Name = "newPatientIntakeWizard_tab5";
+            this.newPatientIntakeWizard_tab5.Size = new System.Drawing.Size(824, 631);
+            this.newPatientIntakeWizard_tab5.TabIndex = 4;
+            this.newPatientIntakeWizard_tab5.Text = "5";
+            // 
+            // newPatientIntakeWizard_tab6
+            // 
+            this.newPatientIntakeWizard_tab6.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab6.Location = new System.Drawing.Point(4, 22);
+            this.newPatientIntakeWizard_tab6.Name = "newPatientIntakeWizard_tab6";
+            this.newPatientIntakeWizard_tab6.Size = new System.Drawing.Size(824, 631);
+            this.newPatientIntakeWizard_tab6.TabIndex = 5;
+            this.newPatientIntakeWizard_tab6.Text = "6";
+            // 
+            // NewPatientIntake_checklist_button_tab3
+            // 
+            this.NewPatientIntake_checklist_button_tab3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewPatientIntake_checklist_button_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPatientIntake_checklist_button_tab3.Location = new System.Drawing.Point(12, 89);
+            this.NewPatientIntake_checklist_button_tab3.Name = "NewPatientIntake_checklist_button_tab3";
+            this.NewPatientIntake_checklist_button_tab3.Size = new System.Drawing.Size(130, 32);
+            this.NewPatientIntake_checklist_button_tab3.TabIndex = 3;
+            this.NewPatientIntake_checklist_button_tab3.Text = "What what";
+            this.NewPatientIntake_checklist_button_tab3.UseVisualStyleBackColor = true;
+            // 
+            // NewPatientIntake_checklist_button_tab5
+            // 
+            this.NewPatientIntake_checklist_button_tab5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewPatientIntake_checklist_button_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPatientIntake_checklist_button_tab5.Location = new System.Drawing.Point(12, 169);
+            this.NewPatientIntake_checklist_button_tab5.Name = "NewPatientIntake_checklist_button_tab5";
+            this.NewPatientIntake_checklist_button_tab5.Size = new System.Drawing.Size(130, 32);
+            this.NewPatientIntake_checklist_button_tab5.TabIndex = 5;
+            this.NewPatientIntake_checklist_button_tab5.Text = "Get It";
+            this.NewPatientIntake_checklist_button_tab5.UseVisualStyleBackColor = true;
+            // 
+            // NewPatientIntake_checklist_button_tab4
+            // 
+            this.NewPatientIntake_checklist_button_tab4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewPatientIntake_checklist_button_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPatientIntake_checklist_button_tab4.Location = new System.Drawing.Point(12, 130);
+            this.NewPatientIntake_checklist_button_tab4.Name = "NewPatientIntake_checklist_button_tab4";
+            this.NewPatientIntake_checklist_button_tab4.Size = new System.Drawing.Size(130, 32);
+            this.NewPatientIntake_checklist_button_tab4.TabIndex = 4;
+            this.NewPatientIntake_checklist_button_tab4.Text = "Is it";
+            this.NewPatientIntake_checklist_button_tab4.UseVisualStyleBackColor = true;
+            // 
+            // NewPatientIntake_checklist_button_tab6
+            // 
+            this.NewPatientIntake_checklist_button_tab6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewPatientIntake_checklist_button_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewPatientIntake_checklist_button_tab6.Location = new System.Drawing.Point(12, 209);
+            this.NewPatientIntake_checklist_button_tab6.Name = "NewPatientIntake_checklist_button_tab6";
+            this.NewPatientIntake_checklist_button_tab6.Size = new System.Drawing.Size(130, 32);
+            this.NewPatientIntake_checklist_button_tab6.TabIndex = 6;
+            this.NewPatientIntake_checklist_button_tab6.Text = "Sorcery...";
+            this.NewPatientIntake_checklist_button_tab6.UseVisualStyleBackColor = true;
             // 
             // NewPatientIntake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 657);
+            this.Controls.Add(this.NewPatientIntake_checklist_button_tab6);
+            this.Controls.Add(this.NewPatientIntake_checklist_button_tab5);
+            this.Controls.Add(this.NewPatientIntake_checklist_button_tab4);
+            this.Controls.Add(this.NewPatientIntake_checklist_button_tab3);
             this.Controls.Add(this.NewPatientIntake_checklist_button_tab2);
             this.Controls.Add(this.NewPatientIntake_checklist_button_tab1);
             this.Controls.Add(this.newPatientIntakeWizard);
@@ -440,7 +536,7 @@
 
         private WizardTabs newPatientIntakeWizard;
         private System.Windows.Forms.TabPage newPatientIntakeWizard_tab1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage newPatientIntakeWizard_tab2;
         private System.Windows.Forms.PictureBox newPatientIntakeWizard_picturebox_wizard;
         private System.Windows.Forms.Label newPatientIntakeWizard_label_title;
         private System.Windows.Forms.TextBox newPatientIntakeWizard_tab1_textbox_firstName;
@@ -465,6 +561,14 @@
         private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab1;
         private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab2;
         private System.Windows.Forms.Button newPatientIntakeWizard_button_back;
+        private System.Windows.Forms.TabPage newPatientIntakeWizard_tab3;
+        private System.Windows.Forms.TabPage newPatientIntakeWizard_tab4;
+        private System.Windows.Forms.TabPage newPatientIntakeWizard_tab5;
+        private System.Windows.Forms.TabPage newPatientIntakeWizard_tab6;
+        private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab3;
+        private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab5;
+        private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab4;
+        private System.Windows.Forms.Button NewPatientIntake_checklist_button_tab6;
 
     }
 }

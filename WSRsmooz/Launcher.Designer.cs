@@ -70,6 +70,7 @@ namespace WSRsmooz
             this.launcher_button_viewPatientLog.Size = new System.Drawing.Size(99, 69);
             this.launcher_button_viewPatientLog.Text = "&View Patient Log";
             this.launcher_button_viewPatientLog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.launcher_button_viewPatientLog.Click += new System.EventHandler(this.launcher_button_viewPatientLog_Click);
             // 
             // launcher_button_newPatientIntake
             // 
@@ -91,6 +92,7 @@ namespace WSRsmooz
             this.launcher_button_groupClipboard.Size = new System.Drawing.Size(99, 69);
             this.launcher_button_groupClipboard.Text = "&Group Clipboard";
             this.launcher_button_groupClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.launcher_button_groupClipboard.Click += new System.EventHandler(this.launcher_button_groupClipboard_Click);
             // 
             // launcher_button_individualNotes
             // 

@@ -16,7 +16,11 @@ namespace WSRsmooz
         // option variables
         Color textBoxErrorColor = Color.PaleVioletRed;
         String[] stepDescriptions = { "Step 1: Enter basic client information.",
-                                      "Step 2: Enter bullshit here."
+                                      "Step 2: Enter bullshit here.",
+                                      "Step 3: Enter more stuff here.",
+                                      "Step 4: Enter nothing here.",
+                                      "Step 5: Enter some patient stuff here.",
+                                      "Step 6: Enter wizardry here."
                                     };
 
         Button[] stepButtons;
@@ -28,7 +32,11 @@ namespace WSRsmooz
         {
             InitializeComponent();
             stepButtons = new Button[] { NewPatientIntake_checklist_button_tab1,
-                                         NewPatientIntake_checklist_button_tab2
+                                         NewPatientIntake_checklist_button_tab2,
+                                         NewPatientIntake_checklist_button_tab3,
+                                         NewPatientIntake_checklist_button_tab4,
+                                         NewPatientIntake_checklist_button_tab5,
+                                         NewPatientIntake_checklist_button_tab6
                                        };
             changeConstantsToTab(newPatientIntakeWizard, null);
         }

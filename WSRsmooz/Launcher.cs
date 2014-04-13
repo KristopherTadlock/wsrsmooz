@@ -24,6 +24,7 @@ namespace WSRsmooz
         // initialize form children
         Form loginForm;
         Form newPatientIntakeForm;
+        Form viewPatientLogForm;
         
         public Launcher()
         {
@@ -119,6 +120,32 @@ namespace WSRsmooz
                 newPatientIntakeForm.MdiParent = this;
                 newPatientIntakeForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
                 newPatientIntakeForm.Show();
+            }
+        }
+
+        private void launcher_button_viewPatientLog_Click(object sender, EventArgs e)
+        {
+            if (!this.currentWindow.Equals("View Patient Log"))
+            {
+                shutdownEverything();
+                this.currentWindow = "View Patient Log";
+                viewPatientLogForm = new ViewPatientLog();
+                viewPatientLogForm.MdiParent = this;
+                viewPatientLogForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                viewPatientLogForm.Show();
+            }
+        }
+
+        private void launcher_button_groupClipboard_Click(object sender, EventArgs e)
+        {
+            if (!this.currentWindow.Equals("Group Notes"))
+            {
+                shutdownEverything();
+                this.currentWindow = "Group Notes";
+                viewPatientLogForm = new GroupNotes();
+                viewPatientLogForm.MdiParent = this;
+                viewPatientLogForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                viewPatientLogForm.Show();
             }
         }
     }
