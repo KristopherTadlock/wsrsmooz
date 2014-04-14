@@ -40,6 +40,7 @@
             this.EditEmployeeTitle = new System.Windows.Forms.Label();
             this.AddEmployee = new System.Windows.Forms.Button();
             this.RemoveEmployee = new System.Windows.Forms.Button();
+            this.AcceptButton = EmpCommit;
             this.EmployeeInformation_GroupBox.SuspendLayout();
             this.SuspendLayout();
             // 

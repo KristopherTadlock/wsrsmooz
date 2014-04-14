@@ -87,6 +87,8 @@ namespace WSRsmooz
                         Login_label_password.Visible = false;
                         Login_textbox_employee.Visible = false;
                         Login_textbox_password.Visible = false;
+                        ShowPWCheckbox.Checked = false;
+                        ShowPWCheckbox.Visible = false;
                         Login_label_welcome.Visible = true;
                         Login_label_currentUser.Text = ((Launcher)MdiParent).currentUser;
                         Login_label_currentUser.Visible = true;

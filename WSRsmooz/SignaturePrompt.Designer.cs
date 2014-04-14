@@ -36,7 +36,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(458, 174);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(369, 136);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -46,7 +47,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(377, 174);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(293, 136);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -57,7 +59,7 @@
             // signatureCapturePad
             // 
             this.signatureCapturePad.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.signatureCapturePad.Location = new System.Drawing.Point(42, 12);
+            this.signatureCapturePad.Location = new System.Drawing.Point(0, 0);
             this.signatureCapturePad.Name = "signatureCapturePad";
             this.signatureCapturePad.Size = new System.Drawing.Size(444, 136);
             this.signatureCapturePad.TabIndex = 3;
@@ -66,13 +68,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 209);
+            this.ClientSize = new System.Drawing.Size(444, 159);
             this.Controls.Add(this.signatureCapturePad);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SignaturePrompt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SignaturePrompt";
+            this.Text = "Sign Document";
             this.Load += new System.EventHandler(this.SignaturePrompt_Load);
             this.ResumeLayout(false);
 

@@ -120,8 +120,6 @@ namespace WSRsmooz
 
             if (EmployeePromptResult == DialogResult.OK)
                 updateEmployeeList();
-            else
-                MessageBox.Show("There was an error changing your password. Try again.");
         }
 
         private void RemoveEmployee_Click(object sender, EventArgs e)
@@ -131,8 +129,6 @@ namespace WSRsmooz
 
             if (database.Query(query))
                 updateEmployeeList();
-            else
-                MessageBox.Show("Error removing employee.");
         }
     }
     public class EmployeeItem

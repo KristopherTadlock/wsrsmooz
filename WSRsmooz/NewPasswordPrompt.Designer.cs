@@ -53,7 +53,7 @@
             // 
             // Success
             // 
-            this.Success.Location = new System.Drawing.Point(258, 28);
+            this.Success.Location = new System.Drawing.Point(256, 35);
             this.Success.Name = "Success";
             this.Success.Size = new System.Drawing.Size(93, 46);
             this.Success.TabIndex = 1;
@@ -74,6 +74,7 @@
             // 
             // NewPasswordPrompt
             // 
+            this.AcceptButton = this.Success;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 91);
@@ -86,7 +87,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NewPasswordPrompt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Enter a New Password!";
             this.ResumeLayout(false);
             this.PerformLayout();
 
