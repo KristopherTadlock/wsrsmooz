@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Globalization;
 using iTextSharp.text.pdf;
-using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace WSRsmooz
@@ -48,7 +47,7 @@ namespace WSRsmooz
             updateClientList();
             clientList.SetSelected(0, true);
 
-            newPDFPath = "C:\\Users/Darryl/SparkleShare/WestSlopeSecure/clientfiles/groupnotes/" + loadClientID + "/";
+            newPDFPath = "/clientfiles/groupnotes/" + loadClientID + "/"; // C:\\Users/Darryl/SparkleShare/WestSlopeSecure
             newFile = newPDFPath + firstDayOfWeek.ToString("MM-dd-yyyy") + ".pdf";
             templatePathFromOld = newPDFPath + firstDayOfWeek.ToString("MM-dd-yyyy") + "-old.pdf";
 
@@ -225,6 +224,7 @@ namespace WSRsmooz
             }
             pdfStamper = new PdfStamper(pdfReader, new FileStream(newFile, FileMode.Create));
             pdfFormFields = pdfStamper.AcroFields;
+
             fillBoxesIfExists(pdfFormFields);
 
             pdfStamper.Close();
@@ -270,7 +270,16 @@ namespace WSRsmooz
                 dayOfWeek = "Additional";
                 DateOfWeek.Text = editingDay.ToString("D");
             }
-            processPdfGen();
+            if (clientList.SelectedItem != null)
+            {
+                loadClient((ClientItem)clientList.SelectedItem);
+                newPDFPath = "clientfiles/groupnotes/" + loadClientID + "/";
+                newFile = newPDFPath + firstDayOfWeek.ToString("MM-dd-yyyy") + ".pdf";
+                templatePathFromOld = newPDFPath + firstDayOfWeek.ToString("MM-dd-yyyy") + "-old.pdf";
+                DoW.Text = ClientName + "'s Group Notes";
+
+                processPdfGen();
+            }
         }
 
         private void SignKick_Click(object sender, EventArgs e)

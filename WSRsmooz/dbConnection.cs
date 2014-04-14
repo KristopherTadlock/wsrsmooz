@@ -66,7 +66,7 @@ namespace WSRsmooz
             }
         }
 
-        public void Query(String query)
+        public Boolean Query(String query)
         {
             if (this.OpenConnection() == true)
             {
@@ -88,9 +88,10 @@ namespace WSRsmooz
                     }
                 }
                 this.CloseConnection();
+                return true;
             }
+            return false;
         }
-
 
         public Dictionary<string, string> GetTableData(String query)
         {

@@ -54,8 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmployeePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeePrompt.Designer.cs">
+      <DependentUpon>AddEmployeePrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="DateExtensions.cs" />
     <Compile Include="dbConnection.cs" />
+    <Compile Include="EditEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployees.Designer.cs">
+      <DependentUpon>EditEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPasswordPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPasswordPrompt.Designer.cs">
+      <DependentUpon>NewPasswordPrompt.cs</DependentUpon>
     </Compile>
     <Compile Include="NewPatientIntake.cs">
       <SubType>Form</SubType>
@@ -103,6 +121,12 @@
     <Compile Include="WizardTabs.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="AddEmployeePrompt.resx">
+      <DependentUpon>AddEmployeePrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployees.resx">
+      <DependentUpon>EditEmployees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupNotes.resx">
       <DependentUpon>GroupNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPasswordPrompt.resx">
+      <DependentUpon>NewPasswordPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewPatientIntake.resx">
       <DependentUpon>NewPatientIntake.cs</DependentUpon>

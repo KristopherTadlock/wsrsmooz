@@ -36,6 +36,7 @@ namespace WSRsmooz
             this.Login_picturebox_logo = new System.Windows.Forms.PictureBox();
             this.Login_label_welcome = new System.Windows.Forms.Label();
             this.Login_label_currentUser = new System.Windows.Forms.Label();
+            this.ShowPWCheckbox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Login_picturebox_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@ namespace WSRsmooz
             this.Login_textbox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_textbox_password.Location = new System.Drawing.Point(481, 286);
             this.Login_textbox_password.Name = "Login_textbox_password";
+            this.Login_textbox_password.PasswordChar = '*';
             this.Login_textbox_password.Size = new System.Drawing.Size(100, 22);
             this.Login_textbox_password.TabIndex = 2;
-            this.Login_textbox_password.UseSystemPasswordChar = true;
             // 
             // Login_button_login
             // 
@@ -121,12 +122,24 @@ namespace WSRsmooz
             this.Login_label_currentUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Login_label_currentUser.Visible = false;
             // 
+            // ShowPWCheckbox
+            // 
+            this.ShowPWCheckbox.AutoSize = true;
+            this.ShowPWCheckbox.Location = new System.Drawing.Point(587, 290);
+            this.ShowPWCheckbox.Name = "ShowPWCheckbox";
+            this.ShowPWCheckbox.Size = new System.Drawing.Size(102, 17);
+            this.ShowPWCheckbox.TabIndex = 9;
+            this.ShowPWCheckbox.Text = "Show Password";
+            this.ShowPWCheckbox.UseVisualStyleBackColor = true;
+            this.ShowPWCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Login
             // 
             this.AcceptButton = this.Login_button_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 657);
+            this.Controls.Add(this.ShowPWCheckbox);
             this.Controls.Add(this.Login_label_currentUser);
             this.Controls.Add(this.Login_label_welcome);
             this.Controls.Add(this.Login_picturebox_logo);
@@ -155,5 +168,6 @@ namespace WSRsmooz
         private System.Windows.Forms.PictureBox Login_picturebox_logo;
         private System.Windows.Forms.Label Login_label_welcome;
         private System.Windows.Forms.Label Login_label_currentUser;
+        private System.Windows.Forms.CheckBox ShowPWCheckbox;
     }
 }

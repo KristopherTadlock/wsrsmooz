@@ -135,6 +135,7 @@ namespace WSRsmooz
             this.launcher_button_employees.Size = new System.Drawing.Size(68, 69);
             this.launcher_button_employees.Text = "&Employees";
             this.launcher_button_employees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.launcher_button_employees.Click += new System.EventHandler(this.launcher_button_employees_Click);
             // 
             // Launcher
             // 

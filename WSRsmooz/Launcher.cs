@@ -23,8 +23,10 @@ namespace WSRsmooz
 
         // initialize form children
         Form loginForm;
-        Form newPatientIntakeForm;
         Form viewPatientLogForm;
+        Form groupNotesForm;
+        Form editEmployeesForm;
+        Form newPatientIntakeForm;
         
         public Launcher()
         {
@@ -142,10 +144,23 @@ namespace WSRsmooz
             {
                 shutdownEverything();
                 this.currentWindow = "Group Notes";
-                viewPatientLogForm = new GroupNotes();
-                viewPatientLogForm.MdiParent = this;
-                viewPatientLogForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
-                viewPatientLogForm.Show();
+                groupNotesForm = new GroupNotes();
+                groupNotesForm.MdiParent = this;
+                groupNotesForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                groupNotesForm.Show();
+            }
+        }
+
+        private void launcher_button_employees_Click(object sender, EventArgs e)
+        {
+            if (!this.currentWindow.Equals("Edit Employees"))
+            {
+                shutdownEverything();
+                this.currentWindow = "Edit Employees";
+                editEmployeesForm = new EditEmployees();
+                editEmployeesForm.MdiParent = this;
+                editEmployeesForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                editEmployeesForm.Show();
             }
         }
     }
