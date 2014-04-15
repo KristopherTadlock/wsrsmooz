@@ -6,6 +6,7 @@ using System.IO;
 using System.Globalization;
 using iTextSharp.text.pdf;
 using System.Data;
+using System.ComponentModel;
 
 namespace WSRsmooz
 {
@@ -501,6 +502,7 @@ namespace WSRsmooz
         {
             PastGroupNotesPrompt pastNotesPrompt = new PastGroupNotesPrompt();
             pastNotesPrompt.name = ClientName;
+            pastNotesPrompt.id = loadClientID;
             pastNotesPrompt.ShowDialog();
         }
 

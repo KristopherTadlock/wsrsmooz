@@ -1,12 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WSRsmooz
 {
@@ -32,6 +27,7 @@ namespace WSRsmooz
         
         public Launcher()
         {
+            CleanUp();
             InitializeComponent();
 
             loggedIn = false;
@@ -45,6 +41,30 @@ namespace WSRsmooz
             loginForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
             loginForm.Show();
 
+        }
+
+        public void CleanUp()
+        {
+            String gnotes = "clientfiles/groupnotes/";
+
+            if (Directory.Exists(gnotes))
+            {
+                String[] subDirectories = Directory.GetDirectories(gnotes);
+
+                foreach (string directory in subDirectories)
+                {
+                    String[] filePaths = Directory.GetFiles(directory);
+                    foreach (string file in filePaths)
+                    {
+                        String[] delimits = new String[] { "-", "." };
+                        String[] pdfProps = Path.GetFileName(file).Split(delimits, StringSplitOptions.None);
+
+                        DateTime fileDate = Convert.ToDateTime(pdfProps[0] + "/" + pdfProps[1] + "/" + pdfProps[2]);
+                        if ((fileDate - DateTime.Now).TotalDays > 30)
+                            File.Delete(file);
+                    }
+                }
+            }
         }
 
         public void toggleToolstrip()

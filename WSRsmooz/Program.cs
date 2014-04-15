@@ -1,7 +1,5 @@
 using System;
 using System.Windows.Forms;
-using System.Text;
-using System.Security.Cryptography;
 
 namespace WSRsmooz
 {
