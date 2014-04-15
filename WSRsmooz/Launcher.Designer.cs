@@ -63,64 +63,70 @@ namespace WSRsmooz
             // 
             // launcher_button_viewPatientLog
             // 
+            this.launcher_button_viewPatientLog.AutoSize = false;
             this.launcher_button_viewPatientLog.Enabled = false;
             this.launcher_button_viewPatientLog.Image = global::WSRsmooz.Properties.Resources.viewpatients;
             this.launcher_button_viewPatientLog.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.launcher_button_viewPatientLog.Name = "launcher_button_viewPatientLog";
-            this.launcher_button_viewPatientLog.Size = new System.Drawing.Size(99, 69);
+            this.launcher_button_viewPatientLog.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_viewPatientLog.Text = "&View Patient Log";
             this.launcher_button_viewPatientLog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.launcher_button_viewPatientLog.Click += new System.EventHandler(this.launcher_button_viewPatientLog_Click);
             // 
             // launcher_button_newPatientIntake
             // 
+            this.launcher_button_newPatientIntake.AutoSize = false;
             this.launcher_button_newPatientIntake.Enabled = false;
             this.launcher_button_newPatientIntake.Image = global::WSRsmooz.Properties.Resources.newpatientintake;
             this.launcher_button_newPatientIntake.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.launcher_button_newPatientIntake.Name = "launcher_button_newPatientIntake";
-            this.launcher_button_newPatientIntake.Size = new System.Drawing.Size(110, 69);
+            this.launcher_button_newPatientIntake.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_newPatientIntake.Text = "New Patient &Intake";
             this.launcher_button_newPatientIntake.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.launcher_button_newPatientIntake.Click += new System.EventHandler(this.launcher_button_newPatientIntake_Click);
             // 
             // launcher_button_groupClipboard
             // 
+            this.launcher_button_groupClipboard.AutoSize = false;
             this.launcher_button_groupClipboard.Enabled = false;
             this.launcher_button_groupClipboard.Image = global::WSRsmooz.Properties.Resources.groupclipboard;
             this.launcher_button_groupClipboard.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.launcher_button_groupClipboard.Name = "launcher_button_groupClipboard";
-            this.launcher_button_groupClipboard.Size = new System.Drawing.Size(99, 69);
+            this.launcher_button_groupClipboard.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_groupClipboard.Text = "&Group Clipboard";
             this.launcher_button_groupClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.launcher_button_groupClipboard.Click += new System.EventHandler(this.launcher_button_groupClipboard_Click);
             // 
             // launcher_button_individualNotes
             // 
+            this.launcher_button_individualNotes.AutoSize = false;
             this.launcher_button_individualNotes.Enabled = false;
             this.launcher_button_individualNotes.Image = global::WSRsmooz.Properties.Resources.individualnotes;
             this.launcher_button_individualNotes.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.launcher_button_individualNotes.Name = "launcher_button_individualNotes";
-            this.launcher_button_individualNotes.Size = new System.Drawing.Size(97, 69);
+            this.launcher_button_individualNotes.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_individualNotes.Text = "Individual &Notes";
             this.launcher_button_individualNotes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // launcher_button_dischargePatient
             // 
+            this.launcher_button_dischargePatient.AutoSize = false;
             this.launcher_button_dischargePatient.Enabled = false;
             this.launcher_button_dischargePatient.Image = global::WSRsmooz.Properties.Resources.dischargepatient;
             this.launcher_button_dischargePatient.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.launcher_button_dischargePatient.Name = "launcher_button_dischargePatient";
-            this.launcher_button_dischargePatient.Size = new System.Drawing.Size(103, 69);
+            this.launcher_button_dischargePatient.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_dischargePatient.Text = "&Discharge Patient";
             this.launcher_button_dischargePatient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // launcher_button_login
             // 
             this.launcher_button_login.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.launcher_button_login.AutoSize = false;
             this.launcher_button_login.Image = global::WSRsmooz.Properties.Resources.login;
             this.launcher_button_login.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.launcher_button_login.Name = "launcher_button_login";
-            this.launcher_button_login.Size = new System.Drawing.Size(54, 69);
+            this.launcher_button_login.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_login.Text = "&Login";
             this.launcher_button_login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.launcher_button_login.Click += new System.EventHandler(this.launcher_button_login_Click);
@@ -128,11 +134,12 @@ namespace WSRsmooz
             // launcher_button_employees
             // 
             this.launcher_button_employees.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.launcher_button_employees.AutoSize = false;
             this.launcher_button_employees.Enabled = false;
             this.launcher_button_employees.Image = global::WSRsmooz.Properties.Resources.employees;
             this.launcher_button_employees.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.launcher_button_employees.Name = "launcher_button_employees";
-            this.launcher_button_employees.Size = new System.Drawing.Size(68, 69);
+            this.launcher_button_employees.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_employees.Text = "&Employees";
             this.launcher_button_employees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.launcher_button_employees.Click += new System.EventHandler(this.launcher_button_employees_Click);
