@@ -79,10 +79,7 @@ namespace WSRsmooz
                     ((Launcher)MdiParent).loggedIn = true;
 
                     query = "select superUser from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
-                    //((Launcher)MdiParent).superUser = database.SelectBoolean(query);
-
-                    // turn me off
-                    ((Launcher)MdiParent).superUser = true;
+                    ((Launcher)MdiParent).superUser = database.SelectBoolean(query);
                     ((Launcher)MdiParent).toggleToolstrip();
 
                     // successful login
