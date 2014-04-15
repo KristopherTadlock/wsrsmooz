@@ -30,9 +30,6 @@ namespace WSRsmooz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // delete me
-            Login_textbox_employee.Text = "Darryl Nixon";
-            Login_textbox_password.Text = "testpassword";
 
             // Check for empty fields.
             if (Login_textbox_employee.Text.CompareTo(String.Empty) == 0)
@@ -48,61 +45,66 @@ namespace WSRsmooz
 
             // can reduce all queries to one and store client elsewhere
             // note for later
-            String query = "select PasswordPromptOnLogin from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
-            if (database.SelectBoolean(query))
-            {
-                NewPasswordPrompt PasswordChange = new NewPasswordPrompt();
-                PasswordChange.employee = Login_textbox_employee.Text.ToString();
-                DialogResult PasswordResult = PasswordChange.ShowDialog();
+            // Begin querying for login validation.
+            String query = "select password from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
+            String hash = database.SelectString(query);
+            String inputHash = crunch(Login_textbox_password.Text);
 
-                if (PasswordResult == DialogResult.OK)
-                    MessageBox.Show("Password changed successfully. Please log in.");
-                else
-                    MessageBox.Show("There was an error changing your password. Try again.");
-            }
-            else
+            if (inputHash.CompareTo(hash) == 0)
             {
-                // Begin querying for login validation.
-                query = "select password from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
-                //String hash = database.SelectString(query);
-                //String inputHash = crunch(Login_textbox_password.Text);
-
-                //if (inputHash.CompareTo(hash) == 0)
-                if (this.Enabled == true)
+                query = "select PasswordPromptOnLogin from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
+                if (database.SelectBoolean(query))
                 {
-                    if (!((Launcher)MdiParent).loggedIn)
+                    NewPasswordPrompt PasswordChange = new NewPasswordPrompt();
+                    PasswordChange.employee = Login_textbox_employee.Text.ToString();
+                    DialogResult PasswordResult = PasswordChange.ShowDialog();
+
+                    if (PasswordResult == DialogResult.OK)
                     {
-                        ((Launcher)MdiParent).currentUser = Login_textbox_employee.Text;
-                        ((Launcher)MdiParent).loggedIn = true;
-
-                        query = "select superUser from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
-                        //((Launcher)MdiParent).superUser = database.SelectBoolean(query);
-
-                        // turn me off
-                        ((Launcher)MdiParent).superUser = true;
-                        ((Launcher)MdiParent).toggleToolstrip();
-
-                        // successful login
-                        Login_label_employee.Visible = false;
-                        Login_label_password.Visible = false;
-                        Login_textbox_employee.Visible = false;
-                        Login_textbox_password.Visible = false;
-                        ShowPWCheckbox.Checked = false;
-                        ShowPWCheckbox.Visible = false;
-                        Login_label_welcome.Visible = true;
-                        Login_label_currentUser.Text = ((Launcher)MdiParent).currentUser;
-                        Login_label_currentUser.Visible = true;
-                        Login_button_login.Text = "Logout";
+                        MessageBox.Show("Password changed successfully. Please log in.");
+                        Login_textbox_password.Text = "";
+                        Login_textbox_password.Focus();
+                        return;
                     }
                     else
                     {
-                        ((Launcher)MdiParent).logout();
+                        MessageBox.Show("There was an error changing your password. Try again.");
+                        return;
                     }
+                }
+
+                if (!((Launcher)MdiParent).loggedIn)
+                {
+                    ((Launcher)MdiParent).currentUser = Login_textbox_employee.Text;
+                    ((Launcher)MdiParent).loggedIn = true;
+
+                    query = "select superUser from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
+                    //((Launcher)MdiParent).superUser = database.SelectBoolean(query);
+
+                    // turn me off
+                    ((Launcher)MdiParent).superUser = true;
+                    ((Launcher)MdiParent).toggleToolstrip();
+
+                    // successful login
+                    Login_label_employee.Visible = false;
+                    Login_label_password.Visible = false;
+                    Login_textbox_employee.Visible = false;
+                    Login_textbox_password.Visible = false;
+                    ShowPWCheckbox.Checked = false;
+                    ShowPWCheckbox.Visible = false;
+                    Login_label_welcome.Visible = true;
+                    Login_label_currentUser.Text = ((Launcher)MdiParent).currentUser;
+                    Login_label_currentUser.Visible = true;
+                    Login_button_login.Text = "Logout";
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username or password combination.");
+                    ((Launcher)MdiParent).logout();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password combination.");
             }
 
             //this.Close();
