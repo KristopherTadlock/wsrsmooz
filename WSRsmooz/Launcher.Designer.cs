@@ -107,6 +107,7 @@ namespace WSRsmooz
             this.launcher_button_individualNotes.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_individualNotes.Text = "Individual &Notes";
             this.launcher_button_individualNotes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.launcher_button_individualNotes.Click += new System.EventHandler(this.launcher_button_individualNotes_Click);
             // 
             // launcher_button_dischargePatient
             // 
@@ -118,6 +119,7 @@ namespace WSRsmooz
             this.launcher_button_dischargePatient.Size = new System.Drawing.Size(105, 69);
             this.launcher_button_dischargePatient.Text = "&Discharge Patient";
             this.launcher_button_dischargePatient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.launcher_button_dischargePatient.Click += new System.EventHandler(this.launcher_button_dischargePatient_Click);
             // 
             // launcher_button_login
             // 

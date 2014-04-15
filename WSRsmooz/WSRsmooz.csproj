@@ -62,6 +62,12 @@
     </Compile>
     <Compile Include="DateExtensions.cs" />
     <Compile Include="dbConnection.cs" />
+    <Compile Include="DischargePatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DischargePatient.Designer.cs">
+      <DependentUpon>DischargePatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="GroupNotes.Designer.cs">
       <DependentUpon>GroupNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndividualNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndividualNotes.Designer.cs">
+      <DependentUpon>IndividualNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
@@ -97,6 +109,12 @@
     </Compile>
     <Compile Include="NewPatientIntake.Designer.cs">
       <DependentUpon>NewPatientIntake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PastGroupNotesPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PastGroupNotesPrompt.Designer.cs">
+      <DependentUpon>PastGroupNotesPrompt.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,11 +142,17 @@
     <EmbeddedResource Include="AddEmployeePrompt.resx">
       <DependentUpon>AddEmployeePrompt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DischargePatient.resx">
+      <DependentUpon>DischargePatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditEmployees.resx">
       <DependentUpon>EditEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupNotes.resx">
       <DependentUpon>GroupNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndividualNotes.resx">
+      <DependentUpon>IndividualNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
@@ -141,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewPatientIntake.resx">
       <DependentUpon>NewPatientIntake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastGroupNotesPrompt.resx">
+      <DependentUpon>PastGroupNotesPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -200,6 +227,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="dependencies\MySql.Data.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="printpdf.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

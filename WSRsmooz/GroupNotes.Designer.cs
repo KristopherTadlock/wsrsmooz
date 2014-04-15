@@ -40,24 +40,26 @@
             this.SignKick = new System.Windows.Forms.Button();
             this.KickStart_Label = new System.Windows.Forms.Label();
             this.Kick_GroupBox = new System.Windows.Forms.GroupBox();
-            this.AM_GroupBox = new System.Windows.Forms.GroupBox();
-            this.PM_GroupBox = new System.Windows.Forms.GroupBox();
-            this.KickStart = new System.Windows.Forms.DateTimePicker();
+            this.SignKick_Label = new System.Windows.Forms.Label();
+            this.KickTopic_Label = new System.Windows.Forms.Label();
+            this.KickEnd_Label_AM = new System.Windows.Forms.Label();
+            this.KickStart_Label_AM = new System.Windows.Forms.Label();
             this.KickEnd = new System.Windows.Forms.DateTimePicker();
             this.KickEnd_Label = new System.Windows.Forms.Label();
-            this.KickStart_Label_AM = new System.Windows.Forms.Label();
-            this.KickEnd_Label_AM = new System.Windows.Forms.Label();
-            this.KickTopic_Label = new System.Windows.Forms.Label();
-            this.AMTopic_Label = new System.Windows.Forms.Label();
-            this.PMTopic_Label = new System.Windows.Forms.Label();
-            this.SignAM = new System.Windows.Forms.Button();
-            this.SignPM = new System.Windows.Forms.Button();
-            this.SignKick_Label = new System.Windows.Forms.Label();
+            this.KickStart = new System.Windows.Forms.DateTimePicker();
+            this.AM_GroupBox = new System.Windows.Forms.GroupBox();
             this.SignAM_Label = new System.Windows.Forms.Label();
+            this.SignAM = new System.Windows.Forms.Button();
+            this.AMTopic_Label = new System.Windows.Forms.Label();
+            this.PM_GroupBox = new System.Windows.Forms.GroupBox();
             this.SignPM_Label = new System.Windows.Forms.Label();
+            this.SignPM = new System.Windows.Forms.Button();
+            this.PMTopic_Label = new System.Windows.Forms.Label();
             this.clientList = new System.Windows.Forms.ListBox();
             this.WeekOf_Label = new System.Windows.Forms.Label();
             this.DateOfWeek = new System.Windows.Forms.Label();
+            this.PrintButton = new System.Windows.Forms.Button();
+            this.AdminSeePastNotes = new System.Windows.Forms.Button();
             this.Kick_GroupBox.SuspendLayout();
             this.AM_GroupBox.SuspendLayout();
             this.PM_GroupBox.SuspendLayout();
@@ -113,7 +115,7 @@
             // Save
             // 
             this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.Location = new System.Drawing.Point(482, 553);
+            this.Save.Location = new System.Drawing.Point(291, 548);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(191, 28);
             this.Save.TabIndex = 8;
@@ -197,46 +199,45 @@
             this.Kick_GroupBox.TabStop = false;
             this.Kick_GroupBox.Text = "Kick-Off";
             // 
-            // AM_GroupBox
+            // SignKick_Label
             // 
-            this.AM_GroupBox.Controls.Add(this.SignAM_Label);
-            this.AM_GroupBox.Controls.Add(this.SignAM);
-            this.AM_GroupBox.Controls.Add(this.AMTopic_Label);
-            this.AM_GroupBox.Controls.Add(this.AMText);
-            this.AM_GroupBox.Controls.Add(this.AMTopic);
-            this.AM_GroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AM_GroupBox.Location = new System.Drawing.Point(292, 274);
-            this.AM_GroupBox.Name = "AM_GroupBox";
-            this.AM_GroupBox.Size = new System.Drawing.Size(581, 128);
-            this.AM_GroupBox.TabIndex = 14;
-            this.AM_GroupBox.TabStop = false;
-            this.AM_GroupBox.Text = "AM Notes";
+            this.SignKick_Label.ForeColor = System.Drawing.Color.ForestGreen;
+            this.SignKick_Label.Location = new System.Drawing.Point(443, 65);
+            this.SignKick_Label.Name = "SignKick_Label";
+            this.SignKick_Label.Size = new System.Drawing.Size(132, 19);
+            this.SignKick_Label.TabIndex = 19;
+            this.SignKick_Label.Text = "Unsigned";
+            this.SignKick_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // PM_GroupBox
+            // KickTopic_Label
             // 
-            this.PM_GroupBox.Controls.Add(this.SignPM_Label);
-            this.PM_GroupBox.Controls.Add(this.SignPM);
-            this.PM_GroupBox.Controls.Add(this.PMTopic_Label);
-            this.PM_GroupBox.Controls.Add(this.PMText);
-            this.PM_GroupBox.Controls.Add(this.PMTopic);
-            this.PM_GroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PM_GroupBox.Location = new System.Drawing.Point(292, 410);
-            this.PM_GroupBox.Name = "PM_GroupBox";
-            this.PM_GroupBox.Size = new System.Drawing.Size(581, 128);
-            this.PM_GroupBox.TabIndex = 15;
-            this.PM_GroupBox.TabStop = false;
-            this.PM_GroupBox.Text = "PM Notes";
+            this.KickTopic_Label.AutoSize = true;
+            this.KickTopic_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KickTopic_Label.Location = new System.Drawing.Point(9, 62);
+            this.KickTopic_Label.Name = "KickTopic_Label";
+            this.KickTopic_Label.Size = new System.Drawing.Size(46, 16);
+            this.KickTopic_Label.TabIndex = 18;
+            this.KickTopic_Label.Text = "Topic:";
             // 
-            // KickStart
+            // KickEnd_Label_AM
             // 
-            this.KickStart.CustomFormat = "hh:mm";
-            this.KickStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.KickStart.Location = new System.Drawing.Point(61, 30);
-            this.KickStart.Name = "KickStart";
-            this.KickStart.ShowUpDown = true;
-            this.KickStart.Size = new System.Drawing.Size(64, 22);
-            this.KickStart.TabIndex = 2;
-            this.KickStart.Value = new System.DateTime(2014, 4, 12, 20, 0, 0, 0);
+            this.KickEnd_Label_AM.AutoSize = true;
+            this.KickEnd_Label_AM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KickEnd_Label_AM.Location = new System.Drawing.Point(280, 33);
+            this.KickEnd_Label_AM.Name = "KickEnd_Label_AM";
+            this.KickEnd_Label_AM.Size = new System.Drawing.Size(28, 16);
+            this.KickEnd_Label_AM.TabIndex = 17;
+            this.KickEnd_Label_AM.Text = "AM";
+            // 
+            // KickStart_Label_AM
+            // 
+            this.KickStart_Label_AM.AutoSize = true;
+            this.KickStart_Label_AM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KickStart_Label_AM.Location = new System.Drawing.Point(131, 33);
+            this.KickStart_Label_AM.Name = "KickStart_Label_AM";
+            this.KickStart_Label_AM.Size = new System.Drawing.Size(28, 16);
+            this.KickStart_Label_AM.TabIndex = 16;
+            this.KickStart_Label_AM.Text = "AM";
             // 
             // KickEnd
             // 
@@ -259,55 +260,41 @@
             this.KickEnd_Label.TabIndex = 14;
             this.KickEnd_Label.Text = "End:";
             // 
-            // KickStart_Label_AM
+            // KickStart
             // 
-            this.KickStart_Label_AM.AutoSize = true;
-            this.KickStart_Label_AM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KickStart_Label_AM.Location = new System.Drawing.Point(131, 33);
-            this.KickStart_Label_AM.Name = "KickStart_Label_AM";
-            this.KickStart_Label_AM.Size = new System.Drawing.Size(28, 16);
-            this.KickStart_Label_AM.TabIndex = 16;
-            this.KickStart_Label_AM.Text = "AM";
+            this.KickStart.CustomFormat = "hh:mm";
+            this.KickStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.KickStart.Location = new System.Drawing.Point(61, 30);
+            this.KickStart.Name = "KickStart";
+            this.KickStart.ShowUpDown = true;
+            this.KickStart.Size = new System.Drawing.Size(64, 22);
+            this.KickStart.TabIndex = 2;
+            this.KickStart.Value = new System.DateTime(2014, 4, 12, 20, 0, 0, 0);
             // 
-            // KickEnd_Label_AM
+            // AM_GroupBox
             // 
-            this.KickEnd_Label_AM.AutoSize = true;
-            this.KickEnd_Label_AM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KickEnd_Label_AM.Location = new System.Drawing.Point(280, 33);
-            this.KickEnd_Label_AM.Name = "KickEnd_Label_AM";
-            this.KickEnd_Label_AM.Size = new System.Drawing.Size(28, 16);
-            this.KickEnd_Label_AM.TabIndex = 17;
-            this.KickEnd_Label_AM.Text = "AM";
+            this.AM_GroupBox.Controls.Add(this.SignAM_Label);
+            this.AM_GroupBox.Controls.Add(this.SignAM);
+            this.AM_GroupBox.Controls.Add(this.AMTopic_Label);
+            this.AM_GroupBox.Controls.Add(this.AMText);
+            this.AM_GroupBox.Controls.Add(this.AMTopic);
+            this.AM_GroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AM_GroupBox.Location = new System.Drawing.Point(292, 274);
+            this.AM_GroupBox.Name = "AM_GroupBox";
+            this.AM_GroupBox.Size = new System.Drawing.Size(581, 128);
+            this.AM_GroupBox.TabIndex = 14;
+            this.AM_GroupBox.TabStop = false;
+            this.AM_GroupBox.Text = "AM Notes";
             // 
-            // KickTopic_Label
+            // SignAM_Label
             // 
-            this.KickTopic_Label.AutoSize = true;
-            this.KickTopic_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KickTopic_Label.Location = new System.Drawing.Point(9, 62);
-            this.KickTopic_Label.Name = "KickTopic_Label";
-            this.KickTopic_Label.Size = new System.Drawing.Size(46, 16);
-            this.KickTopic_Label.TabIndex = 18;
-            this.KickTopic_Label.Text = "Topic:";
-            // 
-            // AMTopic_Label
-            // 
-            this.AMTopic_Label.AutoSize = true;
-            this.AMTopic_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AMTopic_Label.Location = new System.Drawing.Point(9, 26);
-            this.AMTopic_Label.Name = "AMTopic_Label";
-            this.AMTopic_Label.Size = new System.Drawing.Size(46, 16);
-            this.AMTopic_Label.TabIndex = 19;
-            this.AMTopic_Label.Text = "Topic:";
-            // 
-            // PMTopic_Label
-            // 
-            this.PMTopic_Label.AutoSize = true;
-            this.PMTopic_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PMTopic_Label.Location = new System.Drawing.Point(9, 30);
-            this.PMTopic_Label.Name = "PMTopic_Label";
-            this.PMTopic_Label.Size = new System.Drawing.Size(46, 16);
-            this.PMTopic_Label.TabIndex = 20;
-            this.PMTopic_Label.Text = "Topic:";
+            this.SignAM_Label.ForeColor = System.Drawing.Color.ForestGreen;
+            this.SignAM_Label.Location = new System.Drawing.Point(443, 29);
+            this.SignAM_Label.Name = "SignAM_Label";
+            this.SignAM_Label.Size = new System.Drawing.Size(132, 19);
+            this.SignAM_Label.TabIndex = 20;
+            this.SignAM_Label.Text = "Unsigned";
+            this.SignAM_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // SignAM
             // 
@@ -320,6 +307,41 @@
             this.SignAM.UseVisualStyleBackColor = true;
             this.SignAM.Click += new System.EventHandler(this.SignAM_Click);
             // 
+            // AMTopic_Label
+            // 
+            this.AMTopic_Label.AutoSize = true;
+            this.AMTopic_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AMTopic_Label.Location = new System.Drawing.Point(9, 26);
+            this.AMTopic_Label.Name = "AMTopic_Label";
+            this.AMTopic_Label.Size = new System.Drawing.Size(46, 16);
+            this.AMTopic_Label.TabIndex = 19;
+            this.AMTopic_Label.Text = "Topic:";
+            // 
+            // PM_GroupBox
+            // 
+            this.PM_GroupBox.Controls.Add(this.SignPM_Label);
+            this.PM_GroupBox.Controls.Add(this.SignPM);
+            this.PM_GroupBox.Controls.Add(this.PMTopic_Label);
+            this.PM_GroupBox.Controls.Add(this.PMText);
+            this.PM_GroupBox.Controls.Add(this.PMTopic);
+            this.PM_GroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PM_GroupBox.Location = new System.Drawing.Point(292, 410);
+            this.PM_GroupBox.Name = "PM_GroupBox";
+            this.PM_GroupBox.Size = new System.Drawing.Size(581, 128);
+            this.PM_GroupBox.TabIndex = 15;
+            this.PM_GroupBox.TabStop = false;
+            this.PM_GroupBox.Text = "PM Notes";
+            // 
+            // SignPM_Label
+            // 
+            this.SignPM_Label.ForeColor = System.Drawing.Color.ForestGreen;
+            this.SignPM_Label.Location = new System.Drawing.Point(443, 33);
+            this.SignPM_Label.Name = "SignPM_Label";
+            this.SignPM_Label.Size = new System.Drawing.Size(132, 19);
+            this.SignPM_Label.TabIndex = 21;
+            this.SignPM_Label.Text = "Unsigned";
+            this.SignPM_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // SignPM
             // 
             this.SignPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -331,35 +353,15 @@
             this.SignPM.UseVisualStyleBackColor = true;
             this.SignPM.Click += new System.EventHandler(this.SignPM_Click);
             // 
-            // SignKick_Label
+            // PMTopic_Label
             // 
-            this.SignKick_Label.ForeColor = System.Drawing.Color.ForestGreen;
-            this.SignKick_Label.Location = new System.Drawing.Point(443, 65);
-            this.SignKick_Label.Name = "SignKick_Label";
-            this.SignKick_Label.Size = new System.Drawing.Size(132, 19);
-            this.SignKick_Label.TabIndex = 19;
-            this.SignKick_Label.Text = "Unsigned";
-            this.SignKick_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // SignAM_Label
-            // 
-            this.SignAM_Label.ForeColor = System.Drawing.Color.ForestGreen;
-            this.SignAM_Label.Location = new System.Drawing.Point(443, 29);
-            this.SignAM_Label.Name = "SignAM_Label";
-            this.SignAM_Label.Size = new System.Drawing.Size(132, 19);
-            this.SignAM_Label.TabIndex = 20;
-            this.SignAM_Label.Text = "Unsigned";
-            this.SignAM_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // SignPM_Label
-            // 
-            this.SignPM_Label.ForeColor = System.Drawing.Color.ForestGreen;
-            this.SignPM_Label.Location = new System.Drawing.Point(443, 33);
-            this.SignPM_Label.Name = "SignPM_Label";
-            this.SignPM_Label.Size = new System.Drawing.Size(132, 19);
-            this.SignPM_Label.TabIndex = 21;
-            this.SignPM_Label.Text = "Unsigned";
-            this.SignPM_Label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.PMTopic_Label.AutoSize = true;
+            this.PMTopic_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMTopic_Label.Location = new System.Drawing.Point(9, 30);
+            this.PMTopic_Label.Name = "PMTopic_Label";
+            this.PMTopic_Label.Size = new System.Drawing.Size(46, 16);
+            this.PMTopic_Label.TabIndex = 20;
+            this.PMTopic_Label.Text = "Topic:";
             // 
             // clientList
             // 
@@ -392,11 +394,37 @@
             this.DateOfWeek.Text = "Change to Current Day";
             this.DateOfWeek.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintButton.Location = new System.Drawing.Point(682, 548);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(191, 28);
+            this.PrintButton.TabIndex = 19;
+            this.PrintButton.Text = "Print Group Notes";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // AdminSeePastNotes
+            // 
+            this.AdminSeePastNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminSeePastNotes.ForeColor = System.Drawing.Color.Teal;
+            this.AdminSeePastNotes.Location = new System.Drawing.Point(468, 581);
+            this.AdminSeePastNotes.Name = "AdminSeePastNotes";
+            this.AdminSeePastNotes.Size = new System.Drawing.Size(227, 28);
+            this.AdminSeePastNotes.TabIndex = 20;
+            this.AdminSeePastNotes.Text = "(Admin) See Past Group Notes";
+            this.AdminSeePastNotes.UseVisualStyleBackColor = true;
+            this.AdminSeePastNotes.Visible = false;
+            this.AdminSeePastNotes.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GroupNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 618);
+            this.Controls.Add(this.AdminSeePastNotes);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.DateOfWeek);
             this.Controls.Add(this.WeekOf_Label);
             this.Controls.Add(this.clientList);
@@ -410,6 +438,7 @@
             this.Name = "GroupNotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GroupNotes";
+            this.Load += new System.EventHandler(this.GroupNotes_Load);
             this.Kick_GroupBox.ResumeLayout(false);
             this.Kick_GroupBox.PerformLayout();
             this.AM_GroupBox.ResumeLayout(false);
@@ -452,5 +481,7 @@
         private System.Windows.Forms.ListBox clientList;
         private System.Windows.Forms.Label WeekOf_Label;
         private System.Windows.Forms.Label DateOfWeek;
+        private System.Windows.Forms.Button PrintButton;
+        private System.Windows.Forms.Button AdminSeePastNotes;
     }
 }

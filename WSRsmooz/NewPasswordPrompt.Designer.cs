@@ -32,6 +32,8 @@
             this.NewPasswordTextBox = new System.Windows.Forms.TextBox();
             this.Success = new System.Windows.Forms.Button();
             this.ShowPWCheckbox = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -45,7 +47,7 @@
             // 
             // NewPasswordTextBox
             // 
-            this.NewPasswordTextBox.Location = new System.Drawing.Point(27, 38);
+            this.NewPasswordTextBox.Location = new System.Drawing.Point(6, 27);
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
             this.NewPasswordTextBox.PasswordChar = '*';
             this.NewPasswordTextBox.Size = new System.Drawing.Size(213, 22);
@@ -53,7 +55,7 @@
             // 
             // Success
             // 
-            this.Success.Location = new System.Drawing.Point(256, 35);
+            this.Success.Location = new System.Drawing.Point(235, 24);
             this.Success.Name = "Success";
             this.Success.Size = new System.Drawing.Size(93, 46);
             this.Success.TabIndex = 1;
@@ -64,7 +66,7 @@
             // ShowPWCheckbox
             // 
             this.ShowPWCheckbox.AutoSize = true;
-            this.ShowPWCheckbox.Location = new System.Drawing.Point(117, 66);
+            this.ShowPWCheckbox.Location = new System.Drawing.Point(96, 55);
             this.ShowPWCheckbox.Name = "ShowPWCheckbox";
             this.ShowPWCheckbox.Size = new System.Drawing.Size(123, 20);
             this.ShowPWCheckbox.TabIndex = 3;
@@ -72,21 +74,33 @@
             this.ShowPWCheckbox.UseVisualStyleBackColor = true;
             this.ShowPWCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.NewPasswordTextBox);
+            this.groupBox1.Controls.Add(this.ShowPWCheckbox);
+            this.groupBox1.Controls.Add(this.Success);
+            this.groupBox1.Location = new System.Drawing.Point(15, 31);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(336, 85);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Change Password";
+            // 
             // NewPasswordPrompt
             // 
             this.AcceptButton = this.Success;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 91);
-            this.Controls.Add(this.ShowPWCheckbox);
-            this.Controls.Add(this.Success);
-            this.Controls.Add(this.NewPasswordTextBox);
+            this.ClientSize = new System.Drawing.Size(366, 129);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NewPasswordPrompt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +112,6 @@
         private System.Windows.Forms.TextBox NewPasswordTextBox;
         private System.Windows.Forms.Button Success;
         private System.Windows.Forms.CheckBox ShowPWCheckbox;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

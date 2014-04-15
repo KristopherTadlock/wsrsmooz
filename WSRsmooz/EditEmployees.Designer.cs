@@ -40,8 +40,11 @@
             this.EditEmployeeTitle = new System.Windows.Forms.Label();
             this.AddEmployee = new System.Windows.Forms.Button();
             this.RemoveEmployee = new System.Windows.Forms.Button();
-            this.AcceptButton = EmpCommit;
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.EmployeeInformation_GroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // EmpName_Label
@@ -67,7 +70,7 @@
             this.employeeList.ItemHeight = 20;
             this.employeeList.Location = new System.Drawing.Point(166, 67);
             this.employeeList.Name = "employeeList";
-            this.employeeList.Size = new System.Drawing.Size(177, 284);
+            this.employeeList.Size = new System.Drawing.Size(177, 144);
             this.employeeList.TabIndex = 14;
             this.employeeList.SelectedIndexChanged += new System.EventHandler(this.employeeList_SelectedIndexChanged);
             // 
@@ -141,7 +144,7 @@
             this.EditEmployeeTitle.Name = "EditEmployeeTitle";
             this.EditEmployeeTitle.Size = new System.Drawing.Size(648, 33);
             this.EditEmployeeTitle.TabIndex = 16;
-            this.EditEmployeeTitle.Text = "Edit Employees";
+            this.EditEmployeeTitle.Text = "Administration Center";
             this.EditEmployeeTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // AddEmployee
@@ -168,11 +171,31 @@
             this.RemoveEmployee.UseVisualStyleBackColor = true;
             this.RemoveEmployee.Click += new System.EventHandler(this.RemoveEmployee_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(166, 217);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(643, 376);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Activity Log";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(631, 349);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // EditEmployees
             // 
+            this.AcceptButton = this.EmpCommit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 618);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.RemoveEmployee);
             this.Controls.Add(this.AddEmployee);
             this.Controls.Add(this.EditEmployeeTitle);
@@ -186,6 +209,8 @@
             this.Text = "EditEmployees";
             this.EmployeeInformation_GroupBox.ResumeLayout(false);
             this.EmployeeInformation_GroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,5 +229,7 @@
         private System.Windows.Forms.Label EditEmployeeTitle;
         private System.Windows.Forms.Button AddEmployee;
         private System.Windows.Forms.Button RemoveEmployee;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

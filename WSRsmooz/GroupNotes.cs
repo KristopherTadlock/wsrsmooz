@@ -11,6 +11,7 @@ namespace WSRsmooz
 {
     public partial class GroupNotes : Form
     {
+        public Boolean admin { get; set; }
         dbConnection database = new dbConnection();
         DataSet clients = new DataSet();
 
@@ -34,6 +35,7 @@ namespace WSRsmooz
         public GroupNotes()
         {
             InitializeComponent();
+            admin = false;
 
             String query = "select * from clients where `Active`=true";
             clients = database.GetTable(query);
@@ -444,6 +446,68 @@ namespace WSRsmooz
 
                 processPdfGen();
             }
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            Boolean valid = true;
+            String violators = "";
+
+            if (File.Exists(newFile))
+            {
+                pdfReader = new PdfReader(newFile);
+                AcroFields pdfFormFields = pdfReader.AcroFields;
+
+                foreach (var field in pdfFormFields.Fields)
+                {
+                    if (field.Key.Contains("Signature"))
+                    {
+                        String tempValue = pdfFormFields.GetField(field.Key);
+                        if (tempValue == "")
+                        {
+                            violators += field.Key.Replace(" Signature", "\n").Replace("Kick", "Kick-off").Replace("AM", "Morning").Replace("PM", "Afternoon");
+                            valid = false;
+                        }
+                    }
+                }
+                pdfReader.Close();
+            }
+
+            if (!valid)
+            {
+                DialogResult dialogResult = MessageBox.Show("The following fields were not signed:\n\n" + violators + "\nContinue printing?", "Validation Error", MessageBoxButtons.YesNo);
+                if (dialogResult != DialogResult.Yes)
+                    return;
+            }
+
+            try
+            {
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.StartInfo.FileName = "printpdf.exe";
+                proc.StartInfo.Arguments = "-print-dialog -exit-on-print \"" + newFile + "\"";
+                proc.StartInfo.RedirectStandardError = false;
+                proc.StartInfo.RedirectStandardOutput = false;
+                proc.StartInfo.UseShellExecute = true;
+                proc.Start();
+                proc.WaitForExit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error opening the print dialog.\n\n" + ex);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PastGroupNotesPrompt pastNotesPrompt = new PastGroupNotesPrompt();
+            pastNotesPrompt.name = ClientName;
+            pastNotesPrompt.ShowDialog();
+        }
+
+        private void GroupNotes_Load(object sender, EventArgs e)
+        {
+            if (admin)
+                AdminSeePastNotes.Visible = true;
         }
 
     }

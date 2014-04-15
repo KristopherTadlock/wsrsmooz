@@ -27,6 +27,8 @@ namespace WSRsmooz
         Form groupNotesForm;
         Form editEmployeesForm;
         Form newPatientIntakeForm;
+        Form dischargePatientForm;
+        Form individualNotesForm;
         
         public Launcher()
         {
@@ -145,6 +147,7 @@ namespace WSRsmooz
                 shutdownEverything();
                 this.currentWindow = "Group Notes";
                 groupNotesForm = new GroupNotes();
+                ((GroupNotes)groupNotesForm).admin = true;
                 groupNotesForm.MdiParent = this;
                 groupNotesForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
                 groupNotesForm.Show();
@@ -161,6 +164,32 @@ namespace WSRsmooz
                 editEmployeesForm.MdiParent = this;
                 editEmployeesForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
                 editEmployeesForm.Show();
+            }
+        }
+
+        private void launcher_button_individualNotes_Click(object sender, EventArgs e)
+        {
+            if (!this.currentWindow.Equals("Individual Notes"))
+            {
+                shutdownEverything();
+                this.currentWindow = "Individual Notes";
+                individualNotesForm = new IndividualNotes();
+                individualNotesForm.MdiParent = this;
+                individualNotesForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                individualNotesForm.Show();
+            }
+        }
+
+        private void launcher_button_dischargePatient_Click(object sender, EventArgs e)
+        {
+            if (!this.currentWindow.Equals("Discharge Patient"))
+            {
+                shutdownEverything();
+                this.currentWindow = "Discharge Patient";
+                dischargePatientForm = new DischargePatient();
+                dischargePatientForm.MdiParent = this;
+                dischargePatientForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                dischargePatientForm.Show();
             }
         }
     }
