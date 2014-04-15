@@ -107,5 +107,18 @@ namespace WSRsmooz
             if (PastNotes.Items.Count > 0)
                 PastNotes.SelectedIndex = 0;
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (PastNotes.SelectedItems.Count < 1) return;
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this file?", "Confirm Delete", MessageBoxButtons.YesNo);
+            if (dialogResult != DialogResult.Yes)
+                return;
+
+            String delFile = pdfPath + id + "/" + PastNotes.SelectedItem.ToString() + ".pdf";
+            File.Delete(delFile);
+            grabPDFs();
+        }
     }
 }

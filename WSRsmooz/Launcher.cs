@@ -153,7 +153,7 @@ namespace WSRsmooz
             {
                 shutdownEverything();
                 this.currentWindow = "View Patient Log";
-                viewPatientLogForm = new ViewPatientLog();
+                viewPatientLogForm = new PatientLog();
                 viewPatientLogForm.MdiParent = this;
                 viewPatientLogForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
                 viewPatientLogForm.Show();

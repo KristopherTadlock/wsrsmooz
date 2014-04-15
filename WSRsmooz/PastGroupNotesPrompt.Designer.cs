@@ -33,6 +33,7 @@
             this.ClientName = new System.Windows.Forms.Label();
             this.PrintButton = new System.Windows.Forms.Button();
             this.Note = new System.Windows.Forms.Label();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PastNotes
@@ -46,7 +47,7 @@
             // 
             // MainLabel
             // 
-            this.MainLabel.Location = new System.Drawing.Point(138, 21);
+            this.MainLabel.Location = new System.Drawing.Point(138, 18);
             this.MainLabel.Name = "MainLabel";
             this.MainLabel.Size = new System.Drawing.Size(237, 20);
             this.MainLabel.TabIndex = 1;
@@ -56,7 +57,7 @@
             // ClientName
             // 
             this.ClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientName.Location = new System.Drawing.Point(138, 41);
+            this.ClientName.Location = new System.Drawing.Point(138, 38);
             this.ClientName.Name = "ClientName";
             this.ClientName.Size = new System.Drawing.Size(237, 25);
             this.ClientName.TabIndex = 2;
@@ -65,9 +66,9 @@
             // 
             // PrintButton
             // 
-            this.PrintButton.Location = new System.Drawing.Point(189, 69);
+            this.PrintButton.Location = new System.Drawing.Point(189, 64);
             this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(134, 42);
+            this.PrintButton.Size = new System.Drawing.Size(134, 29);
             this.PrintButton.TabIndex = 3;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
@@ -75,18 +76,30 @@
             // 
             // Note
             // 
-            this.Note.Location = new System.Drawing.Point(139, 120);
+            this.Note.Location = new System.Drawing.Point(139, 123);
             this.Note.Name = "Note";
             this.Note.Size = new System.Drawing.Size(236, 16);
             this.Note.TabIndex = 4;
             this.Note.Text = "Notes are destroyed after 30 days.";
             this.Note.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.Location = new System.Drawing.Point(189, 94);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(134, 26);
+            this.DeleteButton.TabIndex = 5;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // PastGroupNotesPrompt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 154);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.Note);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.ClientName);
@@ -110,5 +123,6 @@
         private System.Windows.Forms.Label ClientName;
         private System.Windows.Forms.Button PrintButton;
         private System.Windows.Forms.Label Note;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }

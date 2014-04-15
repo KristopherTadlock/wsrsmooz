@@ -413,7 +413,7 @@
             this.AdminSeePastNotes.Name = "AdminSeePastNotes";
             this.AdminSeePastNotes.Size = new System.Drawing.Size(227, 28);
             this.AdminSeePastNotes.TabIndex = 20;
-            this.AdminSeePastNotes.Text = "(Admin) See Past Group Notes";
+            this.AdminSeePastNotes.Text = "Manage Past Group Notes";
             this.AdminSeePastNotes.UseVisualStyleBackColor = true;
             this.AdminSeePastNotes.Visible = false;
             this.AdminSeePastNotes.Click += new System.EventHandler(this.button1_Click);
