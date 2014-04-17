@@ -159,7 +159,7 @@ namespace WSRsmooz
         public void openForm(FormItem form, ClientItem client)
         {
             MessageBox.Show("Open " + form + " for " + client.clientName + ".");
-            ((Form_ClientScreeningForm)form.form).client = client;
+            ((Form_ClientScreeningForm)form.form).clientID = client.id;
             form.form.ShowDialog();
         }
 
