@@ -40,6 +40,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dependencies\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PDFExporter">
+      <HintPath>dependencies\PDFExporter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +76,12 @@
     </Compile>
     <Compile Include="EditEmployees.Designer.cs">
       <DependentUpon>EditEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ClientScreeningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ClientScreeningForm.Designer.cs">
+      <DependentUpon>Form_ClientScreeningForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupNotes.cs">
       <SubType>Form</SubType>
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditEmployees.resx">
       <DependentUpon>EditEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ClientScreeningForm.resx">
+      <DependentUpon>Form_ClientScreeningForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupNotes.resx">
       <DependentUpon>GroupNotes.cs</DependentUpon>

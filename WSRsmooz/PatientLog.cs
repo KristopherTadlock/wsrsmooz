@@ -63,6 +63,8 @@ namespace WSRsmooz
                     {
                         FormItem newFormItem = new FormItem();
                         newFormItem.name = form;
+                        if (form.Equals("Client Screening Information"))
+                            newFormItem.form = new Form_ClientScreeningForm();
                         newFormItem.path = "/templates/" + form + ".pdf";
                         newPanel.list.Add(newFormItem);
                     }
@@ -157,6 +159,7 @@ namespace WSRsmooz
         public void openForm(FormItem form, ClientItem client)
         {
             MessageBox.Show("Open " + form + " for " + client.clientName + ".");
+            form.form.ShowDialog();
         }
 
         private void PatientLog_Load(object sender, EventArgs e)
