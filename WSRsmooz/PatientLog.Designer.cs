@@ -32,6 +32,7 @@
             this.clientList = new System.Windows.Forms.ListBox();
             this.PanelList = new System.Windows.Forms.ComboBox();
             this.Title = new System.Windows.Forms.Label();
+            this.AdminEditPanels = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -81,11 +82,24 @@
             this.Title.Text = "Patient Log and Forms";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // AdminEditPanels
+            // 
+            this.AdminEditPanels.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminEditPanels.ForeColor = System.Drawing.Color.Teal;
+            this.AdminEditPanels.Location = new System.Drawing.Point(471, 578);
+            this.AdminEditPanels.Name = "AdminEditPanels";
+            this.AdminEditPanels.Size = new System.Drawing.Size(227, 28);
+            this.AdminEditPanels.TabIndex = 101;
+            this.AdminEditPanels.Text = "Manage Panels";
+            this.AdminEditPanels.UseVisualStyleBackColor = true;
+            this.AdminEditPanels.Visible = false;
+            // 
             // PatientLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 618);
+            this.Controls.Add(this.AdminEditPanels);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.PanelList);
             this.Controls.Add(this.checkBox1);
@@ -96,6 +110,7 @@
             this.Name = "PatientLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "PatientLog";
+            this.Load += new System.EventHandler(this.PatientLog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +122,6 @@
         private System.Windows.Forms.ListBox clientList;
         private System.Windows.Forms.ComboBox PanelList;
         private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Button AdminEditPanels;
     }
 }

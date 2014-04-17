@@ -17,10 +17,13 @@ namespace WSRsmooz
         DataSet clients = new DataSet();
         DataSet forms = new DataSet();
         List<String>[] panels;
+        public Boolean admin { get; set; }
 
         public PatientLog()
         {
             InitializeComponent();
+            admin = false;
+
             panels = new List<String>[7];
             resetFormList();
             PanelList.SelectedIndex = 0;
@@ -121,8 +124,11 @@ namespace WSRsmooz
             {
                 if (Controls[i] is Button)
                 {
-                    Controls.RemoveAt(i);
-                    i--;
+                    if (!Controls[i].Name.Contains("Admin"))
+                    {
+                        Controls.RemoveAt(i);
+                        i--;
+                    }
                 }
             }
 
@@ -151,6 +157,12 @@ namespace WSRsmooz
         public void openForm(FormItem form, ClientItem client)
         {
             MessageBox.Show("Open " + form + " for " + client.clientName + ".");
+        }
+
+        private void PatientLog_Load(object sender, EventArgs e)
+        {
+            if (admin)
+                AdminEditPanels.Visible = true;
         }
 
     }
