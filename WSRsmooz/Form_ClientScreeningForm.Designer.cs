@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dt_DoB = new System.Windows.Forms.DateTimePicker();
             this.MAR = new System.Windows.Forms.ComboBox();
             this.ClientState = new System.Windows.Forms.ComboBox();
             this.cb_Vet = new System.Windows.Forms.CheckBox();
@@ -147,7 +148,6 @@
             this.PHwhy = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.NextButton = new System.Windows.Forms.Button();
-            this.dt_DoB = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -200,6 +200,14 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Basic Information";
+            // 
+            // dt_DoB
+            // 
+            this.dt_DoB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_DoB.Location = new System.Drawing.Point(505, 36);
+            this.dt_DoB.Name = "dt_DoB";
+            this.dt_DoB.Size = new System.Drawing.Size(103, 22);
+            this.dt_DoB.TabIndex = 39;
             // 
             // MAR
             // 
@@ -1428,17 +1436,9 @@
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(339, 40);
             this.NextButton.TabIndex = 7;
-            this.NextButton.Text = "Continue Interview";
+            this.NextButton.Text = "Save Form Information";
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
-            // 
-            // dt_DoB
-            // 
-            this.dt_DoB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_DoB.Location = new System.Drawing.Point(505, 36);
-            this.dt_DoB.Name = "dt_DoB";
-            this.dt_DoB.Size = new System.Drawing.Size(103, 22);
-            this.dt_DoB.TabIndex = 39;
             // 
             // Form_ClientScreeningForm
             // 

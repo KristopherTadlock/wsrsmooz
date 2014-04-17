@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace WSRsmooz
 {
@@ -17,7 +19,7 @@ namespace WSRsmooz
 
         private void PrimaryPhoneNumber_TextChanged(object sender, EventArgs e)
         {
-            ClientPhone.Text = String.Format("{0:(###) ###-####}", ClientPhone.Text);
+            //ClientPhone.Text = String.Format("{0:(###) ###-####}", ClientPhone.Text);
         }
 
         private void NextButton_Click(object sender, EventArgs e)
@@ -30,36 +32,42 @@ namespace WSRsmooz
             MySqlConnection newConnect = new MySqlConnection(connectionString);
             newConnect.Open();
 
-            for (int i = 0; i < this.Controls.Count; i++)
+            foreach (Control d in this.Controls.OfType<GroupBox>())
             {
-                if (Controls[i] is TextBox)
+                foreach (Control c in d.Controls)
                 {
-                    query += ", " + Controls[i].Name;
-                    values += ", " + Controls[i].Text;
-                    update += ", " + Controls[i].Name + "=VALUES(" + Controls[i].Name + ")";
-                }
-                else if (Controls[i] is CheckBox)
-                {
-                    String[] parser = Controls[i].Name.Split(delimit, StringSplitOptions.None);
-                    query += ", \"" + parser[1] + "\"";
+                    if (c is TextBox)
+                    {
+                        if (((TextBox)c).Text != "")
+                        {
+                            query += ", " + c.Name;
+                            values += ", \"" + c.Text + "\"";
+                            update += ", " + c.Name + "=VALUES(" + c.Name + ")";
+                        }
+                    }
+                    else if (c is CheckBox)
+                    {
+                        String[] parser = c.Name.Split(delimit, StringSplitOptions.None);
+                        query += ", " + parser[1];
 
-                    if (((CheckBox)Controls[i]).Checked == true)
-                        values += ", true";
-                    else
-                        values += ", false";
+                        if (((CheckBox)c).Checked == true)
+                            values += ", true";
+                        else
+                            values += ", false";
 
-                    update += ", " + Controls[i].Name + "=VALUES(" + Controls[i].Name + ")";
-                }
-                else if (Controls[i] is DateTimePicker)
-                {
-                    String[] parser = Controls[i].Name.Split(delimit, StringSplitOptions.None);
-                    values += ", \"" + ((DateTimePicker)Controls[i]).Value.ToString("yyyy-MM-dd") + "\"";
+                        update += ", " + parser[1] + "=VALUES(" + parser[1] + ")";
+                    }
+                    else if (c is DateTimePicker)
+                    {
+                        String[] parser = c.Name.Split(delimit, StringSplitOptions.None);
+                        query += ", " + parser[1];
+                        values += ", \"" + ((DateTimePicker)c).Value.ToString("yyyy-MM-dd") + "\"";
 
-                    update += ", " + Controls[i].Name + "=VALUES(" + Controls[i].Name + ")";
+                        update += ", " + parser[1] + "=VALUES(" + parser[1] + ")";
+                    }
                 }
             }
             query += ") values(" + values + ") on duplicate key update " + update;
-
             MySqlCommand newCommand = new MySqlCommand(query, newConnect);
             newCommand.ExecuteNonQuery();
             newConnect.Close();
@@ -67,7 +75,7 @@ namespace WSRsmooz
 
         private void Form_ClientScreeningForm_Load(object sender, EventArgs e)
         {
-            query = "select * from FR7_ClientScreening where FR7_ClientID = '" + clientID + "' ";
+            query = "select * from FR7_ClientScreening where FR7_ClientID = '" + clientID + "'";
             MySqlConnection newConnect = new MySqlConnection(connectionString);
             MySqlCommand newCommand = new MySqlCommand(query, newConnect);
             newConnect.Open();
@@ -78,29 +86,31 @@ namespace WSRsmooz
 
             while (reader.Read())
             {
-                for (int i = 0; i < this.Controls.Count; i++)
+                foreach (Control d in this.Controls.OfType<GroupBox>())
                 {
-                    if (Controls[i] is TextBox)
+                    foreach (Control c in d.Controls)
                     {
-                        Controls[i].Text = reader.GetString(Controls[i].Name);
-                    }
-                    else if (Controls[i] is CheckBox)
-                    {
-                        if (Controls[i].Name.Contains("cb_"))
+                        if (c is TextBox)
                         {
-                            parser = Controls[i].Name.Split(delimit, StringSplitOptions.None);
-
-                            if (reader.GetInt32(parser[1]) == 1)
-                                ((CheckBox)Controls[i]).Checked = true;
+                            c.Text = reader.GetString(c.Name);
                         }
-                    }
-                    else if (Controls[i] is DateTimePicker)
-                    {
-                        if (Controls[i].Name.Contains("dt_"))
+                        else if (c is CheckBox)
                         {
-                            parser = Controls[i].Name.Split(delimit, StringSplitOptions.None);
-                            String dateString = reader.GetString(parser[1]);
-                            ((DateTimePicker)Controls[i]).Value = Convert.ToDateTime(dateString);
+                            if (c.Name.Contains("cb_"))
+                            {
+                                parser = c.Name.Split(delimit, StringSplitOptions.None);
+
+                                if (reader.GetInt32(parser[1]) == 1)
+                                    ((CheckBox)c).Checked = true;
+                            }
+                        }
+                        else if (c is DateTimePicker)
+                        {
+                            if (c.Name.Contains("dt_"))
+                            {
+                                parser = c.Name.Split(delimit, StringSplitOptions.None);
+                                ((DateTimePicker)c).Value = reader.GetDateTime(reader.GetOrdinal(parser[1]));
+                            }
                         }
                     }
                 }
