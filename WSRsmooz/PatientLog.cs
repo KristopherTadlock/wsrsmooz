@@ -15,15 +15,56 @@ namespace WSRsmooz
     {
         dbConnection database = new dbConnection();
         DataSet clients = new DataSet();
+        DataSet forms = new DataSet();
+        List<String>[] panels;
 
         public PatientLog()
         {
             InitializeComponent();
-
+            panels = new List<String>[7];
+            resetFormList();
             PanelList.SelectedIndex = 0;
             String query = "select * from clients where `Active`=true";
             clients = database.GetTable(query);
             updateClientList();
+        }
+
+        public void resetFormList()
+        {
+            String query = "select table_name from INFORMATION_SCHEMA.TABLES where " +
+                "table_name like 'form_%'";
+            forms = database.GetFormTemplates(query);
+            PanelList.Items.Clear();
+            for (int i = 0; i < panels.Length; i++)
+                panels[i] = new List<String>(64);
+
+            foreach (DataTable table in forms.Tables)
+            {
+                if (table.Columns.Contains("Panel"))
+                {
+                    int panelNumber = Convert.ToInt32(table.Rows[0]["Panel"]);
+                    panels[panelNumber].Add(table.TableName.ToString());
+                }
+            }
+
+            for (int i = 0; i < panels.Length; i++)
+            {
+                if (panels[i].Count > 0)
+                {
+                    PanelItem newPanel = new PanelItem();
+                    newPanel.name = "Panel " + i;
+                    newPanel.list = new List<FormItem>(16);
+                    PanelList.Items.Add(newPanel);
+
+                    foreach (String form in panels[i])
+                    {
+                        FormItem newFormItem = new FormItem();
+                        newFormItem.name = form;
+                        newFormItem.path = "/templates/" + form + ".pdf";
+                        newPanel.list.Add(newFormItem);
+                    }
+                }
+            }
         }
 
         public void updateClientList()
@@ -36,6 +77,7 @@ namespace WSRsmooz
                 item.clientName = row["First Name"].ToString() + " " + row["Last Name"].ToString();
                 clientList.Items.Add(item);
             }
+            clientList.SelectedIndex = 0;
         }
 
         public void loadClient(ClientItem client)
@@ -66,6 +108,70 @@ namespace WSRsmooz
             }
             clients = database.GetTable(query);
             updateClientList();
+        }
+
+        private void PanelList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateButtonList((PanelItem)PanelList.SelectedItem);
+        }
+
+        private void updateButtonList(PanelItem panel)
+        {
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                if (Controls[i] is Button)
+                {
+                    Controls.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            int buttonX = 384;
+            int buttonY = 109;
+            int tabIndex = 1;
+            foreach (FormItem form in panel.list)
+            {
+                Button newButton = new Button();
+                newButton.Location = new Point(buttonX, buttonY);
+                newButton.BackColor = SystemColors.Window;
+                newButton.FlatStyle = FlatStyle.Popup;
+                newButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                newButton.Size = new Size(400, 40);
+                newButton.TabIndex = tabIndex;
+                newButton.Text = form.name;
+                newButton.UseVisualStyleBackColor = false;
+                newButton.Click += (s, e) => { openForm(form, (ClientItem)clientList.SelectedItem);  };
+                Controls.Add(newButton);
+
+                buttonY += 45;
+                tabIndex++;
+            }
+        }
+
+        public void openForm(FormItem form, ClientItem client)
+        {
+            MessageBox.Show("Open " + form + " for " + client.clientName + ".");
+        }
+
+    }
+        public class PanelItem
+        {
+            public String name { get; set; }
+            public List<FormItem> list { get; set; }
+            public override string ToString()
+            {
+                return name;
+            }
+        }
+
+    public class FormItem
+    {
+        public String name { get; set; }
+        public String path { get; set; }
+        public Form form { get; set; }
+        public override string ToString()
+        {
+            return name;
         }
     }
 }

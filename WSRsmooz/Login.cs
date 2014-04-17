@@ -1,3 +1,4 @@
+
 using System;
 using System.Windows.Forms;
 using System.Security.Cryptography;
@@ -30,7 +31,6 @@ namespace WSRsmooz
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             // Check for empty fields.
             if (Login_textbox_employee.Text.CompareTo(String.Empty) == 0)
             {
