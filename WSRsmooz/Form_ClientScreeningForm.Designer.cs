@@ -30,35 +30,35 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.State = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Basic_State = new System.Windows.Forms.ComboBox();
+            this.Basic_Veteran = new System.Windows.Forms.CheckBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.Basic_DriversLicenseState = new System.Windows.Forms.TextBox();
+            this.Basic_DriversLicense = new System.Windows.Forms.TextBox();
+            this.Basic_SSN = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.PrimaryPhoneNumber = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.Basic_WorkCellNumber = new System.Windows.Forms.TextBox();
+            this.Basic_PrimaryPhoneNumber = new System.Windows.Forms.TextBox();
+            this.Basic_YearsResided = new System.Windows.Forms.TextBox();
+            this.Basic_County = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Basic_ZipCode = new System.Windows.Forms.TextBox();
+            this.Basic_City = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Basic_Address = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Basic_DateOfBirth = new System.Windows.Forms.TextBox();
+            this.Basic_LastName = new System.Windows.Forms.TextBox();
+            this.Basic_FirstName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -160,35 +160,35 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.State);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.Basic_State);
+            this.groupBox1.Controls.Add(this.Basic_Veteran);
             this.groupBox1.Controls.Add(this.textBox18);
-            this.groupBox1.Controls.Add(this.textBox16);
-            this.groupBox1.Controls.Add(this.textBox15);
-            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.Basic_DriversLicenseState);
+            this.groupBox1.Controls.Add(this.Basic_DriversLicense);
+            this.groupBox1.Controls.Add(this.Basic_SSN);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox13);
-            this.groupBox1.Controls.Add(this.PrimaryPhoneNumber);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.Basic_WorkCellNumber);
+            this.groupBox1.Controls.Add(this.Basic_PrimaryPhoneNumber);
+            this.groupBox1.Controls.Add(this.Basic_YearsResided);
+            this.groupBox1.Controls.Add(this.Basic_County);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.Basic_ZipCode);
+            this.groupBox1.Controls.Add(this.Basic_City);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.Basic_Address);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.Basic_DateOfBirth);
+            this.groupBox1.Controls.Add(this.Basic_LastName);
+            this.groupBox1.Controls.Add(this.Basic_FirstName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -217,12 +217,12 @@
             this.comboBox1.TabIndex = 38;
             this.comboBox1.Text = "Single";
             // 
-            // State
+            // Basic_State
             // 
-            this.State.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.State.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.State.FormattingEnabled = true;
-            this.State.Items.AddRange(new object[] {
+            this.Basic_State.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Basic_State.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Basic_State.FormattingEnabled = true;
+            this.Basic_State.Items.AddRange(new object[] {
             "AL",
             "AK",
             "AZ",
@@ -273,21 +273,21 @@
             "WV",
             "WI",
             "WY"});
-            this.State.Location = new System.Drawing.Point(630, 65);
-            this.State.Name = "State";
-            this.State.Size = new System.Drawing.Size(49, 24);
-            this.State.TabIndex = 37;
-            this.State.Text = "CA";
+            this.Basic_State.Location = new System.Drawing.Point(630, 65);
+            this.Basic_State.Name = "Basic_State";
+            this.Basic_State.Size = new System.Drawing.Size(49, 24);
+            this.Basic_State.TabIndex = 37;
+            this.Basic_State.Text = "CA";
             // 
-            // checkBox1
+            // Basic_Veteran
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(630, 38);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(81, 20);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.Text = "Veteran?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Basic_Veteran.AutoSize = true;
+            this.Basic_Veteran.Location = new System.Drawing.Point(630, 38);
+            this.Basic_Veteran.Name = "Basic_Veteran";
+            this.Basic_Veteran.Size = new System.Drawing.Size(81, 20);
+            this.Basic_Veteran.TabIndex = 36;
+            this.Basic_Veteran.Text = "Veteran?";
+            this.Basic_Veteran.UseVisualStyleBackColor = true;
             // 
             // textBox18
             // 
@@ -296,26 +296,26 @@
             this.textBox18.Size = new System.Drawing.Size(132, 22);
             this.textBox18.TabIndex = 35;
             // 
-            // textBox16
+            // Basic_DriversLicenseState
             // 
-            this.textBox16.Location = new System.Drawing.Point(508, 148);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 22);
-            this.textBox16.TabIndex = 33;
+            this.Basic_DriversLicenseState.Location = new System.Drawing.Point(508, 148);
+            this.Basic_DriversLicenseState.Name = "Basic_DriversLicenseState";
+            this.Basic_DriversLicenseState.Size = new System.Drawing.Size(100, 22);
+            this.Basic_DriversLicenseState.TabIndex = 33;
             // 
-            // textBox15
+            // Basic_DriversLicense
             // 
-            this.textBox15.Location = new System.Drawing.Point(333, 148);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 22);
-            this.textBox15.TabIndex = 32;
+            this.Basic_DriversLicense.Location = new System.Drawing.Point(333, 148);
+            this.Basic_DriversLicense.Name = "Basic_DriversLicense";
+            this.Basic_DriversLicense.Size = new System.Drawing.Size(100, 22);
+            this.Basic_DriversLicense.TabIndex = 32;
             // 
-            // textBox14
+            // Basic_SSN
             // 
-            this.textBox14.Location = new System.Drawing.Point(87, 148);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(106, 22);
-            this.textBox14.TabIndex = 31;
+            this.Basic_SSN.Location = new System.Drawing.Point(87, 148);
+            this.Basic_SSN.Name = "Basic_SSN";
+            this.Basic_SSN.Size = new System.Drawing.Size(106, 22);
+            this.Basic_SSN.TabIndex = 31;
             // 
             // label18
             // 
@@ -362,34 +362,34 @@
             this.label14.TabIndex = 26;
             this.label14.Text = "SSN:";
             // 
-            // textBox13
+            // Basic_WorkCellNumber
             // 
-            this.textBox13.Location = new System.Drawing.Point(437, 120);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(122, 22);
-            this.textBox13.TabIndex = 25;
+            this.Basic_WorkCellNumber.Location = new System.Drawing.Point(437, 120);
+            this.Basic_WorkCellNumber.Name = "Basic_WorkCellNumber";
+            this.Basic_WorkCellNumber.Size = new System.Drawing.Size(122, 22);
+            this.Basic_WorkCellNumber.TabIndex = 25;
             // 
-            // PrimaryPhoneNumber
+            // Basic_PrimaryPhoneNumber
             // 
-            this.PrimaryPhoneNumber.Location = new System.Drawing.Point(173, 120);
-            this.PrimaryPhoneNumber.Name = "PrimaryPhoneNumber";
-            this.PrimaryPhoneNumber.Size = new System.Drawing.Size(116, 22);
-            this.PrimaryPhoneNumber.TabIndex = 24;
-            this.PrimaryPhoneNumber.TextChanged += new System.EventHandler(this.PrimaryPhoneNumber_TextChanged);
+            this.Basic_PrimaryPhoneNumber.Location = new System.Drawing.Point(173, 120);
+            this.Basic_PrimaryPhoneNumber.Name = "Basic_PrimaryPhoneNumber";
+            this.Basic_PrimaryPhoneNumber.Size = new System.Drawing.Size(116, 22);
+            this.Basic_PrimaryPhoneNumber.TabIndex = 24;
+            this.Basic_PrimaryPhoneNumber.TextChanged += new System.EventHandler(this.PrimaryPhoneNumber_TextChanged);
             // 
-            // textBox11
+            // Basic_YearsResided
             // 
-            this.textBox11.Location = new System.Drawing.Point(482, 92);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(46, 22);
-            this.textBox11.TabIndex = 23;
+            this.Basic_YearsResided.Location = new System.Drawing.Point(482, 92);
+            this.Basic_YearsResided.Name = "Basic_YearsResided";
+            this.Basic_YearsResided.Size = new System.Drawing.Size(46, 22);
+            this.Basic_YearsResided.TabIndex = 23;
             // 
-            // textBox10
+            // Basic_County
             // 
-            this.textBox10.Location = new System.Drawing.Point(257, 92);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 22;
+            this.Basic_County.Location = new System.Drawing.Point(257, 92);
+            this.Basic_County.Name = "Basic_County";
+            this.Basic_County.Size = new System.Drawing.Size(100, 22);
+            this.Basic_County.TabIndex = 22;
             // 
             // label13
             // 
@@ -427,19 +427,19 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "County:";
             // 
-            // textBox9
+            // Basic_ZipCode
             // 
-            this.textBox9.Location = new System.Drawing.Point(87, 92);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 17;
+            this.Basic_ZipCode.Location = new System.Drawing.Point(87, 92);
+            this.Basic_ZipCode.Name = "Basic_ZipCode";
+            this.Basic_ZipCode.Size = new System.Drawing.Size(100, 22);
+            this.Basic_ZipCode.TabIndex = 17;
             // 
-            // textBox7
+            // Basic_City
             // 
-            this.textBox7.Location = new System.Drawing.Point(473, 64);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 15;
+            this.Basic_City.Location = new System.Drawing.Point(473, 64);
+            this.Basic_City.Name = "Basic_City";
+            this.Basic_City.Size = new System.Drawing.Size(100, 22);
+            this.Basic_City.TabIndex = 15;
             // 
             // label9
             // 
@@ -468,12 +468,12 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "City:";
             // 
-            // textBox6
+            // Basic_Address
             // 
-            this.textBox6.Location = new System.Drawing.Point(87, 64);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(332, 22);
-            this.textBox6.TabIndex = 11;
+            this.Basic_Address.Location = new System.Drawing.Point(87, 64);
+            this.Basic_Address.Name = "Basic_Address";
+            this.Basic_Address.Size = new System.Drawing.Size(332, 22);
+            this.Basic_Address.TabIndex = 11;
             // 
             // label6
             // 
@@ -484,26 +484,26 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Address:";
             // 
-            // textBox3
+            // Basic_DateOfBirth
             // 
-            this.textBox3.Location = new System.Drawing.Point(508, 36);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 7;
+            this.Basic_DateOfBirth.Location = new System.Drawing.Point(508, 36);
+            this.Basic_DateOfBirth.Name = "Basic_DateOfBirth";
+            this.Basic_DateOfBirth.Size = new System.Drawing.Size(100, 22);
+            this.Basic_DateOfBirth.TabIndex = 7;
             // 
-            // textBox2
+            // Basic_LastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(298, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 6;
+            this.Basic_LastName.Location = new System.Drawing.Point(298, 36);
+            this.Basic_LastName.Name = "Basic_LastName";
+            this.Basic_LastName.Size = new System.Drawing.Size(100, 22);
+            this.Basic_LastName.TabIndex = 6;
             // 
-            // textBox1
+            // Basic_FirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 22);
-            this.textBox1.TabIndex = 5;
+            this.Basic_FirstName.Location = new System.Drawing.Point(87, 36);
+            this.Basic_FirstName.Name = "Basic_FirstName";
+            this.Basic_FirstName.Size = new System.Drawing.Size(106, 22);
+            this.Basic_FirstName.TabIndex = 5;
             // 
             // label3
             // 
@@ -1454,6 +1454,7 @@
             this.Name = "Form_ClientScreeningForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Client Screening Form";
+            this.Load += new System.EventHandler(this.Form_ClientScreeningForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1474,35 +1475,35 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox State;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox Basic_State;
+        private System.Windows.Forms.CheckBox Basic_Veteran;
         private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox Basic_DriversLicenseState;
+        private System.Windows.Forms.TextBox Basic_DriversLicense;
+        private System.Windows.Forms.TextBox Basic_SSN;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox PrimaryPhoneNumber;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox Basic_WorkCellNumber;
+        private System.Windows.Forms.TextBox Basic_PrimaryPhoneNumber;
+        private System.Windows.Forms.TextBox Basic_YearsResided;
+        private System.Windows.Forms.TextBox Basic_County;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox Basic_ZipCode;
+        private System.Windows.Forms.TextBox Basic_City;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Basic_Address;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Basic_DateOfBirth;
+        private System.Windows.Forms.TextBox Basic_LastName;
+        private System.Windows.Forms.TextBox Basic_FirstName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

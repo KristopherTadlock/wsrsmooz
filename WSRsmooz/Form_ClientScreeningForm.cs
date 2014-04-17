@@ -12,6 +12,8 @@ namespace WSRsmooz
 {
     public partial class Form_ClientScreeningForm : Form
     {
+        public ClientItem client { get; set; }
+
         public Form_ClientScreeningForm()
         {
             InitializeComponent();
@@ -19,12 +21,17 @@ namespace WSRsmooz
 
         private void PrimaryPhoneNumber_TextChanged(object sender, EventArgs e)
         {
-            PrimaryPhoneNumber.Text = String.Format("{0:(###) ###-####}", PrimaryPhoneNumber.Text);
+            Basic_PrimaryPhoneNumber.Text = String.Format("{0:(###) ###-####}", Basic_PrimaryPhoneNumber.Text);
         }
 
         private void NextButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form_ClientScreeningForm_Load(object sender, EventArgs e)
+        {
+            label4.Text = client.clientName;
         }
     }
 }
