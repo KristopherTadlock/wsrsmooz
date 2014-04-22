@@ -2,13 +2,12 @@
 using System.Windows.Forms;
 using System.Linq;
 using MySql.Data.MySqlClient;
-using System.Globalization;
 
 namespace WSRsmooz
 {
     public partial class Form_ClientScreeningForm : Form
     {
-        public String clientID { get; set; }
+        public string client { get; set; }
         String connectionString = "Server=192.241.235.225;Database=development;Uid=dev;Pwd=rqki4t#Kr$;";
         String query;
 
@@ -25,7 +24,7 @@ namespace WSRsmooz
         private void NextButton_Click(object sender, EventArgs e)
         {
             String[] delimit = new String[] { "_" };
-            String values = clientID;
+            String values = client;
             String update = "FR7_ClientID=VALUES(FR7_ClientID)";
             query = "insert into FR7_ClientScreening (FR7_ClientID";
 
@@ -75,7 +74,7 @@ namespace WSRsmooz
 
         private void Form_ClientScreeningForm_Load(object sender, EventArgs e)
         {
-            query = "select * from FR7_ClientScreening where FR7_ClientID = '" + clientID + "'";
+            query = "select * from FR7_ClientScreening where FR7_ClientID = '" + client + "'";
             MySqlConnection newConnect = new MySqlConnection(connectionString);
             MySqlCommand newCommand = new MySqlCommand(query, newConnect);
             newConnect.Open();
@@ -117,6 +116,11 @@ namespace WSRsmooz
             }
             reader.Close();
             newConnect.Close();
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            PDFExporter.Print.ClientScreening(Convert.ToInt32(client));
         }
     }
 }

@@ -114,46 +114,45 @@
             this.PStatmt = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.cb_PT = new System.Windows.Forms.CheckBox();
             this.cb_IVU = new System.Windows.Forms.CheckBox();
             this.MHwhy = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.cb_MHdays = new System.Windows.Forms.CheckBox();
             this.cb_PHdays = new System.Windows.Forms.CheckBox();
+            this.label47 = new System.Windows.Forms.Label();
             this.WWTreat = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.HMT = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
             this.Substance1 = new System.Windows.Forms.TextBox();
-            this.lastUseDate1 = new System.Windows.Forms.TextBox();
-            this.Frequency1 = new System.Windows.Forms.TextBox();
-            this.amountUsed1 = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.Method1 = new System.Windows.Forms.TextBox();
-            this.Substance2 = new System.Windows.Forms.TextBox();
-            this.lastUseDate2 = new System.Windows.Forms.TextBox();
-            this.Frequency2 = new System.Windows.Forms.TextBox();
-            this.amountUsed2 = new System.Windows.Forms.TextBox();
-            this.Method2 = new System.Windows.Forms.TextBox();
-            this.Frequency3 = new System.Windows.Forms.TextBox();
-            this.Substance3 = new System.Windows.Forms.TextBox();
-            this.lastUseDate3 = new System.Windows.Forms.TextBox();
-            this.Method3 = new System.Windows.Forms.TextBox();
-            this.amountUsed3 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.PHwhy = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
+            this.Substance2 = new System.Windows.Forms.TextBox();
+            this.Substance3 = new System.Windows.Forms.TextBox();
+            this.Method1 = new System.Windows.Forms.TextBox();
+            this.Frequency1 = new System.Windows.Forms.TextBox();
+            this.Frequency2 = new System.Windows.Forms.TextBox();
+            this.Method3 = new System.Windows.Forms.TextBox();
+            this.amountUsed2 = new System.Windows.Forms.TextBox();
+            this.Frequency3 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.amountUsed1 = new System.Windows.Forms.TextBox();
+            this.Method2 = new System.Windows.Forms.TextBox();
+            this.amountUsed3 = new System.Windows.Forms.TextBox();
             this.NextButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
+            this.lastUseDate1 = new System.Windows.Forms.TextBox();
+            this.lastUseDate2 = new System.Windows.Forms.TextBox();
+            this.lastUseDate3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1114,31 +1113,68 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lastUseDate3);
+            this.groupBox4.Controls.Add(this.lastUseDate2);
+            this.groupBox4.Controls.Add(this.lastUseDate1);
+            this.groupBox4.Controls.Add(this.label32);
+            this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Controls.Add(this.cb_PT);
             this.groupBox4.Controls.Add(this.cb_IVU);
             this.groupBox4.Controls.Add(this.MHwhy);
+            this.groupBox4.Controls.Add(this.label46);
             this.groupBox4.Controls.Add(this.label52);
             this.groupBox4.Controls.Add(this.cb_MHdays);
             this.groupBox4.Controls.Add(this.cb_PHdays);
+            this.groupBox4.Controls.Add(this.label47);
             this.groupBox4.Controls.Add(this.WWTreat);
             this.groupBox4.Controls.Add(this.label29);
             this.groupBox4.Controls.Add(this.HMT);
+            this.groupBox4.Controls.Add(this.Substance1);
             this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.tableLayoutPanel1);
             this.groupBox4.Controls.Add(this.PHwhy);
             this.groupBox4.Controls.Add(this.label51);
+            this.groupBox4.Controls.Add(this.Substance2);
+            this.groupBox4.Controls.Add(this.Substance3);
+            this.groupBox4.Controls.Add(this.Method1);
+            this.groupBox4.Controls.Add(this.Frequency1);
+            this.groupBox4.Controls.Add(this.Frequency2);
+            this.groupBox4.Controls.Add(this.Method3);
+            this.groupBox4.Controls.Add(this.amountUsed2);
+            this.groupBox4.Controls.Add(this.Frequency3);
+            this.groupBox4.Controls.Add(this.label49);
+            this.groupBox4.Controls.Add(this.amountUsed1);
+            this.groupBox4.Controls.Add(this.Method2);
+            this.groupBox4.Controls.Add(this.amountUsed3);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(537, 339);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(521, 351);
+            this.groupBox4.Size = new System.Drawing.Size(521, 342);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Physical & Mental Health";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(23, 143);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(72, 16);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Substance";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(130, 143);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(61, 16);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Last Use";
+            // 
             // cb_PT
             // 
             this.cb_PT.AutoSize = true;
-            this.cb_PT.Location = new System.Drawing.Point(16, 263);
+            this.cb_PT.Location = new System.Drawing.Point(16, 243);
             this.cb_PT.Name = "cb_PT";
             this.cb_PT.Size = new System.Drawing.Size(148, 20);
             this.cb_PT.TabIndex = 25;
@@ -1148,7 +1184,7 @@
             // cb_IVU
             // 
             this.cb_IVU.AutoSize = true;
-            this.cb_IVU.Location = new System.Drawing.Point(308, 263);
+            this.cb_IVU.Location = new System.Drawing.Point(308, 243);
             this.cb_IVU.Name = "cb_IVU";
             this.cb_IVU.Size = new System.Drawing.Size(192, 20);
             this.cb_IVU.TabIndex = 24;
@@ -1161,6 +1197,15 @@
             this.MHwhy.Name = "MHwhy";
             this.MHwhy.Size = new System.Drawing.Size(423, 22);
             this.MHwhy.TabIndex = 23;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(224, 143);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(72, 16);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Frequency";
             // 
             // label52
             // 
@@ -1191,9 +1236,18 @@
             this.cb_PHdays.Text = "Physical Hospitalization in the Past 30 days?";
             this.cb_PHdays.UseVisualStyleBackColor = true;
             // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(315, 143);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(95, 16);
+            this.label47.TabIndex = 3;
+            this.label47.Text = "Amount of Use";
+            // 
             // WWTreat
             // 
-            this.WWTreat.Location = new System.Drawing.Point(140, 313);
+            this.WWTreat.Location = new System.Drawing.Point(140, 302);
             this.WWTreat.Name = "WWTreat";
             this.WWTreat.Size = new System.Drawing.Size(333, 22);
             this.WWTreat.TabIndex = 18;
@@ -1201,7 +1255,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(16, 316);
+            this.label29.Location = new System.Drawing.Point(16, 305);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(115, 16);
             this.label29.TabIndex = 17;
@@ -1209,209 +1263,26 @@
             // 
             // HMT
             // 
-            this.HMT.Location = new System.Drawing.Point(67, 285);
+            this.HMT.Location = new System.Drawing.Point(67, 274);
             this.HMT.Name = "HMT";
             this.HMT.Size = new System.Drawing.Size(67, 22);
             this.HMT.TabIndex = 16;
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(12, 288);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(49, 16);
-            this.label30.TabIndex = 15;
-            this.label30.Text = "Times:";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
-            this.tableLayoutPanel1.Controls.Add(this.label32, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label33, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label46, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label47, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Substance1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lastUseDate1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Frequency1, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.amountUsed1, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label49, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Method1, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Substance2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lastUseDate2, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Frequency2, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.amountUsed2, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Method2, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Frequency3, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Substance3, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lastUseDate3, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Method3, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.amountUsed3, 4, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 135);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.2F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.92593F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.85185F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(483, 122);
-            this.tableLayoutPanel1.TabIndex = 10;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(3, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(72, 16);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Substance";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(91, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(82, 32);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "Date of Last Use";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(179, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(72, 16);
-            this.label46.TabIndex = 2;
-            this.label46.Text = "Frequency";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(267, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(70, 32);
-            this.label47.TabIndex = 3;
-            this.label47.Text = "Amount of Use";
-            // 
             // Substance1
             // 
-            this.Substance1.Location = new System.Drawing.Point(3, 45);
+            this.Substance1.Location = new System.Drawing.Point(16, 162);
             this.Substance1.Name = "Substance1";
             this.Substance1.Size = new System.Drawing.Size(82, 22);
             this.Substance1.TabIndex = 4;
             // 
-            // lastUseDate1
+            // label30
             // 
-            this.lastUseDate1.Location = new System.Drawing.Point(91, 45);
-            this.lastUseDate1.Name = "lastUseDate1";
-            this.lastUseDate1.Size = new System.Drawing.Size(82, 22);
-            this.lastUseDate1.TabIndex = 5;
-            // 
-            // Frequency1
-            // 
-            this.Frequency1.Location = new System.Drawing.Point(179, 45);
-            this.Frequency1.Name = "Frequency1";
-            this.Frequency1.Size = new System.Drawing.Size(82, 22);
-            this.Frequency1.TabIndex = 6;
-            // 
-            // amountUsed1
-            // 
-            this.amountUsed1.Location = new System.Drawing.Point(267, 45);
-            this.amountUsed1.Name = "amountUsed1";
-            this.amountUsed1.Size = new System.Drawing.Size(82, 22);
-            this.amountUsed1.TabIndex = 7;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(355, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(53, 16);
-            this.label49.TabIndex = 16;
-            this.label49.Text = "Method";
-            // 
-            // Method1
-            // 
-            this.Method1.Location = new System.Drawing.Point(355, 45);
-            this.Method1.Name = "Method1";
-            this.Method1.Size = new System.Drawing.Size(82, 22);
-            this.Method1.TabIndex = 8;
-            // 
-            // Substance2
-            // 
-            this.Substance2.Location = new System.Drawing.Point(3, 68);
-            this.Substance2.Name = "Substance2";
-            this.Substance2.Size = new System.Drawing.Size(82, 22);
-            this.Substance2.TabIndex = 9;
-            // 
-            // lastUseDate2
-            // 
-            this.lastUseDate2.Location = new System.Drawing.Point(91, 68);
-            this.lastUseDate2.Name = "lastUseDate2";
-            this.lastUseDate2.Size = new System.Drawing.Size(82, 22);
-            this.lastUseDate2.TabIndex = 10;
-            // 
-            // Frequency2
-            // 
-            this.Frequency2.Location = new System.Drawing.Point(179, 68);
-            this.Frequency2.Name = "Frequency2";
-            this.Frequency2.Size = new System.Drawing.Size(82, 22);
-            this.Frequency2.TabIndex = 11;
-            // 
-            // amountUsed2
-            // 
-            this.amountUsed2.Location = new System.Drawing.Point(267, 68);
-            this.amountUsed2.Name = "amountUsed2";
-            this.amountUsed2.Size = new System.Drawing.Size(82, 22);
-            this.amountUsed2.TabIndex = 11;
-            // 
-            // Method2
-            // 
-            this.Method2.Location = new System.Drawing.Point(355, 68);
-            this.Method2.Name = "Method2";
-            this.Method2.Size = new System.Drawing.Size(82, 22);
-            this.Method2.TabIndex = 19;
-            // 
-            // Frequency3
-            // 
-            this.Frequency3.Location = new System.Drawing.Point(179, 91);
-            this.Frequency3.Name = "Frequency3";
-            this.Frequency3.Size = new System.Drawing.Size(82, 22);
-            this.Frequency3.TabIndex = 17;
-            // 
-            // Substance3
-            // 
-            this.Substance3.Location = new System.Drawing.Point(3, 91);
-            this.Substance3.Name = "Substance3";
-            this.Substance3.Size = new System.Drawing.Size(82, 22);
-            this.Substance3.TabIndex = 20;
-            // 
-            // lastUseDate3
-            // 
-            this.lastUseDate3.Location = new System.Drawing.Point(91, 91);
-            this.lastUseDate3.Name = "lastUseDate3";
-            this.lastUseDate3.Size = new System.Drawing.Size(82, 22);
-            this.lastUseDate3.TabIndex = 21;
-            // 
-            // Method3
-            // 
-            this.Method3.Location = new System.Drawing.Point(355, 91);
-            this.Method3.Name = "Method3";
-            this.Method3.Size = new System.Drawing.Size(82, 22);
-            this.Method3.TabIndex = 22;
-            // 
-            // amountUsed3
-            // 
-            this.amountUsed3.Location = new System.Drawing.Point(267, 91);
-            this.amountUsed3.Name = "amountUsed3";
-            this.amountUsed3.Size = new System.Drawing.Size(82, 22);
-            this.amountUsed3.TabIndex = 18;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(12, 277);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(49, 16);
+            this.label30.TabIndex = 15;
+            this.label30.Text = "Times:";
             // 
             // PHwhy
             // 
@@ -1429,22 +1300,141 @@
             this.label51.TabIndex = 4;
             this.label51.Text = "Reason:";
             // 
+            // Substance2
+            // 
+            this.Substance2.Location = new System.Drawing.Point(16, 185);
+            this.Substance2.Name = "Substance2";
+            this.Substance2.Size = new System.Drawing.Size(82, 22);
+            this.Substance2.TabIndex = 9;
+            // 
+            // Substance3
+            // 
+            this.Substance3.Location = new System.Drawing.Point(16, 208);
+            this.Substance3.Name = "Substance3";
+            this.Substance3.Size = new System.Drawing.Size(82, 22);
+            this.Substance3.TabIndex = 20;
+            // 
+            // Method1
+            // 
+            this.Method1.Location = new System.Drawing.Point(417, 162);
+            this.Method1.Name = "Method1";
+            this.Method1.Size = new System.Drawing.Size(82, 22);
+            this.Method1.TabIndex = 8;
+            // 
+            // Frequency1
+            // 
+            this.Frequency1.Location = new System.Drawing.Point(220, 162);
+            this.Frequency1.Name = "Frequency1";
+            this.Frequency1.Size = new System.Drawing.Size(82, 22);
+            this.Frequency1.TabIndex = 6;
+            // 
+            // Frequency2
+            // 
+            this.Frequency2.Location = new System.Drawing.Point(220, 185);
+            this.Frequency2.Name = "Frequency2";
+            this.Frequency2.Size = new System.Drawing.Size(82, 22);
+            this.Frequency2.TabIndex = 11;
+            // 
+            // Method3
+            // 
+            this.Method3.Location = new System.Drawing.Point(417, 208);
+            this.Method3.Name = "Method3";
+            this.Method3.Size = new System.Drawing.Size(82, 22);
+            this.Method3.TabIndex = 22;
+            // 
+            // amountUsed2
+            // 
+            this.amountUsed2.Location = new System.Drawing.Point(318, 185);
+            this.amountUsed2.Name = "amountUsed2";
+            this.amountUsed2.Size = new System.Drawing.Size(82, 22);
+            this.amountUsed2.TabIndex = 11;
+            // 
+            // Frequency3
+            // 
+            this.Frequency3.Location = new System.Drawing.Point(220, 208);
+            this.Frequency3.Name = "Frequency3";
+            this.Frequency3.Size = new System.Drawing.Size(82, 22);
+            this.Frequency3.TabIndex = 17;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(432, 142);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(53, 16);
+            this.label49.TabIndex = 16;
+            this.label49.Text = "Method";
+            // 
+            // amountUsed1
+            // 
+            this.amountUsed1.Location = new System.Drawing.Point(318, 162);
+            this.amountUsed1.Name = "amountUsed1";
+            this.amountUsed1.Size = new System.Drawing.Size(82, 22);
+            this.amountUsed1.TabIndex = 7;
+            // 
+            // Method2
+            // 
+            this.Method2.Location = new System.Drawing.Point(417, 185);
+            this.Method2.Name = "Method2";
+            this.Method2.Size = new System.Drawing.Size(82, 22);
+            this.Method2.TabIndex = 19;
+            // 
+            // amountUsed3
+            // 
+            this.amountUsed3.Location = new System.Drawing.Point(318, 208);
+            this.amountUsed3.Name = "amountUsed3";
+            this.amountUsed3.Size = new System.Drawing.Size(82, 22);
+            this.amountUsed3.TabIndex = 18;
+            // 
             // NextButton
             // 
             this.NextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextButton.Location = new System.Drawing.Point(92, 641);
+            this.NextButton.Location = new System.Drawing.Point(69, 641);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(339, 40);
+            this.NextButton.Size = new System.Drawing.Size(194, 40);
             this.NextButton.TabIndex = 7;
             this.NextButton.Text = "Save Form Information";
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintButton.Location = new System.Drawing.Point(269, 641);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(194, 40);
+            this.PrintButton.TabIndex = 8;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // lastUseDate1
+            // 
+            this.lastUseDate1.Location = new System.Drawing.Point(119, 162);
+            this.lastUseDate1.Name = "lastUseDate1";
+            this.lastUseDate1.Size = new System.Drawing.Size(82, 22);
+            this.lastUseDate1.TabIndex = 43;
+            // 
+            // lastUseDate2
+            // 
+            this.lastUseDate2.Location = new System.Drawing.Point(119, 185);
+            this.lastUseDate2.Name = "lastUseDate2";
+            this.lastUseDate2.Size = new System.Drawing.Size(82, 22);
+            this.lastUseDate2.TabIndex = 44;
+            // 
+            // lastUseDate3
+            // 
+            this.lastUseDate3.Location = new System.Drawing.Point(119, 208);
+            this.lastUseDate3.Name = "lastUseDate3";
+            this.lastUseDate3.Size = new System.Drawing.Size(82, 22);
+            this.lastUseDate3.TabIndex = 45;
+            // 
             // Form_ClientScreeningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 700);
+            this.ClientSize = new System.Drawing.Size(1082, 693);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
@@ -1466,8 +1456,6 @@
             this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1563,25 +1551,21 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox HMT;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox Substance1;
-        private System.Windows.Forms.TextBox lastUseDate1;
         private System.Windows.Forms.TextBox Frequency1;
         private System.Windows.Forms.TextBox amountUsed1;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox Method1;
         private System.Windows.Forms.TextBox Substance2;
-        private System.Windows.Forms.TextBox lastUseDate2;
         private System.Windows.Forms.TextBox Frequency2;
         private System.Windows.Forms.TextBox amountUsed2;
         private System.Windows.Forms.TextBox Method2;
         private System.Windows.Forms.TextBox Frequency3;
         private System.Windows.Forms.TextBox Substance3;
-        private System.Windows.Forms.TextBox lastUseDate3;
         private System.Windows.Forms.TextBox Method3;
         private System.Windows.Forms.TextBox amountUsed3;
         private System.Windows.Forms.TextBox PHwhy;
@@ -1594,5 +1578,9 @@
         private System.Windows.Forms.CheckBox cb_PHdays;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.DateTimePicker dt_DoB;
+        private System.Windows.Forms.Button PrintButton;
+        private System.Windows.Forms.TextBox lastUseDate3;
+        private System.Windows.Forms.TextBox lastUseDate2;
+        private System.Windows.Forms.TextBox lastUseDate1;
     }
 }

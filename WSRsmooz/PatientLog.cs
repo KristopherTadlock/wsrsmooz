@@ -65,6 +65,10 @@ namespace WSRsmooz
                         newFormItem.name = form;
                         if (form.Equals("Client Screening Information"))
                             newFormItem.form = new Form_ClientScreeningForm();
+                        else if (form.Equals("Admission Bookkeeping"))
+                            newFormItem.form = new Form_AdmissionBookkeeping();
+                        else if (form.Equals("ASAM"))
+                            newFormItem.form = new Form_ASAM();
                         newFormItem.path = "/templates/" + form + ".pdf";
                         newPanel.list.Add(newFormItem);
                     }
@@ -159,8 +163,21 @@ namespace WSRsmooz
         public void openForm(FormItem form, ClientItem client)
         {
             //MessageBox.Show("Open " + form + " for " + client.clientName + ".");
-            form.form = new Form_ClientScreeningForm();
-            ((Form_ClientScreeningForm)form.form).clientID = client.id;
+            if (form.form.Equals("Client Screening Information"))
+            {
+                form.form = new Form_ClientScreeningForm();
+                ((Form_ClientScreeningForm)form.form).client = client.id;
+            }
+            else if (form.form.Equals("Admission Bookkeeping"))
+            {
+                form.form = new Form_AdmissionBookkeeping();
+                ((Form_AdmissionBookkeeping)form.form).client = client.id;
+            }
+            else if (form.form.Equals("ASAM"))
+            {
+                form.form = new Form_ASAM();
+                ((Form_ASAM)form.form).client = client.id;
+            }
             form.form.ShowDialog();
         }
 
