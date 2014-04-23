@@ -40,6 +40,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dependencies\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PDFExporter">
+      <HintPath>dependencies\PDFExporter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +76,30 @@
     </Compile>
     <Compile Include="EditEmployees.Designer.cs">
       <DependentUpon>EditEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AdmissionBookkeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdmissionBookkeeping.Designer.cs">
+      <DependentUpon>Form_AdmissionBookkeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ASAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ASAM.Designer.cs">
+      <DependentUpon>Form_ASAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ASAM2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ASAM2.Designer.cs">
+      <DependentUpon>Form_ASAM2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ClientScreeningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ClientScreeningForm.Designer.cs">
+      <DependentUpon>Form_ClientScreeningForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupNotes.cs">
       <SubType>Form</SubType>
@@ -154,6 +181,18 @@
     <EmbeddedResource Include="EditEmployees.resx">
       <DependentUpon>EditEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdmissionBookkeeping.resx">
+      <DependentUpon>Form_AdmissionBookkeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ASAM.resx">
+      <DependentUpon>Form_ASAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ASAM2.resx">
+      <DependentUpon>Form_ASAM2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ClientScreeningForm.resx">
+      <DependentUpon>Form_ClientScreeningForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupNotes.resx">
       <DependentUpon>GroupNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,15 +236,6 @@
     <EmbeddedResource Include="ViewPatientLog.resx">
       <DependentUpon>ViewPatientLog.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="clientfiles\6\1-ASAM\c_2_15_2014.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="clientfiles\6\1-ASAM\i_3_27_2014.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="clientfiles\6\1-Client Screening Information\i_2_15_2014.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -301,6 +331,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="clientfiles\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
@@ -310,10 +341,9 @@
     <None Include="img\wizard-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dependencies\itextsharp.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="dependencies\MySql.Data.dll">
+    <Content Include="dependencies\itextsharp.dll" />
+    <Content Include="dependencies\MySql.Data.dll" />
+    <Content Include="dependencies\PDFExporter.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="printpdf.exe">

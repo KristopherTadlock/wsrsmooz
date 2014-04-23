@@ -17,12 +17,8 @@ namespace WSRsmooz
         public String currentWindow { get; set; }
 
         // initialize form children
-        Form loginForm;
-        Form viewPatientLogForm;
-        Form groupNotesForm;
-        Form editEmployeesForm;
-        Form newPatientIntakeForm;
-        Form dischargePatientForm;
+        Form loginForm, viewPatientLogForm, groupNotesForm;
+        Form editEmployeesForm, newPatientIntakeForm, dischargePatientForm;
         Form individualNotesForm;
         
         public Launcher()
