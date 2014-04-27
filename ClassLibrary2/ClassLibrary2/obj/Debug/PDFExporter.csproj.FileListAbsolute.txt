@@ -1,0 +1,5 @@
+C:\Users\Michael Tadlock\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\bin\Debug\PDFExporter.dll
+C:\Users\Michael Tadlock\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\bin\Debug\PDFExporter.pdb
+C:\Users\Michael Tadlock\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\obj\Debug\PDFExporter.dll
+C:\Users\Michael Tadlock\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\obj\Debug\PDFExporter.pdb
+C:\Users\Michael Tadlock\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\bin\Debug\itextsharp.dll
