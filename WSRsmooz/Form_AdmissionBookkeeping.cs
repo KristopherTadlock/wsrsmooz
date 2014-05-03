@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 using iTextSharp.text.pdf;
+using System.Collections.Generic;
 
 
 namespace WSRsmooz
@@ -23,30 +24,40 @@ namespace WSRsmooz
         string templatePDF = "templates/1-ADMISSION BOOKKEEPING FORM.pdf";
         string newFile;
 
-        //
-        //
-        //
-        //
-        // PERFORM NAME SWAPS HERE!!!!!!!!!!!!!!!!!!!!!
-        //
-        // Both names must exist.
-        //
-        //
+
         public void performReplacements()
         {
-            // template:
-            //                  DATABASENAME             PDFNAME
-            clientInfo.Columns["IntakeDate"].ColumnName = "ADate";
-            clientInfo.Columns["SecPhone"].ColumnName = "ClientWCM";
+            Dictionary<string, string> changes = new Dictionary<string, string>();
+
+
+            //
+            //
+            //
+            //
+            // PERFORM NAME SWAPS HERE!!!!!!!!!!!!!!!!!!!!!
+            //
+            // Both names must exist.
+            // Template:
+            //        changes.Add(DATABASE_NAME, PDF_EQUIVALENT);
+            //
+            changes.Add("IntakeDate", "ADate");
+            changes.Add("SecPhone", "ClientWCM");
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            
+
+
+            foreach (KeyValuePair<string, string> change in changes)
+            {
+                clientInfo.Columns[change.Key].ColumnName = change.Value;
+            }
         }
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //
 
         // form initialization
         public Form_AdmissionBookkeeping()
@@ -154,8 +165,7 @@ namespace WSRsmooz
             }
         }
 
-        // dialogue and close
-        private void closeForm()
+        private void cancelForm(object sender, EventArgs e)
         {
             String message = ("Are you sure you want to cancel? All unsaved progress will be lost");
             string caption = "Form Closing";
