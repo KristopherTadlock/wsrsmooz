@@ -64,7 +64,9 @@
       <DependentUpon>AddEmployeePrompt.cs</DependentUpon>
     </Compile>
     <Compile Include="DateExtensions.cs" />
+    <Compile Include="dbConnect.cs" />
     <Compile Include="dbConnection.cs" />
+    <Compile Include="dependencies\PDFExporter.cs" />
     <Compile Include="DischargePatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,9 +345,6 @@
   <ItemGroup>
     <Content Include="dependencies\itextsharp.dll" />
     <Content Include="dependencies\MySql.Data.dll" />
-    <Content Include="dependencies\PDFExporter.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="printpdf.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

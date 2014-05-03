@@ -30,38 +30,37 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.EndDate = new System.Windows.Forms.TextBox();
-            this.AuthorizationDate = new System.Windows.Forms.TextBox();
-            this.PrivateCharges = new System.Windows.Forms.TextBox();
-            this.PaymentMethod = new System.Windows.Forms.TextBox();
-            this.PCounselor = new System.Windows.Forms.TextBox();
-            this.DSMIV = new System.Windows.Forms.TextBox();
+            this.ClientAuthEnd = new System.Windows.Forms.DateTimePicker();
+            this.ClientAuthStart = new System.Windows.Forms.DateTimePicker();
+            this.ClientPCharges = new System.Windows.Forms.TextBox();
+            this.ClientMethPayInt = new System.Windows.Forms.TextBox();
+            this.ClientPCounselor = new System.Windows.Forms.TextBox();
+            this.ClientDSMIV = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.BillingNotified3 = new System.Windows.Forms.TextBox();
-            this.Status3 = new System.Windows.Forms.TextBox();
-            this.EffectiveDate3 = new System.Windows.Forms.TextBox();
-            this.BillingNotified2 = new System.Windows.Forms.TextBox();
-            this.Status2 = new System.Windows.Forms.TextBox();
-            this.EffectiveDate2 = new System.Windows.Forms.TextBox();
+            this.ClientChangeStatus3 = new System.Windows.Forms.TextBox();
+            this.ClientChangeStatus2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Save = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.Status1 = new System.Windows.Forms.TextBox();
-            this.BillingNotified1 = new System.Windows.Forms.TextBox();
-            this.EffectiveDate1 = new System.Windows.Forms.TextBox();
+            this.ClientChangeStatus1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ClientChangeBill3 = new System.Windows.Forms.DateTimePicker();
+            this.ClientChangeBill2 = new System.Windows.Forms.DateTimePicker();
+            this.ClientChangeBill1 = new System.Windows.Forms.DateTimePicker();
+            this.ClientChangeDate3 = new System.Windows.Forms.DateTimePicker();
+            this.ClientChangeDate2 = new System.Windows.Forms.DateTimePicker();
+            this.ClientChangeDate1 = new System.Windows.Forms.DateTimePicker();
             this.Print = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,12 +80,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.EndDate);
-            this.groupBox1.Controls.Add(this.AuthorizationDate);
-            this.groupBox1.Controls.Add(this.PrivateCharges);
-            this.groupBox1.Controls.Add(this.PaymentMethod);
-            this.groupBox1.Controls.Add(this.PCounselor);
-            this.groupBox1.Controls.Add(this.DSMIV);
+            this.groupBox1.Controls.Add(this.ClientAuthEnd);
+            this.groupBox1.Controls.Add(this.ClientAuthStart);
+            this.groupBox1.Controls.Add(this.ClientPCharges);
+            this.groupBox1.Controls.Add(this.ClientMethPayInt);
+            this.groupBox1.Controls.Add(this.ClientPCounselor);
+            this.groupBox1.Controls.Add(this.ClientDSMIV);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -101,56 +100,58 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admission Bookkeping Form";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // EndDate
+            // ClientAuthEnd
             // 
-            this.EndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate.Location = new System.Drawing.Point(404, 112);
-            this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(100, 22);
-            this.EndDate.TabIndex = 13;
+            this.ClientAuthEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientAuthEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientAuthEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientAuthEnd.Location = new System.Drawing.Point(404, 114);
+            this.ClientAuthEnd.Name = "ClientAuthEnd";
+            this.ClientAuthEnd.Size = new System.Drawing.Size(106, 22);
+            this.ClientAuthEnd.TabIndex = 89;
             // 
-            // AuthorizationDate
+            // ClientAuthStart
             // 
-            this.AuthorizationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AuthorizationDate.Location = new System.Drawing.Point(164, 112);
-            this.AuthorizationDate.Name = "AuthorizationDate";
-            this.AuthorizationDate.Size = new System.Drawing.Size(100, 22);
-            this.AuthorizationDate.TabIndex = 12;
+            this.ClientAuthStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientAuthStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientAuthStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientAuthStart.Location = new System.Drawing.Point(164, 114);
+            this.ClientAuthStart.Name = "ClientAuthStart";
+            this.ClientAuthStart.Size = new System.Drawing.Size(106, 22);
+            this.ClientAuthStart.TabIndex = 88;
             // 
-            // PrivateCharges
+            // ClientPCharges
             // 
-            this.PrivateCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrivateCharges.Location = new System.Drawing.Point(404, 73);
-            this.PrivateCharges.Name = "PrivateCharges";
-            this.PrivateCharges.Size = new System.Drawing.Size(100, 22);
-            this.PrivateCharges.TabIndex = 11;
+            this.ClientPCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientPCharges.Location = new System.Drawing.Point(404, 73);
+            this.ClientPCharges.Name = "ClientPCharges";
+            this.ClientPCharges.Size = new System.Drawing.Size(100, 22);
+            this.ClientPCharges.TabIndex = 11;
             // 
-            // PaymentMethod
+            // ClientMethPayInt
             // 
-            this.PaymentMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaymentMethod.Location = new System.Drawing.Point(164, 73);
-            this.PaymentMethod.Name = "PaymentMethod";
-            this.PaymentMethod.Size = new System.Drawing.Size(100, 22);
-            this.PaymentMethod.TabIndex = 10;
+            this.ClientMethPayInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientMethPayInt.Location = new System.Drawing.Point(164, 73);
+            this.ClientMethPayInt.Name = "ClientMethPayInt";
+            this.ClientMethPayInt.Size = new System.Drawing.Size(100, 22);
+            this.ClientMethPayInt.TabIndex = 10;
             // 
-            // PCounselor
+            // ClientPCounselor
             // 
-            this.PCounselor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PCounselor.Location = new System.Drawing.Point(404, 34);
-            this.PCounselor.Name = "PCounselor";
-            this.PCounselor.Size = new System.Drawing.Size(100, 22);
-            this.PCounselor.TabIndex = 8;
+            this.ClientPCounselor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientPCounselor.Location = new System.Drawing.Point(404, 34);
+            this.ClientPCounselor.Name = "ClientPCounselor";
+            this.ClientPCounselor.Size = new System.Drawing.Size(100, 22);
+            this.ClientPCounselor.TabIndex = 8;
             // 
-            // DSMIV
+            // ClientDSMIV
             // 
-            this.DSMIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DSMIV.Location = new System.Drawing.Point(164, 34);
-            this.DSMIV.Name = "DSMIV";
-            this.DSMIV.Size = new System.Drawing.Size(100, 22);
-            this.DSMIV.TabIndex = 7;
-            this.DSMIV.TextChanged += new System.EventHandler(this.DSMIV_TextChanged);
+            this.ClientDSMIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientDSMIV.Location = new System.Drawing.Point(164, 34);
+            this.ClientDSMIV.Name = "ClientDSMIV";
+            this.ClientDSMIV.Size = new System.Drawing.Size(100, 22);
+            this.ClientDSMIV.TabIndex = 7;
             // 
             // label7
             // 
@@ -211,64 +212,31 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.closeForm);
             // 
-            // BillingNotified3
+            // ClientChangeStatus3
             // 
-            this.BillingNotified3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BillingNotified3.Location = new System.Drawing.Point(388, 294);
-            this.BillingNotified3.Name = "BillingNotified3";
-            this.BillingNotified3.Size = new System.Drawing.Size(100, 22);
-            this.BillingNotified3.TabIndex = 18;
+            this.ClientChangeStatus3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeStatus3.Location = new System.Drawing.Point(32, 336);
+            this.ClientChangeStatus3.Multiline = true;
+            this.ClientChangeStatus3.Name = "ClientChangeStatus3";
+            this.ClientChangeStatus3.Size = new System.Drawing.Size(456, 64);
+            this.ClientChangeStatus3.TabIndex = 17;
             // 
-            // Status3
+            // ClientChangeStatus2
             // 
-            this.Status3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status3.Location = new System.Drawing.Point(32, 336);
-            this.Status3.Multiline = true;
-            this.Status3.Name = "Status3";
-            this.Status3.Size = new System.Drawing.Size(456, 64);
-            this.Status3.TabIndex = 17;
-            // 
-            // EffectiveDate3
-            // 
-            this.EffectiveDate3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EffectiveDate3.Location = new System.Drawing.Point(153, 292);
-            this.EffectiveDate3.Name = "EffectiveDate3";
-            this.EffectiveDate3.Size = new System.Drawing.Size(100, 22);
-            this.EffectiveDate3.TabIndex = 16;
-            // 
-            // BillingNotified2
-            // 
-            this.BillingNotified2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BillingNotified2.Location = new System.Drawing.Point(388, 164);
-            this.BillingNotified2.Name = "BillingNotified2";
-            this.BillingNotified2.Size = new System.Drawing.Size(100, 22);
-            this.BillingNotified2.TabIndex = 15;
-            // 
-            // Status2
-            // 
-            this.Status2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status2.Location = new System.Drawing.Point(32, 208);
-            this.Status2.Multiline = true;
-            this.Status2.Name = "Status2";
-            this.Status2.Size = new System.Drawing.Size(456, 64);
-            this.Status2.TabIndex = 14;
-            this.Status2.TextChanged += new System.EventHandler(this.Status2_TextChanged);
-            // 
-            // EffectiveDate2
-            // 
-            this.EffectiveDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EffectiveDate2.Location = new System.Drawing.Point(153, 164);
-            this.EffectiveDate2.Name = "EffectiveDate2";
-            this.EffectiveDate2.Size = new System.Drawing.Size(100, 22);
-            this.EffectiveDate2.TabIndex = 13;
+            this.ClientChangeStatus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeStatus2.Location = new System.Drawing.Point(32, 208);
+            this.ClientChangeStatus2.Multiline = true;
+            this.ClientChangeStatus2.Name = "ClientChangeStatus2";
+            this.ClientChangeStatus2.Size = new System.Drawing.Size(456, 64);
+            this.ClientChangeStatus2.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(259, 297);
+            this.label9.Location = new System.Drawing.Point(262, 298);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 16);
             this.label9.TabIndex = 12;
@@ -288,32 +256,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 299);
+            this.label4.Location = new System.Drawing.Point(29, 298);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Effective This Date:";
             // 
-            // Save
-            // 
-            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.Location = new System.Drawing.Point(12, 600);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
-            this.Save.TabIndex = 5;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = true;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(262, 167);
+            this.label10.Location = new System.Drawing.Point(262, 169);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 16);
+            this.label10.Size = new System.Drawing.Size(128, 16);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Date Billing Notified";
+            this.label10.Text = "Date Billing Notified:";
             // 
             // label11
             // 
@@ -325,37 +282,20 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "Effective This Date:";
             // 
-            // Status1
+            // ClientChangeStatus1
             // 
-            this.Status1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status1.Location = new System.Drawing.Point(32, 80);
-            this.Status1.Multiline = true;
-            this.Status1.Name = "Status1";
-            this.Status1.Size = new System.Drawing.Size(456, 64);
-            this.Status1.TabIndex = 6;
-            // 
-            // BillingNotified1
-            // 
-            this.BillingNotified1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BillingNotified1.Location = new System.Drawing.Point(388, 34);
-            this.BillingNotified1.Name = "BillingNotified1";
-            this.BillingNotified1.Size = new System.Drawing.Size(100, 22);
-            this.BillingNotified1.TabIndex = 5;
-            // 
-            // EffectiveDate1
-            // 
-            this.EffectiveDate1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EffectiveDate1.Location = new System.Drawing.Point(153, 36);
-            this.EffectiveDate1.Name = "EffectiveDate1";
-            this.EffectiveDate1.Size = new System.Drawing.Size(100, 22);
-            this.EffectiveDate1.TabIndex = 3;
-            this.EffectiveDate1.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.ClientChangeStatus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeStatus1.Location = new System.Drawing.Point(32, 80);
+            this.ClientChangeStatus1.Multiline = true;
+            this.ClientChangeStatus1.Name = "ClientChangeStatus1";
+            this.ClientChangeStatus1.Size = new System.Drawing.Size(456, 64);
+            this.ClientChangeStatus1.TabIndex = 6;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(259, 37);
+            this.label12.Location = new System.Drawing.Point(262, 38);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(128, 16);
             this.label12.TabIndex = 2;
@@ -394,21 +334,21 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Controls.Add(this.BillingNotified3);
-            this.groupBox2.Controls.Add(this.Status3);
-            this.groupBox2.Controls.Add(this.EffectiveDate3);
-            this.groupBox2.Controls.Add(this.BillingNotified2);
-            this.groupBox2.Controls.Add(this.Status2);
-            this.groupBox2.Controls.Add(this.EffectiveDate2);
+            this.groupBox2.Controls.Add(this.ClientChangeBill3);
+            this.groupBox2.Controls.Add(this.ClientChangeBill2);
+            this.groupBox2.Controls.Add(this.ClientChangeBill1);
+            this.groupBox2.Controls.Add(this.ClientChangeDate3);
+            this.groupBox2.Controls.Add(this.ClientChangeDate2);
+            this.groupBox2.Controls.Add(this.ClientChangeDate1);
+            this.groupBox2.Controls.Add(this.ClientChangeStatus3);
+            this.groupBox2.Controls.Add(this.ClientChangeStatus2);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.Status1);
-            this.groupBox2.Controls.Add(this.BillingNotified1);
-            this.groupBox2.Controls.Add(this.EffectiveDate1);
+            this.groupBox2.Controls.Add(this.ClientChangeStatus1);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
@@ -421,16 +361,76 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Change In Status";
             // 
+            // ClientChangeBill3
+            // 
+            this.ClientChangeBill3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeBill3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeBill3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientChangeBill3.Location = new System.Drawing.Point(388, 295);
+            this.ClientChangeBill3.Name = "ClientChangeBill3";
+            this.ClientChangeBill3.Size = new System.Drawing.Size(106, 22);
+            this.ClientChangeBill3.TabIndex = 87;
+            // 
+            // ClientChangeBill2
+            // 
+            this.ClientChangeBill2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeBill2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeBill2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientChangeBill2.Location = new System.Drawing.Point(388, 166);
+            this.ClientChangeBill2.Name = "ClientChangeBill2";
+            this.ClientChangeBill2.Size = new System.Drawing.Size(106, 22);
+            this.ClientChangeBill2.TabIndex = 86;
+            // 
+            // ClientChangeBill1
+            // 
+            this.ClientChangeBill1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeBill1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeBill1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientChangeBill1.Location = new System.Drawing.Point(388, 36);
+            this.ClientChangeBill1.Name = "ClientChangeBill1";
+            this.ClientChangeBill1.Size = new System.Drawing.Size(106, 22);
+            this.ClientChangeBill1.TabIndex = 85;
+            // 
+            // ClientChangeDate3
+            // 
+            this.ClientChangeDate3.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeDate3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeDate3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientChangeDate3.Location = new System.Drawing.Point(153, 295);
+            this.ClientChangeDate3.Name = "ClientChangeDate3";
+            this.ClientChangeDate3.Size = new System.Drawing.Size(106, 22);
+            this.ClientChangeDate3.TabIndex = 84;
+            // 
+            // ClientChangeDate2
+            // 
+            this.ClientChangeDate2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeDate2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientChangeDate2.Location = new System.Drawing.Point(153, 166);
+            this.ClientChangeDate2.Name = "ClientChangeDate2";
+            this.ClientChangeDate2.Size = new System.Drawing.Size(106, 22);
+            this.ClientChangeDate2.TabIndex = 83;
+            // 
+            // ClientChangeDate1
+            // 
+            this.ClientChangeDate1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeDate1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientChangeDate1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ClientChangeDate1.Location = new System.Drawing.Point(153, 36);
+            this.ClientChangeDate1.Name = "ClientChangeDate1";
+            this.ClientChangeDate1.Size = new System.Drawing.Size(106, 22);
+            this.ClientChangeDate1.TabIndex = 82;
+            // 
             // Print
             // 
             this.Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Print.Location = new System.Drawing.Point(93, 600);
+            this.Print.Location = new System.Drawing.Point(12, 600);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(75, 23);
             this.Print.TabIndex = 8;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = true;
-            this.Print.Click += new System.EventHandler(this.Print_Click);
+            this.Print.Click += new System.EventHandler(this.processPdfGen);
             // 
             // Form_AdmissionBookkeeping
             // 
@@ -440,7 +440,6 @@
             this.ClientSize = new System.Drawing.Size(554, 635);
             this.Controls.Add(this.Print);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.Save);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -459,38 +458,37 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox EndDate;
-        private System.Windows.Forms.TextBox AuthorizationDate;
-        private System.Windows.Forms.TextBox PrivateCharges;
-        private System.Windows.Forms.TextBox PaymentMethod;
-        private System.Windows.Forms.TextBox PCounselor;
-        private System.Windows.Forms.TextBox DSMIV;
+        private System.Windows.Forms.TextBox ClientPCharges;
+        private System.Windows.Forms.TextBox ClientMethPayInt;
+        private System.Windows.Forms.TextBox ClientPCounselor;
+        private System.Windows.Forms.TextBox ClientDSMIV;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox BillingNotified3;
-        private System.Windows.Forms.TextBox Status3;
-        private System.Windows.Forms.TextBox EffectiveDate3;
-        private System.Windows.Forms.TextBox BillingNotified2;
-        private System.Windows.Forms.TextBox Status2;
-        private System.Windows.Forms.TextBox EffectiveDate2;
+        private System.Windows.Forms.TextBox ClientChangeStatus3;
+        private System.Windows.Forms.TextBox ClientChangeStatus2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox Status1;
-        private System.Windows.Forms.TextBox BillingNotified1;
-        private System.Windows.Forms.TextBox EffectiveDate1;
+        private System.Windows.Forms.TextBox ClientChangeStatus1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Print;
+        private System.Windows.Forms.DateTimePicker ClientChangeBill3;
+        private System.Windows.Forms.DateTimePicker ClientChangeBill2;
+        private System.Windows.Forms.DateTimePicker ClientChangeBill1;
+        private System.Windows.Forms.DateTimePicker ClientChangeDate3;
+        private System.Windows.Forms.DateTimePicker ClientChangeDate2;
+        private System.Windows.Forms.DateTimePicker ClientChangeDate1;
+        private System.Windows.Forms.DateTimePicker ClientAuthEnd;
+        private System.Windows.Forms.DateTimePicker ClientAuthStart;
     }
 }
