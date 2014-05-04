@@ -126,7 +126,7 @@ namespace WSRsmooz
             // Traverse anything not in a group box.
             foreach (Control k in this.Controls)
             {
-                if (k is TextBox || k is ComboBox)
+                if (k is TextBox || k is ComboBox || k is MaskedTextBox)
                 {
                     pdfFormFields.SetField(k.Name, k.Text);
                 }
