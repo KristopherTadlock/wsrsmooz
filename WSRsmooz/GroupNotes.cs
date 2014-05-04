@@ -13,8 +13,8 @@ namespace WSRsmooz
     public partial class GroupNotes : Form
     {
         public Boolean admin { get; set; }
-        dbConnection database = new dbConnection();
-        DataSet clients = new DataSet();
+        dbConnect database = new dbConnect();
+        DataTable clients = new DataTable();
 
         int loadClientID;
         String ClientName;
@@ -38,7 +38,7 @@ namespace WSRsmooz
             InitializeComponent();
             admin = false;
 
-            String query = "select * from clients where `Active`=true";
+            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0000-00-00%'";
             clients = database.GetTable(query);
             
             editingDay = DateTime.Now;
@@ -67,20 +67,20 @@ namespace WSRsmooz
 
         public void updateClientList()
         {
-            DataTable clientTable = clients.Tables[0];
+            DataTable clientTable = clients;
             foreach (DataRow row in clientTable.Rows)
             {
                 ClientItem item = new ClientItem();
-                item.id = row["ID"].ToString();
-                item.clientName = row["First Name"].ToString() + " " + row["Last Name"].ToString();
+                item.id = row["ClientNum"].ToString();
+                item.clientName = row["ClientName"].ToString();
                 clientList.Items.Add(item);
             }
         }
 
         public void loadClient(ClientItem client)
         {
-            String query = "select * from clients where `ID`=\"" + client + "\"";
-            DataTable loadedClient = database.GetTable(query).Tables[0];
+            String query = "select ClientNum, ClientID from ClientInfo where `ClientNum`=\"" + client + "\"";
+            DataTable loadedClient = database.GetTable(query);
             loadClientID = Convert.ToInt32(client.id);
             ClientName = client.clientName;
         }

@@ -8,8 +8,8 @@ namespace WSRsmooz
 {
     public partial class EditEmployees : Form
     {
-        dbConnection database = new dbConnection();
-        DataSet employees = new DataSet();
+        dbConnect database = new dbConnect();
+        DataTable employees = new DataTable();
 
         public EditEmployees()
         {
@@ -39,7 +39,7 @@ namespace WSRsmooz
             String query = "select * from users where `Active`=true";
             employees = database.GetTable(query);
 
-            DataTable employeeTable = employees.Tables[0];
+            DataTable employeeTable = employees;
             foreach (DataRow row in employeeTable.Rows)
             {
                 EmployeeItem item = new EmployeeItem();
@@ -55,7 +55,7 @@ namespace WSRsmooz
         public void loadEmployee(EmployeeItem employee)
         {
             String query = "select * from users where `employeeID`=\"" + employee + "\"";
-            DataTable loadedClient = database.GetTable(query).Tables[0];
+            DataTable loadedClient = database.GetTable(query);
 
             EmpName.Text = employee.employeeName;
 

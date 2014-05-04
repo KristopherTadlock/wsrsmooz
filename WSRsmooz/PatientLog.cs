@@ -14,7 +14,8 @@ namespace WSRsmooz
     public partial class PatientLog : Form
     {
         dbConnection database = new dbConnection();
-        DataSet clients = new DataSet();
+        dbConnect database2 = new dbConnect();
+        DataTable clientTable = new DataTable();
         DataSet forms = new DataSet();
         List<String>[] panels;
         public Boolean admin { get; set; }
@@ -27,8 +28,8 @@ namespace WSRsmooz
             panels = new List<String>[7];
             resetFormList();
             PanelList.SelectedIndex = 0;
-            String query = "select * from clients where `Active`=true";
-            clients = database.GetTable(query);
+            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0000-00-00%'";
+            clientTable = database2.GetTable(query);
             updateClientList();
         }
 
@@ -63,12 +64,12 @@ namespace WSRsmooz
                     {
                         FormItem newFormItem = new FormItem();
                         newFormItem.name = form;
-                        if (form.Equals("Client Screening Information"))
+                        /*if (form.Equals("Client Screening Information"))
                             newFormItem.form = new Form_ClientScreeningForm();
                         else if (form.Equals("Admission Bookkeeping"))
                             newFormItem.form = new Form_AdmissionBookkeeping();
                         else if (form.Equals("ASAM"))
-                            newFormItem.form = new Form_ASAM();
+                            newFormItem.form = new Form_ASAM();*/
                         newFormItem.path = "/templates/" + form + ".pdf";
                         newPanel.list.Add(newFormItem);
                     }
@@ -78,12 +79,11 @@ namespace WSRsmooz
 
         public void updateClientList()
         {
-            DataTable clientTable = clients.Tables[0];
             foreach (DataRow row in clientTable.Rows)
             {
                 ClientItem item = new ClientItem();
-                item.id = row["ID"].ToString();
-                item.clientName = row["First Name"].ToString() + " " + row["Last Name"].ToString();
+                item.id = row["ClientNum"].ToString();
+                item.clientName = row["ClientName"].ToString();
                 clientList.Items.Add(item);
             }
             clientList.SelectedIndex = 0;
@@ -91,8 +91,8 @@ namespace WSRsmooz
 
         public void loadClient(ClientItem client)
         {
-            String query = "select * from clients where `ID`=\"" + client + "\"";
-            DataTable loadedClient = database.GetTable(query).Tables[0];
+            String query = "select ClientNum, ClientName from ClientInfo where `ClientNum`=\"" + client + "\"";
+            DataTable loadedClient = database2.GetTable(query);
         }
 
         private void clientList_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,13 +109,13 @@ namespace WSRsmooz
             clientList.Items.Clear();
             if (checkBox1.Checked)
             {
-                query = "select * from clients";
+                query = "select ClientNum, ClientName from ClientInfo";
             }
             else
             {
-                query = "select * from clients where `Active`=true";
+                query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0000-00-00%'";
             }
-            clients = database.GetTable(query);
+            clientTable = database2.GetTable(query);
             updateClientList();
         }
 
@@ -163,7 +163,7 @@ namespace WSRsmooz
         public void openForm(FormItem form, ClientItem client)
         {
             //MessageBox.Show("Open " + form + " for " + client.clientName + ".");
-            if (form.form.Equals("Client Screening Information"))
+            /*if (form.form.Equals("Client Screening Information"))
             {
                 form.form = new Form_ClientScreeningForm();
                 ((Form_ClientScreeningForm)form.form).client = client.id;
@@ -178,7 +178,7 @@ namespace WSRsmooz
                 form.form = new Form_ASAM();
                 ((Form_ASAM)form.form).client = client.id;
             }
-            form.form.ShowDialog();
+            form.form.ShowDialog();*/
         }
 
         private void PatientLog_Load(object sender, EventArgs e)

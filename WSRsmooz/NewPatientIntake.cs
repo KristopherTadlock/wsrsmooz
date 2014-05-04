@@ -749,13 +749,31 @@ namespace WSRsmooz
             screeningChanges.Add("Diag1", newPatientIntakeWizard_tab12_textbox_diagnosis1.Text);
             screeningChanges.Add("Diag2", newPatientIntakeWizard_tab12_textbox_diagnosis2.Text);
             screeningChanges.Add("Diag3", newPatientIntakeWizard_tab12_textbox_diagnosis3.Text);
-
+            
             // Finally, database shit.
             String query = "insert into ClientInfo (";
-            query += "ClientName, DoB, Age, County, ClientCity, ClientAddr, ClientState, ClientZip, ";
+
+            if (newPatientIntakeWizard_tab13_checkbox_intakeornot.Checked)
+                query += "ClientNum, ";
+
+            query += "IntakeDate, ClientName, DoB, Age, County, ClientCity, ClientAddr, ClientState, ClientZip, ";
             query += "ClientPhone, SecPhone, AName, AAddr, ACPName, ACPNumber) values(\"";
-            query += newPatientIntakeWizard_tab1_textbox_firstName.Text + " " + newPatientIntakeWizard_tab1_textbox_lastName.Text + "\",";
-            query += newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.Value.ToString("yyyy-mm-dd") + ",";
+
+            if (newPatientIntakeWizard_tab13_checkbox_intakeornot.Checked)
+            {
+                String getClientNum = database.SelectString("select max(ClientNum) from ClientInfo");
+                int intClientNum = Convert.ToInt32(getClientNum) + 1;
+
+                query += intClientNum.ToString() + "\", \"";
+                query += newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Value.ToString("yyyy-MM-dd") + "\", \"";
+            }
+            else
+            {
+                query += "0001-01-01\", \"";
+            }
+
+            query += newPatientIntakeWizard_tab1_textbox_firstName.Text + " " + newPatientIntakeWizard_tab1_textbox_lastName.Text + "\",\"";
+            query += newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.Value.ToString("yyyy-MM-dd") + "\",";
             query += age.ToString() + ",";
             query += "\"" + newPatientIntakeWizard_tab1_textbox_county.Text;
             query += "\", \"" + newPatientIntakeWizard_tab1_textbox_city.Text;
@@ -772,7 +790,7 @@ namespace WSRsmooz
 
             
             // how do i get clientnumz
-            query = "select ClientID from ClientInfo where ClientName=\"";
+            query = "select ClientNum from ClientInfo where ClientName=\"";
             query += newPatientIntakeWizard_tab1_textbox_firstName.Text + " " + newPatientIntakeWizard_tab1_textbox_lastName.Text + "\" and ";
             query += "ClientAddr=\"" + newPatientIntakeWizard_tab1_textbox_streetAddress.Text + "\"";
             String newClientNum = database.SelectString(query);
@@ -783,6 +801,21 @@ namespace WSRsmooz
             asamChanges.Add("ClientNum2", newClientNum);
              
 
+        }
+
+        private void newPatientIntakeWizard_tab13_checkbox_intakeornot_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked)
+            {
+                newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Value = DateTime.Today;
+                newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Visible = true;
+                newPatientIntakeWizard_tab13_label_intakeDate.Visible = true;
+            }
+            else
+            {
+                newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Visible = false;
+                newPatientIntakeWizard_tab13_label_intakeDate.Visible = true;
+            }
         }
 
     }

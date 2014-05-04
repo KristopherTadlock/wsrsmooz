@@ -8,7 +8,7 @@ namespace WSRsmooz
 {
     public partial class Login : Form
     {
-        dbConnection database = new dbConnection();
+        dbConnect database = new dbConnect();
 
         public Login()
         {

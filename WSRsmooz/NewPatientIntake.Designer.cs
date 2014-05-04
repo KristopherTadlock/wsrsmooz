@@ -238,6 +238,9 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_describeLimits = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations = new System.Windows.Forms.CheckBox();
             this.newPatientIntakeWizard_tab13 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab13_label_intakeDate = new System.Windows.Forms.Label();
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate = new System.Windows.Forms.DateTimePicker();
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot = new System.Windows.Forms.CheckBox();
             this.newPatientIntakeWizard.SuspendLayout();
             this.newPatientIntakeWizard_tab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_picturebox_wizard)).BeginInit();
@@ -252,6 +255,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab10.SuspendLayout();
             this.newPatientIntakeWizard_tab11.SuspendLayout();
             this.newPatientIntakeWizard_tab12.SuspendLayout();
+            this.newPatientIntakeWizard_tab13.SuspendLayout();
             this.SuspendLayout();
             // 
             // NewPatientIntake_checklist_button_tab1
@@ -262,6 +266,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab1.Name = "NewPatientIntake_checklist_button_tab1";
             this.NewPatientIntake_checklist_button_tab1.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab1.TabIndex = 1;
+            this.NewPatientIntake_checklist_button_tab1.TabStop = false;
             this.NewPatientIntake_checklist_button_tab1.Text = "Basic I";
             this.NewPatientIntake_checklist_button_tab1.UseVisualStyleBackColor = true;
             // 
@@ -273,6 +278,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab2.Name = "NewPatientIntake_checklist_button_tab2";
             this.NewPatientIntake_checklist_button_tab2.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab2.TabIndex = 2;
+            this.NewPatientIntake_checklist_button_tab2.TabStop = false;
             this.NewPatientIntake_checklist_button_tab2.Text = "Basic II";
             this.NewPatientIntake_checklist_button_tab2.UseVisualStyleBackColor = true;
             // 
@@ -284,6 +290,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab3.Name = "NewPatientIntake_checklist_button_tab3";
             this.NewPatientIntake_checklist_button_tab3.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab3.TabIndex = 3;
+            this.NewPatientIntake_checklist_button_tab3.TabStop = false;
             this.NewPatientIntake_checklist_button_tab3.Text = "Emergency";
             this.NewPatientIntake_checklist_button_tab3.UseVisualStyleBackColor = true;
             // 
@@ -295,6 +302,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab5.Name = "NewPatientIntake_checklist_button_tab5";
             this.NewPatientIntake_checklist_button_tab5.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab5.TabIndex = 5;
+            this.NewPatientIntake_checklist_button_tab5.TabStop = false;
             this.NewPatientIntake_checklist_button_tab5.Text = "Legal";
             this.NewPatientIntake_checklist_button_tab5.UseVisualStyleBackColor = true;
             // 
@@ -306,6 +314,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab4.Name = "NewPatientIntake_checklist_button_tab4";
             this.NewPatientIntake_checklist_button_tab4.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab4.TabIndex = 4;
+            this.NewPatientIntake_checklist_button_tab4.TabStop = false;
             this.NewPatientIntake_checklist_button_tab4.Text = "Agency";
             this.NewPatientIntake_checklist_button_tab4.UseVisualStyleBackColor = true;
             // 
@@ -317,6 +326,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab6.Name = "NewPatientIntake_checklist_button_tab6";
             this.NewPatientIntake_checklist_button_tab6.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab6.TabIndex = 6;
+            this.NewPatientIntake_checklist_button_tab6.TabStop = false;
             this.NewPatientIntake_checklist_button_tab6.Text = "Health I";
             this.NewPatientIntake_checklist_button_tab6.UseVisualStyleBackColor = true;
             // 
@@ -328,6 +338,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab7.Name = "NewPatientIntake_checklist_button_tab7";
             this.NewPatientIntake_checklist_button_tab7.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab7.TabIndex = 7;
+            this.NewPatientIntake_checklist_button_tab7.TabStop = false;
             this.NewPatientIntake_checklist_button_tab7.Text = "Health II";
             this.NewPatientIntake_checklist_button_tab7.UseVisualStyleBackColor = true;
             // 
@@ -339,6 +350,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab8.Name = "NewPatientIntake_checklist_button_tab8";
             this.NewPatientIntake_checklist_button_tab8.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab8.TabIndex = 8;
+            this.NewPatientIntake_checklist_button_tab8.TabStop = false;
             this.NewPatientIntake_checklist_button_tab8.Text = "Questionnaire";
             this.NewPatientIntake_checklist_button_tab8.UseVisualStyleBackColor = true;
             // 
@@ -350,6 +362,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab9.Name = "NewPatientIntake_checklist_button_tab9";
             this.NewPatientIntake_checklist_button_tab9.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab9.TabIndex = 9;
+            this.NewPatientIntake_checklist_button_tab9.TabStop = false;
             this.NewPatientIntake_checklist_button_tab9.Text = "Triage Analysis";
             this.NewPatientIntake_checklist_button_tab9.UseVisualStyleBackColor = true;
             // 
@@ -361,6 +374,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab10.Name = "NewPatientIntake_checklist_button_tab10";
             this.NewPatientIntake_checklist_button_tab10.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab10.TabIndex = 10;
+            this.NewPatientIntake_checklist_button_tab10.TabStop = false;
             this.NewPatientIntake_checklist_button_tab10.Text = "Triage Analysis II";
             this.NewPatientIntake_checklist_button_tab10.UseVisualStyleBackColor = true;
             // 
@@ -372,6 +386,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab12.Name = "NewPatientIntake_checklist_button_tab12";
             this.NewPatientIntake_checklist_button_tab12.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab12.TabIndex = 12;
+            this.NewPatientIntake_checklist_button_tab12.TabStop = false;
             this.NewPatientIntake_checklist_button_tab12.Text = "Prescriptions";
             this.NewPatientIntake_checklist_button_tab12.UseVisualStyleBackColor = true;
             // 
@@ -383,6 +398,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab11.Name = "NewPatientIntake_checklist_button_tab11";
             this.NewPatientIntake_checklist_button_tab11.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab11.TabIndex = 11;
+            this.NewPatientIntake_checklist_button_tab11.TabStop = false;
             this.NewPatientIntake_checklist_button_tab11.Text = "Level of Function";
             this.NewPatientIntake_checklist_button_tab11.UseVisualStyleBackColor = true;
             // 
@@ -414,6 +430,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab13.Name = "NewPatientIntake_checklist_button_tab13";
             this.NewPatientIntake_checklist_button_tab13.Size = new System.Drawing.Size(130, 32);
             this.NewPatientIntake_checklist_button_tab13.TabIndex = 15;
+            this.NewPatientIntake_checklist_button_tab13.TabStop = false;
             this.NewPatientIntake_checklist_button_tab13.Text = "Complete";
             this.NewPatientIntake_checklist_button_tab13.UseVisualStyleBackColor = true;
             // 
@@ -481,7 +498,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_textbox_yearsResided.Mask = "00";
             this.newPatientIntakeWizard_tab1_textbox_yearsResided.Name = "newPatientIntakeWizard_tab1_textbox_yearsResided";
             this.newPatientIntakeWizard_tab1_textbox_yearsResided.Size = new System.Drawing.Size(24, 22);
-            this.newPatientIntakeWizard_tab1_textbox_yearsResided.TabIndex = 29;
+            this.newPatientIntakeWizard_tab1_textbox_yearsResided.TabIndex = 8;
             this.newPatientIntakeWizard_tab1_textbox_yearsResided.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab1_textbox_zip
@@ -491,7 +508,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_textbox_zip.Mask = "00000";
             this.newPatientIntakeWizard_tab1_textbox_zip.Name = "newPatientIntakeWizard_tab1_textbox_zip";
             this.newPatientIntakeWizard_tab1_textbox_zip.Size = new System.Drawing.Size(48, 22);
-            this.newPatientIntakeWizard_tab1_textbox_zip.TabIndex = 28;
+            this.newPatientIntakeWizard_tab1_textbox_zip.TabIndex = 6;
             this.newPatientIntakeWizard_tab1_textbox_zip.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab1_label_yearsResided
@@ -521,7 +538,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_textbox_county.MaxLength = 26;
             this.newPatientIntakeWizard_tab1_textbox_county.Name = "newPatientIntakeWizard_tab1_textbox_county";
             this.newPatientIntakeWizard_tab1_textbox_county.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab1_textbox_county.TabIndex = 24;
+            this.newPatientIntakeWizard_tab1_textbox_county.TabIndex = 7;
             this.newPatientIntakeWizard_tab1_textbox_county.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_button_back
@@ -529,7 +546,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_button_back.Location = new System.Drawing.Point(416, 394);
             this.newPatientIntakeWizard_button_back.Name = "newPatientIntakeWizard_button_back";
             this.newPatientIntakeWizard_button_back.Size = new System.Drawing.Size(75, 23);
-            this.newPatientIntakeWizard_button_back.TabIndex = 23;
+            this.newPatientIntakeWizard_button_back.TabIndex = 9;
             this.newPatientIntakeWizard_button_back.Text = "Back";
             this.newPatientIntakeWizard_button_back.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_button_back.Click += new System.EventHandler(this.backTab);
@@ -612,7 +629,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_combobox_state.MaxLength = 2;
             this.newPatientIntakeWizard_tab1_combobox_state.Name = "newPatientIntakeWizard_tab1_combobox_state";
             this.newPatientIntakeWizard_tab1_combobox_state.Size = new System.Drawing.Size(59, 24);
-            this.newPatientIntakeWizard_tab1_combobox_state.TabIndex = 20;
+            this.newPatientIntakeWizard_tab1_combobox_state.TabIndex = 5;
             this.newPatientIntakeWizard_tab1_combobox_state.Text = "CA";
             // 
             // newPatientIntakeWizard_tab1_label_state
@@ -642,7 +659,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_textbox_city.MaxLength = 30;
             this.newPatientIntakeWizard_tab1_textbox_city.Name = "newPatientIntakeWizard_tab1_textbox_city";
             this.newPatientIntakeWizard_tab1_textbox_city.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab1_textbox_city.TabIndex = 16;
+            this.newPatientIntakeWizard_tab1_textbox_city.TabIndex = 4;
             this.newPatientIntakeWizard_tab1_textbox_city.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab1_label_streetAddress
@@ -662,7 +679,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_textbox_streetAddress.MaxLength = 50;
             this.newPatientIntakeWizard_tab1_textbox_streetAddress.Name = "newPatientIntakeWizard_tab1_textbox_streetAddress";
             this.newPatientIntakeWizard_tab1_textbox_streetAddress.Size = new System.Drawing.Size(220, 22);
-            this.newPatientIntakeWizard_tab1_textbox_streetAddress.TabIndex = 14;
+            this.newPatientIntakeWizard_tab1_textbox_streetAddress.TabIndex = 3;
             this.newPatientIntakeWizard_tab1_textbox_streetAddress.TextChanged += new System.EventHandler(this.validateLettersNumbers);
             // 
             // newPatientIntakeWizard_tab1_label_dateOfBirth
@@ -683,7 +700,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.Location = new System.Drawing.Point(454, 169);
             this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.Name = "newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth";
             this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.TabIndex = 12;
+            this.newPatientIntakeWizard_tab1_datetimepicker_dateOfBirth.TabIndex = 2;
             // 
             // newPatientIntakeWizard_button_cancel
             // 
@@ -722,7 +739,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_textbox_lastName.MaxLength = 26;
             this.newPatientIntakeWizard_tab1_textbox_lastName.Name = "newPatientIntakeWizard_tab1_textbox_lastName";
             this.newPatientIntakeWizard_tab1_textbox_lastName.Size = new System.Drawing.Size(150, 22);
-            this.newPatientIntakeWizard_tab1_textbox_lastName.TabIndex = 5;
+            this.newPatientIntakeWizard_tab1_textbox_lastName.TabIndex = 1;
             this.newPatientIntakeWizard_tab1_textbox_lastName.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_label_instructions
@@ -752,7 +769,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1_textbox_firstName.MaxLength = 26;
             this.newPatientIntakeWizard_tab1_textbox_firstName.Name = "newPatientIntakeWizard_tab1_textbox_firstName";
             this.newPatientIntakeWizard_tab1_textbox_firstName.Size = new System.Drawing.Size(150, 22);
-            this.newPatientIntakeWizard_tab1_textbox_firstName.TabIndex = 2;
+            this.newPatientIntakeWizard_tab1_textbox_firstName.TabIndex = 0;
             this.newPatientIntakeWizard_tab1_textbox_firstName.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_picturebox_wizard
@@ -807,7 +824,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_textbox_secondPhone.Mask = "(999) 000-0000";
             this.newPatientIntakeWizard_tab2_textbox_secondPhone.Name = "newPatientIntakeWizard_tab2_textbox_secondPhone";
             this.newPatientIntakeWizard_tab2_textbox_secondPhone.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab2_textbox_secondPhone.TabIndex = 62;
+            this.newPatientIntakeWizard_tab2_textbox_secondPhone.TabIndex = 1;
             this.newPatientIntakeWizard_tab2_textbox_secondPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab2_textbox_primaryPhone
@@ -817,7 +834,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_textbox_primaryPhone.Mask = "(999) 000-0000";
             this.newPatientIntakeWizard_tab2_textbox_primaryPhone.Name = "newPatientIntakeWizard_tab2_textbox_primaryPhone";
             this.newPatientIntakeWizard_tab2_textbox_primaryPhone.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab2_textbox_primaryPhone.TabIndex = 61;
+            this.newPatientIntakeWizard_tab2_textbox_primaryPhone.TabIndex = 0;
             this.newPatientIntakeWizard_tab2_textbox_primaryPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab2_textbox_ssn
@@ -827,7 +844,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_textbox_ssn.Mask = "000-00-0000";
             this.newPatientIntakeWizard_tab2_textbox_ssn.Name = "newPatientIntakeWizard_tab2_textbox_ssn";
             this.newPatientIntakeWizard_tab2_textbox_ssn.Size = new System.Drawing.Size(81, 22);
-            this.newPatientIntakeWizard_tab2_textbox_ssn.TabIndex = 51;
+            this.newPatientIntakeWizard_tab2_textbox_ssn.TabIndex = 2;
             this.newPatientIntakeWizard_tab2_textbox_ssn.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab2_checkbox_veteran
@@ -837,7 +854,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_checkbox_veteran.Location = new System.Drawing.Point(454, 309);
             this.newPatientIntakeWizard_tab2_checkbox_veteran.Name = "newPatientIntakeWizard_tab2_checkbox_veteran";
             this.newPatientIntakeWizard_tab2_checkbox_veteran.Size = new System.Drawing.Size(81, 20);
-            this.newPatientIntakeWizard_tab2_checkbox_veteran.TabIndex = 50;
+            this.newPatientIntakeWizard_tab2_checkbox_veteran.TabIndex = 7;
             this.newPatientIntakeWizard_tab2_checkbox_veteran.Text = "Veteran?";
             this.newPatientIntakeWizard_tab2_checkbox_veteran.UseVisualStyleBackColor = true;
             // 
@@ -868,7 +885,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_textbox_partnersName.MaxLength = 5;
             this.newPatientIntakeWizard_tab2_textbox_partnersName.Name = "newPatientIntakeWizard_tab2_textbox_partnersName";
             this.newPatientIntakeWizard_tab2_textbox_partnersName.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab2_textbox_partnersName.TabIndex = 42;
+            this.newPatientIntakeWizard_tab2_textbox_partnersName.TabIndex = 6;
             this.newPatientIntakeWizard_tab2_textbox_partnersName.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab2_combobox_dlstate
@@ -938,7 +955,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_combobox_dlstate.Location = new System.Drawing.Point(638, 225);
             this.newPatientIntakeWizard_tab2_combobox_dlstate.Name = "newPatientIntakeWizard_tab2_combobox_dlstate";
             this.newPatientIntakeWizard_tab2_combobox_dlstate.Size = new System.Drawing.Size(59, 24);
-            this.newPatientIntakeWizard_tab2_combobox_dlstate.TabIndex = 41;
+            this.newPatientIntakeWizard_tab2_combobox_dlstate.TabIndex = 4;
             this.newPatientIntakeWizard_tab2_combobox_dlstate.Text = "CA";
             // 
             // newPatientIntakeWizard_tab2_label_dlstate
@@ -968,7 +985,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_textbox_maritalStatus.MaxLength = 30;
             this.newPatientIntakeWizard_tab2_textbox_maritalStatus.Name = "newPatientIntakeWizard_tab2_textbox_maritalStatus";
             this.newPatientIntakeWizard_tab2_textbox_maritalStatus.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab2_textbox_maritalStatus.TabIndex = 38;
+            this.newPatientIntakeWizard_tab2_textbox_maritalStatus.TabIndex = 5;
             this.newPatientIntakeWizard_tab2_textbox_maritalStatus.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab2_label_dlnumber
@@ -988,7 +1005,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab2_textbox_dlnumber.MaxLength = 50;
             this.newPatientIntakeWizard_tab2_textbox_dlnumber.Name = "newPatientIntakeWizard_tab2_textbox_dlnumber";
             this.newPatientIntakeWizard_tab2_textbox_dlnumber.Size = new System.Drawing.Size(130, 22);
-            this.newPatientIntakeWizard_tab2_textbox_dlnumber.TabIndex = 36;
+            this.newPatientIntakeWizard_tab2_textbox_dlnumber.TabIndex = 3;
             // 
             // newPatientIntakeWizard_tab2_label_secondPhone
             // 
@@ -1042,7 +1059,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencyZip.Mask = "00000";
             this.newPatientIntakeWizard_tab3_textbox_emergencyZip.Name = "newPatientIntakeWizard_tab3_textbox_emergencyZip";
             this.newPatientIntakeWizard_tab3_textbox_emergencyZip.Size = new System.Drawing.Size(42, 22);
-            this.newPatientIntakeWizard_tab3_textbox_emergencyZip.TabIndex = 61;
+            this.newPatientIntakeWizard_tab3_textbox_emergencyZip.TabIndex = 5;
             this.newPatientIntakeWizard_tab3_textbox_emergencyZip.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab3_textbox_emergencySecondPhone
@@ -1052,7 +1069,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencySecondPhone.Mask = "(999) 000-0000";
             this.newPatientIntakeWizard_tab3_textbox_emergencySecondPhone.Name = "newPatientIntakeWizard_tab3_textbox_emergencySecondPhone";
             this.newPatientIntakeWizard_tab3_textbox_emergencySecondPhone.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab3_textbox_emergencySecondPhone.TabIndex = 60;
+            this.newPatientIntakeWizard_tab3_textbox_emergencySecondPhone.TabIndex = 7;
             this.newPatientIntakeWizard_tab3_textbox_emergencySecondPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone
@@ -1062,7 +1079,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone.Mask = "(999) 000-0000";
             this.newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone.Name = "newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone";
             this.newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone.TabIndex = 59;
+            this.newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone.TabIndex = 6;
             this.newPatientIntakeWizard_tab3_textbox_emergencyPrimaryPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab3_label_emergencySecondPhone
@@ -1163,7 +1180,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencyState.MaxLength = 2;
             this.newPatientIntakeWizard_tab3_textbox_emergencyState.Name = "newPatientIntakeWizard_tab3_textbox_emergencyState";
             this.newPatientIntakeWizard_tab3_textbox_emergencyState.Size = new System.Drawing.Size(59, 24);
-            this.newPatientIntakeWizard_tab3_textbox_emergencyState.TabIndex = 41;
+            this.newPatientIntakeWizard_tab3_textbox_emergencyState.TabIndex = 4;
             this.newPatientIntakeWizard_tab3_textbox_emergencyState.Text = "CA";
             // 
             // newPatientIntakeWizard_tab3_label_emergencyState
@@ -1193,7 +1210,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencyCity.MaxLength = 30;
             this.newPatientIntakeWizard_tab3_textbox_emergencyCity.Name = "newPatientIntakeWizard_tab3_textbox_emergencyCity";
             this.newPatientIntakeWizard_tab3_textbox_emergencyCity.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab3_textbox_emergencyCity.TabIndex = 38;
+            this.newPatientIntakeWizard_tab3_textbox_emergencyCity.TabIndex = 3;
             this.newPatientIntakeWizard_tab3_textbox_emergencyCity.TextChanged += new System.EventHandler(this.validateLettersNumbers);
             // 
             // newPatientIntakeWizard_tab3_label_emergencyAddress
@@ -1213,7 +1230,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencyAddress.MaxLength = 50;
             this.newPatientIntakeWizard_tab3_textbox_emergencyAddress.Name = "newPatientIntakeWizard_tab3_textbox_emergencyAddress";
             this.newPatientIntakeWizard_tab3_textbox_emergencyAddress.Size = new System.Drawing.Size(220, 22);
-            this.newPatientIntakeWizard_tab3_textbox_emergencyAddress.TabIndex = 36;
+            this.newPatientIntakeWizard_tab3_textbox_emergencyAddress.TabIndex = 2;
             this.newPatientIntakeWizard_tab3_textbox_emergencyAddress.TextChanged += new System.EventHandler(this.validateLettersNumbers);
             // 
             // newPatientIntakeWizard_tab3_label_emergencyRelationship
@@ -1233,7 +1250,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencyRelationship.MaxLength = 26;
             this.newPatientIntakeWizard_tab3_textbox_emergencyRelationship.Name = "newPatientIntakeWizard_tab3_textbox_emergencyRelationship";
             this.newPatientIntakeWizard_tab3_textbox_emergencyRelationship.Size = new System.Drawing.Size(150, 22);
-            this.newPatientIntakeWizard_tab3_textbox_emergencyRelationship.TabIndex = 30;
+            this.newPatientIntakeWizard_tab3_textbox_emergencyRelationship.TabIndex = 1;
             this.newPatientIntakeWizard_tab3_textbox_emergencyRelationship.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab3_label_emergencyContactName
@@ -1253,7 +1270,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab3_textbox_emergencyContactName.MaxLength = 26;
             this.newPatientIntakeWizard_tab3_textbox_emergencyContactName.Name = "newPatientIntakeWizard_tab3_textbox_emergencyContactName";
             this.newPatientIntakeWizard_tab3_textbox_emergencyContactName.Size = new System.Drawing.Size(150, 22);
-            this.newPatientIntakeWizard_tab3_textbox_emergencyContactName.TabIndex = 28;
+            this.newPatientIntakeWizard_tab3_textbox_emergencyContactName.TabIndex = 0;
             this.newPatientIntakeWizard_tab3_textbox_emergencyContactName.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab4
@@ -1300,7 +1317,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencyCounty.MaxLength = 30;
             this.newPatientIntakeWizard_tab4_textbox_agencyCounty.Name = "newPatientIntakeWizard_tab4_textbox_agencyCounty";
             this.newPatientIntakeWizard_tab4_textbox_agencyCounty.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencyCounty.TabIndex = 59;
+            this.newPatientIntakeWizard_tab4_textbox_agencyCounty.TabIndex = 6;
             // 
             // newPatientIntakeWizard_tab4_textbox_agencyZip
             // 
@@ -1309,7 +1326,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencyZip.Mask = "00000";
             this.newPatientIntakeWizard_tab4_textbox_agencyZip.Name = "newPatientIntakeWizard_tab4_textbox_agencyZip";
             this.newPatientIntakeWizard_tab4_textbox_agencyZip.Size = new System.Drawing.Size(42, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencyZip.TabIndex = 58;
+            this.newPatientIntakeWizard_tab4_textbox_agencyZip.TabIndex = 5;
             this.newPatientIntakeWizard_tab4_textbox_agencyZip.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab4_textbox_agencySecondPhone
@@ -1319,7 +1336,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencySecondPhone.Mask = "(999) 000-0000";
             this.newPatientIntakeWizard_tab4_textbox_agencySecondPhone.Name = "newPatientIntakeWizard_tab4_textbox_agencySecondPhone";
             this.newPatientIntakeWizard_tab4_textbox_agencySecondPhone.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencySecondPhone.TabIndex = 57;
+            this.newPatientIntakeWizard_tab4_textbox_agencySecondPhone.TabIndex = 8;
             this.newPatientIntakeWizard_tab4_textbox_agencySecondPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone
@@ -1329,7 +1346,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.Mask = "(999) 000-0000";
             this.newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.Name = "newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone";
             this.newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.TabIndex = 56;
+            this.newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.TabIndex = 7;
             this.newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // newPatientIntakeWizard_tab4_label_agencySecondPhone
@@ -1420,7 +1437,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_combobox_agencyState.MaxLength = 2;
             this.newPatientIntakeWizard_tab4_combobox_agencyState.Name = "newPatientIntakeWizard_tab4_combobox_agencyState";
             this.newPatientIntakeWizard_tab4_combobox_agencyState.Size = new System.Drawing.Size(59, 24);
-            this.newPatientIntakeWizard_tab4_combobox_agencyState.TabIndex = 47;
+            this.newPatientIntakeWizard_tab4_combobox_agencyState.TabIndex = 4;
             this.newPatientIntakeWizard_tab4_combobox_agencyState.Text = "CA";
             // 
             // newPatientIntakeWizard_tab4_label_agencyZip
@@ -1460,7 +1477,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencyCity.MaxLength = 30;
             this.newPatientIntakeWizard_tab4_textbox_agencyCity.Name = "newPatientIntakeWizard_tab4_textbox_agencyCity";
             this.newPatientIntakeWizard_tab4_textbox_agencyCity.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencyCity.TabIndex = 38;
+            this.newPatientIntakeWizard_tab4_textbox_agencyCity.TabIndex = 3;
             this.newPatientIntakeWizard_tab4_textbox_agencyCity.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab4_label_agencyAddress
@@ -1480,7 +1497,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencyAddress.MaxLength = 50;
             this.newPatientIntakeWizard_tab4_textbox_agencyAddress.Name = "newPatientIntakeWizard_tab4_textbox_agencyAddress";
             this.newPatientIntakeWizard_tab4_textbox_agencyAddress.Size = new System.Drawing.Size(220, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencyAddress.TabIndex = 36;
+            this.newPatientIntakeWizard_tab4_textbox_agencyAddress.TabIndex = 2;
             this.newPatientIntakeWizard_tab4_textbox_agencyAddress.TextChanged += new System.EventHandler(this.validateLettersNumbers);
             // 
             // newPatientIntakeWizard_tab4_label_agencyContactName
@@ -1500,7 +1517,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencyContactName.MaxLength = 26;
             this.newPatientIntakeWizard_tab4_textbox_agencyContactName.Name = "newPatientIntakeWizard_tab4_textbox_agencyContactName";
             this.newPatientIntakeWizard_tab4_textbox_agencyContactName.Size = new System.Drawing.Size(150, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencyContactName.TabIndex = 30;
+            this.newPatientIntakeWizard_tab4_textbox_agencyContactName.TabIndex = 1;
             this.newPatientIntakeWizard_tab4_textbox_agencyContactName.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab4_label_agencyName
@@ -1520,7 +1537,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab4_textbox_agencyName.MaxLength = 26;
             this.newPatientIntakeWizard_tab4_textbox_agencyName.Name = "newPatientIntakeWizard_tab4_textbox_agencyName";
             this.newPatientIntakeWizard_tab4_textbox_agencyName.Size = new System.Drawing.Size(150, 22);
-            this.newPatientIntakeWizard_tab4_textbox_agencyName.TabIndex = 28;
+            this.newPatientIntakeWizard_tab4_textbox_agencyName.TabIndex = 0;
             this.newPatientIntakeWizard_tab4_textbox_agencyName.TextChanged += new System.EventHandler(this.validateLettersWithSpaces);
             // 
             // newPatientIntakeWizard_tab5
@@ -1549,7 +1566,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerPhone.Mask = "(999) 000-0000";
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerPhone.Name = "newPatientIntakeWizard_tab5_textbox_paroleOfficerPhone";
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerPhone.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab5_textbox_paroleOfficerPhone.TabIndex = 57;
+            this.newPatientIntakeWizard_tab5_textbox_paroleOfficerPhone.TabIndex = 5;
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label1
@@ -1569,7 +1586,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab5_checkbox_paroleProbation.Location = new System.Drawing.Point(454, 115);
             this.newPatientIntakeWizard_tab5_checkbox_paroleProbation.Name = "newPatientIntakeWizard_tab5_checkbox_paroleProbation";
             this.newPatientIntakeWizard_tab5_checkbox_paroleProbation.Size = new System.Drawing.Size(168, 20);
-            this.newPatientIntakeWizard_tab5_checkbox_paroleProbation.TabIndex = 49;
+            this.newPatientIntakeWizard_tab5_checkbox_paroleProbation.TabIndex = 0;
             this.newPatientIntakeWizard_tab5_checkbox_paroleProbation.Text = "On parole or probation?";
             this.newPatientIntakeWizard_tab5_checkbox_paroleProbation.UseVisualStyleBackColor = true;
             // 
@@ -1580,7 +1597,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab5_checkbox_jailPrison.Location = new System.Drawing.Point(454, 141);
             this.newPatientIntakeWizard_tab5_checkbox_jailPrison.Name = "newPatientIntakeWizard_tab5_checkbox_jailPrison";
             this.newPatientIntakeWizard_tab5_checkbox_jailPrison.Size = new System.Drawing.Size(197, 20);
-            this.newPatientIntakeWizard_tab5_checkbox_jailPrison.TabIndex = 48;
+            this.newPatientIntakeWizard_tab5_checkbox_jailPrison.TabIndex = 1;
             this.newPatientIntakeWizard_tab5_checkbox_jailPrison.Text = "Jail or prison in last 30 days?";
             this.newPatientIntakeWizard_tab5_checkbox_jailPrison.UseVisualStyleBackColor = true;
             // 
@@ -1601,7 +1618,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerAddress.MaxLength = 50;
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerAddress.Name = "newPatientIntakeWizard_tab5_textbox_paroleOfficerAddress";
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerAddress.Size = new System.Drawing.Size(220, 22);
-            this.newPatientIntakeWizard_tab5_textbox_paroleOfficerAddress.TabIndex = 36;
+            this.newPatientIntakeWizard_tab5_textbox_paroleOfficerAddress.TabIndex = 4;
             // 
             // label11
             // 
@@ -1620,7 +1637,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerName.MaxLength = 26;
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerName.Name = "newPatientIntakeWizard_tab5_textbox_paroleOfficerName";
             this.newPatientIntakeWizard_tab5_textbox_paroleOfficerName.Size = new System.Drawing.Size(150, 22);
-            this.newPatientIntakeWizard_tab5_textbox_paroleOfficerName.TabIndex = 30;
+            this.newPatientIntakeWizard_tab5_textbox_paroleOfficerName.TabIndex = 3;
             // 
             // label12
             // 
@@ -1639,7 +1656,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab5_textbox_paroleReason.MaxLength = 26;
             this.newPatientIntakeWizard_tab5_textbox_paroleReason.Name = "newPatientIntakeWizard_tab5_textbox_paroleReason";
             this.newPatientIntakeWizard_tab5_textbox_paroleReason.Size = new System.Drawing.Size(197, 22);
-            this.newPatientIntakeWizard_tab5_textbox_paroleReason.TabIndex = 28;
+            this.newPatientIntakeWizard_tab5_textbox_paroleReason.TabIndex = 2;
             // 
             // newPatientIntakeWizard_tab6
             // 
@@ -1679,7 +1696,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_textbox_priorTreatmentWhereWhen.MaxLength = 26;
             this.newPatientIntakeWizard_tab6_textbox_priorTreatmentWhereWhen.Name = "newPatientIntakeWizard_tab6_textbox_priorTreatmentWhereWhen";
             this.newPatientIntakeWizard_tab6_textbox_priorTreatmentWhereWhen.Size = new System.Drawing.Size(205, 22);
-            this.newPatientIntakeWizard_tab6_textbox_priorTreatmentWhereWhen.TabIndex = 83;
+            this.newPatientIntakeWizard_tab6_textbox_priorTreatmentWhereWhen.TabIndex = 7;
             // 
             // label18
             // 
@@ -1698,7 +1715,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_textbox_priorTreatmentAmount.MaxLength = 30;
             this.newPatientIntakeWizard_tab6_textbox_priorTreatmentAmount.Name = "newPatientIntakeWizard_tab6_textbox_priorTreatmentAmount";
             this.newPatientIntakeWizard_tab6_textbox_priorTreatmentAmount.Size = new System.Drawing.Size(40, 22);
-            this.newPatientIntakeWizard_tab6_textbox_priorTreatmentAmount.TabIndex = 81;
+            this.newPatientIntakeWizard_tab6_textbox_priorTreatmentAmount.TabIndex = 6;
             // 
             // newPatientIntakeWizard_tab6_checkbox_priorTreatment
             // 
@@ -1707,7 +1724,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_checkbox_priorTreatment.Location = new System.Drawing.Point(410, 255);
             this.newPatientIntakeWizard_tab6_checkbox_priorTreatment.Name = "newPatientIntakeWizard_tab6_checkbox_priorTreatment";
             this.newPatientIntakeWizard_tab6_checkbox_priorTreatment.Size = new System.Drawing.Size(196, 20);
-            this.newPatientIntakeWizard_tab6_checkbox_priorTreatment.TabIndex = 54;
+            this.newPatientIntakeWizard_tab6_checkbox_priorTreatment.TabIndex = 5;
             this.newPatientIntakeWizard_tab6_checkbox_priorTreatment.Text = "Prior treatment or programs?";
             this.newPatientIntakeWizard_tab6_checkbox_priorTreatment.UseVisualStyleBackColor = true;
             // 
@@ -1718,7 +1735,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_checkbox_ivUsed.Location = new System.Drawing.Point(410, 229);
             this.newPatientIntakeWizard_tab6_checkbox_ivUsed.Name = "newPatientIntakeWizard_tab6_checkbox_ivUsed";
             this.newPatientIntakeWizard_tab6_checkbox_ivUsed.Size = new System.Drawing.Size(171, 20);
-            this.newPatientIntakeWizard_tab6_checkbox_ivUsed.TabIndex = 53;
+            this.newPatientIntakeWizard_tab6_checkbox_ivUsed.TabIndex = 4;
             this.newPatientIntakeWizard_tab6_checkbox_ivUsed.Text = "IV use in last 12 months?";
             this.newPatientIntakeWizard_tab6_checkbox_ivUsed.UseVisualStyleBackColor = true;
             // 
@@ -1729,7 +1746,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_checkbox_mentalHospitalization.Location = new System.Drawing.Point(413, 173);
             this.newPatientIntakeWizard_tab6_checkbox_mentalHospitalization.Name = "newPatientIntakeWizard_tab6_checkbox_mentalHospitalization";
             this.newPatientIntakeWizard_tab6_checkbox_mentalHospitalization.Size = new System.Drawing.Size(293, 20);
-            this.newPatientIntakeWizard_tab6_checkbox_mentalHospitalization.TabIndex = 52;
+            this.newPatientIntakeWizard_tab6_checkbox_mentalHospitalization.TabIndex = 2;
             this.newPatientIntakeWizard_tab6_checkbox_mentalHospitalization.Text = "Mental health hospitalization in past 30 days?";
             this.newPatientIntakeWizard_tab6_checkbox_mentalHospitalization.UseVisualStyleBackColor = true;
             // 
@@ -1740,7 +1757,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_checkbox_physicalHospitalization.Location = new System.Drawing.Point(413, 119);
             this.newPatientIntakeWizard_tab6_checkbox_physicalHospitalization.Name = "newPatientIntakeWizard_tab6_checkbox_physicalHospitalization";
             this.newPatientIntakeWizard_tab6_checkbox_physicalHospitalization.Size = new System.Drawing.Size(286, 20);
-            this.newPatientIntakeWizard_tab6_checkbox_physicalHospitalization.TabIndex = 51;
+            this.newPatientIntakeWizard_tab6_checkbox_physicalHospitalization.TabIndex = 0;
             this.newPatientIntakeWizard_tab6_checkbox_physicalHospitalization.Text = "Physical hospitalization in the past 30 days?";
             this.newPatientIntakeWizard_tab6_checkbox_physicalHospitalization.UseVisualStyleBackColor = true;
             // 
@@ -1761,7 +1778,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_textbox_physicalHospitalizationReason.MaxLength = 26;
             this.newPatientIntakeWizard_tab6_textbox_physicalHospitalizationReason.Name = "newPatientIntakeWizard_tab6_textbox_physicalHospitalizationReason";
             this.newPatientIntakeWizard_tab6_textbox_physicalHospitalizationReason.Size = new System.Drawing.Size(252, 22);
-            this.newPatientIntakeWizard_tab6_textbox_physicalHospitalizationReason.TabIndex = 30;
+            this.newPatientIntakeWizard_tab6_textbox_physicalHospitalizationReason.TabIndex = 1;
             // 
             // label10
             // 
@@ -1780,7 +1797,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab6_textbox_mentalHospitalizationReason.MaxLength = 26;
             this.newPatientIntakeWizard_tab6_textbox_mentalHospitalizationReason.Name = "newPatientIntakeWizard_tab6_textbox_mentalHospitalizationReason";
             this.newPatientIntakeWizard_tab6_textbox_mentalHospitalizationReason.Size = new System.Drawing.Size(250, 22);
-            this.newPatientIntakeWizard_tab6_textbox_mentalHospitalizationReason.TabIndex = 28;
+            this.newPatientIntakeWizard_tab6_textbox_mentalHospitalizationReason.TabIndex = 3;
             // 
             // newPatientIntakeWizard_tab7
             // 
@@ -1838,7 +1855,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance3method.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance3method.Name = "newPatientIntakeWizard_tab7_textbox_substance3method";
             this.newPatientIntakeWizard_tab7_textbox_substance3method.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance3method.TabIndex = 109;
+            this.newPatientIntakeWizard_tab7_textbox_substance3method.TabIndex = 14;
             // 
             // label21
             // 
@@ -1857,7 +1874,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance3amount.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance3amount.Name = "newPatientIntakeWizard_tab7_textbox_substance3amount";
             this.newPatientIntakeWizard_tab7_textbox_substance3amount.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance3amount.TabIndex = 107;
+            this.newPatientIntakeWizard_tab7_textbox_substance3amount.TabIndex = 13;
             // 
             // label22
             // 
@@ -1876,7 +1893,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance3frequency.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance3frequency.Name = "newPatientIntakeWizard_tab7_textbox_substance3frequency";
             this.newPatientIntakeWizard_tab7_textbox_substance3frequency.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance3frequency.TabIndex = 105;
+            this.newPatientIntakeWizard_tab7_textbox_substance3frequency.TabIndex = 12;
             // 
             // label23
             // 
@@ -1895,7 +1912,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance3name.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance3name.Name = "newPatientIntakeWizard_tab7_textbox_substance3name";
             this.newPatientIntakeWizard_tab7_textbox_substance3name.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance3name.TabIndex = 103;
+            this.newPatientIntakeWizard_tab7_textbox_substance3name.TabIndex = 10;
             // 
             // label24
             // 
@@ -1915,7 +1932,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_datetimepicker_substance3lastuse.Location = new System.Drawing.Point(453, 294);
             this.newPatientIntakeWizard_tab7_datetimepicker_substance3lastuse.Name = "newPatientIntakeWizard_tab7_datetimepicker_substance3lastuse";
             this.newPatientIntakeWizard_tab7_datetimepicker_substance3lastuse.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab7_datetimepicker_substance3lastuse.TabIndex = 101;
+            this.newPatientIntakeWizard_tab7_datetimepicker_substance3lastuse.TabIndex = 11;
             // 
             // label25
             // 
@@ -1934,7 +1951,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance2method.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance2method.Name = "newPatientIntakeWizard_tab7_textbox_substance2method";
             this.newPatientIntakeWizard_tab7_textbox_substance2method.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance2method.TabIndex = 99;
+            this.newPatientIntakeWizard_tab7_textbox_substance2method.TabIndex = 9;
             // 
             // label26
             // 
@@ -1953,7 +1970,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance2amount.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance2amount.Name = "newPatientIntakeWizard_tab7_textbox_substance2amount";
             this.newPatientIntakeWizard_tab7_textbox_substance2amount.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance2amount.TabIndex = 97;
+            this.newPatientIntakeWizard_tab7_textbox_substance2amount.TabIndex = 8;
             // 
             // label27
             // 
@@ -1972,7 +1989,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance2frequency.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance2frequency.Name = "newPatientIntakeWizard_tab7_textbox_substance2frequency";
             this.newPatientIntakeWizard_tab7_textbox_substance2frequency.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance2frequency.TabIndex = 95;
+            this.newPatientIntakeWizard_tab7_textbox_substance2frequency.TabIndex = 7;
             // 
             // label28
             // 
@@ -1991,7 +2008,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance2name.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance2name.Name = "newPatientIntakeWizard_tab7_textbox_substance2name";
             this.newPatientIntakeWizard_tab7_textbox_substance2name.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance2name.TabIndex = 93;
+            this.newPatientIntakeWizard_tab7_textbox_substance2name.TabIndex = 5;
             // 
             // label29
             // 
@@ -2011,7 +2028,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_datetimepicker_substance2lastuse.Location = new System.Drawing.Point(453, 216);
             this.newPatientIntakeWizard_tab7_datetimepicker_substance2lastuse.Name = "newPatientIntakeWizard_tab7_datetimepicker_substance2lastuse";
             this.newPatientIntakeWizard_tab7_datetimepicker_substance2lastuse.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab7_datetimepicker_substance2lastuse.TabIndex = 91;
+            this.newPatientIntakeWizard_tab7_datetimepicker_substance2lastuse.TabIndex = 6;
             // 
             // label30
             // 
@@ -2030,7 +2047,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance1method.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance1method.Name = "newPatientIntakeWizard_tab7_textbox_substance1method";
             this.newPatientIntakeWizard_tab7_textbox_substance1method.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance1method.TabIndex = 89;
+            this.newPatientIntakeWizard_tab7_textbox_substance1method.TabIndex = 4;
             // 
             // label31
             // 
@@ -2049,7 +2066,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance1amount.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance1amount.Name = "newPatientIntakeWizard_tab7_textbox_substance1amount";
             this.newPatientIntakeWizard_tab7_textbox_substance1amount.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance1amount.TabIndex = 87;
+            this.newPatientIntakeWizard_tab7_textbox_substance1amount.TabIndex = 3;
             // 
             // label32
             // 
@@ -2068,7 +2085,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance1frequency.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance1frequency.Name = "newPatientIntakeWizard_tab7_textbox_substance1frequency";
             this.newPatientIntakeWizard_tab7_textbox_substance1frequency.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance1frequency.TabIndex = 85;
+            this.newPatientIntakeWizard_tab7_textbox_substance1frequency.TabIndex = 2;
             // 
             // label33
             // 
@@ -2087,7 +2104,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_textbox_substance1name.MaxLength = 30;
             this.newPatientIntakeWizard_tab7_textbox_substance1name.Name = "newPatientIntakeWizard_tab7_textbox_substance1name";
             this.newPatientIntakeWizard_tab7_textbox_substance1name.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab7_textbox_substance1name.TabIndex = 83;
+            this.newPatientIntakeWizard_tab7_textbox_substance1name.TabIndex = 0;
             // 
             // label34
             // 
@@ -2107,7 +2124,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab7_datetimepicker_substance1lastuse.Location = new System.Drawing.Point(453, 138);
             this.newPatientIntakeWizard_tab7_datetimepicker_substance1lastuse.Name = "newPatientIntakeWizard_tab7_datetimepicker_substance1lastuse";
             this.newPatientIntakeWizard_tab7_datetimepicker_substance1lastuse.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab7_datetimepicker_substance1lastuse.TabIndex = 81;
+            this.newPatientIntakeWizard_tab7_datetimepicker_substance1lastuse.TabIndex = 1;
             // 
             // newPatientIntakeWizard_tab8
             // 
@@ -2140,7 +2157,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab8_textbox_referrals.Location = new System.Drawing.Point(520, 255);
             this.newPatientIntakeWizard_tab8_textbox_referrals.Name = "newPatientIntakeWizard_tab8_textbox_referrals";
             this.newPatientIntakeWizard_tab8_textbox_referrals.Size = new System.Drawing.Size(225, 22);
-            this.newPatientIntakeWizard_tab8_textbox_referrals.TabIndex = 56;
+            this.newPatientIntakeWizard_tab8_textbox_referrals.TabIndex = 2;
             // 
             // newPatientIntakeWizard_tab8_label_stop2
             // 
@@ -2173,7 +2190,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab8_checkbox_arson.Location = new System.Drawing.Point(413, 144);
             this.newPatientIntakeWizard_tab8_checkbox_arson.Name = "newPatientIntakeWizard_tab8_checkbox_arson";
             this.newPatientIntakeWizard_tab8_checkbox_arson.Size = new System.Drawing.Size(268, 20);
-            this.newPatientIntakeWizard_tab8_checkbox_arson.TabIndex = 53;
+            this.newPatientIntakeWizard_tab8_checkbox_arson.TabIndex = 1;
             this.newPatientIntakeWizard_tab8_checkbox_arson.Text = "Have you ever been convicted of arson?";
             this.newPatientIntakeWizard_tab8_checkbox_arson.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_tab8_checkbox_arson.CheckedChanged += new System.EventHandler(this.stopIntake);
@@ -2185,7 +2202,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.Location = new System.Drawing.Point(413, 119);
             this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.Name = "newPatientIntakeWizard_tab8_checkbox_sexualCrime";
             this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.Size = new System.Drawing.Size(320, 20);
-            this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.TabIndex = 52;
+            this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.TabIndex = 0;
             this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.Text = "Have you ever been convicted of a sexual crime?";
             this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_tab8_checkbox_sexualCrime.CheckedChanged += new System.EventHandler(this.stopIntake);
@@ -2225,7 +2242,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab9_checkbox_3.Location = new System.Drawing.Point(413, 280);
             this.newPatientIntakeWizard_tab9_checkbox_3.Name = "newPatientIntakeWizard_tab9_checkbox_3";
             this.newPatientIntakeWizard_tab9_checkbox_3.Size = new System.Drawing.Size(301, 45);
-            this.newPatientIntakeWizard_tab9_checkbox_3.TabIndex = 95;
+            this.newPatientIntakeWizard_tab9_checkbox_3.TabIndex = 6;
             this.newPatientIntakeWizard_tab9_checkbox_3.Text = "Do you feel that you are imminently in danger of harming yourself or someone else" +
     "?";
             this.newPatientIntakeWizard_tab9_checkbox_3.UseVisualStyleBackColor = true;
@@ -2237,7 +2254,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab9_checkbox_2.Location = new System.Drawing.Point(413, 237);
             this.newPatientIntakeWizard_tab9_checkbox_2.Name = "newPatientIntakeWizard_tab9_checkbox_2";
             this.newPatientIntakeWizard_tab9_checkbox_2.Size = new System.Drawing.Size(265, 45);
-            this.newPatientIntakeWizard_tab9_checkbox_2.TabIndex = 94;
+            this.newPatientIntakeWizard_tab9_checkbox_2.TabIndex = 5;
             this.newPatientIntakeWizard_tab9_checkbox_2.Text = "Do you have any current, severe and untreated physical health problems?";
             this.newPatientIntakeWizard_tab9_checkbox_2.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_tab9_checkbox_2.CheckedChanged += new System.EventHandler(this.stopIntake);
@@ -2248,7 +2265,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab9_checkbox_1b.Location = new System.Drawing.Point(413, 192);
             this.newPatientIntakeWizard_tab9_checkbox_1b.Name = "newPatientIntakeWizard_tab9_checkbox_1b";
             this.newPatientIntakeWizard_tab9_checkbox_1b.Size = new System.Drawing.Size(235, 44);
-            this.newPatientIntakeWizard_tab9_checkbox_1b.TabIndex = 93;
+            this.newPatientIntakeWizard_tab9_checkbox_1b.TabIndex = 4;
             this.newPatientIntakeWizard_tab9_checkbox_1b.Text = "Are you currently having similar withdrawal symptoms?";
             this.newPatientIntakeWizard_tab9_checkbox_1b.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_tab9_checkbox_1b.CheckedChanged += new System.EventHandler(this.stopIntake);
@@ -2259,7 +2276,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab9_checkbox_1a.Location = new System.Drawing.Point(413, 145);
             this.newPatientIntakeWizard_tab9_checkbox_1a.Name = "newPatientIntakeWizard_tab9_checkbox_1a";
             this.newPatientIntakeWizard_tab9_checkbox_1a.Size = new System.Drawing.Size(281, 44);
-            this.newPatientIntakeWizard_tab9_checkbox_1a.TabIndex = 92;
+            this.newPatientIntakeWizard_tab9_checkbox_1a.TabIndex = 3;
             this.newPatientIntakeWizard_tab9_checkbox_1a.Text = "Have you ever had life threatening symptoms during withdrawal?";
             this.newPatientIntakeWizard_tab9_checkbox_1a.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_tab9_checkbox_1a.CheckedChanged += new System.EventHandler(this.stopIntake);
@@ -2271,18 +2288,20 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab9_checkbox_duringtx.Location = new System.Drawing.Point(621, 119);
             this.newPatientIntakeWizard_tab9_checkbox_duringtx.Name = "newPatientIntakeWizard_tab9_checkbox_duringtx";
             this.newPatientIntakeWizard_tab9_checkbox_duringtx.Size = new System.Drawing.Size(93, 20);
-            this.newPatientIntakeWizard_tab9_checkbox_duringtx.TabIndex = 91;
+            this.newPatientIntakeWizard_tab9_checkbox_duringtx.TabIndex = 2;
             this.newPatientIntakeWizard_tab9_checkbox_duringtx.Text = "During TX?";
             this.newPatientIntakeWizard_tab9_checkbox_duringtx.UseVisualStyleBackColor = true;
             // 
             // newPatientIntakeWizard_tab9_checkbox_admit
             // 
             this.newPatientIntakeWizard_tab9_checkbox_admit.AutoSize = true;
+            this.newPatientIntakeWizard_tab9_checkbox_admit.Checked = true;
+            this.newPatientIntakeWizard_tab9_checkbox_admit.CheckState = System.Windows.Forms.CheckState.Checked;
             this.newPatientIntakeWizard_tab9_checkbox_admit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newPatientIntakeWizard_tab9_checkbox_admit.Location = new System.Drawing.Point(547, 119);
             this.newPatientIntakeWizard_tab9_checkbox_admit.Name = "newPatientIntakeWizard_tab9_checkbox_admit";
             this.newPatientIntakeWizard_tab9_checkbox_admit.Size = new System.Drawing.Size(68, 20);
-            this.newPatientIntakeWizard_tab9_checkbox_admit.TabIndex = 90;
+            this.newPatientIntakeWizard_tab9_checkbox_admit.TabIndex = 1;
             this.newPatientIntakeWizard_tab9_checkbox_admit.Text = "Admit?";
             this.newPatientIntakeWizard_tab9_checkbox_admit.UseVisualStyleBackColor = true;
             // 
@@ -2293,7 +2312,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab9_checkbox_phoneInterview.Location = new System.Drawing.Point(413, 119);
             this.newPatientIntakeWizard_tab9_checkbox_phoneInterview.Name = "newPatientIntakeWizard_tab9_checkbox_phoneInterview";
             this.newPatientIntakeWizard_tab9_checkbox_phoneInterview.Size = new System.Drawing.Size(128, 20);
-            this.newPatientIntakeWizard_tab9_checkbox_phoneInterview.TabIndex = 89;
+            this.newPatientIntakeWizard_tab9_checkbox_phoneInterview.TabIndex = 0;
             this.newPatientIntakeWizard_tab9_checkbox_phoneInterview.Text = "Phone Interview?";
             this.newPatientIntakeWizard_tab9_checkbox_phoneInterview.UseVisualStyleBackColor = true;
             // 
@@ -2344,7 +2363,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab10_checkbox_6.Location = new System.Drawing.Point(413, 297);
             this.newPatientIntakeWizard_tab10_checkbox_6.Name = "newPatientIntakeWizard_tab10_checkbox_6";
             this.newPatientIntakeWizard_tab10_checkbox_6.Size = new System.Drawing.Size(325, 41);
-            this.newPatientIntakeWizard_tab10_checkbox_6.TabIndex = 102;
+            this.newPatientIntakeWizard_tab10_checkbox_6.TabIndex = 4;
             this.newPatientIntakeWizard_tab10_checkbox_6.Text = "Are there any dangerous family, significant other, living/working/school situatio" +
     "ns threatening your safety, immediate well being or sobriety?";
             this.newPatientIntakeWizard_tab10_checkbox_6.UseVisualStyleBackColor = true;
@@ -2368,7 +2387,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab10_checkbox_5b.Location = new System.Drawing.Point(413, 242);
             this.newPatientIntakeWizard_tab10_checkbox_5b.Name = "newPatientIntakeWizard_tab10_checkbox_5b";
             this.newPatientIntakeWizard_tab10_checkbox_5b.Size = new System.Drawing.Size(301, 54);
-            this.newPatientIntakeWizard_tab10_checkbox_5b.TabIndex = 100;
+            this.newPatientIntakeWizard_tab10_checkbox_5b.TabIndex = 3;
             this.newPatientIntakeWizard_tab10_checkbox_5b.Text = "Are you likely to continue the use of alcohol or other drugs or to relapse, in an" +
     " imminently dangerous manner?";
             this.newPatientIntakeWizard_tab10_checkbox_5b.UseVisualStyleBackColor = true;
@@ -2380,7 +2399,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab10_checkbox_5a.Location = new System.Drawing.Point(413, 221);
             this.newPatientIntakeWizard_tab10_checkbox_5a.Name = "newPatientIntakeWizard_tab10_checkbox_5a";
             this.newPatientIntakeWizard_tab10_checkbox_5a.Size = new System.Drawing.Size(265, 21);
-            this.newPatientIntakeWizard_tab10_checkbox_5a.TabIndex = 99;
+            this.newPatientIntakeWizard_tab10_checkbox_5a.TabIndex = 2;
             this.newPatientIntakeWizard_tab10_checkbox_5a.Text = "Are you currently under the influence?";
             this.newPatientIntakeWizard_tab10_checkbox_5a.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_tab10_checkbox_5a.CheckedChanged += new System.EventHandler(this.stopIntake);
@@ -2391,7 +2410,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab10_checkbox_4b.Location = new System.Drawing.Point(413, 145);
             this.newPatientIntakeWizard_tab10_checkbox_4b.Name = "newPatientIntakeWizard_tab10_checkbox_4b";
             this.newPatientIntakeWizard_tab10_checkbox_4b.Size = new System.Drawing.Size(325, 73);
-            this.newPatientIntakeWizard_tab10_checkbox_4b.TabIndex = 98;
+            this.newPatientIntakeWizard_tab10_checkbox_4b.TabIndex = 1;
             this.newPatientIntakeWizard_tab10_checkbox_4b.Text = "Have you been referred or required to have an assessment and/or enter treatment b" +
     "y the criminal justice system, health or social services, work/school, or family" +
     " members/significant other?";
@@ -2404,7 +2423,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab10_checkbox_4a.Location = new System.Drawing.Point(413, 105);
             this.newPatientIntakeWizard_tab10_checkbox_4a.Name = "newPatientIntakeWizard_tab10_checkbox_4a";
             this.newPatientIntakeWizard_tab10_checkbox_4a.Size = new System.Drawing.Size(281, 42);
-            this.newPatientIntakeWizard_tab10_checkbox_4a.TabIndex = 97;
+            this.newPatientIntakeWizard_tab10_checkbox_4a.TabIndex = 0;
             this.newPatientIntakeWizard_tab10_checkbox_4a.Text = "Do you feel you have an immediate need for Alcohol/Drug treatment or recovery?";
             this.newPatientIntakeWizard_tab10_checkbox_4a.UseVisualStyleBackColor = true;
             this.newPatientIntakeWizard_tab10_checkbox_4a.CheckedChanged += new System.EventHandler(this.stopIntake);
@@ -2452,7 +2471,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab11_combobox_6.Location = new System.Drawing.Point(654, 295);
             this.newPatientIntakeWizard_tab11_combobox_6.Name = "newPatientIntakeWizard_tab11_combobox_6";
             this.newPatientIntakeWizard_tab11_combobox_6.Size = new System.Drawing.Size(100, 24);
-            this.newPatientIntakeWizard_tab11_combobox_6.TabIndex = 109;
+            this.newPatientIntakeWizard_tab11_combobox_6.TabIndex = 5;
             // 
             // label13
             // 
@@ -2476,7 +2495,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab11_combobox_5.Location = new System.Drawing.Point(654, 265);
             this.newPatientIntakeWizard_tab11_combobox_5.Name = "newPatientIntakeWizard_tab11_combobox_5";
             this.newPatientIntakeWizard_tab11_combobox_5.Size = new System.Drawing.Size(100, 24);
-            this.newPatientIntakeWizard_tab11_combobox_5.TabIndex = 107;
+            this.newPatientIntakeWizard_tab11_combobox_5.TabIndex = 4;
             // 
             // label8
             // 
@@ -2500,7 +2519,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab11_combobox_4.Location = new System.Drawing.Point(654, 235);
             this.newPatientIntakeWizard_tab11_combobox_4.Name = "newPatientIntakeWizard_tab11_combobox_4";
             this.newPatientIntakeWizard_tab11_combobox_4.Size = new System.Drawing.Size(100, 24);
-            this.newPatientIntakeWizard_tab11_combobox_4.TabIndex = 105;
+            this.newPatientIntakeWizard_tab11_combobox_4.TabIndex = 3;
             // 
             // label7
             // 
@@ -2524,7 +2543,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab11_combobox_3.Location = new System.Drawing.Point(654, 205);
             this.newPatientIntakeWizard_tab11_combobox_3.Name = "newPatientIntakeWizard_tab11_combobox_3";
             this.newPatientIntakeWizard_tab11_combobox_3.Size = new System.Drawing.Size(100, 24);
-            this.newPatientIntakeWizard_tab11_combobox_3.TabIndex = 103;
+            this.newPatientIntakeWizard_tab11_combobox_3.TabIndex = 2;
             // 
             // label5
             // 
@@ -2548,7 +2567,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab11_combobox_2.Location = new System.Drawing.Point(654, 172);
             this.newPatientIntakeWizard_tab11_combobox_2.Name = "newPatientIntakeWizard_tab11_combobox_2";
             this.newPatientIntakeWizard_tab11_combobox_2.Size = new System.Drawing.Size(100, 24);
-            this.newPatientIntakeWizard_tab11_combobox_2.TabIndex = 101;
+            this.newPatientIntakeWizard_tab11_combobox_2.TabIndex = 1;
             // 
             // label4
             // 
@@ -2572,7 +2591,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab11_combobox_1.Location = new System.Drawing.Point(654, 142);
             this.newPatientIntakeWizard_tab11_combobox_1.Name = "newPatientIntakeWizard_tab11_combobox_1";
             this.newPatientIntakeWizard_tab11_combobox_1.Size = new System.Drawing.Size(100, 24);
-            this.newPatientIntakeWizard_tab11_combobox_1.TabIndex = 99;
+            this.newPatientIntakeWizard_tab11_combobox_1.TabIndex = 0;
             // 
             // newPatientIntakeWizard_tab12
             // 
@@ -2621,7 +2640,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_diagnosis3.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_diagnosis3.Name = "newPatientIntakeWizard_tab12_textbox_diagnosis3";
             this.newPatientIntakeWizard_tab12_textbox_diagnosis3.Size = new System.Drawing.Size(272, 22);
-            this.newPatientIntakeWizard_tab12_textbox_diagnosis3.TabIndex = 119;
+            this.newPatientIntakeWizard_tab12_textbox_diagnosis3.TabIndex = 10;
             // 
             // label40
             // 
@@ -2640,7 +2659,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_dosage3.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_dosage3.Name = "newPatientIntakeWizard_tab12_textbox_dosage3";
             this.newPatientIntakeWizard_tab12_textbox_dosage3.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab12_textbox_dosage3.TabIndex = 117;
+            this.newPatientIntakeWizard_tab12_textbox_dosage3.TabIndex = 9;
             // 
             // label41
             // 
@@ -2659,7 +2678,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_medication3.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_medication3.Name = "newPatientIntakeWizard_tab12_textbox_medication3";
             this.newPatientIntakeWizard_tab12_textbox_medication3.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab12_textbox_medication3.TabIndex = 115;
+            this.newPatientIntakeWizard_tab12_textbox_medication3.TabIndex = 8;
             // 
             // label16
             // 
@@ -2678,7 +2697,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_diagnosis2.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_diagnosis2.Name = "newPatientIntakeWizard_tab12_textbox_diagnosis2";
             this.newPatientIntakeWizard_tab12_textbox_diagnosis2.Size = new System.Drawing.Size(272, 22);
-            this.newPatientIntakeWizard_tab12_textbox_diagnosis2.TabIndex = 113;
+            this.newPatientIntakeWizard_tab12_textbox_diagnosis2.TabIndex = 7;
             // 
             // label37
             // 
@@ -2697,7 +2716,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_dosage2.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_dosage2.Name = "newPatientIntakeWizard_tab12_textbox_dosage2";
             this.newPatientIntakeWizard_tab12_textbox_dosage2.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab12_textbox_dosage2.TabIndex = 111;
+            this.newPatientIntakeWizard_tab12_textbox_dosage2.TabIndex = 6;
             // 
             // label38
             // 
@@ -2716,7 +2735,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_medication2.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_medication2.Name = "newPatientIntakeWizard_tab12_textbox_medication2";
             this.newPatientIntakeWizard_tab12_textbox_medication2.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab12_textbox_medication2.TabIndex = 109;
+            this.newPatientIntakeWizard_tab12_textbox_medication2.TabIndex = 5;
             // 
             // label17
             // 
@@ -2735,7 +2754,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_diagnosis1.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_diagnosis1.Name = "newPatientIntakeWizard_tab12_textbox_diagnosis1";
             this.newPatientIntakeWizard_tab12_textbox_diagnosis1.Size = new System.Drawing.Size(272, 22);
-            this.newPatientIntakeWizard_tab12_textbox_diagnosis1.TabIndex = 107;
+            this.newPatientIntakeWizard_tab12_textbox_diagnosis1.TabIndex = 4;
             // 
             // label35
             // 
@@ -2754,7 +2773,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_dosage1.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_dosage1.Name = "newPatientIntakeWizard_tab12_textbox_dosage1";
             this.newPatientIntakeWizard_tab12_textbox_dosage1.Size = new System.Drawing.Size(80, 22);
-            this.newPatientIntakeWizard_tab12_textbox_dosage1.TabIndex = 105;
+            this.newPatientIntakeWizard_tab12_textbox_dosage1.TabIndex = 3;
             // 
             // label36
             // 
@@ -2773,7 +2792,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_medication1.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_medication1.Name = "newPatientIntakeWizard_tab12_textbox_medication1";
             this.newPatientIntakeWizard_tab12_textbox_medication1.Size = new System.Drawing.Size(106, 22);
-            this.newPatientIntakeWizard_tab12_textbox_medication1.TabIndex = 103;
+            this.newPatientIntakeWizard_tab12_textbox_medication1.TabIndex = 2;
             // 
             // label15
             // 
@@ -2792,7 +2811,7 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_describeLimits.MaxLength = 30;
             this.newPatientIntakeWizard_tab12_textbox_describeLimits.Name = "newPatientIntakeWizard_tab12_textbox_describeLimits";
             this.newPatientIntakeWizard_tab12_textbox_describeLimits.Size = new System.Drawing.Size(250, 22);
-            this.newPatientIntakeWizard_tab12_textbox_describeLimits.TabIndex = 99;
+            this.newPatientIntakeWizard_tab12_textbox_describeLimits.TabIndex = 1;
             // 
             // newPatientIntakeWizard_tab12_checkbox_physicalLimitations
             // 
@@ -2800,19 +2819,56 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations.Location = new System.Drawing.Point(413, 112);
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations.Name = "newPatientIntakeWizard_tab12_checkbox_physicalLimitations";
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations.Size = new System.Drawing.Size(334, 37);
-            this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations.TabIndex = 98;
+            this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations.TabIndex = 0;
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations.Text = "Do you have any physical limitations that may require assistance?";
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations.UseVisualStyleBackColor = true;
             // 
             // newPatientIntakeWizard_tab13
             // 
             this.newPatientIntakeWizard_tab13.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_checkbox_intakeornot);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_label_intakeDate);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate);
             this.newPatientIntakeWizard_tab13.Location = new System.Drawing.Point(4, 22);
             this.newPatientIntakeWizard_tab13.Name = "newPatientIntakeWizard_tab13";
             this.newPatientIntakeWizard_tab13.Padding = new System.Windows.Forms.Padding(3);
             this.newPatientIntakeWizard_tab13.Size = new System.Drawing.Size(824, 631);
             this.newPatientIntakeWizard_tab13.TabIndex = 12;
             this.newPatientIntakeWizard_tab13.Text = "13";
+            // 
+            // newPatientIntakeWizard_tab13_label_intakeDate
+            // 
+            this.newPatientIntakeWizard_tab13_label_intakeDate.AutoSize = true;
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Location = new System.Drawing.Point(481, 166);
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Name = "newPatientIntakeWizard_tab13_label_intakeDate";
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Size = new System.Drawing.Size(79, 16);
+            this.newPatientIntakeWizard_tab13_label_intakeDate.TabIndex = 84;
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Text = "Intake Date:";
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Visible = false;
+            // 
+            // newPatientIntakeWizard_tab13_datetimepicker_intakeDate
+            // 
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Location = new System.Drawing.Point(566, 163);
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Name = "newPatientIntakeWizard_tab13_datetimepicker_intakeDate";
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Size = new System.Drawing.Size(106, 22);
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.TabIndex = 83;
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Visible = false;
+            // 
+            // newPatientIntakeWizard_tab13_checkbox_intakeornot
+            // 
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.AutoSize = true;
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Location = new System.Drawing.Point(505, 135);
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Name = "newPatientIntakeWizard_tab13_checkbox_intakeornot";
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Size = new System.Drawing.Size(140, 20);
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.TabIndex = 85;
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Text = "Intake patient now?";
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.UseVisualStyleBackColor = true;
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.CheckedChanged += new System.EventHandler(this.newPatientIntakeWizard_tab13_checkbox_intakeornot_CheckedChanged);
             // 
             // NewPatientIntake
             // 
@@ -2865,6 +2921,8 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab11.PerformLayout();
             this.newPatientIntakeWizard_tab12.ResumeLayout(false);
             this.newPatientIntakeWizard_tab12.PerformLayout();
+            this.newPatientIntakeWizard_tab13.ResumeLayout(false);
+            this.newPatientIntakeWizard_tab13.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3080,6 +3138,9 @@ namespace WSRsmooz
         private System.Windows.Forms.TextBox newPatientIntakeWizard_tab4_textbox_agencyCounty;
         private System.Windows.Forms.Label newPatientIntakeWizard_tab8_label_referrals;
         private System.Windows.Forms.TextBox newPatientIntakeWizard_tab8_textbox_referrals;
+        private CheckBox newPatientIntakeWizard_tab13_checkbox_intakeornot;
+        private Label newPatientIntakeWizard_tab13_label_intakeDate;
+        private DateTimePicker newPatientIntakeWizard_tab13_datetimepicker_intakeDate;
 
     }
 }
