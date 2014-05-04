@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace WSRsmooz
 {
@@ -17,7 +18,12 @@ namespace WSRsmooz
                                       "Step 5: Enter client legal information.",
                                       "Step 6: Enter client health information.",
                                       "Step 7: Continue entering client health information.",
-                                      "Step 8: Participants are required to be clean and sober for 72 hours."
+                                      "Step 8: Participants are required to be clean and sober for 72 hours.",
+                                      "Step 9: ASAM. Enter basic information to analyze need.",
+                                      "Step 10: ASAM. Continue entering information.",
+                                      "Step 11: ASAM. Level of function analysis.",
+                                      "Step 12: Enter client's current prescriptions.",
+                                      "Step 13: Complete patient intake!"
                                     };
 
         Button[] stepButtons;
@@ -35,7 +41,12 @@ namespace WSRsmooz
                                          NewPatientIntake_checklist_button_tab5,
                                          NewPatientIntake_checklist_button_tab6,
                                          NewPatientIntake_checklist_button_tab7,
-                                         NewPatientIntake_checklist_button_tab8
+                                         NewPatientIntake_checklist_button_tab8,
+                                         NewPatientIntake_checklist_button_tab9,
+                                         NewPatientIntake_checklist_button_tab10,
+                                         NewPatientIntake_checklist_button_tab11,
+                                         NewPatientIntake_checklist_button_tab12,
+                                         NewPatientIntake_checklist_button_tab13
                                        };
             changeConstantsToTab(newPatientIntakeWizard, null);
         }
@@ -142,7 +153,10 @@ namespace WSRsmooz
                     return;
                 }
             }
-            nextTab();
+            if (newPatientIntakeWizard_button_next.Text != "Complete")
+                nextTab();
+            else
+                completeForm();
         }
 
         private void validateLettersNumbers(object sender, EventArgs e)
@@ -172,17 +186,79 @@ namespace WSRsmooz
 
         private void stopIntake(object sender, EventArgs e)
         {
-            if (newPatientIntakeWizard_tab8_checkbox_arson.Checked || newPatientIntakeWizard_tab8_checkbox_sexualCrime.Checked)
+            if (newPatientIntakeWizard.SelectedIndex == 7)
             {
-                newPatientIntakeWizard_tab8_label_stop.Visible = true;
-                newPatientIntakeWizard_tab8_label_stop2.Visible = true;
-                newPatientIntakeWizard_button_next.Enabled = false;
-            } else
-            {
-                newPatientIntakeWizard_tab8_label_stop.Visible = false;
-                newPatientIntakeWizard_tab8_label_stop2.Visible = false;
-                newPatientIntakeWizard_button_next.Enabled = true;
+                if (newPatientIntakeWizard_tab8_checkbox_arson.Checked || newPatientIntakeWizard_tab8_checkbox_sexualCrime.Checked)
+                {
+                    newPatientIntakeWizard_tab8_label_stop.Visible = true;
+                    newPatientIntakeWizard_tab8_label_stop2.Visible = true;
+                    newPatientIntakeWizard_button_next.Enabled = false;
+                }
+                else
+                {
+                    newPatientIntakeWizard_tab8_label_stop.Visible = false;
+                    newPatientIntakeWizard_tab8_label_stop2.Visible = false;
+                    newPatientIntakeWizard_button_next.Enabled = true;
+                }
             }
+            else if (newPatientIntakeWizard.SelectedIndex == 8)
+            {
+                if ((newPatientIntakeWizard_tab9_checkbox_1a.Checked && newPatientIntakeWizard_tab9_checkbox_1b.Checked)
+                    || newPatientIntakeWizard_tab9_checkbox_2.Checked || newPatientIntakeWizard_tab9_checkbox_3.Checked)
+                {
+                    newPatientIntakeWizard_tab9_label_emergency.Visible = true;
+                }
+                else
+                {
+                    newPatientIntakeWizard_tab9_label_emergency.Visible = false;
+                }
+            }
+            else if (newPatientIntakeWizard.SelectedIndex == 9)
+            {
+                if (newPatientIntakeWizard_tab10_checkbox_4a.Checked || newPatientIntakeWizard_tab10_checkbox_4b.Checked)
+                {
+                    newPatientIntakeWizard_tab10_label_emergency.Visible = true;
+                }
+                else
+                {
+                    newPatientIntakeWizard_tab10_label_emergency.Visible = false;
+                }
+
+                if (newPatientIntakeWizard_tab10_checkbox_5a.Checked)
+                {
+                    newPatientIntakeWizard_tab10_label_emergency2.Visible = true;
+                }
+                else
+                {
+                    newPatientIntakeWizard_tab10_label_emergency2.Visible = false;
+                }
+
+                if (newPatientIntakeWizard_tab10_checkbox_6.Checked || newPatientIntakeWizard_tab10_checkbox_5b.Checked)
+                {
+                    newPatientIntakeWizard_tab10_label_emergency3.Visible = true;
+                }
+                else
+                {
+                    newPatientIntakeWizard_tab10_label_emergency3.Visible = false;
+                }
+            }
+        }
+
+
+
+        private void completeForm()
+        {
+            Dictionary<string, string> changes = new Dictionary<string, string>();
+
+            //
+            //
+            //
+            // Changes below.
+            //
+            //
+            //
+            changes.Add("","");
+
         }
 
     }
