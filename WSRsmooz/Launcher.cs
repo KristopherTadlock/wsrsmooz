@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections.Generic;
 
 namespace WSRsmooz
 {
@@ -17,7 +18,7 @@ namespace WSRsmooz
         public String currentWindow { get; set; }
 
         // initialize form children
-        Form loginForm, viewPatientLogForm, groupNotesForm;
+        Form loginForm, viewPatientLogForm, groupNotesForm, formOrganizationform;
         Form editEmployeesForm, newPatientIntakeForm, dischargePatientForm;
         Form individualNotesForm;
         
@@ -73,7 +74,11 @@ namespace WSRsmooz
                     launcher_button_groupClipboard.Enabled = true;
                     launcher_button_individualNotes.Enabled = true;
                     launcher_button_dischargePatient.Enabled = true;
-                    if (superUser) launcher_button_employees.Enabled = true;
+                    if (superUser)
+                    {
+                        launcher_button_employees.Enabled = true;
+                        launcher_button_forms.Enabled = true;
+                    }
                     launcher_button_login.Text = "&Logout";
                     launcher_button_login.Image = WSRsmooz.Properties.Resources.logout;
                     this.Text = defaultTitle + " - [" + currentUser + "]";
@@ -85,6 +90,7 @@ namespace WSRsmooz
                     launcher_button_individualNotes.Enabled = false;
                     launcher_button_dischargePatient.Enabled = false;
                     launcher_button_employees.Enabled = false;
+                    launcher_button_forms.Enabled = false;
                     launcher_button_login.Text = "&Login";
                     launcher_button_login.Image = WSRsmooz.Properties.Resources.login;
                     this.Text = defaultTitle;
@@ -208,6 +214,52 @@ namespace WSRsmooz
                 dischargePatientForm.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
                 dischargePatientForm.Show();
             }
+        }
+
+        private void launcher_button_forms_Click(object sender, EventArgs e)
+        {
+            if (!this.currentWindow.Equals("Form Organization"))
+            {
+                shutdownEverything();
+                this.currentWindow = "Form Organization";
+                formOrganizationform = new FormOrganization();
+                formOrganizationform.MdiParent = this;
+                formOrganizationform.Size = new Rectangle(0, 0, toolStrip.Width - 4, (this.ClientRectangle.Height - toolStrip.Height - 4)).Size;
+                formOrganizationform.Show();
+            }
+        }
+    }
+
+    public class ClientItem
+    {
+        public String id { get; set; }
+        public String clientName { get; set; }
+        public override string ToString()
+        {
+            return clientName;
+        }
+    }
+
+    public class PanelItem
+    {
+        public String name { get; set; }
+        public List<FormItem> list { get; set; }
+        public String id { get; set; }
+        public override string ToString()
+        {
+            return name;
+        }
+    }
+
+    public class FormItem
+    {
+        public String name { get; set; }
+        public String path { get; set; }
+        public Form form { get; set; }
+        public String id { get; set; }
+        public override string ToString()
+        {
+            return name;
         }
     }
 }

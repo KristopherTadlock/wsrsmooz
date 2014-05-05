@@ -38,7 +38,7 @@ namespace WSRsmooz
             InitializeComponent();
             admin = false;
 
-            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0000-00-00%'";
+            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0001-01-01%'";
             clients = database.GetTable(query);
             
             editingDay = DateTime.Now;

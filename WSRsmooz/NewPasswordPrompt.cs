@@ -7,7 +7,7 @@ namespace WSRsmooz
 {
     public partial class NewPasswordPrompt : Form
     {
-        dbConnection database = new dbConnection();
+        dbConnect database = new dbConnect();
         public String employee { get; set; }
 
         static string crunch(String bunch)

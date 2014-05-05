@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Data;
 
 namespace WSRsmooz
 {
@@ -34,6 +35,7 @@ namespace WSRsmooz
         Dictionary<string, string> screeningChanges;
         Dictionary<string, string> asamChanges;
         dbConnect database = new dbConnect();
+        DataTable inactiveClients = new DataTable();
 
         // just pdf-y things
         PdfReader pdfReader;
@@ -66,6 +68,57 @@ namespace WSRsmooz
             int rand = rng.Next(int.MaxValue);
             newScreening = Convert.ToString(rand) + ".pdf";
             newASAM = Convert.ToString(rng.Next(rand)) + ".pdf";
+            fillInactiveClientList();
+        }
+
+        private void fillInactiveClientList()
+        {
+            newPatientIntakeWizard_tab1_listbox_inactiveclients.Items.Clear();
+
+            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate LIKE '0001-01-01%'";
+            inactiveClients = database.GetTable(query);
+
+            foreach (DataRow row in inactiveClients.Rows)
+            {
+                ClientItem item = new ClientItem();
+                item.id = row["ClientNum"].ToString();
+                item.clientName = row["ClientName"].ToString();
+                newPatientIntakeWizard_tab1_listbox_inactiveclients.Items.Add(item);
+            }
+            if (newPatientIntakeWizard_tab1_listbox_inactiveclients.Items.Count > 0)
+                newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedIndex = 0;
+        }
+
+        private void newPatientIntakeWizard_tab1_button_removeclient_Click(object sender, EventArgs e)
+        {
+            if (newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedItems.Count > 0)
+            {
+                String query = "delete from ClientInfo where ClientNum=";
+                query += ((ClientItem)newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedItem).id;
+
+                if (database.Query(query))
+                    fillInactiveClientList();
+            }
+        }
+
+        private void newPatientIntakeWizard_tab1_button_giveintakedate_Click(object sender, EventArgs e)
+        {
+            if (newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedItems.Count > 0)
+            {
+                String query = "update ClientInfo set IntakeDate=\"";
+                query += newPatientIntakeWizard_tab1_datetimepicker_intakedate.Value.ToString("yyyy-MM-dd");
+                query += "\" where ClientNum=";
+                query += ((ClientItem)newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedItem).id;
+                String mbox = ((ClientItem)newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedItem).clientName;
+
+                if (database.Query(query))
+                    mbox += "'s intake is now complete. Client will appear in the patient log.";
+                else
+                    mbox += "'s intake could not be added to the database.";
+                MessageBox.Show(mbox);
+
+                fillInactiveClientList();
+            }
         }
 
         public void cancelNewPatientIntake(object sender, EventArgs e)
@@ -787,6 +840,7 @@ namespace WSRsmooz
             query += "\", \"" + newPatientIntakeWizard_tab4_textbox_agencyContactName.Text;
             query += "\", \"" + newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.Text + "\")";
             database.Query(query);
+            fillInactiveClientList();
 
             
             // how do i get clientnumz
@@ -817,6 +871,5 @@ namespace WSRsmooz
                 newPatientIntakeWizard_tab13_label_intakeDate.Visible = true;
             }
         }
-
     }
 }

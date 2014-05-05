@@ -36,6 +36,7 @@ namespace WSRsmooz
             this.launcher_button_dischargePatient = new System.Windows.Forms.ToolStripButton();
             this.launcher_button_login = new System.Windows.Forms.ToolStripButton();
             this.launcher_button_employees = new System.Windows.Forms.ToolStripButton();
+            this.launcher_button_forms = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@ namespace WSRsmooz
             this.launcher_button_individualNotes,
             this.launcher_button_dischargePatient,
             this.launcher_button_login,
-            this.launcher_button_employees});
+            this.launcher_button_employees,
+            this.launcher_button_forms});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.ShowItemToolTips = false;
@@ -146,6 +148,19 @@ namespace WSRsmooz
             this.launcher_button_employees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.launcher_button_employees.Click += new System.EventHandler(this.launcher_button_employees_Click);
             // 
+            // launcher_button_forms
+            // 
+            this.launcher_button_forms.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.launcher_button_forms.AutoSize = false;
+            this.launcher_button_forms.Enabled = false;
+            this.launcher_button_forms.Image = global::WSRsmooz.Properties.Resources.formoganization;
+            this.launcher_button_forms.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.launcher_button_forms.Name = "launcher_button_forms";
+            this.launcher_button_forms.Size = new System.Drawing.Size(105, 69);
+            this.launcher_button_forms.Text = "&Forms";
+            this.launcher_button_forms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.launcher_button_forms.Click += new System.EventHandler(this.launcher_button_forms_Click);
+            // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +190,7 @@ namespace WSRsmooz
         private System.Windows.Forms.ToolStripButton launcher_button_login;
         private System.Windows.Forms.ToolStripButton launcher_button_dischargePatient;
         private System.Windows.Forms.ToolStripButton launcher_button_employees;
+        private System.Windows.Forms.ToolStripButton launcher_button_forms;
     }
 }
 

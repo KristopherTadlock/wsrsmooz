@@ -238,9 +238,14 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_describeLimits = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations = new System.Windows.Forms.CheckBox();
             this.newPatientIntakeWizard_tab13 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot = new System.Windows.Forms.CheckBox();
             this.newPatientIntakeWizard_tab13_label_intakeDate = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate = new System.Windows.Forms.DateTimePicker();
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot = new System.Windows.Forms.CheckBox();
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients = new System.Windows.Forms.ListBox();
+            this.newPatientIntakeWizard_tab1_button_removeclient = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate = new System.Windows.Forms.DateTimePicker();
+            this.newPatientIntakeWizard_tab1_button_giveintakedate = new System.Windows.Forms.Button();
             this.newPatientIntakeWizard.SuspendLayout();
             this.newPatientIntakeWizard_tab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_picturebox_wizard)).BeginInit();
@@ -460,6 +465,11 @@ namespace WSRsmooz
             // newPatientIntakeWizard_tab1
             // 
             this.newPatientIntakeWizard_tab1.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_button_giveintakedate);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.label43);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_datetimepicker_intakedate);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_button_removeclient);
+            this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_listbox_inactiveclients);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_textbox_yearsResided);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_textbox_zip);
             this.newPatientIntakeWizard_tab1.Controls.Add(this.newPatientIntakeWizard_tab1_label_yearsResided);
@@ -882,7 +892,7 @@ namespace WSRsmooz
             // 
             this.newPatientIntakeWizard_tab2_textbox_partnersName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newPatientIntakeWizard_tab2_textbox_partnersName.Location = new System.Drawing.Point(454, 281);
-            this.newPatientIntakeWizard_tab2_textbox_partnersName.MaxLength = 5;
+            this.newPatientIntakeWizard_tab2_textbox_partnersName.MaxLength = 30;
             this.newPatientIntakeWizard_tab2_textbox_partnersName.Name = "newPatientIntakeWizard_tab2_textbox_partnersName";
             this.newPatientIntakeWizard_tab2_textbox_partnersName.Size = new System.Drawing.Size(106, 22);
             this.newPatientIntakeWizard_tab2_textbox_partnersName.TabIndex = 6;
@@ -2836,6 +2846,18 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab13.TabIndex = 12;
             this.newPatientIntakeWizard_tab13.Text = "13";
             // 
+            // newPatientIntakeWizard_tab13_checkbox_intakeornot
+            // 
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.AutoSize = true;
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Location = new System.Drawing.Point(505, 135);
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Name = "newPatientIntakeWizard_tab13_checkbox_intakeornot";
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Size = new System.Drawing.Size(140, 20);
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.TabIndex = 85;
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Text = "Intake patient now?";
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.UseVisualStyleBackColor = true;
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.CheckedChanged += new System.EventHandler(this.newPatientIntakeWizard_tab13_checkbox_intakeornot_CheckedChanged);
+            // 
             // newPatientIntakeWizard_tab13_label_intakeDate
             // 
             this.newPatientIntakeWizard_tab13_label_intakeDate.AutoSize = true;
@@ -2858,17 +2880,57 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.TabIndex = 83;
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Visible = false;
             // 
-            // newPatientIntakeWizard_tab13_checkbox_intakeornot
+            // newPatientIntakeWizard_tab1_listbox_inactiveclients
             // 
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.AutoSize = true;
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Location = new System.Drawing.Point(505, 135);
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Name = "newPatientIntakeWizard_tab13_checkbox_intakeornot";
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Size = new System.Drawing.Size(140, 20);
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.TabIndex = 85;
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Text = "Intake patient now?";
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.UseVisualStyleBackColor = true;
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.CheckedChanged += new System.EventHandler(this.newPatientIntakeWizard_tab13_checkbox_intakeornot_CheckedChanged);
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients.FormattingEnabled = true;
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients.ItemHeight = 20;
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients.Location = new System.Drawing.Point(6, 479);
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients.Name = "newPatientIntakeWizard_tab1_listbox_inactiveclients";
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients.Size = new System.Drawing.Size(193, 144);
+            this.newPatientIntakeWizard_tab1_listbox_inactiveclients.TabIndex = 28;
+            // 
+            // newPatientIntakeWizard_tab1_button_removeclient
+            // 
+            this.newPatientIntakeWizard_tab1_button_removeclient.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab1_button_removeclient.Location = new System.Drawing.Point(205, 479);
+            this.newPatientIntakeWizard_tab1_button_removeclient.Name = "newPatientIntakeWizard_tab1_button_removeclient";
+            this.newPatientIntakeWizard_tab1_button_removeclient.Size = new System.Drawing.Size(23, 33);
+            this.newPatientIntakeWizard_tab1_button_removeclient.TabIndex = 29;
+            this.newPatientIntakeWizard_tab1_button_removeclient.Text = "-";
+            this.newPatientIntakeWizard_tab1_button_removeclient.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.newPatientIntakeWizard_tab1_button_removeclient.UseVisualStyleBackColor = true;
+            this.newPatientIntakeWizard_tab1_button_removeclient.Click += new System.EventHandler(this.newPatientIntakeWizard_tab1_button_removeclient_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(228, 518);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(79, 16);
+            this.label43.TabIndex = 31;
+            this.label43.Text = "Intake Date:";
+            // 
+            // newPatientIntakeWizard_tab1_datetimepicker_intakedate
+            // 
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate.Location = new System.Drawing.Point(231, 537);
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate.Name = "newPatientIntakeWizard_tab1_datetimepicker_intakedate";
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate.Size = new System.Drawing.Size(106, 22);
+            this.newPatientIntakeWizard_tab1_datetimepicker_intakedate.TabIndex = 30;
+            // 
+            // newPatientIntakeWizard_tab1_button_giveintakedate
+            // 
+            this.newPatientIntakeWizard_tab1_button_giveintakedate.Location = new System.Drawing.Point(231, 560);
+            this.newPatientIntakeWizard_tab1_button_giveintakedate.Name = "newPatientIntakeWizard_tab1_button_giveintakedate";
+            this.newPatientIntakeWizard_tab1_button_giveintakedate.Size = new System.Drawing.Size(106, 23);
+            this.newPatientIntakeWizard_tab1_button_giveintakedate.TabIndex = 32;
+            this.newPatientIntakeWizard_tab1_button_giveintakedate.Text = "Give Intake Date";
+            this.newPatientIntakeWizard_tab1_button_giveintakedate.UseVisualStyleBackColor = true;
+            this.newPatientIntakeWizard_tab1_button_giveintakedate.Click += new System.EventHandler(this.newPatientIntakeWizard_tab1_button_giveintakedate_Click);
             // 
             // NewPatientIntake
             // 
@@ -3141,6 +3203,11 @@ namespace WSRsmooz
         private CheckBox newPatientIntakeWizard_tab13_checkbox_intakeornot;
         private Label newPatientIntakeWizard_tab13_label_intakeDate;
         private DateTimePicker newPatientIntakeWizard_tab13_datetimepicker_intakeDate;
+        private ListBox newPatientIntakeWizard_tab1_listbox_inactiveclients;
+        private Button newPatientIntakeWizard_tab1_button_removeclient;
+        private Button newPatientIntakeWizard_tab1_button_giveintakedate;
+        private Label label43;
+        private DateTimePicker newPatientIntakeWizard_tab1_datetimepicker_intakedate;
 
     }
 }

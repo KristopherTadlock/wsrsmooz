@@ -79,6 +79,12 @@
     <Compile Include="EditEmployees.Designer.cs">
       <DependentUpon>EditEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOrganization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganization.Designer.cs">
+      <DependentUpon>FormOrganization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AdmissionBookkeeping.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,12 +171,6 @@
     <Compile Include="SignaturePrompt.Designer.cs">
       <DependentUpon>SignaturePrompt.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewPatientLog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewPatientLog.Designer.cs">
-      <DependentUpon>ViewPatientLog.cs</DependentUpon>
-    </Compile>
     <Compile Include="WizardTabs.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -182,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditEmployees.resx">
       <DependentUpon>EditEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganization.resx">
+      <DependentUpon>FormOrganization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdmissionBookkeeping.resx">
       <DependentUpon>Form_AdmissionBookkeeping.cs</DependentUpon>
@@ -234,9 +237,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SignaturePrompt.resx">
       <DependentUpon>SignaturePrompt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewPatientLog.resx">
-      <DependentUpon>ViewPatientLog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -334,7 +334,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="clientfiles\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\wsrlogo.png" />
@@ -348,6 +347,8 @@
     <Content Include="printpdf.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icon_43701.png" />
+    <None Include="Resources\formorganization.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

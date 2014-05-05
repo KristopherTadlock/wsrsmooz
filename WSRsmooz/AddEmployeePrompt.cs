@@ -5,7 +5,7 @@ namespace WSRsmooz
 {
     public partial class AddEmployeePrompt : Form
     {
-        dbConnection database = new dbConnection();
+        dbConnect database = new dbConnect();
 
         public AddEmployeePrompt()
         {

@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
@@ -15,12 +15,12 @@ namespace WSRsmooz
         {
             // Change to local MySQL server ISP.
             // 192.241.235.225  DigitalOcean Dev Droplet
-            server =    "192.241.235.225";
-            port =      "3306";
+            server = "192.241.235.225";
+            port = "3306";
 
-            database =  "westSlopeDB";
-            uid =       "westslope";
-            password =  "whatwhat";
+            database = "westSlopeDB";
+            uid = "westslope";
+            password = "whatwhat";
 
             string newConnection = "Server=" + server +
                 ";Port=" + port + ";Database=" + database +
