@@ -255,6 +255,7 @@ namespace WSRsmooz
     {
         public String name { get; set; }
         public String path { get; set; }
+        public String panel { get; set; }
         public Form form { get; set; }
         public String id { get; set; }
         public override string ToString()

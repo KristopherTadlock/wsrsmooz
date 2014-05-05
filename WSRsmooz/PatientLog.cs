@@ -8,71 +8,86 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Collections;
 
 namespace WSRsmooz
 {
     public partial class PatientLog : Form
     {
-        dbConnection database = new dbConnection();
-        dbConnect database2 = new dbConnect();
-        DataTable clientTable = new DataTable();
-        DataSet forms = new DataSet();
-        List<String>[] panels;
+        dbConnect database = new dbConnect();
+        DataTable clientTable;
+        DataTable forms;
+        DataTable panels;
         public Boolean admin { get; set; }
+        String query = "";
+        ArrayList formItems = new ArrayList();
 
         public PatientLog()
         {
             InitializeComponent();
             admin = false;
 
-            panels = new List<String>[7];
-            resetFormList();
+            fillPanelBox();
             PanelList.SelectedIndex = 0;
+            resetFormList();
             String query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0001-01-01%'";
-            clientTable = database2.GetTable(query);
+            clientTable = database.GetTable(query);
             updateClientList();
+        }
+
+        private void fillPanelBox()
+        {
+            PanelList.Items.Clear();
+            query = "select * from panels order by Priority asc";
+            panels = database.GetTable(query);
+
+            foreach (DataRow row in panels.Rows)
+            {
+                PanelItem newPanel = new PanelItem();
+                newPanel.name = row["PanelName"].ToString();
+                newPanel.id = row["PanelID"].ToString();
+                PanelList.Items.Add(newPanel);
+            }
         }
 
         public void resetFormList()
         {
-            String query = "select table_name from INFORMATION_SCHEMA.TABLES where " +
-                "table_name like 'form_%'";
-            forms = database.GetFormTemplates(query);
-            PanelList.Items.Clear();
-            for (int i = 0; i < panels.Length; i++)
-                panels[i] = new List<String>(64);
+            formItems.Clear();
 
-            foreach (DataTable table in forms.Tables)
+            foreach (DataRow panel in panels.Rows)
             {
-                if (table.Columns.Contains("Panel"))
-                {
-                    int panelNumber = Convert.ToInt32(table.Rows[0]["Panel"]);
-                    panels[panelNumber].Add(table.TableName.ToString());
-                }
-            }
+                query = "select * from forms where Panel=" + ((PanelItem)PanelList.SelectedItem).id + " order by Priority asc";
+                forms = database.GetTable(query);
 
-            for (int i = 0; i < panels.Length; i++)
-            {
-                if (panels[i].Count > 0)
+                foreach (DataRow form in forms.Rows)
                 {
-                    PanelItem newPanel = new PanelItem();
-                    newPanel.name = "Panel " + i;
-                    newPanel.list = new List<FormItem>(16);
-                    PanelList.Items.Add(newPanel);
+                    FormItem newFormItem = new FormItem();
+                    newFormItem.id = form["FormID"].ToString();
+                    newFormItem.name = form["FormName"].ToString();
+                    newFormItem.panel = form["Panel"].ToString();
+                    newFormItem.path = "/templates/" + form["Path"].ToString() + ".pdf";
 
-                    foreach (String form in panels[i])
+                    //
+                    // ADD HARCODED FORMS HERE
+                    //
+                    switch (newFormItem.id)
                     {
-                        FormItem newFormItem = new FormItem();
-                        newFormItem.name = form;
-                        /*if (form.Equals("Client Screening Information"))
+                        case "1": // Screening & Client Information 
                             newFormItem.form = new Form_ClientScreeningForm();
-                        else */if (form.Equals("Admission Bookkeeping"))
-                            newFormItem.form = new Form_AdmissionBookkeeping();
-                        /*else if (form.Equals("ASAM"))
-                            newFormItem.form = new Form_ASAM();*/
-                        newFormItem.path = "/templates/" + form + ".pdf";
-                        newPanel.list.Add(newFormItem);
+                            break;
+                        case "2": // Admission Bookkeeping
+                            //newFormItem.form = new Form_AdmissionBookkeeping();
+                            break;
+                        case "3": // Urine Analysis
+                            break;
+                        default:
+                            break;
                     }
+                    //
+                    // FINISH ADDING HARDCODED FORMS HERE
+                    //
+
+                    formItems.Add(newFormItem);
                 }
             }
         }
@@ -92,7 +107,7 @@ namespace WSRsmooz
         public void loadClient(ClientItem client)
         {
             String query = "select ClientNum, ClientName from ClientInfo where `ClientNum`=\"" + client + "\"";
-            DataTable loadedClient = database2.GetTable(query);
+            DataTable loadedClient = database.GetTable(query);
         }
 
         private void clientList_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,7 +130,7 @@ namespace WSRsmooz
             {
                 query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0001-01-01%'";
             }
-            clientTable = database2.GetTable(query);
+            clientTable = database.GetTable(query);
             updateClientList();
         }
 
@@ -141,22 +156,26 @@ namespace WSRsmooz
             int buttonX = 384;
             int buttonY = 109;
             int tabIndex = 1;
-            foreach (FormItem form in panel.list)
-            {
-                Button newButton = new Button();
-                newButton.Location = new Point(buttonX, buttonY);
-                newButton.BackColor = SystemColors.Window;
-                newButton.FlatStyle = FlatStyle.Popup;
-                newButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-                newButton.Size = new Size(400, 40);
-                newButton.TabIndex = tabIndex;
-                newButton.Text = form.name;
-                newButton.UseVisualStyleBackColor = false;
-                newButton.Click += (s, e) => { openForm(form, (ClientItem)clientList.SelectedItem);  };
-                Controls.Add(newButton);
 
-                buttonY += 45;
-                tabIndex++;
+            foreach (FormItem form in formItems)
+            {
+                if (form.panel.Equals(((PanelItem)PanelList.SelectedItem).id))
+                {
+                    Button newButton = new Button();
+                    newButton.Location = new Point(buttonX, buttonY);
+                    newButton.BackColor = SystemColors.Window;
+                    newButton.FlatStyle = FlatStyle.Popup;
+                    newButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    newButton.Size = new Size(400, 40);
+                    newButton.TabIndex = tabIndex;
+                    newButton.Text = form.name;
+                    newButton.UseVisualStyleBackColor = false;
+                    newButton.Click += (s, e) => { openForm(form, (ClientItem)clientList.SelectedItem); };
+                    Controls.Add(newButton);
+
+                    buttonY += 45;
+                    tabIndex++;
+                }
             }
         }
 

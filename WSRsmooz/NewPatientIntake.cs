@@ -28,7 +28,6 @@ namespace WSRsmooz
                                       "Step 12: Enter client's current prescriptions.",
                                       "Step 13: Provide an intake date or leave blank to wait!"
                                     };
-
         Button[] stepButtons;
 
         // mandatory variables
@@ -129,7 +128,6 @@ namespace WSRsmooz
                 ((Launcher)MdiParent).currentWindow = "";
                 this.Close();
             }
-            
         }
 
         public void validateTextBox(object sender, short type)
