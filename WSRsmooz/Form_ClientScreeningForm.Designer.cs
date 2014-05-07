@@ -114,6 +114,9 @@
             this.PStatmt = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lastUseDate3 = new System.Windows.Forms.TextBox();
+            this.lastUseDate2 = new System.Windows.Forms.TextBox();
+            this.lastUseDate1 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.cb_PT = new System.Windows.Forms.CheckBox();
@@ -143,11 +146,8 @@
             this.amountUsed1 = new System.Windows.Forms.TextBox();
             this.Method2 = new System.Windows.Forms.TextBox();
             this.amountUsed3 = new System.Windows.Forms.TextBox();
-            this.NextButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
-            this.lastUseDate1 = new System.Windows.Forms.TextBox();
-            this.lastUseDate2 = new System.Windows.Forms.TextBox();
-            this.lastUseDate3 = new System.Windows.Forms.TextBox();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -382,7 +382,6 @@
             this.ClientPhone.Name = "ClientPhone";
             this.ClientPhone.Size = new System.Drawing.Size(116, 22);
             this.ClientPhone.TabIndex = 24;
-            this.ClientPhone.TextChanged += new System.EventHandler(this.PrimaryPhoneNumber_TextChanged);
             // 
             // NumYears
             // 
@@ -1153,6 +1152,27 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Physical & Mental Health";
             // 
+            // lastUseDate3
+            // 
+            this.lastUseDate3.Location = new System.Drawing.Point(119, 208);
+            this.lastUseDate3.Name = "lastUseDate3";
+            this.lastUseDate3.Size = new System.Drawing.Size(82, 22);
+            this.lastUseDate3.TabIndex = 45;
+            // 
+            // lastUseDate2
+            // 
+            this.lastUseDate2.Location = new System.Drawing.Point(119, 185);
+            this.lastUseDate2.Name = "lastUseDate2";
+            this.lastUseDate2.Size = new System.Drawing.Size(82, 22);
+            this.lastUseDate2.TabIndex = 44;
+            // 
+            // lastUseDate1
+            // 
+            this.lastUseDate1.Location = new System.Drawing.Point(119, 162);
+            this.lastUseDate1.Name = "lastUseDate1";
+            this.lastUseDate1.Size = new System.Drawing.Size(82, 22);
+            this.lastUseDate1.TabIndex = 43;
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1386,21 +1406,10 @@
             this.amountUsed3.Size = new System.Drawing.Size(82, 22);
             this.amountUsed3.TabIndex = 18;
             // 
-            // NextButton
-            // 
-            this.NextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextButton.Location = new System.Drawing.Point(69, 641);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(194, 40);
-            this.NextButton.TabIndex = 7;
-            this.NextButton.Text = "Save Form Information";
-            this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
-            // 
             // PrintButton
             // 
             this.PrintButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrintButton.Location = new System.Drawing.Point(269, 641);
+            this.PrintButton.Location = new System.Drawing.Point(34, 641);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(194, 40);
             this.PrintButton.TabIndex = 8;
@@ -1408,34 +1417,24 @@
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
-            // lastUseDate1
+            // CancelButton
             // 
-            this.lastUseDate1.Location = new System.Drawing.Point(119, 162);
-            this.lastUseDate1.Name = "lastUseDate1";
-            this.lastUseDate1.Size = new System.Drawing.Size(82, 22);
-            this.lastUseDate1.TabIndex = 43;
-            // 
-            // lastUseDate2
-            // 
-            this.lastUseDate2.Location = new System.Drawing.Point(119, 185);
-            this.lastUseDate2.Name = "lastUseDate2";
-            this.lastUseDate2.Size = new System.Drawing.Size(82, 22);
-            this.lastUseDate2.TabIndex = 44;
-            // 
-            // lastUseDate3
-            // 
-            this.lastUseDate3.Location = new System.Drawing.Point(119, 208);
-            this.lastUseDate3.Name = "lastUseDate3";
-            this.lastUseDate3.Size = new System.Drawing.Size(82, 22);
-            this.lastUseDate3.TabIndex = 45;
+            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelButton.Location = new System.Drawing.Point(251, 641);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(194, 40);
+            this.CancelButton.TabIndex = 9;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // Form_ClientScreeningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 693);
+            this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.PrintButton);
-            this.Controls.Add(this.NextButton);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
@@ -1445,7 +1444,6 @@
             this.Name = "Form_ClientScreeningForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Client Screening Form";
-            this.Load += new System.EventHandler(this.Form_ClientScreeningForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1576,11 +1574,11 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.CheckBox cb_MHdays;
         private System.Windows.Forms.CheckBox cb_PHdays;
-        private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.DateTimePicker dt_DoB;
         private System.Windows.Forms.Button PrintButton;
         private System.Windows.Forms.TextBox lastUseDate3;
         private System.Windows.Forms.TextBox lastUseDate2;
         private System.Windows.Forms.TextBox lastUseDate1;
+        private System.Windows.Forms.Button CancelButton;
     }
 }

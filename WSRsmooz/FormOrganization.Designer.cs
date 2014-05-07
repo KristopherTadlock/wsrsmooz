@@ -45,6 +45,13 @@
             this.SaveForm = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.FormName = new System.Windows.Forms.TextBox();
+            this.PanelGroupBox = new System.Windows.Forms.GroupBox();
+            this.FormGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PanelChoiceBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PanelGroupBox.SuspendLayout();
+            this.FormGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormOrganizationTitle
@@ -61,7 +68,7 @@
             // 
             this.FormBox.FormattingEnabled = true;
             this.FormBox.ItemHeight = 16;
-            this.FormBox.Location = new System.Drawing.Point(206, 325);
+            this.FormBox.Location = new System.Drawing.Point(47, 38);
             this.FormBox.Name = "FormBox";
             this.FormBox.Size = new System.Drawing.Size(228, 116);
             this.FormBox.TabIndex = 19;
@@ -71,7 +78,7 @@
             // 
             this.PanelBox.FormattingEnabled = true;
             this.PanelBox.ItemHeight = 16;
-            this.PanelBox.Location = new System.Drawing.Point(206, 124);
+            this.PanelBox.Location = new System.Drawing.Point(50, 38);
             this.PanelBox.Name = "PanelBox";
             this.PanelBox.Size = new System.Drawing.Size(228, 116);
             this.PanelBox.TabIndex = 20;
@@ -79,7 +86,7 @@
             // 
             // PanelName
             // 
-            this.PanelName.Location = new System.Drawing.Point(702, 156);
+            this.PanelName.Location = new System.Drawing.Point(127, 160);
             this.PanelName.Name = "PanelName";
             this.PanelName.Size = new System.Drawing.Size(151, 22);
             this.PanelName.TabIndex = 21;
@@ -87,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(610, 159);
+            this.label1.Location = new System.Drawing.Point(35, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 22;
@@ -95,7 +102,7 @@
             // 
             // SavePanel
             // 
-            this.SavePanel.Location = new System.Drawing.Point(738, 184);
+            this.SavePanel.Location = new System.Drawing.Point(203, 188);
             this.SavePanel.Name = "SavePanel";
             this.SavePanel.Size = new System.Drawing.Size(75, 25);
             this.SavePanel.TabIndex = 24;
@@ -105,7 +112,7 @@
             // 
             // Panel_MoveUp
             // 
-            this.Panel_MoveUp.Location = new System.Drawing.Point(446, 124);
+            this.Panel_MoveUp.Location = new System.Drawing.Point(290, 38);
             this.Panel_MoveUp.Name = "Panel_MoveUp";
             this.Panel_MoveUp.Size = new System.Drawing.Size(87, 27);
             this.Panel_MoveUp.TabIndex = 25;
@@ -115,7 +122,7 @@
             // 
             // Panel_MoveDown
             // 
-            this.Panel_MoveDown.Location = new System.Drawing.Point(446, 159);
+            this.Panel_MoveDown.Location = new System.Drawing.Point(290, 73);
             this.Panel_MoveDown.Name = "Panel_MoveDown";
             this.Panel_MoveDown.Size = new System.Drawing.Size(87, 27);
             this.Panel_MoveDown.TabIndex = 26;
@@ -125,8 +132,9 @@
             // 
             // RemoveEmployee
             // 
+            this.RemoveEmployee.Enabled = false;
             this.RemoveEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveEmployee.Location = new System.Drawing.Point(177, 162);
+            this.RemoveEmployee.Location = new System.Drawing.Point(21, 76);
             this.RemoveEmployee.Name = "RemoveEmployee";
             this.RemoveEmployee.Size = new System.Drawing.Size(23, 33);
             this.RemoveEmployee.TabIndex = 28;
@@ -136,8 +144,9 @@
             // 
             // AddEmployee
             // 
+            this.AddEmployee.Enabled = false;
             this.AddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEmployee.Location = new System.Drawing.Point(177, 124);
+            this.AddEmployee.Location = new System.Drawing.Point(21, 38);
             this.AddEmployee.Name = "AddEmployee";
             this.AddEmployee.Size = new System.Drawing.Size(23, 33);
             this.AddEmployee.TabIndex = 27;
@@ -147,8 +156,9 @@
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(177, 363);
+            this.button4.Location = new System.Drawing.Point(18, 76);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(23, 33);
             this.button4.TabIndex = 30;
@@ -158,8 +168,9 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(177, 325);
+            this.button5.Location = new System.Drawing.Point(18, 38);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(23, 33);
             this.button5.TabIndex = 29;
@@ -169,7 +180,7 @@
             // 
             // Form_MoveDown
             // 
-            this.Form_MoveDown.Location = new System.Drawing.Point(440, 360);
+            this.Form_MoveDown.Location = new System.Drawing.Point(292, 71);
             this.Form_MoveDown.Name = "Form_MoveDown";
             this.Form_MoveDown.Size = new System.Drawing.Size(87, 27);
             this.Form_MoveDown.TabIndex = 32;
@@ -179,7 +190,7 @@
             // 
             // Form_MoveUp
             // 
-            this.Form_MoveUp.Location = new System.Drawing.Point(440, 330);
+            this.Form_MoveUp.Location = new System.Drawing.Point(292, 38);
             this.Form_MoveUp.Name = "Form_MoveUp";
             this.Form_MoveUp.Size = new System.Drawing.Size(87, 27);
             this.Form_MoveUp.TabIndex = 31;
@@ -189,7 +200,7 @@
             // 
             // SaveForm
             // 
-            this.SaveForm.Location = new System.Drawing.Point(738, 364);
+            this.SaveForm.Location = new System.Drawing.Point(292, 187);
             this.SaveForm.Name = "SaveForm";
             this.SaveForm.Size = new System.Drawing.Size(75, 25);
             this.SaveForm.TabIndex = 35;
@@ -200,7 +211,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(614, 339);
+            this.label2.Location = new System.Drawing.Point(36, 163);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 16);
             this.label2.TabIndex = 34;
@@ -208,32 +219,82 @@
             // 
             // FormName
             // 
-            this.FormName.Location = new System.Drawing.Point(702, 336);
+            this.FormName.Location = new System.Drawing.Point(124, 160);
             this.FormName.Name = "FormName";
             this.FormName.Size = new System.Drawing.Size(151, 22);
             this.FormName.TabIndex = 33;
+            // 
+            // PanelGroupBox
+            // 
+            this.PanelGroupBox.Controls.Add(this.PanelBox);
+            this.PanelGroupBox.Controls.Add(this.Panel_MoveUp);
+            this.PanelGroupBox.Controls.Add(this.Panel_MoveDown);
+            this.PanelGroupBox.Controls.Add(this.AddEmployee);
+            this.PanelGroupBox.Controls.Add(this.RemoveEmployee);
+            this.PanelGroupBox.Controls.Add(this.PanelName);
+            this.PanelGroupBox.Controls.Add(this.label1);
+            this.PanelGroupBox.Controls.Add(this.SavePanel);
+            this.PanelGroupBox.Location = new System.Drawing.Point(83, 61);
+            this.PanelGroupBox.Name = "PanelGroupBox";
+            this.PanelGroupBox.Size = new System.Drawing.Size(397, 227);
+            this.PanelGroupBox.TabIndex = 36;
+            this.PanelGroupBox.TabStop = false;
+            this.PanelGroupBox.Text = "Panel Organization";
+            // 
+            // FormGroupBox
+            // 
+            this.FormGroupBox.Controls.Add(this.label4);
+            this.FormGroupBox.Controls.Add(this.PanelChoiceBox);
+            this.FormGroupBox.Controls.Add(this.Form_MoveUp);
+            this.FormGroupBox.Controls.Add(this.FormBox);
+            this.FormGroupBox.Controls.Add(this.SaveForm);
+            this.FormGroupBox.Controls.Add(this.button5);
+            this.FormGroupBox.Controls.Add(this.label2);
+            this.FormGroupBox.Controls.Add(this.button4);
+            this.FormGroupBox.Controls.Add(this.FormName);
+            this.FormGroupBox.Controls.Add(this.Form_MoveDown);
+            this.FormGroupBox.Location = new System.Drawing.Point(496, 61);
+            this.FormGroupBox.Name = "FormGroupBox";
+            this.FormGroupBox.Size = new System.Drawing.Size(397, 227);
+            this.FormGroupBox.TabIndex = 37;
+            this.FormGroupBox.TabStop = false;
+            this.FormGroupBox.Text = "Form Organization";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(239, 299);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(482, 21);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Choose a panel on the left in order to modify forms within that panel.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PanelChoiceBox
+            // 
+            this.PanelChoiceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PanelChoiceBox.FormattingEnabled = true;
+            this.PanelChoiceBox.Location = new System.Drawing.Point(124, 188);
+            this.PanelChoiceBox.Name = "PanelChoiceBox";
+            this.PanelChoiceBox.Size = new System.Drawing.Size(151, 24);
+            this.PanelChoiceBox.TabIndex = 39;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(72, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Panel:";
             // 
             // FormOrganization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 618);
-            this.Controls.Add(this.SaveForm);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.FormName);
-            this.Controls.Add(this.Form_MoveDown);
-            this.Controls.Add(this.Form_MoveUp);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.RemoveEmployee);
-            this.Controls.Add(this.AddEmployee);
-            this.Controls.Add(this.Panel_MoveDown);
-            this.Controls.Add(this.Panel_MoveUp);
-            this.Controls.Add(this.SavePanel);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PanelName);
-            this.Controls.Add(this.PanelBox);
-            this.Controls.Add(this.FormBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.FormGroupBox);
+            this.Controls.Add(this.PanelGroupBox);
             this.Controls.Add(this.FormOrganizationTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -241,8 +302,11 @@
             this.Name = "FormOrganization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormOrganization";
+            this.PanelGroupBox.ResumeLayout(false);
+            this.PanelGroupBox.PerformLayout();
+            this.FormGroupBox.ResumeLayout(false);
+            this.FormGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -265,5 +329,10 @@
         private System.Windows.Forms.Button SaveForm;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox FormName;
+        private System.Windows.Forms.GroupBox PanelGroupBox;
+        private System.Windows.Forms.GroupBox FormGroupBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox PanelChoiceBox;
     }
 }

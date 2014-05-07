@@ -29,7 +29,6 @@ namespace WSRsmooz
         {
             Dictionary<string, string> changes = new Dictionary<string, string>();
 
-
             //
             //
             //
@@ -51,8 +50,6 @@ namespace WSRsmooz
             //
             //
             
-
-
             foreach (KeyValuePair<string, string> change in changes)
             {
                 clientInfo.Columns[change.Key].ColumnName = change.Value;
@@ -148,7 +145,7 @@ namespace WSRsmooz
             {
                 foreach (Control j in i.Controls)
                 {
-                    if (j is TextBox || j is ComboBox)
+                    if (j is TextBox || j is ComboBox || j is MaskedTextBox)
                     {
                         pdfFormFields.SetField(j.Name, j.Text);
                     }

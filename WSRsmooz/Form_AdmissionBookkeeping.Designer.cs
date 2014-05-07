@@ -62,6 +62,8 @@
             this.ClientChangeDate2 = new System.Windows.Forms.DateTimePicker();
             this.ClientChangeDate1 = new System.Windows.Forms.DateTimePicker();
             this.Print = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.SSN = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +82,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.SSN);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.ClientAuthEnd);
             this.groupBox1.Controls.Add(this.ClientAuthStart);
             this.groupBox1.Controls.Add(this.ClientPCharges);
@@ -106,7 +110,7 @@
             this.ClientAuthEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientAuthEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientAuthEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ClientAuthEnd.Location = new System.Drawing.Point(404, 114);
+            this.ClientAuthEnd.Location = new System.Drawing.Point(404, 90);
             this.ClientAuthEnd.Name = "ClientAuthEnd";
             this.ClientAuthEnd.Size = new System.Drawing.Size(106, 22);
             this.ClientAuthEnd.TabIndex = 89;
@@ -116,7 +120,7 @@
             this.ClientAuthStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientAuthStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientAuthStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ClientAuthStart.Location = new System.Drawing.Point(164, 114);
+            this.ClientAuthStart.Location = new System.Drawing.Point(164, 90);
             this.ClientAuthStart.Name = "ClientAuthStart";
             this.ClientAuthStart.Size = new System.Drawing.Size(106, 22);
             this.ClientAuthStart.TabIndex = 88;
@@ -124,7 +128,7 @@
             // ClientPCharges
             // 
             this.ClientPCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientPCharges.Location = new System.Drawing.Point(404, 73);
+            this.ClientPCharges.Location = new System.Drawing.Point(404, 62);
             this.ClientPCharges.Name = "ClientPCharges";
             this.ClientPCharges.Size = new System.Drawing.Size(100, 22);
             this.ClientPCharges.TabIndex = 11;
@@ -132,7 +136,7 @@
             // ClientMethPayInt
             // 
             this.ClientMethPayInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientMethPayInt.Location = new System.Drawing.Point(164, 73);
+            this.ClientMethPayInt.Location = new System.Drawing.Point(164, 62);
             this.ClientMethPayInt.Name = "ClientMethPayInt";
             this.ClientMethPayInt.Size = new System.Drawing.Size(100, 22);
             this.ClientMethPayInt.TabIndex = 10;
@@ -157,7 +161,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(331, 117);
+            this.label7.Location = new System.Drawing.Point(331, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 16);
             this.label7.TabIndex = 6;
@@ -167,7 +171,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 116);
+            this.label6.Location = new System.Drawing.Point(9, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(149, 16);
             this.label6.TabIndex = 5;
@@ -177,7 +181,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(281, 73);
+            this.label5.Location = new System.Drawing.Point(281, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 16);
             this.label5.TabIndex = 4;
@@ -187,7 +191,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 75);
+            this.label3.Location = new System.Drawing.Point(46, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 16);
             this.label3.TabIndex = 2;
@@ -432,6 +436,23 @@
             this.Print.UseVisualStyleBackColor = true;
             this.Print.Click += new System.EventHandler(this.processPdfGen);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(119, 121);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(39, 16);
+            this.label16.TabIndex = 90;
+            this.label16.Text = "SSN:";
+            // 
+            // SSN
+            // 
+            this.SSN.Location = new System.Drawing.Point(164, 118);
+            this.SSN.Mask = "000-00-0000";
+            this.SSN.Name = "SSN";
+            this.SSN.Size = new System.Drawing.Size(95, 22);
+            this.SSN.TabIndex = 91;
+            // 
             // Form_AdmissionBookkeeping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,5 +511,7 @@
         private System.Windows.Forms.DateTimePicker ClientChangeDate1;
         private System.Windows.Forms.DateTimePicker ClientAuthEnd;
         private System.Windows.Forms.DateTimePicker ClientAuthStart;
+        private System.Windows.Forms.MaskedTextBox SSN;
+        private System.Windows.Forms.Label label16;
     }
 }

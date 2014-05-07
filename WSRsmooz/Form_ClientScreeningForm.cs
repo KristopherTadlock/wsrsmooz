@@ -1,126 +1,185 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+using System.IO;
+using iTextSharp.text.pdf;
 
 namespace WSRsmooz
 {
     public partial class Form_ClientScreeningForm : Form
     {
+        // 'global' variables
         public string client { get; set; }
-        String connectionString = "Server=192.241.235.225;Database=development;Uid=dev;Pwd=rqki4t#Kr$;";
-        String query;
+        dbConnect database = new dbConnect();
+        DataTable clientInfo;
+        Random rng = new Random();
+
+        // just pdf-y things
+        PdfReader pdfReader;
+        PdfStamper pdfStamper;
+        AcroFields pdfFormFields;
+        string templatePDF = "templates/1-Screening & Client Information.pdf";
+        string newFile;
+
+        public void performReplacements()
+        {
+            Dictionary<string, string> changes = new Dictionary<string, string>();
+
+            changes.Add("AName", "AName");
+            changes.Add("AAddr", "AAddr");
+
+            foreach (KeyValuePair<string, string> change in changes)
+            {
+                clientInfo.Columns[change.Key].ColumnName = change.Value;
+            }
+        }
 
         public Form_ClientScreeningForm()
         {
             InitializeComponent();
+
+            // create an obfuscated pdf
+            newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
+
+            client = "3";
+            string query = " SELECT * FROM ClientInfo WHERE ClientID = " + client;
+
+            clientInfo = database.GetTable(query);
+            performReplacements();
+
         }
 
-        private void PrimaryPhoneNumber_TextChanged(object sender, EventArgs e)
+        // reads in pdf template, calls functions to fill new pdf, prints, deletes
+        public void processPdfGen(object sender, EventArgs e)
         {
-            //ClientPhone.Text = String.Format("{0:(###) ###-####}", ClientPhone.Text);
-        }
-
-        private void NextButton_Click(object sender, EventArgs e)
-        {
-            String[] delimit = new String[] { "_" };
-            String values = client;
-            String update = "FR7_ClientID=VALUES(FR7_ClientID)";
-            query = "insert into FR7_ClientScreening (FR7_ClientID";
-
-            MySqlConnection newConnect = new MySqlConnection(connectionString);
-            newConnect.Open();
-
-            foreach (Control d in this.Controls.OfType<GroupBox>())
+            if (!File.Exists(newFile))
             {
-                foreach (Control c in d.Controls)
+                pdfReader = new PdfReader(templatePDF);
+            }
+            else
+            {
+                MessageBox.Show("Error creating file.");
+                return;
+            }
+
+            pdfStamper = new PdfStamper(pdfReader, new FileStream(newFile, FileMode.Create));
+            pdfFormFields = pdfStamper.AcroFields;
+
+            stampPdf();
+            pdfStamper.Close();
+            pdfReader.Close();
+            printPdf();
+
+            if (File.Exists(newFile))
+                File.Delete(newFile);
+        }
+
+        // function to call printpdf.exe and wait for processing before deleting
+        public void printPdf()
+        {
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.StartInfo.FileName = "printpdf.exe";
+            proc.StartInfo.Arguments = "-print-dialog -exit-on-print \"" + newFile + "\"";
+            proc.StartInfo.RedirectStandardError = false;
+            proc.StartInfo.RedirectStandardOutput = false;
+            proc.StartInfo.UseShellExecute = true;
+            proc.Start();
+            proc.WaitForExit();
+        }
+
+        public void stampPdf()
+        {
+            // Fill from database.
+            foreach (var field in pdfFormFields.Fields)
+            {
+                if (clientInfo.Columns.Contains(field.Key))
                 {
-                    if (c is TextBox)
+                    pdfFormFields.SetField(field.Key, clientInfo.Rows[0][field.Key].ToString());
+                }
+            }
+
+            // Traverse anything not in a group box.
+            foreach (Control k in this.Controls)
+            {
+                if (k is TextBox || k is ComboBox || k is MaskedTextBox)
+                {
+                    pdfFormFields.SetField(k.Name, k.Text);
+                }
+                else if (k is DateTimePicker)
+                {
+                    pdfFormFields.SetField(k.Name, ((DateTimePicker)k).Value.Date.ToString("MM/dd/yyyy"));
+                }
+                else if (k is CheckBox)
+                {
+                    // Depends on "checked" value of PDF.
+                    // Can modify later if anyone actually used a checkbox Acrofield.
+                    if (((CheckBox)k).Checked)
+                        pdfFormFields.SetField(k.Name, "X");
+                }
+            }
+
+            // Traverse everything inside groupboxes.
+            foreach (Control i in this.Controls.OfType<GroupBox>())
+            {
+                foreach (Control j in i.Controls)
+                {
+                    if (j is TextBox || j is ComboBox)
                     {
-                        if (((TextBox)c).Text != "")
-                        {
-                            query += ", " + c.Name;
-                            values += ", \"" + c.Text + "\"";
-                            update += ", " + c.Name + "=VALUES(" + c.Name + ")";
-                        }
+                        pdfFormFields.SetField(j.Name, j.Text);
                     }
-                    else if (c is CheckBox)
+                    else if (j is DateTimePicker)
                     {
-                        String[] parser = c.Name.Split(delimit, StringSplitOptions.None);
-                        query += ", " + parser[1];
-
-                        if (((CheckBox)c).Checked == true)
-                            values += ", true";
-                        else
-                            values += ", false";
-
-                        update += ", " + parser[1] + "=VALUES(" + parser[1] + ")";
+                        pdfFormFields.SetField(j.Name, ((DateTimePicker)j).Value.Date.ToString("MM/dd/yyyy"));
                     }
-                    else if (c is DateTimePicker)
+                    else if (j is CheckBox)
                     {
-                        String[] parser = c.Name.Split(delimit, StringSplitOptions.None);
-                        query += ", " + parser[1];
-                        values += ", \"" + ((DateTimePicker)c).Value.ToString("yyyy-MM-dd") + "\"";
-
-                        update += ", " + parser[1] + "=VALUES(" + parser[1] + ")";
+                        // Depends on "checked" value of PDF.
+                        // Can modify later if anyone actually used a checkbox Acrofield.
+                        pdfFormFields.SetField(j.Name, "X");
                     }
                 }
             }
-            query += ") values(" + values + ") on duplicate key update " + update;
-            MySqlCommand newCommand = new MySqlCommand(query, newConnect);
-            newCommand.ExecuteNonQuery();
-            newConnect.Close();
-        }
-
-        private void Form_ClientScreeningForm_Load(object sender, EventArgs e)
-        {
-            query = "select * from FR7_ClientScreening where FR7_ClientID = '" + client + "'";
-            MySqlConnection newConnect = new MySqlConnection(connectionString);
-            MySqlCommand newCommand = new MySqlCommand(query, newConnect);
-            newConnect.Open();
-            MySqlDataReader reader = newCommand.ExecuteReader();
-
-            String[] parser;
-            String[] delimit = new String[] { "_" };
-
-            while (reader.Read())
-            {
-                foreach (Control d in this.Controls.OfType<GroupBox>())
-                {
-                    foreach (Control c in d.Controls)
-                    {
-                        if (c is TextBox)
-                        {
-                            c.Text = reader.GetString(c.Name);
-                        }
-                        else if (c is CheckBox)
-                        {
-                            if (c.Name.Contains("cb_"))
-                            {
-                                parser = c.Name.Split(delimit, StringSplitOptions.None);
-
-                                if (reader.GetInt32(parser[1]) == 1)
-                                    ((CheckBox)c).Checked = true;
-                            }
-                        }
-                        else if (c is DateTimePicker)
-                        {
-                            if (c.Name.Contains("dt_"))
-                            {
-                                parser = c.Name.Split(delimit, StringSplitOptions.None);
-                                ((DateTimePicker)c).Value = reader.GetDateTime(reader.GetOrdinal(parser[1]));
-                            }
-                        }
-                    }
-                }
-            }
-            reader.Close();
-            newConnect.Close();
         }
 
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            PDFExporter.Print.ClientScreening(Convert.ToInt32(client));
+            if (!File.Exists(newFile))
+            {
+                pdfReader = new PdfReader(templatePDF);
+            }
+            else
+            {
+                MessageBox.Show("Error creating file.");
+                return;
+            }
+
+            pdfStamper = new PdfStamper(pdfReader, new FileStream(newFile, FileMode.Create));
+            pdfFormFields = pdfStamper.AcroFields;
+
+            stampPdf();
+            pdfStamper.Close();
+            pdfReader.Close();
+            printPdf();
+
+            if (File.Exists(newFile))
+                File.Delete(newFile);
         }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            String message = ("Are you sure you want to cancel? All unsaved progress will be lost");
+            string caption = "Form Closing";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+
     }
 }
+

@@ -26,13 +26,20 @@ namespace WSRsmooz
         {
             InitializeComponent();
             admin = false;
+        }
+
+        private void PatientLog_Load(object sender, EventArgs e)
+        {
+            if (admin)
+                AdminEditPanels.Visible = true;
 
             fillPanelBox();
             PanelList.SelectedIndex = 0;
             resetFormList();
-            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0001-01-01%'";
+            query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0001-01-01%'";
             clientTable = database.GetTable(query);
             updateClientList();
+            triggerButtonSwap();
         }
 
         private void fillPanelBox()
@@ -54,41 +61,39 @@ namespace WSRsmooz
         {
             formItems.Clear();
 
-            foreach (DataRow panel in panels.Rows)
+            query = "select * from forms where Panel=" + ((PanelItem)PanelList.SelectedItem).id + " order by Priority asc";
+            forms = database.GetTable(query);
+
+            foreach (DataRow form in forms.Rows)
             {
-                query = "select * from forms where Panel=" + ((PanelItem)PanelList.SelectedItem).id + " order by Priority asc";
-                forms = database.GetTable(query);
+                FormItem newFormItem = new FormItem();
+                newFormItem.id = form["FormID"].ToString();
+                newFormItem.name = form["FormName"].ToString();
+                newFormItem.panel = form["Panel"].ToString();
+                newFormItem.path = "/templates/" + form["Path"].ToString() + ".pdf";
 
-                foreach (DataRow form in forms.Rows)
+                //
+                // ADD HARCODED FORMS HERE
+                //
+                switch (newFormItem.id)
                 {
-                    FormItem newFormItem = new FormItem();
-                    newFormItem.id = form["FormID"].ToString();
-                    newFormItem.name = form["FormName"].ToString();
-                    newFormItem.panel = form["Panel"].ToString();
-                    newFormItem.path = "/templates/" + form["Path"].ToString() + ".pdf";
-
-                    //
-                    // ADD HARCODED FORMS HERE
-                    //
-                    switch (newFormItem.id)
-                    {
-                        case "1": // Screening & Client Information 
-                            newFormItem.form = new Form_ClientScreeningForm();
-                            break;
-                        case "2": // Admission Bookkeeping
-                            //newFormItem.form = new Form_AdmissionBookkeeping();
-                            break;
-                        case "3": // Urine Analysis
-                            break;
-                        default:
-                            break;
-                    }
-                    //
-                    // FINISH ADDING HARDCODED FORMS HERE
-                    //
-
-                    formItems.Add(newFormItem);
+                    case "1": // Screening & Client Information 
+                        newFormItem.form = new Form_ClientScreeningForm();
+                        break;
+                    case "2": // Admission Bookkeeping
+                        newFormItem.form = new Form_AdmissionBookkeeping();
+                        break;
+                    case "3": // Urine Analysis
+                        break;
+                    default:
+                        newFormItem.form = null;
+                        break;
                 }
+                //
+                // FINISH ADDING HARDCODED FORMS HERE
+                //
+
+                formItems.Add(newFormItem);
             }
         }
 
@@ -134,7 +139,7 @@ namespace WSRsmooz
             updateClientList();
         }
 
-        private void PanelList_SelectedIndexChanged(object sender, EventArgs e)
+        private void triggerButtonSwap()
         {
             updateButtonList((PanelItem)PanelList.SelectedItem);
         }
@@ -181,29 +186,26 @@ namespace WSRsmooz
 
         public void openForm(FormItem form, ClientItem client)
         {
-            /*if (form.form.Equals("Client Screening Information"))
+            switch (form.id)
             {
-                form.form = new Form_ClientScreeningForm();
-                ((Form_ClientScreeningForm)form.form).client = client.id;
+                case "1": // Screening & Client Information 
+                    ((Form_ClientScreeningForm)form.form).client = client.id;
+                    break;
+                case "2": // Admission Bookkeeping
+                    ((Form_AdmissionBookkeeping)form.form).client = client.id;
+                    break;
+                case "3": // Urine Analysis
+                    break;
+                default: // ((Form_ASAM)form.form).client = client.id;
+                    break;
             }
-            else*/ if (form.form.Equals("Admission Bookkeeping"))
-            {
-                form.form = new Form_AdmissionBookkeeping();
-                ((Form_AdmissionBookkeeping)form.form).client = client.id;
-            }/*
-            else if (form.form.Equals("ASAM"))
-            {
-                form.form = new Form_ASAM();
-                ((Form_ASAM)form.form).client = client.id;
-            }
-            form.form.ShowDialog();*/
+            form.form.ShowDialog();
         }
 
-        private void PatientLog_Load(object sender, EventArgs e)
+        private void PanelList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (admin)
-                AdminEditPanels.Visible = true;
+            resetFormList();
+            triggerButtonSwap();
         }
-
     }
 }

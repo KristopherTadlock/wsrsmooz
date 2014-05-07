@@ -26,6 +26,7 @@ namespace WSRsmooz
         private void fillPanelBox()
         {
             PanelBox.Items.Clear();
+            PanelChoiceBox.Items.Clear();
             query = "select * from panels order by Priority asc";
             panels = database.GetTable(query);
 
@@ -35,6 +36,7 @@ namespace WSRsmooz
                 newPanel.name = row["PanelName"].ToString();
                 newPanel.id = row["PanelID"].ToString();
                 PanelBox.Items.Add(newPanel);
+                PanelChoiceBox.Items.Add(newPanel);
             }
         }
 
@@ -116,6 +118,8 @@ namespace WSRsmooz
             {
                 fillFormList();
                 PanelName.Text = ((PanelItem)PanelBox.SelectedItem).name;
+                FormName.Text = "";
+                PanelChoiceBox.SelectedIndex = PanelBox.SelectedIndex;
             }
             skip = false;
         }
@@ -132,6 +136,7 @@ namespace WSRsmooz
             skip = true;
             fillPanelBox();
             PanelBox.SetSelected(index, true);
+            PanelChoiceBox.SelectedIndex = PanelBox.SelectedIndex;
         }
 
         private void Form_MoveUp_Click(object sender, EventArgs e)
@@ -156,8 +161,15 @@ namespace WSRsmooz
 
         private void SaveForm_Click(object sender, EventArgs e)
         {
+            query = "select coalesce(max(Priority), 0) as MaxPriority from ";
+            query += "forms where Panel=\"" + ((PanelItem)PanelChoiceBox.SelectedItem).id + "\"";
+            String newPriorityString = database.SelectString(query);
+            int newPriority = Convert.ToInt32(newPriorityString) + 1;
+
             int index = FormBox.SelectedIndex;
-            query = "update forms set FormName=\"" + FormName.Text + "\" where FormID=";
+            query = "update forms set FormName=\"" + FormName.Text + "\", Panel=\"";
+            query += ((PanelItem)PanelChoiceBox.SelectedItem).id + "\", Priority=\"";
+            query += newPriority.ToString() + "\" where FormID=";
             query += ((FormItem)FormBox.SelectedItem).id;
 
             if (!database.Query(query))
@@ -165,7 +177,11 @@ namespace WSRsmooz
 
             skip = true;
             fillFormList();
-            FormBox.SetSelected(index, true);
+            PanelBox.SelectedIndex = PanelChoiceBox.SelectedIndex;
+            fillPanelBox();
+
+            if (FormBox.Items.Count > 0 && index <= (FormBox.Items.Count-1))
+                FormBox.SetSelected(index, true);
         }
     }
 }
