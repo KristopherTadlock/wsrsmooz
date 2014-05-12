@@ -39,16 +39,6 @@ namespace WSRsmooz
         public Form_ClientScreeningForm()
         {
             InitializeComponent();
-
-            // create an obfuscated pdf
-            newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
-
-            client = "3";
-            string query = " SELECT * FROM ClientInfo WHERE ClientID = " + client;
-
-            clientInfo = database.GetTable(query);
-            performReplacements();
-
         }
 
         // reads in pdf template, calls functions to fill new pdf, prints, deletes
@@ -177,6 +167,17 @@ namespace WSRsmooz
             {
                 this.Close();
             }
+        }
+
+        private void Form_ClientScreeningForm_Load(object sender, EventArgs e)
+        {
+            // create an obfuscated pdf
+            newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
+
+            string query = " SELECT * FROM ClientInfo WHERE ClientID = " + client;
+
+            clientInfo = database.GetTable(query);
+            performReplacements();
         }
 
 

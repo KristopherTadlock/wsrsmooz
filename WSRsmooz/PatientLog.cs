@@ -85,8 +85,14 @@ namespace WSRsmooz
                         break;
                     case "3": // Urine Analysis
                         break;
+                    case "4": // Exit Bookkeeping
+                        newFormItem.form = new Form_ExitBookkeeping();
+                        break;
+                    case "5": // Client Admission Agreement
+                        newFormItem.form = new Form_ClientAdmissionAgreement();
+                        break;
                     default:
-                        newFormItem.form = null;
+                        newFormItem.form = new CustomFormView();
                         break;
                 }
                 //
@@ -111,8 +117,8 @@ namespace WSRsmooz
 
         public void loadClient(ClientItem client)
         {
-            String query = "select ClientNum, ClientName from ClientInfo where `ClientNum`=\"" + client + "\"";
-            DataTable loadedClient = database.GetTable(query);
+            //String query = "select ClientNum, ClientName from ClientInfo where `ClientNum`=\"" + client + "\"";
+            //DataTable loadedClient = database.GetTable(query);
         }
 
         private void clientList_SelectedIndexChanged(object sender, EventArgs e)
@@ -196,7 +202,15 @@ namespace WSRsmooz
                     break;
                 case "3": // Urine Analysis
                     break;
+                case "4": // Exit Bookkeeping
+                    ((Form_ExitBookkeeping)form.form).client = client.id;
+                    break;
+                case "5": // Client Admission Agreement
+                    ((Form_ClientAdmissionAgreement)form.form).client = client.id;
+                    break;
                 default: // ((Form_ASAM)form.form).client = client.id;
+                    ((CustomFormView)form.form).client = client.id;
+                    ((CustomFormView)form.form).loadFormID = form.id;
                     break;
             }
             form.form.ShowDialog();

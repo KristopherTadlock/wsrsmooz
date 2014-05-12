@@ -60,15 +60,6 @@ namespace WSRsmooz
         public Form_AdmissionBookkeeping()
         {
             InitializeComponent();
-
-            // create an obfuscated pdf
-            newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
-
-            client = "3";
-            string query = "select * from ClientInfo where ClientID=" + client;
-
-            clientInfo = database.GetTable(query);
-            performReplacements();
         }
 
         // reads in pdf template, calls functions to fill new pdf, prints, deletes
@@ -173,6 +164,16 @@ namespace WSRsmooz
             {
                 this.Close();
             }
+        }
+
+        private void Form_AdmissionBookkeeping_Load(object sender, EventArgs e)
+        {
+            // create an obfuscated pdf
+            newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
+            string query = "select * from ClientInfo where ClientID=" + client;
+
+            clientInfo = database.GetTable(query);
+            performReplacements();
         }
     }
 }

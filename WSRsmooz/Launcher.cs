@@ -258,6 +258,7 @@ namespace WSRsmooz
         public String panel { get; set; }
         public Form form { get; set; }
         public String id { get; set; }
+        public String hardcoded { get; set; }
         public override string ToString()
         {
             return name;

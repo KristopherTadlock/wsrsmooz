@@ -1444,6 +1444,7 @@
             this.Name = "Form_ClientScreeningForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Client Screening Form";
+            this.Load += new System.EventHandler(this.Form_ClientScreeningForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

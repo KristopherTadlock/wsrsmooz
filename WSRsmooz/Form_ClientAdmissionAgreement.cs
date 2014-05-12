@@ -1,52 +1,67 @@
-﻿using iTextSharp.text.pdf;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+using System.IO;
+using iTextSharp.text.pdf;
+//using PDFExporter;
 
 namespace WSRsmooz
 {
-    public partial class IndividualNotes : Form
+    public partial class Form_ClientAdmissionAgreement : Form
     {
+        // 'global' variables
+        public string client { get; set; }
         dbConnect database = new dbConnect();
-        DataTable clients;
         DataTable clientInfo;
+        Random rng = new Random();
 
-        int loadClientID;
-        String ClientName;
-
+        // just pdf-y things
         PdfReader pdfReader;
         PdfStamper pdfStamper;
         AcroFields pdfFormFields;
-
-        Random rng = new Random();
-
-        string templatePDF = "templates/2- 1on1 notes 2.pdf";
-        DateTime firstDayOfWeek;
-        DateTime sevenLater;
+        string templatePDF = "templates/4-CLIENT ADMISSION AGREEMENT.pdf";
         string newFile;
 
-        public IndividualNotes()
-        {
-            InitializeComponent();
-            firstDayOfWeek = DateTime.Today.StartOfWeek(DayOfWeek.Monday);
-            sevenLater = firstDayOfWeek.AddDays(7);
-            D1.Value = firstDayOfWeek;
-            D4.Value = sevenLater;
-            D7.Value = DateTime.Today;
-        }
 
         public void performReplacements()
         {
             Dictionary<string, string> changes = new Dictionary<string, string>();
-            changes.Add("ClientName", "CLIENT NAME");
-            changes.Add("ClientNum", "CLIENT LOG");
+
+
+            //
+            //
+            //
+            //
+            // PERFORM NAME SWAPS HERE!!!!!!!!!!!!!!!!!!!!!
+            //
+            // Both names must exist.
+            // Template:
+            //        changes.Add(DATABASE_NAME, PDF_EQUIVALENT);
+            //
+            changes.Add("AName", "AName");
+            changes.Add("ClientCity", "ACity");
+            changes.Add("ClientAddr", "AAdr");
+            changes.Add("ClientState", "AState");
+            changes.Add("ClientZip", "AZIP");
+            changes.Add("ClientPhone", "ACnumber");
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+            //
+
+
 
             foreach (KeyValuePair<string, string> change in changes)
             {
@@ -54,44 +69,13 @@ namespace WSRsmooz
             }
         }
 
-        private void clientList_SelectedIndexChanged(object sender, EventArgs e)
+
+
+
+
+        public Form_ClientAdmissionAgreement()
         {
-            if (clientList.SelectedItem != null)
-            {
-                loadClient((ClientItem)clientList.SelectedItem);
-                newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
-                ClientNameLabel.Text = "1-on-1 with " + ClientName;
-            }
-            // copied this
-            //string query = "select * from ClientInfo where ClientID=" + client;
-            string query = "";
-
-            clientInfo = database.GetTable(query);
-            performReplacements();
-        }
-
-        public void loadClient(ClientItem client)
-        {
-            String query = "select ClientNum, ClientID from ClientInfo where `ClientNum`=\"" + client + "\"";
-            DataTable loadedClient = database.GetTable(query);
-            loadClientID = Convert.ToInt32(client.id);
-            ClientName = client.clientName;
-        }
-
-        public void updateClientList()
-        {
-            foreach (DataRow row in clients.Rows)
-            {
-                ClientItem item = new ClientItem();
-                item.id = row["ClientNum"].ToString();
-                item.clientName = row["ClientName"].ToString();
-                clientList.Items.Add(item);
-            }
-        }
-
-        private void PrintButton_Click(object sender, EventArgs e)
-        {
-
+            InitializeComponent();
         }
 
         // reads in pdf template, calls functions to fill new pdf, prints, deletes
@@ -168,7 +152,7 @@ namespace WSRsmooz
             {
                 foreach (Control j in i.Controls)
                 {
-                    if (j is TextBox || j is ComboBox || j is MaskedTextBox)
+                    if (j is TextBox || j is ComboBox)
                     {
                         pdfFormFields.SetField(j.Name, j.Text);
                     }
@@ -185,5 +169,55 @@ namespace WSRsmooz
                 }
             }
         }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(newFile))
+            {
+                pdfReader = new PdfReader(templatePDF);
+            }
+            else
+            {
+                MessageBox.Show("Error creating file.");
+                return;
+            }
+
+            pdfStamper = new PdfStamper(pdfReader, new FileStream(newFile, FileMode.Create));
+            pdfFormFields = pdfStamper.AcroFields;
+
+            stampPdf();
+            pdfStamper.Close();
+            pdfReader.Close();
+            printPdf();
+
+            if (File.Exists(newFile))
+                File.Delete(newFile);
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            String message = ("Are you sure you want to cancel? All unsaved progress will be lost");
+            string caption = "Form Closing";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void Form_ClientAdmissionAgreement_Load(object sender, EventArgs e)
+        {
+            // create an obfuscated pdf
+            newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
+
+            string query = " SELECT * FROM ClientInfo WHERE ClientID = " + client;
+
+            clientInfo = database.GetTable(query);
+            performReplacements();
+        }
+
+
     }
 }
+

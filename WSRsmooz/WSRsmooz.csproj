@@ -63,6 +63,28 @@
     <Compile Include="AddEmployeePrompt.Designer.cs">
       <DependentUpon>AddEmployeePrompt.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomDraggable.cs" />
+    <Compile Include="CustomFormEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomFormEditor.Designer.cs">
+      <DependentUpon>CustomFormEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomFormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomFormView.Designer.cs">
+      <DependentUpon>CustomFormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTextboxLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomTextboxLabel.Designer.cs">
+      <DependentUpon>CustomTextboxLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DateExtensions.cs" />
     <Compile Include="dbConnect.cs" />
     <Compile Include="dbConnection.cs" />
@@ -73,11 +95,41 @@
     <Compile Include="DischargePatient.Designer.cs">
       <DependentUpon>DischargePatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditableCheckbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditableCheckbox.Designer.cs">
+      <DependentUpon>EditableCheckbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditableCombobox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditableCombobox.Designer.cs">
+      <DependentUpon>EditableCombobox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditableLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditableLabel.Designer.cs">
+      <DependentUpon>EditableLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditEmployees.Designer.cs">
       <DependentUpon>EditEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditor_ChangeType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditor_ChangeType.Designer.cs">
+      <DependentUpon>FormEditor_ChangeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ExitBookkeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ExitBookkeeping.Designer.cs">
+      <DependentUpon>Form_ExitBookkeeping.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOrganization.cs">
       <SubType>Form</SubType>
@@ -103,11 +155,23 @@
     <Compile Include="Form_ASAM2.Designer.cs">
       <DependentUpon>Form_ASAM2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ClientAdmissionAgreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ClientAdmissionAgreement.Designer.cs">
+      <DependentUpon>Form_ClientAdmissionAgreement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ClientScreeningForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_ClientScreeningForm.Designer.cs">
       <DependentUpon>Form_ClientScreeningForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FinancialAssessment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FinancialAssessment.Designer.cs">
+      <DependentUpon>Form_FinancialAssessment.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupNotes.cs">
       <SubType>Form</SubType>
@@ -120,6 +184,12 @@
     </Compile>
     <Compile Include="IndividualNotes.Designer.cs">
       <DependentUpon>IndividualNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabelEditor.Designer.cs">
+      <DependentUpon>LabelEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
@@ -177,11 +247,32 @@
     <EmbeddedResource Include="AddEmployeePrompt.resx">
       <DependentUpon>AddEmployeePrompt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomFormEditor.resx">
+      <DependentUpon>CustomFormEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFormView.resx">
+      <DependentUpon>CustomFormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomTextboxLabel.resx">
+      <DependentUpon>CustomTextboxLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DischargePatient.resx">
       <DependentUpon>DischargePatient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditableCheckbox.resx">
+      <DependentUpon>EditableCheckbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditableCombobox.resx">
+      <DependentUpon>EditableCombobox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditableLabel.resx">
+      <DependentUpon>EditableLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditEmployees.resx">
       <DependentUpon>EditEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditor_ChangeType.resx">
+      <DependentUpon>FormEditor_ChangeType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOrganization.resx">
       <DependentUpon>FormOrganization.cs</DependentUpon>
@@ -195,8 +286,17 @@
     <EmbeddedResource Include="Form_ASAM2.resx">
       <DependentUpon>Form_ASAM2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_ClientAdmissionAgreement.resx">
+      <DependentUpon>Form_ClientAdmissionAgreement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ClientScreeningForm.resx">
       <DependentUpon>Form_ClientScreeningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ExitBookkeeping.resx">
+      <DependentUpon>Form_ExitBookkeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FinancialAssessment.resx">
+      <DependentUpon>Form_FinancialAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupNotes.resx">
       <DependentUpon>GroupNotes.cs</DependentUpon>

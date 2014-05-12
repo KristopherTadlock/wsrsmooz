@@ -67,8 +67,8 @@ namespace WSRsmooz
 
         public void updateClientList()
         {
-            DataTable clientTable = clients;
-            foreach (DataRow row in clientTable.Rows)
+            //DataTable clientTable = clients;
+            foreach (DataRow row in clients.Rows)
             {
                 ClientItem item = new ClientItem();
                 item.id = row["ClientNum"].ToString();

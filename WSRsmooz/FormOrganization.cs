@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,19 +43,23 @@ namespace WSRsmooz
 
         private void fillFormList()
         {
-            FormBox.Items.Clear();
-
-            query = "select * from forms where Panel=\"";
-            query += ((PanelItem)PanelBox.SelectedItem).id + "\" order by Priority asc";
-            forms = database.GetTable(query);
-
-            foreach (DataRow row in forms.Rows)
+            if (PanelBox.SelectedItems.Count > 0)
             {
-                FormItem newForm = new FormItem();
-                newForm.name = row["FormName"].ToString();
-                newForm.path = row["Path"].ToString();
-                newForm.id = row["FormID"].ToString();
-                FormBox.Items.Add(newForm);
+                FormBox.Items.Clear();
+
+                query = "select * from forms where Panel=\"";
+                query += ((PanelItem)PanelBox.SelectedItem).id + "\" order by Priority asc";
+                forms = database.GetTable(query);
+
+                foreach (DataRow row in forms.Rows)
+                {
+                    FormItem newForm = new FormItem();
+                    newForm.name = row["FormName"].ToString();
+                    newForm.path = row["Path"].ToString();
+                    newForm.id = row["FormID"].ToString();
+                    newForm.hardcoded = row["Hardcoded"].ToString();
+                    FormBox.Items.Add(newForm);
+                }
             }
         }
 
@@ -153,8 +158,15 @@ namespace WSRsmooz
 
         private void FormClicked(object sender, EventArgs e)
         {
-            if (!skip)
+            if (!skip && FormBox.SelectedItems.Count > 0)
+            {
                 FormName.Text = ((FormItem)FormBox.SelectedItem).name;
+
+                if (Convert.ToBoolean(((FormItem)FormBox.SelectedItem).hardcoded))
+                    EditFormButton.Enabled = RemoveForm.Enabled = false;
+                else
+                    EditFormButton.Enabled = RemoveForm.Enabled = true;
+            }
 
             skip = false;
         }
@@ -182,6 +194,54 @@ namespace WSRsmooz
 
             if (FormBox.Items.Count > 0 && index <= (FormBox.Items.Count-1))
                 FormBox.SetSelected(index, true);
+        }
+
+        private void AddForm_Click(object sender, EventArgs e)
+        {
+            using (CustomFormEditor form = new CustomFormEditor())
+            {
+                form.ShowDialog();
+                if (form.DialogResult == DialogResult.Yes)
+                {
+                    fillFormList();
+                }
+            }
+        }
+
+        private void EditFormButton_Click(object sender, EventArgs e)
+        {
+            if (FormBox.SelectedItems.Count > 0)
+            {
+                using (CustomFormEditor form = new CustomFormEditor())
+                {
+                    form.loadedPdf = Path.GetFileName(((FormItem)FormBox.SelectedItem).path);
+                    form.panelIndex = Convert.ToInt32(((FormItem)FormBox.SelectedItem).panel);
+                    form.preload = form.hideLoad = true;
+                    form.ShowDialog();
+                    if (form.DialogResult == DialogResult.Yes)
+                    {
+                        fillFormList();
+                    }
+                }
+            }
+        }
+
+        private void RemoveForm_Click(object sender, EventArgs e)
+        {
+            if (FormBox.SelectedItems.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete " + ((FormItem)FormBox.SelectedItem).name + "? This will delete the template PDF. Please have a backup.", "Confirm Delete?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    query = "delete from forms where FormID=" + ((FormItem)FormBox.SelectedItem).id;
+                    if (database.Query(query))
+                    {
+                        //File.Delete("templates/" + ((FormItem)FormBox.SelectedItem).path);
+                        fillFormList();
+                        updateFormDB();
+                    }
+                }
+            }
         }
     }
 }

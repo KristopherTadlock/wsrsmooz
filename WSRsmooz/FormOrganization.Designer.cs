@@ -36,10 +36,10 @@
             this.SavePanel = new System.Windows.Forms.Button();
             this.Panel_MoveUp = new System.Windows.Forms.Button();
             this.Panel_MoveDown = new System.Windows.Forms.Button();
-            this.RemoveEmployee = new System.Windows.Forms.Button();
-            this.AddEmployee = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.RemovePanel = new System.Windows.Forms.Button();
+            this.AddPanel = new System.Windows.Forms.Button();
+            this.RemoveForm = new System.Windows.Forms.Button();
+            this.AddForm = new System.Windows.Forms.Button();
             this.Form_MoveDown = new System.Windows.Forms.Button();
             this.Form_MoveUp = new System.Windows.Forms.Button();
             this.SaveForm = new System.Windows.Forms.Button();
@@ -47,9 +47,10 @@
             this.FormName = new System.Windows.Forms.TextBox();
             this.PanelGroupBox = new System.Windows.Forms.GroupBox();
             this.FormGroupBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.PanelChoiceBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.PanelChoiceBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.EditFormButton = new System.Windows.Forms.Button();
             this.PanelGroupBox.SuspendLayout();
             this.FormGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -130,53 +131,54 @@
             this.Panel_MoveDown.UseVisualStyleBackColor = true;
             this.Panel_MoveDown.Click += new System.EventHandler(this.Panel_MoveDown_Click);
             // 
-            // RemoveEmployee
+            // RemovePanel
             // 
-            this.RemoveEmployee.Enabled = false;
-            this.RemoveEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveEmployee.Location = new System.Drawing.Point(21, 76);
-            this.RemoveEmployee.Name = "RemoveEmployee";
-            this.RemoveEmployee.Size = new System.Drawing.Size(23, 33);
-            this.RemoveEmployee.TabIndex = 28;
-            this.RemoveEmployee.Text = "-";
-            this.RemoveEmployee.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RemoveEmployee.UseVisualStyleBackColor = true;
+            this.RemovePanel.Enabled = false;
+            this.RemovePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemovePanel.Location = new System.Drawing.Point(21, 76);
+            this.RemovePanel.Name = "RemovePanel";
+            this.RemovePanel.Size = new System.Drawing.Size(23, 33);
+            this.RemovePanel.TabIndex = 28;
+            this.RemovePanel.Text = "-";
+            this.RemovePanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.RemovePanel.UseVisualStyleBackColor = true;
             // 
-            // AddEmployee
+            // AddPanel
             // 
-            this.AddEmployee.Enabled = false;
-            this.AddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEmployee.Location = new System.Drawing.Point(21, 38);
-            this.AddEmployee.Name = "AddEmployee";
-            this.AddEmployee.Size = new System.Drawing.Size(23, 33);
-            this.AddEmployee.TabIndex = 27;
-            this.AddEmployee.Text = "+";
-            this.AddEmployee.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.AddEmployee.UseVisualStyleBackColor = true;
+            this.AddPanel.Enabled = false;
+            this.AddPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddPanel.Location = new System.Drawing.Point(21, 38);
+            this.AddPanel.Name = "AddPanel";
+            this.AddPanel.Size = new System.Drawing.Size(23, 33);
+            this.AddPanel.TabIndex = 27;
+            this.AddPanel.Text = "+";
+            this.AddPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.AddPanel.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // RemoveForm
             // 
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(18, 76);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 33);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "-";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = true;
+            this.RemoveForm.Enabled = false;
+            this.RemoveForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveForm.Location = new System.Drawing.Point(18, 76);
+            this.RemoveForm.Name = "RemoveForm";
+            this.RemoveForm.Size = new System.Drawing.Size(23, 33);
+            this.RemoveForm.TabIndex = 30;
+            this.RemoveForm.Text = "-";
+            this.RemoveForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.RemoveForm.UseVisualStyleBackColor = true;
+            this.RemoveForm.Click += new System.EventHandler(this.RemoveForm_Click);
             // 
-            // button5
+            // AddForm
             // 
-            this.button5.Enabled = false;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(18, 38);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(23, 33);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "+";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.UseVisualStyleBackColor = true;
+            this.AddForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddForm.Location = new System.Drawing.Point(18, 38);
+            this.AddForm.Name = "AddForm";
+            this.AddForm.Size = new System.Drawing.Size(23, 33);
+            this.AddForm.TabIndex = 29;
+            this.AddForm.Text = "+";
+            this.AddForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.AddForm.UseVisualStyleBackColor = true;
+            this.AddForm.Click += new System.EventHandler(this.AddForm_Click);
             // 
             // Form_MoveDown
             // 
@@ -229,8 +231,8 @@
             this.PanelGroupBox.Controls.Add(this.PanelBox);
             this.PanelGroupBox.Controls.Add(this.Panel_MoveUp);
             this.PanelGroupBox.Controls.Add(this.Panel_MoveDown);
-            this.PanelGroupBox.Controls.Add(this.AddEmployee);
-            this.PanelGroupBox.Controls.Add(this.RemoveEmployee);
+            this.PanelGroupBox.Controls.Add(this.AddPanel);
+            this.PanelGroupBox.Controls.Add(this.RemovePanel);
             this.PanelGroupBox.Controls.Add(this.PanelName);
             this.PanelGroupBox.Controls.Add(this.label1);
             this.PanelGroupBox.Controls.Add(this.SavePanel);
@@ -243,14 +245,15 @@
             // 
             // FormGroupBox
             // 
+            this.FormGroupBox.Controls.Add(this.EditFormButton);
             this.FormGroupBox.Controls.Add(this.label4);
             this.FormGroupBox.Controls.Add(this.PanelChoiceBox);
             this.FormGroupBox.Controls.Add(this.Form_MoveUp);
             this.FormGroupBox.Controls.Add(this.FormBox);
             this.FormGroupBox.Controls.Add(this.SaveForm);
-            this.FormGroupBox.Controls.Add(this.button5);
+            this.FormGroupBox.Controls.Add(this.AddForm);
             this.FormGroupBox.Controls.Add(this.label2);
-            this.FormGroupBox.Controls.Add(this.button4);
+            this.FormGroupBox.Controls.Add(this.RemoveForm);
             this.FormGroupBox.Controls.Add(this.FormName);
             this.FormGroupBox.Controls.Add(this.Form_MoveDown);
             this.FormGroupBox.Location = new System.Drawing.Point(496, 61);
@@ -260,14 +263,14 @@
             this.FormGroupBox.TabStop = false;
             this.FormGroupBox.Text = "Form Organization";
             // 
-            // label3
+            // label4
             // 
-            this.label3.Location = new System.Drawing.Point(239, 299);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(482, 21);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Choose a panel on the left in order to modify forms within that panel.";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(72, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Panel:";
             // 
             // PanelChoiceBox
             // 
@@ -278,14 +281,25 @@
             this.PanelChoiceBox.Size = new System.Drawing.Size(151, 24);
             this.PanelChoiceBox.TabIndex = 39;
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 192);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 16);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Panel:";
+            this.label3.Location = new System.Drawing.Point(239, 299);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(482, 21);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Choose a panel on the left in order to modify forms within that panel.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // EditFormButton
+            // 
+            this.EditFormButton.Enabled = false;
+            this.EditFormButton.Location = new System.Drawing.Point(298, 104);
+            this.EditFormButton.Name = "EditFormButton";
+            this.EditFormButton.Size = new System.Drawing.Size(75, 25);
+            this.EditFormButton.TabIndex = 41;
+            this.EditFormButton.Text = "Edit";
+            this.EditFormButton.UseVisualStyleBackColor = true;
+            this.EditFormButton.Click += new System.EventHandler(this.EditFormButton_Click);
             // 
             // FormOrganization
             // 
@@ -320,10 +334,10 @@
         private System.Windows.Forms.Button SavePanel;
         private System.Windows.Forms.Button Panel_MoveUp;
         private System.Windows.Forms.Button Panel_MoveDown;
-        private System.Windows.Forms.Button RemoveEmployee;
-        private System.Windows.Forms.Button AddEmployee;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button RemovePanel;
+        private System.Windows.Forms.Button AddPanel;
+        private System.Windows.Forms.Button RemoveForm;
+        private System.Windows.Forms.Button AddForm;
         private System.Windows.Forms.Button Form_MoveDown;
         private System.Windows.Forms.Button Form_MoveUp;
         private System.Windows.Forms.Button SaveForm;
@@ -334,5 +348,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox PanelChoiceBox;
+        private System.Windows.Forms.Button EditFormButton;
     }
 }

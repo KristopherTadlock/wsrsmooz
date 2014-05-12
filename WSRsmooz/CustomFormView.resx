@@ -117,14 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Counseling notes should correspond with each treatment plan index.
-
-1. Drug use and/or withdrawal potential.
-2. Biomedical conditions and complications. (Physical Health)
-3. Emotional/behavioral conditions. (Mental Health)
-4. Treatment acceptance/resistance. (Legal)
-5. Release continued use potential.
-6. Recovery environment. (Family, Social, Educational, Vocational)</value>
-  </data>
 </root>

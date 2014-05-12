@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SSN = new System.Windows.Forms.MaskedTextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.ClientAuthEnd = new System.Windows.Forms.DateTimePicker();
             this.ClientAuthStart = new System.Windows.Forms.DateTimePicker();
             this.ClientPCharges = new System.Windows.Forms.TextBox();
@@ -62,8 +64,6 @@
             this.ClientChangeDate2 = new System.Windows.Forms.DateTimePicker();
             this.ClientChangeDate1 = new System.Windows.Forms.DateTimePicker();
             this.Print = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.SSN = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +104,23 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admission Bookkeping Form";
+            // 
+            // SSN
+            // 
+            this.SSN.Location = new System.Drawing.Point(164, 118);
+            this.SSN.Mask = "000-00-0000";
+            this.SSN.Name = "SSN";
+            this.SSN.Size = new System.Drawing.Size(95, 22);
+            this.SSN.TabIndex = 91;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(119, 121);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(39, 16);
+            this.label16.TabIndex = 90;
+            this.label16.Text = "SSN:";
             // 
             // ClientAuthEnd
             // 
@@ -436,23 +453,6 @@
             this.Print.UseVisualStyleBackColor = true;
             this.Print.Click += new System.EventHandler(this.processPdfGen);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(119, 121);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(39, 16);
-            this.label16.TabIndex = 90;
-            this.label16.Text = "SSN:";
-            // 
-            // SSN
-            // 
-            this.SSN.Location = new System.Drawing.Point(164, 118);
-            this.SSN.Mask = "000-00-0000";
-            this.SSN.Name = "SSN";
-            this.SSN.Size = new System.Drawing.Size(95, 22);
-            this.SSN.TabIndex = 91;
-            // 
             // Form_AdmissionBookkeeping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +467,7 @@
             this.Name = "Form_AdmissionBookkeeping";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Admission Bookkeeping";
+            this.Load += new System.EventHandler(this.Form_AdmissionBookkeeping_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
