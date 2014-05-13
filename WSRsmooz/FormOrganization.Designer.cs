@@ -47,10 +47,10 @@
             this.FormName = new System.Windows.Forms.TextBox();
             this.PanelGroupBox = new System.Windows.Forms.GroupBox();
             this.FormGroupBox = new System.Windows.Forms.GroupBox();
+            this.EditFormButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.PanelChoiceBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.EditFormButton = new System.Windows.Forms.Button();
             this.PanelGroupBox.SuspendLayout();
             this.FormGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -133,7 +133,6 @@
             // 
             // RemovePanel
             // 
-            this.RemovePanel.Enabled = false;
             this.RemovePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemovePanel.Location = new System.Drawing.Point(21, 76);
             this.RemovePanel.Name = "RemovePanel";
@@ -142,10 +141,10 @@
             this.RemovePanel.Text = "-";
             this.RemovePanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RemovePanel.UseVisualStyleBackColor = true;
+            this.RemovePanel.Click += new System.EventHandler(this.RemovePanel_Click);
             // 
             // AddPanel
             // 
-            this.AddPanel.Enabled = false;
             this.AddPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddPanel.Location = new System.Drawing.Point(21, 38);
             this.AddPanel.Name = "AddPanel";
@@ -154,6 +153,7 @@
             this.AddPanel.Text = "+";
             this.AddPanel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.AddPanel.UseVisualStyleBackColor = true;
+            this.AddPanel.Click += new System.EventHandler(this.AddPanel_Click);
             // 
             // RemoveForm
             // 
@@ -263,6 +263,17 @@
             this.FormGroupBox.TabStop = false;
             this.FormGroupBox.Text = "Form Organization";
             // 
+            // EditFormButton
+            // 
+            this.EditFormButton.Enabled = false;
+            this.EditFormButton.Location = new System.Drawing.Point(298, 104);
+            this.EditFormButton.Name = "EditFormButton";
+            this.EditFormButton.Size = new System.Drawing.Size(75, 25);
+            this.EditFormButton.TabIndex = 41;
+            this.EditFormButton.Text = "Edit";
+            this.EditFormButton.UseVisualStyleBackColor = true;
+            this.EditFormButton.Click += new System.EventHandler(this.EditFormButton_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -289,17 +300,6 @@
             this.label3.TabIndex = 38;
             this.label3.Text = "Choose a panel on the left in order to modify forms within that panel.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // EditFormButton
-            // 
-            this.EditFormButton.Enabled = false;
-            this.EditFormButton.Location = new System.Drawing.Point(298, 104);
-            this.EditFormButton.Name = "EditFormButton";
-            this.EditFormButton.Size = new System.Drawing.Size(75, 25);
-            this.EditFormButton.TabIndex = 41;
-            this.EditFormButton.Text = "Edit";
-            this.EditFormButton.UseVisualStyleBackColor = true;
-            this.EditFormButton.Click += new System.EventHandler(this.EditFormButton_Click);
             // 
             // FormOrganization
             // 

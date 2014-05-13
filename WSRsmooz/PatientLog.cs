@@ -30,9 +30,6 @@ namespace WSRsmooz
 
         private void PatientLog_Load(object sender, EventArgs e)
         {
-            if (admin)
-                AdminEditPanels.Visible = true;
-
             fillPanelBox();
             PanelList.SelectedIndex = 0;
             resetFormList();
@@ -156,11 +153,11 @@ namespace WSRsmooz
             {
                 if (Controls[i] is Button)
                 {
-                    if (!Controls[i].Name.Contains("Admin"))
-                    {
+                    //if (!Controls[i].Name.Contains("Admin"))
+                    //{
                         Controls.RemoveAt(i);
                         i--;
-                    }
+                    //}
                 }
             }
 

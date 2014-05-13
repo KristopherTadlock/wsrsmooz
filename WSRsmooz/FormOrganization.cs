@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WSRsmooz
@@ -188,9 +182,9 @@ namespace WSRsmooz
                 MessageBox.Show("Could not successfully change form name.");
 
             skip = true;
+            int tempPanel = PanelChoiceBox.SelectedIndex;
+            PanelBox.SelectedIndex = PanelChoiceBox.SelectedIndex = tempPanel;
             fillFormList();
-            PanelBox.SelectedIndex = PanelChoiceBox.SelectedIndex;
-            fillPanelBox();
 
             if (FormBox.Items.Count > 0 && index <= (FormBox.Items.Count-1))
                 FormBox.SetSelected(index, true);
@@ -230,7 +224,8 @@ namespace WSRsmooz
         {
             if (FormBox.SelectedItems.Count > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete " + ((FormItem)FormBox.SelectedItem).name + "? This will delete the template PDF. Please have a backup.", "Confirm Delete?", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete " + ((FormItem)FormBox.SelectedItem).name +
+                    "? This will delete the template PDF. Please have a backup.", "Confirm Delete?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     query = "delete from forms where FormID=" + ((FormItem)FormBox.SelectedItem).id;
@@ -240,6 +235,39 @@ namespace WSRsmooz
                         fillFormList();
                         updateFormDB();
                     }
+                }
+            }
+        }
+
+        private void AddPanel_Click(object sender, EventArgs e)
+        {
+            query = "select coalesce(max(Priority), 0) as MaxPriority from panels";
+            String newPriorityString = database.SelectString(query);
+            int newPriority = Convert.ToInt32(newPriorityString) + 1;
+
+            query = "insert into panels (PanelName, Priority) values(\"Panel " + newPriority.ToString() + "\", " + newPriority.ToString() + ")";
+
+            if (database.Query(query))
+                fillPanelBox();
+        }
+
+        private void RemovePanel_Click(object sender, EventArgs e)
+        {
+            if (PanelBox.SelectedItems.Count > 0)
+            {
+                if (FormBox.Items.Count == 0)
+                {
+                    query = "delete from panels where PanelID=" + ((PanelItem)PanelBox.SelectedItem).id;
+
+                    if (database.Query(query))
+                    {
+                        fillPanelBox();
+                        updatePanelDB();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Panel must be empty before removal.");
                 }
             }
         }

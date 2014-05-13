@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.IMPORTANTYESTitleBox = new System.Windows.Forms.Label();
+            this.PrintButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // IMPORTANTYESTitleBox
@@ -42,11 +43,22 @@
             this.IMPORTANTYESTitleBox.Text = "Title";
             this.IMPORTANTYESTitleBox.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Location = new System.Drawing.Point(799, 1);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(131, 27);
+            this.PrintButton.TabIndex = 1;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
             // CustomFormView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 509);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.IMPORTANTYESTitleBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -62,5 +74,6 @@
         #endregion
 
         private System.Windows.Forms.Label IMPORTANTYESTitleBox;
+        private System.Windows.Forms.Button PrintButton;
     }
 }

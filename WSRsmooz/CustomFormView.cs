@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,16 @@ namespace WSRsmooz
 
         // Local stuff.
         dbConnect database = new dbConnect();
-        DataTable form, panels;
+        DataTable form, clientInfo;
         String query;
+        Random rng = new Random();
+
+        // just pdf-y things
+        PdfReader pdfReader;
+        PdfStamper pdfStamper;
+        AcroFields pdfFormFields;
+        string templatePDF = "templates/";
+        string newFile;
 
         public CustomFormView()
         {
@@ -29,6 +38,19 @@ namespace WSRsmooz
 
         private void grabForm(object sender, EventArgs e)
         {
+            newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
+            query = "select * from ClientInfo where ClientID=" + client;
+            clientInfo = database.GetTable(query);
+
+            query = "select Path from forms where FormID=" + loadFormID;
+            templatePDF += database.SelectString(query);
+
+            if (!File.Exists(templatePDF))
+            {
+                MessageBox.Show("There was an error finding " + form.Rows[0]["Path"].ToString() + "!");
+                this.Close();
+            }
+
             query = "select * from CustomForms where FormID=" + loadFormID;
             form = database.GetTable(query);
 
@@ -126,6 +148,98 @@ namespace WSRsmooz
 
             IMPORTANTYESTitleBox.Text = form.Rows[0]["FormName"].ToString();
             this.Text = IMPORTANTYESTitleBox.Text;
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(newFile))
+            {
+                pdfReader = new PdfReader(templatePDF);
+            }
+            else
+            {
+                MessageBox.Show("Error creating file.");
+                return;
+            }
+
+            pdfStamper = new PdfStamper(pdfReader, new FileStream(newFile, FileMode.Create));
+            pdfFormFields = pdfStamper.AcroFields;
+
+            stampPdf();
+            pdfStamper.Close();
+            pdfReader.Close();
+            printPdf();
+
+            if (File.Exists(newFile))
+                File.Delete(newFile);
+        }
+
+        // reads in pdf template, calls functions to fill new pdf, prints, deletes
+        public void processPdfGen(object sender, EventArgs e)
+        {
+            if (!File.Exists(newFile))
+            {
+                pdfReader = new PdfReader(templatePDF);
+            }
+            else
+            {
+                MessageBox.Show("Error creating file.");
+                return;
+            }
+
+            pdfStamper = new PdfStamper(pdfReader, new FileStream(newFile, FileMode.Create));
+            pdfFormFields = pdfStamper.AcroFields;
+
+            stampPdf();
+            pdfStamper.Close();
+            pdfReader.Close();
+            printPdf();
+
+            if (File.Exists(newFile))
+                File.Delete(newFile);
+        }
+
+        // function to call printpdf.exe and wait for processing before deleting
+        public void printPdf()
+        {
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.StartInfo.FileName = "printpdf.exe";
+            proc.StartInfo.Arguments = "-print-dialog -exit-on-print \"" + newFile + "\"";
+            proc.StartInfo.RedirectStandardError = false;
+            proc.StartInfo.RedirectStandardOutput = false;
+            proc.StartInfo.UseShellExecute = true;
+            proc.Start();
+            proc.WaitForExit();
+        }
+
+        public void stampPdf()
+        {
+            // Fill from database.
+            foreach (var field in pdfFormFields.Fields)
+            {
+                if (clientInfo.Columns.Contains(field.Key))
+                {
+                    pdfFormFields.SetField(field.Key, clientInfo.Rows[0][field.Key].ToString());
+                }
+            }
+
+            // Traverse anything not in a group box.
+            foreach (Control k in this.Controls)
+            {
+                if (k is CustomTextboxLabel)
+                {
+                    pdfFormFields.SetField(((CustomTextboxLabel)k).pdfAttribute, ((CustomTextboxLabel)k).textBox.Text);
+                }
+                else if (k is ComboBoxer)
+                {
+                    pdfFormFields.SetField(((ComboBoxer)k).pdfAttribute, ((ComboBoxer)k).Text);
+                }
+                else if (k is CheckBoxer)
+                {
+                    if (((CheckBoxer)k).Checked)
+                        pdfFormFields.SetField(((CheckBoxer)k).pdfAttribute, "X");
+                }
+            }
         }
     }
 }
