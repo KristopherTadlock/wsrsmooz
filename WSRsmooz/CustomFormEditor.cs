@@ -24,6 +24,7 @@ namespace WSRsmooz
         {
             InitializeComponent();
             hideLoad = preload = false;
+            panelIndex = 0;
             fillPanelBox();
         }
 
@@ -32,11 +33,8 @@ namespace WSRsmooz
             return new Point(coords.X - (coords.X % 10), coords.Y - (coords.Y % 10));
         }
 
-        private void checkExisting(object sender, EventArgs e)
+        private void checkExisting()
         {
-            if (hideLoad)
-                IMPORTANTYESLoadPDFButton.Enabled = false;
-
             query = "select count(1) from forms where Path=\"" + Path.GetFileName(loadedPdf) + "\"";
             int result = Convert.ToInt32(database.SelectString(query));
 
@@ -325,7 +323,17 @@ namespace WSRsmooz
             }
 
             preload = true;
-            checkExisting(sender, e);
+            checkExisting();
+        }
+
+        private void CustomFormEditor_Load(object sender, EventArgs e)
+        {
+            IMPORTANTYESPanelChoiceBox.SelectedIndex = panelIndex;
+
+            if (hideLoad)
+                IMPORTANTYESLoadPDFButton.Enabled = false;
+
+            checkExisting();
         }
     }
 }

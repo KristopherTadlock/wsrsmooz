@@ -98,7 +98,7 @@
             this.Name = "CustomFormEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form Editor";
-            this.Load += new System.EventHandler(this.checkExisting);
+            this.Load += new System.EventHandler(this.CustomFormEditor_Load);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();

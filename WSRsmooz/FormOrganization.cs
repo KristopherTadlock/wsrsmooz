@@ -194,6 +194,7 @@ namespace WSRsmooz
         {
             using (CustomFormEditor form = new CustomFormEditor())
             {
+                form.panelIndex = PanelBox.SelectedIndex;
                 form.ShowDialog();
                 if (form.DialogResult == DialogResult.Yes)
                 {
@@ -248,7 +249,10 @@ namespace WSRsmooz
             query = "insert into panels (PanelName, Priority) values(\"Panel " + newPriority.ToString() + "\", " + newPriority.ToString() + ")";
 
             if (database.Query(query))
+            {
                 fillPanelBox();
+                PanelBox.SelectedIndex = PanelBox.Items.Count - 1;
+            }
         }
 
         private void RemovePanel_Click(object sender, EventArgs e)

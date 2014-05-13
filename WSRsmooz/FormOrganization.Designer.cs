@@ -89,7 +89,7 @@
             // 
             this.PanelName.Location = new System.Drawing.Point(127, 160);
             this.PanelName.Name = "PanelName";
-            this.PanelName.Size = new System.Drawing.Size(151, 22);
+            this.PanelName.Size = new System.Drawing.Size(244, 22);
             this.PanelName.TabIndex = 21;
             // 
             // label1
@@ -103,7 +103,7 @@
             // 
             // SavePanel
             // 
-            this.SavePanel.Location = new System.Drawing.Point(203, 188);
+            this.SavePanel.Location = new System.Drawing.Point(296, 188);
             this.SavePanel.Name = "SavePanel";
             this.SavePanel.Size = new System.Drawing.Size(75, 25);
             this.SavePanel.TabIndex = 24;
@@ -202,7 +202,7 @@
             // 
             // SaveForm
             // 
-            this.SaveForm.Location = new System.Drawing.Point(292, 187);
+            this.SaveForm.Location = new System.Drawing.Point(298, 187);
             this.SaveForm.Name = "SaveForm";
             this.SaveForm.Size = new System.Drawing.Size(75, 25);
             this.SaveForm.TabIndex = 35;
@@ -223,7 +223,7 @@
             // 
             this.FormName.Location = new System.Drawing.Point(124, 160);
             this.FormName.Name = "FormName";
-            this.FormName.Size = new System.Drawing.Size(151, 22);
+            this.FormName.Size = new System.Drawing.Size(249, 22);
             this.FormName.TabIndex = 33;
             // 
             // PanelGroupBox
