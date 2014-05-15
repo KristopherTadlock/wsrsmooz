@@ -125,6 +125,12 @@
     <Compile Include="FormEditor_ChangeType.Designer.cs">
       <DependentUpon>FormEditor_ChangeType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_DischargeSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DischargeSummary.Designer.cs">
+      <DependentUpon>Form_DischargeSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ExitBookkeeping.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ClientScreeningForm.resx">
       <DependentUpon>Form_ClientScreeningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DischargeSummary.resx">
+      <DependentUpon>Form_DischargeSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ExitBookkeeping.resx">
       <DependentUpon>Form_ExitBookkeeping.cs</DependentUpon>
