@@ -40,7 +40,7 @@
             this.D7 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.T1 = new System.Windows.Forms.DateTimePicker();
-            this.T2 = new System.Windows.Forms.DateTimePicker();
+            this.T3 = new System.Windows.Forms.DateTimePicker();
             this.label = new System.Windows.Forms.Label();
             this.label432 = new System.Windows.Forms.Label();
             this.NOTE = new System.Windows.Forms.TextBox();
@@ -154,16 +154,16 @@
             this.T1.TabIndex = 23;
             this.T1.Value = new System.DateTime(2014, 4, 12, 20, 0, 0, 0);
             // 
-            // T2
+            // T3
             // 
-            this.T2.CustomFormat = "hh:mm";
-            this.T2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.T2.Location = new System.Drawing.Point(652, 258);
-            this.T2.Name = "T2";
-            this.T2.ShowUpDown = true;
-            this.T2.Size = new System.Drawing.Size(64, 22);
-            this.T2.TabIndex = 24;
-            this.T2.Value = new System.DateTime(2014, 4, 12, 20, 0, 0, 0);
+            this.T3.CustomFormat = "hh:mm";
+            this.T3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.T3.Location = new System.Drawing.Point(652, 258);
+            this.T3.Name = "T3";
+            this.T3.ShowUpDown = true;
+            this.T3.Size = new System.Drawing.Size(64, 22);
+            this.T3.TabIndex = 24;
+            this.T3.Value = new System.DateTime(2014, 4, 12, 20, 0, 0, 0);
             // 
             // label
             // 
@@ -210,7 +210,7 @@
             this.Controls.Add(this.NOTE);
             this.Controls.Add(this.label432);
             this.Controls.Add(this.label);
-            this.Controls.Add(this.T2);
+            this.Controls.Add(this.T3);
             this.Controls.Add(this.T1);
             this.Controls.Add(this.D7);
             this.Controls.Add(this.label4);
@@ -228,6 +228,7 @@
             this.Name = "IndividualNotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "IndividualNotes";
+            this.Load += new System.EventHandler(this.IndividualNotes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,7 +247,7 @@
         private System.Windows.Forms.DateTimePicker D7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker T1;
-        private System.Windows.Forms.DateTimePicker T2;
+        private System.Windows.Forms.DateTimePicker T3;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label432;
         private System.Windows.Forms.TextBox NOTE;

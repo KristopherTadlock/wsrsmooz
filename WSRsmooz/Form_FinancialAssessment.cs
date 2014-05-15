@@ -131,7 +131,8 @@ namespace WSRsmooz
                     {
                         // Depends on "checked" value of PDF.
                         // Can modify later if anyone actually used a checkbox Acrofield.
-                        pdfFormFields.SetField(j.Name, "X");
+                        if (((CheckBox)j).Checked)
+                            pdfFormFields.SetField(j.Name, "X");
                     }
                 }
             }

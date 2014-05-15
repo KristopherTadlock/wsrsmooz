@@ -88,6 +88,12 @@ namespace WSRsmooz
                     case "5": // Client Admission Agreement
                         newFormItem.form = new Form_ClientAdmissionAgreement();
                         break;
+                    case "6": // Financial Assessment
+                        newFormItem.form = new Form_FinancialAssessment();
+                        break;
+                    case "7": // Discharge Summary
+                        newFormItem.form = new Form_DischargeSummary();
+                        break;
                     default:
                         newFormItem.form = new CustomFormView();
                         break;
@@ -204,6 +210,12 @@ namespace WSRsmooz
                     break;
                 case "5": // Client Admission Agreement
                     ((Form_ClientAdmissionAgreement)form.form).client = client.id;
+                    break;
+                case "6": // Financial Assessment
+                    ((Form_FinancialAssessment)form.form).client = client.id;
+                    break;
+                case "7": // Discharge Summary
+                    ((Form_DischargeSummary)form.form).client = client.id;
                     break;
                 default: // ((Form_ASAM)form.form).client = client.id;
                     ((CustomFormView)form.form).client = client.id;

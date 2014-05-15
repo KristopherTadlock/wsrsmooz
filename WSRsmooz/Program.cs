@@ -13,7 +13,7 @@ namespace WSRsmooz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_DischargeSummary());
+            Application.Run(new Launcher());
         }
     }
 }

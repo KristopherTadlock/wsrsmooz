@@ -58,18 +58,13 @@ namespace WSRsmooz
                 newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
                 ClientNameLabel.Text = "1-on-1 with " + ClientName;
             }
-            // copied this
-            //string query = "select * from ClientInfo where ClientID=" + client;
-            string query = "";
-
-            clientInfo = database.GetTable(query);
-            performReplacements();
         }
 
         public void loadClient(ClientItem client)
         {
-            String query = "select ClientNum, ClientID from ClientInfo where `ClientNum`=\"" + client + "\"";
-            DataTable loadedClient = database.GetTable(query);
+            String query = "select ClientName, ClientNum from ClientInfo where `ClientID`=\"" + client.id + "\"";
+            clientInfo = database.GetTable(query);
+            performReplacements();
             loadClientID = Convert.ToInt32(client.id);
             ClientName = client.clientName;
         }
@@ -79,7 +74,7 @@ namespace WSRsmooz
             foreach (DataRow row in clients.Rows)
             {
                 ClientItem item = new ClientItem();
-                item.id = row["ClientNum"].ToString();
+                item.id = row["ClientID"].ToString();
                 item.clientName = row["ClientName"].ToString();
                 clientList.Items.Add(item);
             }
@@ -87,7 +82,33 @@ namespace WSRsmooz
 
         private void PrintButton_Click(object sender, EventArgs e)
         {
+            if (clientList.SelectedItems.Count > 0)
+            {
+                if (!File.Exists(newFile))
+                {
+                    pdfReader = new PdfReader(templatePDF);
+                }
+                else
+                {
+                    MessageBox.Show("Error creating file.");
+                    return;
+                }
 
+                pdfStamper = new PdfStamper(pdfReader, new FileStream(newFile, FileMode.Create));
+                pdfFormFields = pdfStamper.AcroFields;
+
+                stampPdf();
+                pdfStamper.Close();
+                pdfReader.Close();
+                printPdf();
+
+                if (File.Exists(newFile))
+                    File.Delete(newFile);
+            }
+            else
+            {
+                MessageBox.Show("You must select a client before printing.");
+            }
         }
 
         // reads in pdf template, calls functions to fill new pdf, prints, deletes
@@ -148,7 +169,10 @@ namespace WSRsmooz
                 }
                 else if (k is DateTimePicker)
                 {
-                    pdfFormFields.SetField(k.Name, ((DateTimePicker)k).Value.Date.ToString("MM/dd/yyyy"));
+                    if (k.Name.Equals("T1") || k.Name.Equals("T3"))
+                        pdfFormFields.SetField(k.Name, k.Text);
+                    else
+                        pdfFormFields.SetField(k.Name, ((DateTimePicker)k).Value.Date.ToString("MM/dd/yyyy"));
                 }
                 else if (k is CheckBox)
                 {
@@ -158,28 +182,14 @@ namespace WSRsmooz
                         pdfFormFields.SetField(k.Name, "X");
                 }
             }
+        }
 
-            // Traverse everything inside groupboxes.
-            foreach (Control i in this.Controls.OfType<GroupBox>())
-            {
-                foreach (Control j in i.Controls)
-                {
-                    if (j is TextBox || j is ComboBox || j is MaskedTextBox)
-                    {
-                        pdfFormFields.SetField(j.Name, j.Text);
-                    }
-                    else if (j is DateTimePicker)
-                    {
-                        pdfFormFields.SetField(j.Name, ((DateTimePicker)j).Value.Date.ToString("MM/dd/yyyy"));
-                    }
-                    else if (j is CheckBox)
-                    {
-                        // Depends on "checked" value of PDF.
-                        // Can modify later if anyone actually used a checkbox Acrofield.
-                        pdfFormFields.SetField(j.Name, "X");
-                    }
-                }
-            }
+        private void IndividualNotes_Load(object sender, EventArgs e)
+        {
+            string query = "select ClientName, ClientID from ClientInfo";
+            clients = database.GetTable(query);
+
+            updateClientList();
         }
     }
 }

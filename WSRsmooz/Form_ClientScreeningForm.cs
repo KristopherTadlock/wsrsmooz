@@ -115,7 +115,7 @@ namespace WSRsmooz
             {
                 foreach (Control j in i.Controls)
                 {
-                    if (j is TextBox || j is ComboBox)
+                    if (j is TextBox || j is ComboBox || j is MaskedTextBox)
                     {
                         pdfFormFields.SetField(j.Name, j.Text);
                     }
@@ -127,7 +127,8 @@ namespace WSRsmooz
                     {
                         // Depends on "checked" value of PDF.
                         // Can modify later if anyone actually used a checkbox Acrofield.
-                        pdfFormFields.SetField(j.Name, "X");
+                        if (((CheckBox)j).Checked)
+                            pdfFormFields.SetField(j.Name, "X");
                     }
                 }
             }
