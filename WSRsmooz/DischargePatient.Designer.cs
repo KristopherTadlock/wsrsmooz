@@ -33,6 +33,14 @@
             this.checklist_button2 = new System.Windows.Forms.Button();
             this.wizardTabs = new WSRsmooz.WizardTabs();
             this.tab1 = new System.Windows.Forms.TabPage();
+            this.linensAgreement = new System.Windows.Forms.Button();
+            this.safeKeepingAgreement = new System.Windows.Forms.Button();
+            this.clientSelfEvaluation = new System.Windows.Forms.Button();
+            this.dischargeSummary = new System.Windows.Forms.Button();
+            this.dischargeASAM = new System.Windows.Forms.Button();
+            this.dischargeBookkeeping = new System.Windows.Forms.Button();
+            this.ClientNameLabel = new System.Windows.Forms.Label();
+            this.ClientListComboBox = new System.Windows.Forms.ComboBox();
             this.instructions = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
@@ -40,9 +48,13 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.wizardPicture = new System.Windows.Forms.PictureBox();
             this.tab2 = new System.Windows.Forms.TabPage();
+            this.newPatientIntakeWizard_tab13_label_intakeDate = new System.Windows.Forms.Label();
+            this.dischargeDate = new System.Windows.Forms.DateTimePicker();
+            this.Successful = new System.Windows.Forms.CheckBox();
             this.wizardTabs.SuspendLayout();
             this.tab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wizardPicture)).BeginInit();
+            this.tab2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -52,7 +64,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 23);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Screening";
+            this.label2.Text = "Process";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // checklist_button1
@@ -64,7 +76,7 @@
             this.checklist_button1.Size = new System.Drawing.Size(130, 32);
             this.checklist_button1.TabIndex = 14;
             this.checklist_button1.TabStop = false;
-            this.checklist_button1.Text = "Basic I";
+            this.checklist_button1.Text = "Forms";
             this.checklist_button1.UseVisualStyleBackColor = true;
             // 
             // checklist_button2
@@ -76,7 +88,7 @@
             this.checklist_button2.Size = new System.Drawing.Size(130, 32);
             this.checklist_button2.TabIndex = 16;
             this.checklist_button2.TabStop = false;
-            this.checklist_button2.Text = "Basic I";
+            this.checklist_button2.Text = "Discharge";
             this.checklist_button2.UseVisualStyleBackColor = true;
             // 
             // wizardTabs
@@ -95,6 +107,14 @@
             // tab1
             // 
             this.tab1.BackColor = System.Drawing.SystemColors.Control;
+            this.tab1.Controls.Add(this.linensAgreement);
+            this.tab1.Controls.Add(this.safeKeepingAgreement);
+            this.tab1.Controls.Add(this.clientSelfEvaluation);
+            this.tab1.Controls.Add(this.dischargeSummary);
+            this.tab1.Controls.Add(this.dischargeASAM);
+            this.tab1.Controls.Add(this.dischargeBookkeeping);
+            this.tab1.Controls.Add(this.ClientNameLabel);
+            this.tab1.Controls.Add(this.ClientListComboBox);
             this.tab1.Controls.Add(this.instructions);
             this.tab1.Controls.Add(this.BackButton);
             this.tab1.Controls.Add(this.CancelButton);
@@ -108,15 +128,108 @@
             this.tab1.TabIndex = 0;
             this.tab1.Text = "1";
             // 
+            // linensAgreement
+            // 
+            this.linensAgreement.Enabled = false;
+            this.linensAgreement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linensAgreement.Location = new System.Drawing.Point(380, 319);
+            this.linensAgreement.Name = "linensAgreement";
+            this.linensAgreement.Size = new System.Drawing.Size(317, 26);
+            this.linensAgreement.TabIndex = 23;
+            this.linensAgreement.Text = "Linens Agreement";
+            this.linensAgreement.UseVisualStyleBackColor = true;
+            this.linensAgreement.Click += new System.EventHandler(this.linensAgreement_Click);
+            // 
+            // safeKeepingAgreement
+            // 
+            this.safeKeepingAgreement.Enabled = false;
+            this.safeKeepingAgreement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.safeKeepingAgreement.Location = new System.Drawing.Point(380, 287);
+            this.safeKeepingAgreement.Name = "safeKeepingAgreement";
+            this.safeKeepingAgreement.Size = new System.Drawing.Size(317, 26);
+            this.safeKeepingAgreement.TabIndex = 22;
+            this.safeKeepingAgreement.Text = "Safe Keeping Agreement";
+            this.safeKeepingAgreement.UseVisualStyleBackColor = true;
+            this.safeKeepingAgreement.Click += new System.EventHandler(this.safeKeepingAgreement_Click);
+            // 
+            // clientSelfEvaluation
+            // 
+            this.clientSelfEvaluation.Enabled = false;
+            this.clientSelfEvaluation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientSelfEvaluation.Location = new System.Drawing.Point(380, 255);
+            this.clientSelfEvaluation.Name = "clientSelfEvaluation";
+            this.clientSelfEvaluation.Size = new System.Drawing.Size(317, 26);
+            this.clientSelfEvaluation.TabIndex = 21;
+            this.clientSelfEvaluation.Text = "Client Self Evaluation";
+            this.clientSelfEvaluation.UseVisualStyleBackColor = true;
+            this.clientSelfEvaluation.Click += new System.EventHandler(this.clientSelfEvaluation_Click);
+            // 
+            // dischargeSummary
+            // 
+            this.dischargeSummary.Enabled = false;
+            this.dischargeSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dischargeSummary.Location = new System.Drawing.Point(380, 223);
+            this.dischargeSummary.Name = "dischargeSummary";
+            this.dischargeSummary.Size = new System.Drawing.Size(317, 26);
+            this.dischargeSummary.TabIndex = 20;
+            this.dischargeSummary.Text = "Discharge Summary";
+            this.dischargeSummary.UseVisualStyleBackColor = true;
+            this.dischargeSummary.Click += new System.EventHandler(this.dischargeSummary_Click);
+            // 
+            // dischargeASAM
+            // 
+            this.dischargeASAM.Enabled = false;
+            this.dischargeASAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dischargeASAM.Location = new System.Drawing.Point(380, 191);
+            this.dischargeASAM.Name = "dischargeASAM";
+            this.dischargeASAM.Size = new System.Drawing.Size(317, 26);
+            this.dischargeASAM.TabIndex = 19;
+            this.dischargeASAM.Text = "Discharge ASAM";
+            this.dischargeASAM.UseVisualStyleBackColor = true;
+            this.dischargeASAM.Click += new System.EventHandler(this.dischargeASAM_Click);
+            // 
+            // dischargeBookkeeping
+            // 
+            this.dischargeBookkeeping.Enabled = false;
+            this.dischargeBookkeeping.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dischargeBookkeeping.Location = new System.Drawing.Point(380, 159);
+            this.dischargeBookkeeping.Name = "dischargeBookkeeping";
+            this.dischargeBookkeeping.Size = new System.Drawing.Size(317, 26);
+            this.dischargeBookkeeping.TabIndex = 18;
+            this.dischargeBookkeeping.Text = "Discharge Bookkeeping";
+            this.dischargeBookkeeping.UseVisualStyleBackColor = true;
+            this.dischargeBookkeeping.Click += new System.EventHandler(this.dischargeBookkeeping_Click);
+            // 
+            // ClientNameLabel
+            // 
+            this.ClientNameLabel.AutoSize = true;
+            this.ClientNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientNameLabel.Location = new System.Drawing.Point(377, 121);
+            this.ClientNameLabel.Name = "ClientNameLabel";
+            this.ClientNameLabel.Size = new System.Drawing.Size(84, 16);
+            this.ClientNameLabel.TabIndex = 17;
+            this.ClientNameLabel.Text = "Client Name:";
+            // 
+            // ClientListComboBox
+            // 
+            this.ClientListComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClientListComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientListComboBox.FormattingEnabled = true;
+            this.ClientListComboBox.Location = new System.Drawing.Point(467, 115);
+            this.ClientListComboBox.Name = "ClientListComboBox";
+            this.ClientListComboBox.Size = new System.Drawing.Size(230, 28);
+            this.ClientListComboBox.TabIndex = 16;
+            this.ClientListComboBox.SelectedIndexChanged += new System.EventHandler(this.ClientListComboBox_SelectedIndexChanged);
+            // 
             // instructions
             // 
             this.instructions.AutoSize = true;
             this.instructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.instructions.Location = new System.Drawing.Point(356, 83);
             this.instructions.Name = "instructions";
-            this.instructions.Size = new System.Drawing.Size(224, 16);
+            this.instructions.Size = new System.Drawing.Size(313, 16);
             this.instructions.TabIndex = 15;
-            this.instructions.Text = "Step 1: Enter basic client information.";
+            this.instructions.Text = "Step 1: Complete all forms necessary for discharge.";
             // 
             // BackButton
             // 
@@ -171,12 +284,46 @@
             // tab2
             // 
             this.tab2.BackColor = System.Drawing.SystemColors.Control;
+            this.tab2.Controls.Add(this.newPatientIntakeWizard_tab13_label_intakeDate);
+            this.tab2.Controls.Add(this.dischargeDate);
+            this.tab2.Controls.Add(this.Successful);
             this.tab2.Location = new System.Drawing.Point(4, 22);
             this.tab2.Name = "tab2";
             this.tab2.Padding = new System.Windows.Forms.Padding(3);
             this.tab2.Size = new System.Drawing.Size(824, 631);
             this.tab2.TabIndex = 1;
             this.tab2.Text = "2";
+            // 
+            // newPatientIntakeWizard_tab13_label_intakeDate
+            // 
+            this.newPatientIntakeWizard_tab13_label_intakeDate.AutoSize = true;
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Location = new System.Drawing.Point(445, 211);
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Name = "newPatientIntakeWizard_tab13_label_intakeDate";
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Size = new System.Drawing.Size(105, 16);
+            this.newPatientIntakeWizard_tab13_label_intakeDate.TabIndex = 86;
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Text = "Discharge Date:";
+            // 
+            // dischargeDate
+            // 
+            this.dischargeDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dischargeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dischargeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dischargeDate.Location = new System.Drawing.Point(556, 206);
+            this.dischargeDate.Name = "dischargeDate";
+            this.dischargeDate.Size = new System.Drawing.Size(106, 22);
+            this.dischargeDate.TabIndex = 85;
+            // 
+            // Successful
+            // 
+            this.Successful.AutoSize = true;
+            this.Successful.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Successful.Location = new System.Drawing.Point(501, 180);
+            this.Successful.Name = "Successful";
+            this.Successful.Size = new System.Drawing.Size(99, 20);
+            this.Successful.TabIndex = 0;
+            this.Successful.Text = "Successful?";
+            this.Successful.UseVisualStyleBackColor = true;
             // 
             // DischargePatient
             // 
@@ -193,10 +340,13 @@
             this.Name = "DischargePatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "DischargePatient";
+            this.Load += new System.EventHandler(this.DischargePatient_Load);
             this.wizardTabs.ResumeLayout(false);
             this.tab1.ResumeLayout(false);
             this.tab1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wizardPicture)).EndInit();
+            this.tab2.ResumeLayout(false);
+            this.tab2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +365,17 @@
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Label instructions;
         private System.Windows.Forms.Button checklist_button2;
+        private System.Windows.Forms.Label ClientNameLabel;
+        private System.Windows.Forms.ComboBox ClientListComboBox;
+        private System.Windows.Forms.Button dischargeBookkeeping;
+        private System.Windows.Forms.Button dischargeASAM;
+        private System.Windows.Forms.Button dischargeSummary;
+        private System.Windows.Forms.Button clientSelfEvaluation;
+        private System.Windows.Forms.Button linensAgreement;
+        private System.Windows.Forms.Button safeKeepingAgreement;
+        private System.Windows.Forms.CheckBox Successful;
+        private System.Windows.Forms.Label newPatientIntakeWizard_tab13_label_intakeDate;
+        private System.Windows.Forms.DateTimePicker dischargeDate;
 
     }
 }

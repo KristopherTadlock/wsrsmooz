@@ -15,6 +15,7 @@ namespace WSRsmooz
         public bool loggedIn { get; set; }
         public bool superUser { get; set; }
         public String currentUser { get; set; }
+        public String currentID { get; set; }
         public String currentWindow { get; set; }
 
         // initialize form children
@@ -30,6 +31,7 @@ namespace WSRsmooz
             loggedIn = false;
             superUser = false;
             currentUser = "";
+            currentID = "";
             currentWindow = "Login";
 
             // set form children properties properly to fit within mdi
@@ -112,6 +114,7 @@ namespace WSRsmooz
             loggedIn = false;
             superUser = false;
             currentUser = "";
+            currentID = "";
             toggleToolstrip();
             shutdownEverything();
             refreshLoginScreen();

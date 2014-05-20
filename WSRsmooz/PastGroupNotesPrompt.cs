@@ -12,6 +12,7 @@ namespace WSRsmooz
         public String name { get; set; }
         public int id { get; set; }
         public PdfReader pdfReader;
+        dbConnect database = new dbConnect();
 
         public void grabPDFs()
         {
@@ -115,6 +116,11 @@ namespace WSRsmooz
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this file?", "Confirm Delete", MessageBoxButtons.YesNo);
             if (dialogResult != DialogResult.Yes)
                 return;
+
+            string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+            temp += "deleted " + name + "'s group notes from " + PastNotes.SelectedItem.ToString();
+            temp += ".\")";
+            database.Query(temp);
 
             String delFile = pdfPath + id + "/" + PastNotes.SelectedItem.ToString() + ".pdf";
             File.Delete(delFile);

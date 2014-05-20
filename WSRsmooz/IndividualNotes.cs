@@ -186,10 +186,12 @@ namespace WSRsmooz
 
         private void IndividualNotes_Load(object sender, EventArgs e)
         {
-            string query = "select ClientName, ClientID from ClientInfo";
+            string query = "select ClientName, ClientID from ClientInfo where IntakeDate not like '0001-01-01%' and ExitDate like '0001-01-01%'";
             clients = database.GetTable(query);
-
             updateClientList();
+
+            if (clientList.Items.Count > 0)
+                clientList.SelectedIndex = 0;
         }
     }
 }

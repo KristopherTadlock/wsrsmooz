@@ -88,6 +88,8 @@ namespace WSRsmooz
                 {
                     pdfFormFields.SetField(field.Key, clientInfo.Rows[0][field.Key].ToString());
                 }
+                pdfFormFields.SetField("ClientNum1", clientInfo.Rows[0]["ClientNum"].ToString());
+                pdfFormFields.SetField("ClientNum2", clientInfo.Rows[0]["ClientNum"].ToString());
             }
 
             // Traverse anything not in a group box.
@@ -175,7 +177,7 @@ namespace WSRsmooz
             // create an obfuscated pdf
             newFile = Convert.ToString(rng.Next(int.MaxValue)) + ".pdf";
 
-            string query = " SELECT * FROM ClientInfo WHERE ClientID = " + client;
+            string query = "select * from ClientInfo where ClientID=" + client;
 
             clientInfo = database.GetTable(query);
             performReplacements();

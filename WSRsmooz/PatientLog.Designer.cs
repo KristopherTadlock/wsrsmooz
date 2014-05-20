@@ -32,6 +32,7 @@
             this.clientList = new System.Windows.Forms.ListBox();
             this.PanelList = new System.Windows.Forms.ComboBox();
             this.Title = new System.Windows.Forms.Label();
+            this.EditButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -81,11 +82,22 @@
             this.Title.Text = "Patient Log and Forms";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // EditButton
+            // 
+            this.EditButton.Location = new System.Drawing.Point(216, 33);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(75, 23);
+            this.EditButton.TabIndex = 101;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
             // PatientLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 618);
+            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.PanelList);
             this.Controls.Add(this.checkBox1);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.ListBox clientList;
         private System.Windows.Forms.ComboBox PanelList;
         private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Button EditButton;
     }
 }

@@ -90,7 +90,7 @@
             this.ClientOwedAmt.Margin = new System.Windows.Forms.Padding(4);
             this.ClientOwedAmt.Name = "ClientOwedAmt";
             this.ClientOwedAmt.Size = new System.Drawing.Size(83, 22);
-            this.ClientOwedAmt.TabIndex = 10;
+            this.ClientOwedAmt.TabIndex = 2;
             // 
             // ClientMoneyOwed
             // 
@@ -98,7 +98,7 @@
             this.ClientMoneyOwed.Margin = new System.Windows.Forms.Padding(4);
             this.ClientMoneyOwed.Name = "ClientMoneyOwed";
             this.ClientMoneyOwed.Size = new System.Drawing.Size(567, 104);
-            this.ClientMoneyOwed.TabIndex = 9;
+            this.ClientMoneyOwed.TabIndex = 3;
             this.ClientMoneyOwed.Text = "";
             // 
             // ClientMethPay
@@ -107,7 +107,7 @@
             this.ClientMethPay.Margin = new System.Windows.Forms.Padding(4);
             this.ClientMethPay.Name = "ClientMethPay";
             this.ClientMethPay.Size = new System.Drawing.Size(132, 22);
-            this.ClientMethPay.TabIndex = 7;
+            this.ClientMethPay.TabIndex = 1;
             // 
             // ClientPCounselor
             // 
@@ -115,7 +115,7 @@
             this.ClientPCounselor.Margin = new System.Windows.Forms.Padding(4);
             this.ClientPCounselor.Name = "ClientPCounselor";
             this.ClientPCounselor.Size = new System.Drawing.Size(132, 22);
-            this.ClientPCounselor.TabIndex = 6;
+            this.ClientPCounselor.TabIndex = 0;
             // 
             // label5
             // 
@@ -163,7 +163,7 @@
             this.PrintButton.Location = new System.Drawing.Point(518, 571);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(75, 23);
-            this.PrintButton.TabIndex = 5;
+            this.PrintButton.TabIndex = 0;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
@@ -173,7 +173,7 @@
             this.CancelButton.Location = new System.Drawing.Point(24, 571);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 6;
+            this.CancelButton.TabIndex = 1;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -214,7 +214,7 @@
             this.ClientDSMIV.Location = new System.Drawing.Point(109, 236);
             this.ClientDSMIV.Name = "ClientDSMIV";
             this.ClientDSMIV.Size = new System.Drawing.Size(100, 22);
-            this.ClientDSMIV.TabIndex = 21;
+            this.ClientDSMIV.TabIndex = 10;
             // 
             // ClientWCM
             // 
@@ -222,7 +222,7 @@
             this.ClientWCM.Mask = "(999) 000-0000";
             this.ClientWCM.Name = "ClientWCM";
             this.ClientWCM.Size = new System.Drawing.Size(100, 22);
-            this.ClientWCM.TabIndex = 20;
+            this.ClientWCM.TabIndex = 9;
             // 
             // ClientPhone
             // 
@@ -230,7 +230,7 @@
             this.ClientPhone.Mask = "(999) 000-0000";
             this.ClientPhone.Name = "ClientPhone";
             this.ClientPhone.Size = new System.Drawing.Size(100, 22);
-            this.ClientPhone.TabIndex = 19;
+            this.ClientPhone.TabIndex = 8;
             // 
             // SSN
             // 
@@ -238,7 +238,7 @@
             this.SSN.Mask = "000-00-0000";
             this.SSN.Name = "SSN";
             this.SSN.Size = new System.Drawing.Size(100, 22);
-            this.SSN.TabIndex = 18;
+            this.SSN.TabIndex = 7;
             // 
             // label14
             // 
@@ -281,14 +281,14 @@
             this.DoB.Location = new System.Drawing.Point(100, 134);
             this.DoB.Name = "DoB";
             this.DoB.Size = new System.Drawing.Size(239, 22);
-            this.DoB.TabIndex = 13;
+            this.DoB.TabIndex = 6;
             // 
             // ClientZip
             // 
             this.ClientZip.Location = new System.Drawing.Point(620, 86);
             this.ClientZip.Name = "ClientZip";
             this.ClientZip.Size = new System.Drawing.Size(100, 22);
-            this.ClientZip.TabIndex = 12;
+            this.ClientZip.TabIndex = 5;
             // 
             // ClientSt
             // 
@@ -296,35 +296,35 @@
             this.ClientSt.Mask = "CA";
             this.ClientSt.Name = "ClientSt";
             this.ClientSt.Size = new System.Drawing.Size(26, 22);
-            this.ClientSt.TabIndex = 11;
+            this.ClientSt.TabIndex = 4;
             // 
             // ClientCity
             // 
             this.ClientCity.Location = new System.Drawing.Point(362, 86);
             this.ClientCity.Name = "ClientCity";
             this.ClientCity.Size = new System.Drawing.Size(100, 22);
-            this.ClientCity.TabIndex = 10;
+            this.ClientCity.TabIndex = 3;
             // 
             // ClientAddr
             // 
             this.ClientAddr.Location = new System.Drawing.Point(79, 86);
             this.ClientAddr.Name = "ClientAddr";
             this.ClientAddr.Size = new System.Drawing.Size(238, 22);
-            this.ClientAddr.TabIndex = 9;
+            this.ClientAddr.TabIndex = 2;
             // 
             // ADate
             // 
             this.ADate.Location = new System.Drawing.Point(431, 34);
             this.ADate.Name = "ADate";
             this.ADate.Size = new System.Drawing.Size(236, 22);
-            this.ADate.TabIndex = 8;
+            this.ADate.TabIndex = 1;
             // 
             // DCharge
             // 
             this.DCharge.Location = new System.Drawing.Point(78, 34);
             this.DCharge.Name = "DCharge";
             this.DCharge.Size = new System.Drawing.Size(236, 22);
-            this.DCharge.TabIndex = 7;
+            this.DCharge.TabIndex = 0;
             // 
             // label10
             // 

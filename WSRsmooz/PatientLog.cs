@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.Collections;
 
 namespace WSRsmooz
@@ -33,7 +27,7 @@ namespace WSRsmooz
             fillPanelBox();
             PanelList.SelectedIndex = 0;
             resetFormList();
-            query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0001-01-01%'";
+            query = "select ClientID, ClientName from ClientInfo where IntakeDate not like '0001-01-01%' and ExitDate like '0001-01-01%'";
             clientTable = database.GetTable(query);
             updateClientList();
             triggerButtonSwap();
@@ -80,8 +74,6 @@ namespace WSRsmooz
                     case "2": // Admission Bookkeeping
                         newFormItem.form = new Form_AdmissionBookkeeping();
                         break;
-                    case "3": // Urine Analysis
-                        break;
                     case "4": // Exit Bookkeeping
                         newFormItem.form = new Form_ExitBookkeeping();
                         break;
@@ -93,6 +85,31 @@ namespace WSRsmooz
                         break;
                     case "7": // Discharge Summary
                         newFormItem.form = new Form_DischargeSummary();
+                        break;
+                    case "25": // Linen Agreement
+                        newFormItem.form = new Form_LinenAgreement();
+                        break;
+                    case "26": // ASAM
+                        newFormItem.form = new Form_ASAM();
+                        break;
+                    case "3":
+                    case "19":
+                    case "24":
+                    case "20":
+                    case "17":
+                    case "16":
+                    case "14":
+                    case "15":
+                    case "18":
+                    case "21":
+                    case "22":
+                    case "9":
+                    case "23":
+                    case "10":
+                    case "11":
+                    case "12":
+                    case "13":
+                        newFormItem.form = new PrintGeneric();
                         break;
                     default:
                         newFormItem.form = new CustomFormView();
@@ -111,7 +128,7 @@ namespace WSRsmooz
             foreach (DataRow row in clientTable.Rows)
             {
                 ClientItem item = new ClientItem();
-                item.id = row["ClientNum"].ToString();
+                item.id = row["ClientID"].ToString();
                 item.clientName = row["ClientName"].ToString();
                 clientList.Items.Add(item);
             }
@@ -138,11 +155,11 @@ namespace WSRsmooz
             clientList.Items.Clear();
             if (checkBox1.Checked)
             {
-                query = "select ClientNum, ClientName from ClientInfo";
+                query = "select ClientID, ClientName from ClientInfo where ExitDate like '0001-01-01%'";
             }
             else
             {
-                query = "select ClientNum, ClientName from ClientInfo where IntakeDate NOT LIKE '0001-01-01%'";
+                query = "select ClientID, ClientName from ClientInfo where IntakeDate not like '0001-01-01%' and ExitDate like '0001-01-01%'";
             }
             clientTable = database.GetTable(query);
             updateClientList();
@@ -159,11 +176,11 @@ namespace WSRsmooz
             {
                 if (Controls[i] is Button)
                 {
-                    //if (!Controls[i].Name.Contains("Admin"))
-                    //{
+                    if (!Controls[i].Name.Equals("EditButton"))
+                    {
                         Controls.RemoveAt(i);
                         i--;
-                    //}
+                    }
                 }
             }
 
@@ -203,8 +220,6 @@ namespace WSRsmooz
                 case "2": // Admission Bookkeeping
                     ((Form_AdmissionBookkeeping)form.form).client = client.id;
                     break;
-                case "3": // Urine Analysis
-                    break;
                 case "4": // Exit Bookkeeping
                     ((Form_ExitBookkeeping)form.form).client = client.id;
                     break;
@@ -217,6 +232,31 @@ namespace WSRsmooz
                 case "7": // Discharge Summary
                     ((Form_DischargeSummary)form.form).client = client.id;
                     break;
+                case "25": // Linen Agreement
+                    ((Form_LinenAgreement)form.form).client = client.id;
+                    break;
+                case "26": // ASAM
+                    ((Form_ASAM)form.form).client = client.id;
+                    break;
+                case "3":
+                case "19":
+                case "24":
+                case "20":
+                case "17":
+                case "16":
+                case "14":
+                case "15":
+                case "18":
+                case "21":
+                case "22":
+                case "9":
+                case "23":
+                case "10":
+                case "11":
+                case "12":
+                case "13":
+                    setGeneric(form, client.id);
+                    break;
                 default: // ((Form_ASAM)form.form).client = client.id;
                     ((CustomFormView)form.form).client = client.id;
                     ((CustomFormView)form.form).loadFormID = form.id;
@@ -225,10 +265,36 @@ namespace WSRsmooz
             form.form.ShowDialog();
         }
 
+        private void setGeneric(FormItem form, String id)
+        {
+            FormItem temporary = new FormItem();
+            temporary.name = form.name;
+            temporary.id = id;
+            ((PrintGeneric) form.form).f = temporary;
+        }
+
         private void PanelList_SelectedIndexChanged(object sender, EventArgs e)
         {
             resetFormList();
             triggerButtonSwap();
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (clientList.SelectedItems.Count > 0)
+            {
+                EditClient temp = new EditClient();
+                temp.client = ((ClientItem) clientList.SelectedItem).id;
+                DialogResult tempResult = temp.ShowDialog();
+
+                if (tempResult == DialogResult.OK)
+                {
+                    string query = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                    query += "edited client " + ((ClientItem)clientList.SelectedItem).clientName;
+                    query += ".\")";
+                    database.Query(query);
+                }
+            }
         }
     }
 }

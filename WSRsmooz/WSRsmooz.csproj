@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp, Version=5.4.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -62,6 +65,12 @@
     </Compile>
     <Compile Include="AddEmployeePrompt.Designer.cs">
       <DependentUpon>AddEmployeePrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientLog.Designer.cs">
+      <DependentUpon>ClientLog.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomDraggable.cs" />
     <Compile Include="CustomFormEditor.cs">
@@ -113,6 +122,12 @@
     <Compile Include="EditableLabel.Designer.cs">
       <DependentUpon>EditableLabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditClient.Designer.cs">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +170,6 @@
     <Compile Include="Form_ASAM.Designer.cs">
       <DependentUpon>Form_ASAM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ASAM2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_ASAM2.Designer.cs">
-      <DependentUpon>Form_ASAM2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_ClientAdmissionAgreement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +187,12 @@
     </Compile>
     <Compile Include="Form_FinancialAssessment.Designer.cs">
       <DependentUpon>Form_FinancialAssessment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_LinenAgreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_LinenAgreement.Designer.cs">
+      <DependentUpon>Form_LinenAgreement.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupNotes.cs">
       <SubType>Form</SubType>
@@ -233,6 +248,12 @@
     <Compile Include="PatientLog.Designer.cs">
       <DependentUpon>PatientLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintGeneric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintGeneric.Designer.cs">
+      <DependentUpon>PrintGeneric.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignatureCapturePad.cs">
@@ -274,6 +295,9 @@
     <EmbeddedResource Include="EditableLabel.resx">
       <DependentUpon>EditableLabel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditClient.resx">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditEmployees.resx">
       <DependentUpon>EditEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,9 +313,6 @@
     <EmbeddedResource Include="Form_ASAM.resx">
       <DependentUpon>Form_ASAM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_ASAM2.resx">
-      <DependentUpon>Form_ASAM2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_ClientAdmissionAgreement.resx">
       <DependentUpon>Form_ClientAdmissionAgreement.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_FinancialAssessment.resx">
       <DependentUpon>Form_FinancialAssessment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_LinenAgreement.resx">
+      <DependentUpon>Form_LinenAgreement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupNotes.resx">
       <DependentUpon>GroupNotes.cs</DependentUpon>
@@ -330,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatientLog.resx">
       <DependentUpon>PatientLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintGeneric.resx">
+      <DependentUpon>PrintGeneric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -453,6 +480,7 @@
   <ItemGroup>
     <Content Include="dependencies\itextsharp.dll" />
     <Content Include="dependencies\MySql.Data.dll" />
+    <Content Include="icon.ico" />
     <Content Include="printpdf.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -41,10 +41,10 @@
             this.AddEmployee = new System.Windows.Forms.Button();
             this.RemoveEmployee = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.adminLog = new System.Windows.Forms.DataGridView();
             this.EmployeeInformation_GroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminLog)).BeginInit();
             this.SuspendLayout();
             // 
             // EmpName_Label
@@ -173,7 +173,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.adminLog);
             this.groupBox1.Location = new System.Drawing.Point(166, 217);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(643, 376);
@@ -181,13 +181,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Activity Log";
             // 
-            // dataGridView1
+            // adminLog
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(631, 349);
-            this.dataGridView1.TabIndex = 0;
+            this.adminLog.AllowUserToAddRows = false;
+            this.adminLog.AllowUserToDeleteRows = false;
+            this.adminLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.adminLog.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.adminLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.adminLog.Location = new System.Drawing.Point(6, 21);
+            this.adminLog.Name = "adminLog";
+            this.adminLog.ReadOnly = true;
+            this.adminLog.Size = new System.Drawing.Size(631, 349);
+            this.adminLog.TabIndex = 0;
+            this.adminLog.Visible = false;
             // 
             // EditEmployees
             // 
@@ -210,7 +216,7 @@
             this.EmployeeInformation_GroupBox.ResumeLayout(false);
             this.EmployeeInformation_GroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adminLog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,6 +236,6 @@
         private System.Windows.Forms.Button AddEmployee;
         private System.Windows.Forms.Button RemoveEmployee;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView adminLog;
     }
 }

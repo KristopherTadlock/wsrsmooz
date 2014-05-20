@@ -76,6 +76,8 @@ namespace WSRsmooz
                 if (!((Launcher)MdiParent).loggedIn)
                 {
                     ((Launcher)MdiParent).currentUser = Login_textbox_employee.Text;
+                    query = "select employeeID from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";
+                    ((Launcher)MdiParent).currentID = database.SelectString(query);
                     ((Launcher)MdiParent).loggedIn = true;
 
                     query = "select superUser from users where name=\"" + Login_textbox_employee.Text.ToString() + "\"";

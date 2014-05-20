@@ -74,7 +74,7 @@ namespace WSRsmooz
         {
             newPatientIntakeWizard_tab1_listbox_inactiveclients.Items.Clear();
 
-            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate LIKE '0001-01-01%'";
+            String query = "select ClientNum, ClientName from ClientInfo where IntakeDate LIKE '0001-01-01%' and ExitDate like '0001-01-01%'";
             inactiveClients = database.GetTable(query);
 
             foreach (DataRow row in inactiveClients.Rows)
@@ -111,7 +111,13 @@ namespace WSRsmooz
                 String mbox = ((ClientItem)newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedItem).clientName;
 
                 if (database.Query(query))
+                {
                     mbox += "'s intake is now complete. Client will appear in the patient log.";
+                    string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                    temp += "finished intake for " + ((ClientItem)newPatientIntakeWizard_tab1_listbox_inactiveclients.SelectedItem).clientName;
+                    temp += ".\")";
+                    database.Query(temp);
+                }
                 else
                     mbox += "'s intake could not be added to the database.";
                 MessageBox.Show(mbox);
@@ -772,7 +778,6 @@ namespace WSRsmooz
                 default:
                     break;
             }
-
                 asamChanges.Add("A", A.ToString());
                 asamChanges.Add("B", B.ToString());
                 asamChanges.Add("C", C.ToString());
@@ -808,8 +813,8 @@ namespace WSRsmooz
                 query += "ClientNum, ";
 
             query += "IntakeDate, ClientName, DoB, Age, County, ClientCity, ClientAddr, ClientState, ClientZip, ";
-            query += "ClientPhone, SecPhone, AName, AAddr, ACPName, ACPNumber) values(\"";
-
+            query += "ClientPhone, SecPhone, AName, AAddr, ACPName, ACPNumber, Funder, Gender, Race, Ethinicity) values(\"";
+            string temp = "";
             if (newPatientIntakeWizard_tab13_checkbox_intakeornot.Checked)
             {
                 String getClientNum = database.SelectString("select max(ClientNum) from ClientInfo");
@@ -817,10 +822,20 @@ namespace WSRsmooz
 
                 query += intClientNum.ToString() + "\", \"";
                 query += newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Value.ToString("yyyy-MM-dd") + "\", \"";
+
+                temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                temp += "admitted client " + newPatientIntakeWizard_tab1_textbox_firstName.Text + " " + newPatientIntakeWizard_tab1_textbox_lastName.Text;
+                temp += ".\")";
+                database.Query(temp);
             }
             else
             {
                 query += "0001-01-01\", \"";
+
+                temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                temp += "partially intook " + newPatientIntakeWizard_tab1_textbox_firstName.Text + " " + newPatientIntakeWizard_tab1_textbox_lastName.Text;
+                temp += ".\")";
+                database.Query(temp);
             }
 
             query += newPatientIntakeWizard_tab1_textbox_firstName.Text + " " + newPatientIntakeWizard_tab1_textbox_lastName.Text + "\",\"";
@@ -836,10 +851,13 @@ namespace WSRsmooz
             query += "\", \"" + newPatientIntakeWizard_tab4_textbox_agencyName.Text;
             query += "\", \"" + newPatientIntakeWizard_tab4_textbox_agencyAddress.Text;
             query += "\", \"" + newPatientIntakeWizard_tab4_textbox_agencyContactName.Text;
-            query += "\", \"" + newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.Text + "\")";
+            query += "\", \"" + newPatientIntakeWizard_tab4_textbox_agencyPrimaryPhone.Text;
+            query += "\", \"" + newPatientIntakeWizard_tab13_textbox_funder.Text;
+            query += "\", \"" + newPatientIntakeWizard_tab13_combobox_gender.Text;
+            query += "\", \"" + newPatientIntakeWizard_tab13_textbox_race.Text;
+            query += "\", \"" + newPatientIntakeWizard_tab13_combobox_ethnicity.Text + "\")";
             database.Query(query);
             fillInactiveClientList();
-
             
             // how do i get clientnumz
             query = "select ClientNum from ClientInfo where ClientName=\"";
@@ -851,8 +869,6 @@ namespace WSRsmooz
             screeningChanges.Add("ClientNum2", newClientNum);
             asamChanges.Add("ClientNum1", newClientNum);
             asamChanges.Add("ClientNum2", newClientNum);
-             
-
         }
 
         private void newPatientIntakeWizard_tab13_checkbox_intakeornot_CheckedChanged(object sender, EventArgs e)
@@ -866,7 +882,7 @@ namespace WSRsmooz
             else
             {
                 newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Visible = false;
-                newPatientIntakeWizard_tab13_label_intakeDate.Visible = true;
+                newPatientIntakeWizard_tab13_label_intakeDate.Visible = false;
             }
         }
     }

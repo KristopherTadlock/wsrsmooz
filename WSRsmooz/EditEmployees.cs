@@ -10,6 +10,7 @@ namespace WSRsmooz
     {
         dbConnect database = new dbConnect();
         DataTable employees = new DataTable();
+        private DataTable logTable = new DataTable();
 
         public EditEmployees()
         {
@@ -75,6 +76,24 @@ namespace WSRsmooz
             if (employeeList.SelectedItem != null)
             {
                 loadEmployee((EmployeeItem)employeeList.SelectedItem);
+                updateLog((EmployeeItem)employeeList.SelectedItem);
+            }
+        }
+
+        private void updateLog(EmployeeItem employee)
+        {
+            String query = "select timestamp, message from AdminLog where empID=" + employee.id + " order by timestamp desc";
+            logTable = database.GetTable(query);
+
+            if (logTable.Rows.Count > 0)
+            {
+                adminLog.Visible = true;
+                adminLog.DataSource = logTable;
+                adminLog.Refresh();
+            }
+            else
+            {
+                adminLog.Visible = false;
             }
         }
 
@@ -111,6 +130,11 @@ namespace WSRsmooz
                 MessageBox.Show(((EmployeeItem)employeeList.SelectedItem).employeeName + " saved successfully.");
                 updateEmployeeList();
             }
+
+            query = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+            query += "edited employee " + EmpName.Text;
+            query += ".\")";
+            database.Query(query);
         }
 
         private void AddEmployee_Click(object sender, EventArgs e)
@@ -119,7 +143,13 @@ namespace WSRsmooz
             DialogResult EmployeePromptResult = AddEmployeePrompt.ShowDialog();
 
             if (EmployeePromptResult == DialogResult.OK)
+            {
+                string query = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                query += "added a new employee";
+                query += ".\")";
+                database.Query(query);
                 updateEmployeeList();
+            }
         }
 
         private void RemoveEmployee_Click(object sender, EventArgs e)
@@ -128,7 +158,13 @@ namespace WSRsmooz
             query += ((EmployeeItem)employeeList.SelectedItem).id;
 
             if (database.Query(query))
+            {
+                query = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                query += "removed employee " + ((EmployeeItem)employeeList.SelectedItem).employeeName;
+                query += ".\")";
+                database.Query(query);
                 updateEmployeeList();
+            }
         }
     }
     public class EmployeeItem

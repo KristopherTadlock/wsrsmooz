@@ -46,6 +46,7 @@ namespace WSRsmooz
             this.NewPatientIntake_checklist_button_tab13 = new System.Windows.Forms.Button();
             this.newPatientIntakeWizard = new WSRsmooz.WizardTabs();
             this.newPatientIntakeWizard_tab1 = new System.Windows.Forms.TabPage();
+            this.label44 = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_button_giveintakedate = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab1_datetimepicker_intakedate = new System.Windows.Forms.DateTimePicker();
@@ -243,10 +244,17 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab12_textbox_describeLimits = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_tab12_checkbox_physicalLimitations = new System.Windows.Forms.CheckBox();
             this.newPatientIntakeWizard_tab13 = new System.Windows.Forms.TabPage();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.newPatientIntakeWizard_tab13_textbox_funder = new System.Windows.Forms.TextBox();
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity = new System.Windows.Forms.ComboBox();
+            this.newPatientIntakeWizard_tab13_combobox_gender = new System.Windows.Forms.ComboBox();
+            this.newPatientIntakeWizard_tab13_textbox_race = new System.Windows.Forms.TextBox();
             this.newPatientIntakeWizard_tab13_checkbox_intakeornot = new System.Windows.Forms.CheckBox();
             this.newPatientIntakeWizard_tab13_label_intakeDate = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate = new System.Windows.Forms.DateTimePicker();
-            this.label44 = new System.Windows.Forms.Label();
             this.newPatientIntakeWizard.SuspendLayout();
             this.newPatientIntakeWizard_tab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newPatientIntakeWizard_picturebox_wizard)).BeginInit();
@@ -502,6 +510,16 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab1.Size = new System.Drawing.Size(824, 631);
             this.newPatientIntakeWizard_tab1.TabIndex = 0;
             this.newPatientIntakeWizard_tab1.Text = "1";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(46, 460);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(97, 16);
+            this.label44.TabIndex = 33;
+            this.label44.Text = "Inactive Clients";
             // 
             // newPatientIntakeWizard_tab1_button_giveintakedate
             // 
@@ -2890,6 +2908,14 @@ namespace WSRsmooz
             // newPatientIntakeWizard_tab13
             // 
             this.newPatientIntakeWizard_tab13.BackColor = System.Drawing.SystemColors.Control;
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.label48);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.label47);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.label46);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.label45);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_textbox_funder);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_combobox_ethnicity);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_combobox_gender);
+            this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_textbox_race);
             this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_checkbox_intakeornot);
             this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_label_intakeDate);
             this.newPatientIntakeWizard_tab13.Controls.Add(this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate);
@@ -2900,11 +2926,99 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab13.TabIndex = 12;
             this.newPatientIntakeWizard_tab13.Text = "13";
             // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(473, 227);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(60, 16);
+            this.label48.TabIndex = 93;
+            this.label48.Text = "Ethnicity:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(477, 197);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(56, 16);
+            this.label47.TabIndex = 92;
+            this.label47.Text = "Gender:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(489, 169);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(44, 16);
+            this.label46.TabIndex = 91;
+            this.label46.Text = "Race:";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(480, 141);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(53, 16);
+            this.label45.TabIndex = 90;
+            this.label45.Text = "Funder:";
+            // 
+            // newPatientIntakeWizard_tab13_textbox_funder
+            // 
+            this.newPatientIntakeWizard_tab13_textbox_funder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_textbox_funder.Location = new System.Drawing.Point(539, 138);
+            this.newPatientIntakeWizard_tab13_textbox_funder.MaxLength = 30;
+            this.newPatientIntakeWizard_tab13_textbox_funder.Name = "newPatientIntakeWizard_tab13_textbox_funder";
+            this.newPatientIntakeWizard_tab13_textbox_funder.Size = new System.Drawing.Size(148, 22);
+            this.newPatientIntakeWizard_tab13_textbox_funder.TabIndex = 89;
+            // 
+            // newPatientIntakeWizard_tab13_combobox_ethnicity
+            // 
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.FormattingEnabled = true;
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.Items.AddRange(new object[] {
+            "White",
+            "African American",
+            "Hispanic",
+            "Pacific Islander",
+            "Native American",
+            "Asian"});
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.Location = new System.Drawing.Point(539, 224);
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.Name = "newPatientIntakeWizard_tab13_combobox_ethnicity";
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.Size = new System.Drawing.Size(182, 24);
+            this.newPatientIntakeWizard_tab13_combobox_ethnicity.TabIndex = 88;
+            // 
+            // newPatientIntakeWizard_tab13_combobox_gender
+            // 
+            this.newPatientIntakeWizard_tab13_combobox_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.newPatientIntakeWizard_tab13_combobox_gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_combobox_gender.FormattingEnabled = true;
+            this.newPatientIntakeWizard_tab13_combobox_gender.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.newPatientIntakeWizard_tab13_combobox_gender.Location = new System.Drawing.Point(539, 194);
+            this.newPatientIntakeWizard_tab13_combobox_gender.Name = "newPatientIntakeWizard_tab13_combobox_gender";
+            this.newPatientIntakeWizard_tab13_combobox_gender.Size = new System.Drawing.Size(54, 24);
+            this.newPatientIntakeWizard_tab13_combobox_gender.TabIndex = 87;
+            // 
+            // newPatientIntakeWizard_tab13_textbox_race
+            // 
+            this.newPatientIntakeWizard_tab13_textbox_race.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newPatientIntakeWizard_tab13_textbox_race.Location = new System.Drawing.Point(539, 166);
+            this.newPatientIntakeWizard_tab13_textbox_race.MaxLength = 30;
+            this.newPatientIntakeWizard_tab13_textbox_race.Name = "newPatientIntakeWizard_tab13_textbox_race";
+            this.newPatientIntakeWizard_tab13_textbox_race.Size = new System.Drawing.Size(106, 22);
+            this.newPatientIntakeWizard_tab13_textbox_race.TabIndex = 86;
+            // 
             // newPatientIntakeWizard_tab13_checkbox_intakeornot
             // 
             this.newPatientIntakeWizard_tab13_checkbox_intakeornot.AutoSize = true;
             this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Location = new System.Drawing.Point(505, 135);
+            this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Location = new System.Drawing.Point(504, 254);
             this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Name = "newPatientIntakeWizard_tab13_checkbox_intakeornot";
             this.newPatientIntakeWizard_tab13_checkbox_intakeornot.Size = new System.Drawing.Size(140, 20);
             this.newPatientIntakeWizard_tab13_checkbox_intakeornot.TabIndex = 85;
@@ -2916,7 +3030,7 @@ namespace WSRsmooz
             // 
             this.newPatientIntakeWizard_tab13_label_intakeDate.AutoSize = true;
             this.newPatientIntakeWizard_tab13_label_intakeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newPatientIntakeWizard_tab13_label_intakeDate.Location = new System.Drawing.Point(481, 166);
+            this.newPatientIntakeWizard_tab13_label_intakeDate.Location = new System.Drawing.Point(480, 285);
             this.newPatientIntakeWizard_tab13_label_intakeDate.Name = "newPatientIntakeWizard_tab13_label_intakeDate";
             this.newPatientIntakeWizard_tab13_label_intakeDate.Size = new System.Drawing.Size(79, 16);
             this.newPatientIntakeWizard_tab13_label_intakeDate.TabIndex = 84;
@@ -2928,21 +3042,11 @@ namespace WSRsmooz
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Location = new System.Drawing.Point(566, 163);
+            this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Location = new System.Drawing.Point(565, 282);
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Name = "newPatientIntakeWizard_tab13_datetimepicker_intakeDate";
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Size = new System.Drawing.Size(106, 22);
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.TabIndex = 83;
             this.newPatientIntakeWizard_tab13_datetimepicker_intakeDate.Visible = false;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(46, 460);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(97, 16);
-            this.label44.TabIndex = 33;
-            this.label44.Text = "Inactive Clients";
             // 
             // NewPatientIntake
             // 
@@ -3221,6 +3325,14 @@ namespace WSRsmooz
         private Label label43;
         private DateTimePicker newPatientIntakeWizard_tab1_datetimepicker_intakedate;
         private Label label44;
+        private ComboBox newPatientIntakeWizard_tab13_combobox_ethnicity;
+        private ComboBox newPatientIntakeWizard_tab13_combobox_gender;
+        private TextBox newPatientIntakeWizard_tab13_textbox_race;
+        private TextBox newPatientIntakeWizard_tab13_textbox_funder;
+        private Label label48;
+        private Label label47;
+        private Label label46;
+        private Label label45;
 
     }
 }

@@ -129,6 +129,11 @@ namespace WSRsmooz
             query = "update panels set PanelName=\"" + PanelName.Text + "\" where PanelID=";
             query += ((PanelItem)PanelBox.SelectedItem).id;
 
+            string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+            temp += "changed panel name " + ((PanelItem)PanelBox.SelectedItem).name + " to " + PanelName.Text;
+            temp += ".\")";
+            database.Query(temp);
+
             if (!database.Query(query))
                 MessageBox.Show("Could not successfully change panel name.");
 
@@ -178,6 +183,11 @@ namespace WSRsmooz
             query += newPriority.ToString() + "\" where FormID=";
             query += ((FormItem)FormBox.SelectedItem).id;
 
+            string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+            temp += "changed form name " + ((FormItem)FormBox.SelectedItem).name + " to " + FormName.Text;
+            temp += ".\")";
+            database.Query(temp);
+
             if (!database.Query(query))
                 MessageBox.Show("Could not successfully change form name.");
 
@@ -199,6 +209,10 @@ namespace WSRsmooz
                 if (form.DialogResult == DialogResult.Yes)
                 {
                     fillFormList();
+                    string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                    temp += "added a new form";
+                    temp += ".\")";
+                    database.Query(temp);
                 }
             }
         }
@@ -232,6 +246,11 @@ namespace WSRsmooz
                     query = "delete from forms where FormID=" + ((FormItem)FormBox.SelectedItem).id;
                     if (database.Query(query))
                     {
+                        string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                        temp += "deleted form " + ((FormItem)FormBox.SelectedItem).name;
+                        temp += ".\")";
+                        database.Query(temp);
+
                         //File.Delete("templates/" + ((FormItem)FormBox.SelectedItem).path);
                         fillFormList();
                         updateFormDB();
@@ -252,6 +271,11 @@ namespace WSRsmooz
             {
                 fillPanelBox();
                 PanelBox.SelectedIndex = PanelBox.Items.Count - 1;
+
+                string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                temp += "added a new panel";
+                temp += ".\")";
+                database.Query(temp);
             }
         }
 
@@ -267,6 +291,11 @@ namespace WSRsmooz
                     {
                         fillPanelBox();
                         updatePanelDB();
+
+                        string temp = "insert into AdminLog(empID, message) values(" + ((Launcher)MdiParent).currentID + ", \"" + ((Launcher)MdiParent).currentUser + " ";
+                        temp += "deleted a panel";
+                        temp += ".\")";
+                        database.Query(temp);
                     }
                 }
                 else
